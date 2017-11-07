@@ -1,0 +1,15 @@
+
+/* --------------------------------------- */
+/*				@extend components/button
+/* ---------------------------------------- */
+.button, button, input[type="button"], input[type="submit"]{
+	@extend %button;
+}
+
+/* --------------------------------------- */
+/*				@extend components/table
+/* ---------------------------------------- */
+
+table{
+	@extend %table;
+}

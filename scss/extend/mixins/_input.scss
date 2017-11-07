@@ -1,0 +1,112 @@
+@mixin input-radio($width: 1rem, $height: 1rem, $margin: 0, $spacing: .2rem, $bg-body: color(White), $bg-check: color(Black), $round: 100%){
+  &{ width: 0; height: 0; opacity: 0; }
+	@include parent{
+		input[type=radio] + label{ padding-left: $width + $margin; position: relative; cursor: pointer;
+			&:before{ content:""; display: block; position: absolute; left: 0px; top: 0px; width: $width; height: $height; background: $bg-body;
+			  @if $round != 0 { border-radius: $round; }
+			}
+			&:after{ content:""; display: block; position: absolute; left: $spacing; top: $spacing; width: ($width - ($spacing*2)); height: ($width - ($spacing*2)); background: $bg-check; border-radius: $round; opacity: 0; transition: $transition;
+			}
+		}
+		input[type=radio]:checked{
+			& + label:after{ opacity: 1; transition: $transition;}
+		}
+	}
+}
+@mixin input-checkbox($width: 1rem, $height: 1rem, $margin: 0, $spacing: .2rem, $bg-body: color(White), $bg-check: color(Black), $round: 50%){
+	&{ width: 0; height: 0; opacity: 0; }
+	@include parent{
+		input[type=checkbox] + label{ padding-left: $width + $margin; position: relative; cursor: pointer;
+			&:before{ content:""; display: block; position: absolute; left: 0px; top: 0px; width: $width; height: $height; background: $bg-body;
+			  @if $round != 0 { border-radius: $round; }
+			}
+			&:after{ content:""; display: block; position: absolute; left: $spacing; top: $spacing; width: ($width - ($spacing*2)); height: ($width - ($spacing*2)); background: $bg-check; border-radius: $round; opacity: 0; transition: $transition;
+			}
+		}
+		input[type=checkbox]:checked{
+			& + label:after{ opacity: 1; transition: $transition; }
+		}
+	}
+}
+@mixin input-body{
+	@include parent{
+		input + label{
+			&:before{ @content; }
+		}
+	}
+}
+@mixin input-label{
+	@include parent{
+		input + label{ @content; }
+	}
+}
+@mixin input-focus{
+	@include parent{
+		input:focus + label{ @content; }
+	}
+}
+@mixin input-check{
+	@include parent{
+		input:checked + label:after{ @content; }
+	}
+}
+@mixin input-body-checked{
+	@include parent{
+		input:checked + label{
+			&:before{ @content; }
+		}
+	}
+}
+@mixin input-label-checked{
+	@include parent{
+		input:checked + label{ @content; }
+	}
+}
+$input-types:(
+  (button,button),
+  (checkbox,check),
+  (color,button),
+  (date,button),
+  (datetime, text),
+  (datetime-local,text),
+  (email,text ),
+  (file,text),
+  (hidden,hidden),
+  (image,text),
+  (month,text),
+  (number,text),
+  (password,text),
+  (radio,radio),
+  (range,slider),
+  (reset,button),
+  (search,text),
+  (submit,button),
+  (tel,text),
+  (text,text),
+  (time,text),
+  (url,text),
+  (week,text)
+);
+
+@mixin input-type($type){
+  input{
+    #{input-list($type)}{
+      @content;
+    }
+  }
+}
+
+@function input-list($type){
+  $i: 0;
+  $list: '';
+  @each $input in $input-types{
+    @if nth($input,2) == $type{
+      $i: $i + 1;
+      @if $i>1{
+        $list: $list + ',';
+      }
+      $list: $list + '&[type="#{nth($input,1)}"]';
+    }
+  }
+  @return $list;
+}

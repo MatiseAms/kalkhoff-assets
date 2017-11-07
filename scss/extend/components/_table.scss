@@ -1,0 +1,13 @@
+%table{
+	tr, thead{
+		td, th{
+			padding: 1rem;
+			&:first-child{
+				padding-left: 0rem;
+			}
+			&:last-child{
+				padding-right: 0rem;
+			}
+		}
+	}
+}

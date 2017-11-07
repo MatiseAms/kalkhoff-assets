@@ -1,0 +1,16 @@
+%button{
+	font-weight: bold; display: inline-block; line-height: 1; padding: 1rem 2rem; border: none; box-shadow: 0 0 0 2px color(Black) inset; border-radius: 4px; background-color: color(White); text-transform: uppercase; @extend %heading-font-family; border-radius: 1.5rem; font-size: 1rem; transition: box-shadow 0.2s, color 0.2s 0.1s; cursor: pointer;
+	&:not([disabled]):hover{
+		box-shadow: 0 0 0 2rem color(Black) inset; color: color(White);
+	}
+	&[disabled]{
+		opacity: 0.2; cursor: normal;
+	}
+}
+%buttongroup{
+	.button{
+		&+.button{
+			margin-left: 1rem;
+		}
+	}
+}

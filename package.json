@@ -4,7 +4,9 @@
   "description": "Kalkhoff - Brand Appearance Guide Assets",
   "main": "assets.scss",
   "scripts": {
-    "test": "npm run test"
+    "test": "npm run test",
+		"build-extend": "node-sass --output-style expanded --source-map true assets.scss css/assets.css",
+		"build-classes": "node-sass --output-style expanded --source-map true assets-classes.scss css/assets-classes.css"
   },
   "repository": {
     "type": "git",
