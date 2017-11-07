@@ -1,0 +1,29 @@
+{
+  "name": "kalkhoff-assets",
+  "version": "0.0.1",
+  "description": "Kalkhoff - Brand Appearance Guide Assets",
+  "main": "assets.scss",
+  "scripts": {
+    "test": "npm run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com/MatiseAms/kalkhoff-assets.git"
+  },
+  "keywords": [
+    "kalkhoff",
+    "scss",
+    "fonts",
+    "assets"
+  ],
+  "author": "Sil van Diepen - Matise",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^7.1.6",
+    "cssnano": "^3.10.0",
+    "node-sass": "^4.6.0",
+    "postcss-cli": "^4.1.1",
+    "postcss-discard-duplicates": "^2.1.0",
+    "rimraf": "^2.6.2"
+  }
+}
