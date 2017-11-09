@@ -1,12 +1,16 @@
 %button{
-	font-weight: 600; letter-spacing: 0.5px; display: inline-block; line-height: 1; padding: 1rem 2rem; border: none; box-shadow: 0 0 0 0 color(Darkgray) inset; border-radius: 2px; background-color: color(Black); color: color(White); text-transform: uppercase; @extend %heading-font-family; font-size: 1rem; transition: box-shadow 0.2s, color 0.2s 0.1s; cursor: pointer; font-size: 14px;
+	font-weight: 600; letter-spacing: 0.5px; display: inline-block; line-height: 1; padding: 1rem 2rem; border: none; box-shadow: 0 0 0 0 color(Darkgray) inset; border-radius: 2px; background-color: color(Black); color: color(White); text-transform: uppercase;
+	@extend %heading-font-family; font-size: 1rem; transition: box-shadow 0.2s, color 0.2s 0.1s; cursor: pointer; font-size: 14px;
+
 	&:not([disabled]):hover{
 		box-shadow: 0 100px 0 0 color(Dark) inset; color: color(White);
 	}
+
 	&[disabled]{
 		opacity: 0.2; cursor: normal;
 	}
 }
+
 %buttongroup{
 	.button{
 		&+.button{
