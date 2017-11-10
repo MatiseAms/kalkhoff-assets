@@ -1,0 +1,113 @@
+%input{
+	border: 1px solid color(Black,0.25); border-radius: 2px; line-height: 1rem; font-size: 1rem; padding: 0.5rem 1rem;
+	@extend %body-font-family; font-weight: $font-regular; width: 100%;
+
+	/* --------------------- */
+	/* 			states 					 */
+	/* --------------------- */
+	&:before{
+		display: block; width: 100px; height: 100px; background-color: red;
+	}
+	&:hover{
+		border: 1px solid color(Black,0.5);
+	}
+	&:focus{
+		border: 1px solid color(Black,1); box-shadow: 0 0 0.5rem 0 color(Black,0.1);
+		&:hover{
+			border: 1px solid color(Black,1);
+		}
+	}
+}
+%input{
+	&-color{
+		@extend %input;
+		&{
+			padding: 0; -webkit-appearance: none; width: 2rem; height: 2rem; padding: 0.25rem; border-radius: 50%;
+		}
+		&::-webkit-color-swatch-wrapper{
+			display: block; margin: 0; border: none; padding: 0; width: 2rem; height: 2rem; border-radius: 2px;
+		}
+		&::-webkit-color-swatch{
+			display: block; width: 1.4rem; height: 1.4rem; border: none; border-radius: 50%;
+		}
+	}
+	&-date{
+		@extend %input;
+	}
+	&-datetime-local{
+		@extend %input;
+	}
+	&-email{
+		@extend %input;
+	}
+	&-file{
+		@extend %input;
+	}
+	&-image{
+		@extend %input;
+	}
+	&-month{
+		@extend %input;
+	}
+	&-number{
+		@extend %input;
+	}
+	&-password{
+		@extend %input; font-size: 1.25rem; font-family: caption; letter-spacing: 3px;
+	}
+	&-search{
+		@extend %input;
+	}
+	&-tel{
+		@extend %input;
+	}
+	&-text{
+		@extend %input;
+	}
+	&-time{
+		@extend %input;
+	}
+	&-url{
+		@extend %input;
+	}
+	&-week{
+		@extend %input;
+	}
+}
+
+*{
+	%input-checkbox{
+		@include input-checkbox(1rem,1rem,0, 0.25rem, color(White), color(Black), 50%);
+
+		@include input-checkbox-body{
+			box-shadow: 0 0 0 1px color(Black,0.25) inset;
+		}
+		@include input-checkbox-body-checked{
+			background-color: color(Black);
+		}
+		@include input-checkbox-check{
+			transform: scale(0.7) rotate(-45deg) translateY(0rem); background: none; border-left: 2px solid black; border-bottom: 2px solid black; border-radius: 0; width: 8px; height: 4px; margin: 0; top: 3px; left: 3px; opacity: 0.15; transition: 0.1s;
+		}
+		@include input-checkbox-check-checked{
+			transform: scale(1) rotate(-45deg) translateY(0rem); border-color: white;
+		}
+		@include input-checkbox-label{
+			padding-left: 2rem;
+		}
+	}
+}
+*{
+	%input-radio{
+		display: block;
+		@include input-radio(1rem,1rem,0, 0.25rem, color(White), color(Black));
+		@include input-radio-body{
+			box-shadow: 0 0 0 1px color(Black,0.5) inset; margin-right: 1rem;
+		}
+		@include input-radio-check{
+			border-radius: 50%;
+		}
+		@include input-radio-label{
+			padding-left: 2rem;
+		}
+	}
+}
