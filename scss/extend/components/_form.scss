@@ -51,6 +51,9 @@
 	}
 	&-number{
 		@extend %input;
+		&::-webkit-inner-spin-button{
+			border: 1px solid red; width: 10px; height: 20px; display: none;
+		}
 	}
 	&-password{
 		@extend %input; font-size: 1.25rem; font-family: caption; letter-spacing: 3px;
