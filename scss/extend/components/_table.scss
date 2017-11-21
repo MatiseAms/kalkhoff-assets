@@ -1,13 +1,36 @@
 %table{
 	tr, thead{
 		td, th{
-			padding: 1rem;
+			padding: 1rem; text-align: left; @extend %p;
 			&:first-child{
 				padding-left: 0rem;
 			}
 			&:last-child{
 				padding-right: 0rem;
 			}
+			&.no-break{
+				white-space: nowrap;
+			}
+		}
+	}
+}
+
+%content-table{
+	tr, thead{
+		border-bottom: 1px solid color(Black,0.25);
+		td, th{
+			font-weight: $font-regular; font-size: rem(14); padding: 1rem; text-align: left;
+			&:first-child{
+				white-space: nowrap; padding-left: 1rem;
+			}
+			&:last-child{
+				padding-right: 1rem;
+			}
+		}
+	}
+	thead{
+		th{
+			font-weight: $font-bold;
 		}
 	}
 }
