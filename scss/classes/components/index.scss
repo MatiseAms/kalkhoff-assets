@@ -2,30 +2,23 @@
 /* --------------------------------------- */
 /*				@extend components/button
 /* ---------------------------------------- */
-.button, button, input[type="button"], input[type="submit"]{
-	@extend %button;
-	&.naked, &-naked, &[naked]{
-		@extend %button-naked;
-	}
-	&.small, &-small, &[small]{
-		@extend %button-small;
-	}
-}
-.button-group, button-group{
-	@extend %button-group;
-}
+
+@import "button";
 
 /* --------------------------------------- */
 /*				@extend components/table
 /* ---------------------------------------- */
 
-table{
-	@extend %table;
-}
-
+@import "table";
 
 /* --------------------------------------- */
 /*				@extend components/forms
 /* ---------------------------------------- */
 
 @import "forms";
+
+/* --------------------------------------- */
+/*				@extend components/content
+/* ---------------------------------------- */
+
+@import "content";
