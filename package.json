@@ -6,7 +6,9 @@
   "scripts": {
     "test": "npm run test",
     "build-extend": "node-sass --output-style expanded --source-map true assets.scss css/assets.css",
-    "build-classes": "node-sass --output-style expanded --source-map true assets-classes.scss css/assets-classes.css"
+    "build-classes": "node-sass --output-style expanded --source-map true assets-classes.scss css/assets-classes.css",
+    "sass-less": "sass2less scss/**/*.scss 'less/**/*.less'",
+		"sass2less": "sass2less scss/extend/grid/_functions.scss 'less/extend/grid/_functions.less'"
   },
   "repository": {
     "type": "git",
@@ -23,9 +25,14 @@
   "devDependencies": {
     "autoprefixer": "^7.1.6",
     "cssnano": "^3.10.0",
+    "less-plugin-functions": "^1.0.0",
     "node-sass": "^4.6.0",
     "postcss-cli": "^4.1.1",
     "postcss-discard-duplicates": "^2.1.0",
     "rimraf": "^2.6.2"
+  },
+  "dependencies": {
+    "less": "^2.7.3",
+    "less-plugin-sass2less": "^1.1.0"
   }
 }
