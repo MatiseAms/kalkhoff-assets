@@ -1,6 +1,6 @@
 {
   "name": "kalkhoff-assets",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Kalkhoff - Brand Appearance Guide Assets",
   "main": "assets.scss",
   "scripts": {
@@ -8,7 +8,7 @@
     "build-extend": "node-sass --output-style expanded --source-map true assets.scss css/assets.css",
     "build-classes": "node-sass --output-style expanded --source-map true assets-classes.scss css/assets-classes.css",
     "sass-less": "sass2less scss/**/*.scss 'less/**/*.less'",
-		"sass2less": "sass2less scss/extend/grid/_functions.scss 'less/extend/grid/_functions.less'"
+    "sass2less": "sass2less scss/extend/grid/_functions.scss 'less/extend/grid/_functions.less'"
   },
   "repository": {
     "type": "git",
