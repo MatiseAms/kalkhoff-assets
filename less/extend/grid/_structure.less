@@ -2,10 +2,7 @@
 //  Matise grid structure
 //  _____________________________________________
 
-// short hack to get it working
-@media-common: true; 
-
-
+@media-common: true;
 & when (@media-common = true) {
     .@{prefix} {
         &column {
@@ -113,6 +110,7 @@
             @media only screen and (min-width: 1921px) {
                 .generateClasses(1, xxlarge, false, row);
             }
+            .generateStyleHelpers(1);
         }
     }
 }
