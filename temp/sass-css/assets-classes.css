@@ -1,0 +1,646 @@
+/*  Grid Specific values */
+/* Default use:
+  @include min-(width,4,240);
+
+  use width calculation
+  @include min-(width,4,240,'calc(100% - 240px)');
+*/
+/* Generate the classes */
+/* @function c($map){
+ $value: to-string(&);
+ $new: (slugify($value) : $value); //
+ $map: map-merge($map,$new);
+ @return $map;
+}
+
+ */
+/*
+	Use font-include for single fonts
+	and font-list for a list using the $*-font-weights list
+*/
+/* embed sing font weight */
+@font-face {
+  font-family: "Roboto Condensed";
+  src: url("/fonts/RobotoCondensed-Light.eot?#iefix") format("embedded-opentype"), url("/fonts/RobotoCondensed-Light.woff") format("woff"), url("/fonts/RobotoCondensed-Light.ttf") format("truetype"), url("/fonts/RobotoCondensed-Light.svg#Roboto Condensed") format("svg");
+  /* Legacy iOS */
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Roboto Condensed";
+  src: url("/fonts/RobotoCondensed-Regular.eot?#iefix") format("embedded-opentype"), url("/fonts/RobotoCondensed-Regular.woff") format("woff"), url("/fonts/RobotoCondensed-Regular.ttf") format("truetype"), url("/fonts/RobotoCondensed-Regular.svg#Roboto Condensed") format("svg");
+  /* Legacy iOS */
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Roboto Condensed";
+  src: url("/fonts/RobotoCondensed-Bold.eot?#iefix") format("embedded-opentype"), url("/fonts/RobotoCondensed-Bold.woff") format("woff"), url("/fonts/RobotoCondensed-Bold.ttf") format("truetype"), url("/fonts/RobotoCondensed-Bold.svg#Roboto Condensed") format("svg");
+  /* Legacy iOS */
+  font-weight: 600;
+  font-style: normal;
+}
+
+/* embed font family as list */
+.heading-font-family, h1, h2, h3, h6, .button, button, input[type="button"], input[type="submit"] {
+  font-family: Roboto Condensed, serif;
+  text-transform: uppercase;
+}
+
+/* embed sing font weight */
+/* embed font family as list */
+@font-face {
+  font-family: "Roboto";
+  src: url("/fonts/Roboto-Light.eot?#iefix") format("embedded-opentype"), url("/fonts/Roboto-Light.woff") format("woff"), url("/fonts/Roboto-Light.ttf") format("truetype"), url("/fonts/Roboto-Light.svg#Roboto") format("svg");
+  /* Legacy iOS */
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("/fonts/Roboto-Regular.eot?#iefix") format("embedded-opentype"), url("/fonts/Roboto-Regular.woff") format("woff"), url("/fonts/Roboto-Regular.ttf") format("truetype"), url("/fonts/Roboto-Regular.svg#Roboto") format("svg");
+  /* Legacy iOS */
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("/fonts/Roboto-Medium.eot?#iefix") format("embedded-opentype"), url("/fonts/Roboto-Medium.woff") format("woff"), url("/fonts/Roboto-Medium.ttf") format("truetype"), url("/fonts/Roboto-Medium.svg#Roboto") format("svg");
+  /* Legacy iOS */
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("/fonts/Roboto-Bold.eot?#iefix") format("embedded-opentype"), url("/fonts/Roboto-Bold.woff") format("woff"), url("/fonts/Roboto-Bold.ttf") format("truetype"), url("/fonts/Roboto-Bold.svg#Roboto") format("svg");
+  /* Legacy iOS */
+  font-weight: 600;
+  font-style: normal;
+}
+
+.body-font-family, input[type="color"], input[type="password"], input[type="date"], input[type="datetime-local"], input[type="email"], input[type="file"], input[type="image"], input[type="month"], input[type="number"], input[type="search"], input[type="tel"], input[type="text"], input[type="time"], input[type="url"], input[type="week"] {
+  font-family: Roboto, sans-serif;
+  font-weight: normal;
+}
+
+/* embed sing font weight */
+/* embed font family as list */
+@font-face {
+  font-family: "Roboto Mono";
+  src: url("/fonts/RobotoMono-Regular.eot?#iefix") format("embedded-opentype"), url("/fonts/RobotoMono-Regular.woff") format("woff"), url("/fonts/RobotoMono-Regular.ttf") format("truetype"), url("/fonts/RobotoMono-Regular.svg#Roboto Mono") format("svg");
+  /* Legacy iOS */
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Roboto Mono";
+  src: url("/fonts/RobotoMono-Bold.eot?#iefix") format("embedded-opentype"), url("/fonts/RobotoMono-Bold.woff") format("woff"), url("/fonts/RobotoMono-Bold.ttf") format("truetype"), url("/fonts/RobotoMono-Bold.svg#Roboto Mono") format("svg");
+  /* Legacy iOS */
+  font-weight: 600;
+  font-style: normal;
+}
+
+.code-font-family {
+  font-family: Roboto Mono, Monaco, courier, monospace, sans-serif;
+  font-weight: normal;
+}
+
+h1, h2, h3, h6 {
+  font-weight: 600;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+
+h1.sub, h2.sub, h3.sub, h6.sub {
+  font-weight: 400;
+}
+
+h1 {
+  font-size: 3.125vw;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+@media only screen and (max-width: 768px) {
+  h1 {
+    font-size: 24px;
+  }
+}
+
+h2 {
+  font-size: 3.125vw;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+@media only screen and (max-width: 768px) {
+  h2 {
+    font-size: 24px;
+  }
+}
+
+h3 {
+  font-size: 1.66667vw;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+@media only screen and (max-width: 1200px) {
+  h3 {
+    font-size: 20px;
+  }
+}
+
+h4 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 1.75;
+}
+
+h5 {
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+h6 {
+  font-size: 0.75rem;
+  line-height: 1.25;
+}
+
+.font-bold, strong {
+  font-weight: 600;
+}
+
+small {
+  font-size: smaller;
+}
+
+del {
+  text-decoration: line-through;
+}
+
+ins {
+  text-decoration: underline;
+}
+
+sub {
+  font-size: smaller;
+  vertical-align: sub;
+}
+
+sup {
+  font-size: smaller;
+  vertical-align: sup;
+}
+
+table tr td, table tr th, table thead td, table thead th, p {
+  font-family: Roboto, sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+table tr td.text-tiny, table tr th.text-tiny, table thead td.text-tiny, table thead th.text-tiny, p.text-tiny {
+  font-size: 0.75rem;
+}
+
+table tr td.text-small, table tr th.text-small, table thead td.text-small, table thead th.text-small, p.text-small {
+  font-size: 0.875rem;
+}
+
+table tr td.text-regular, table tr th.text-regular, table thead td.text-regular, table thead th.text-regular, p.text-regular {
+  font-size: 1rem;
+}
+
+table tr td.text-large, table tr th.text-large, table thead td.text-large, table thead th.text-large, p.text-large {
+  font-size: 1.125rem;
+}
+
+table tr td.text-xlarge, table tr th.text-xlarge, table thead td.text-xlarge, table thead th.text-xlarge, p.text-xlarge {
+  font-size: 1.5rem;
+}
+
+blockquote {
+  margin: 0;
+  padding: 0.5rem  1rem;
+}
+
+div h1 + h1, div h2 + h1, div h3 + h1, div h4 + h1, div h5 + h1, div pre + h1, div span.code p + h1 {
+  margin-top: 0.75rem;
+}
+
+div h1 + p, div h2 + p, div h3 + p, div h4 + p, div h5 + p, div pre + p, div span.code p + p {
+  margin-top: 2rem;
+}
+
+div h1 + .row, div h2 + .row, div h3 + .row, div h4 + .row, div h5 + .row, div pre + .row, div span.code p + .row {
+  margin-top: 1rem;
+}
+
+div h1 + h1, div h1 + h2, div h1 + h3, div h1 + h4, div h1 + h5, div h1 + p, div h2 + h1, div h2 + h2, div h2 + h3, div h2 + h4, div h2 + h5, div h2 + p, div h3 + h1, div h3 + h2, div h3 + h3, div h3 + h4, div h3 + h5, div h3 + p, div h4 + h1, div h4 + h2, div h4 + h3, div h4 + h4, div h4 + h5, div h4 + p, div h5 + h1, div h5 + h2, div h5 + h3, div h5 + h4, div h5 + h5, div h5 + p, div pre + h1, div pre + h2, div pre + h3, div pre + h4, div pre + h5, div pre + p, div span.code p + h1, div span.code p + h2, div span.code p + h3, div span.code p + h4, div span.code p + h5, div span.code p + p {
+  margin-top: 1rem;
+}
+
+div span.code + h1, div span.code + h2, div span.code + h3, div span.code + h4, div span.code + h5, div pre + h1, div pre + h2, div pre + h3, div pre + h4, div pre + h5 {
+  margin-top: 2rem;
+}
+
+div p[true^="button"], div p[true*=" button"] {
+  margin-top: 2rem;
+}
+
+div p + p {
+  margin-top: 0.5rem;
+}
+
+div p + table {
+  margin-top: 1rem;
+}
+
+div h1 + p, div h2 + p, div h3 + p, div h4 + p, div h5 + p {
+  margin-top: 1.04167vw;
+}
+
+div h1 + table, div h2 + table, div h3 + table, div h4 + table, div h5 + table {
+  margin-top: 1rem;
+}
+
+div h1 + ul, div h2 + ul, div h3 + ul, div h4 + ul, div h5 + ul {
+  margin-top: 1rem;
+}
+
+div h2 + h5, div h3 + h5, div h4 + h5 {
+  margin-top: 0.83333vw;
+}
+
+div table + h1, div table + h2, div table + h3, div table + h4, div table + h5, div table + p {
+  margin-top: 2rem;
+}
+
+div blockquote + h1, div blockquote + h2, div blockquote + h3, div blockquote + h4, div blockquote + h5, div blockquote + p {
+  margin-top: 1rem;
+}
+
+div ul + h1, div ul + h2, div ul + h3, div ul + h4, div ul + h5, div ul + p, div blockquote + h1, div blockquote + h2, div blockquote + h3, div blockquote + h4, div blockquote + h5, div blockquote + p {
+  margin-top: 1rem;
+}
+
+div div + table, div div + h1, div div + h2, div div + h3, div div + h4, div div + h5, div div + ul, div p + table, div p + h1, div p + h2, div p + h3, div p + h4, div p + h5, div p + ul {
+  margin-top: 2.08333vw;
+}
+
+.button, button, input[type="button"], input[type="submit"] {
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  display: inline-block;
+  font-size: 1rem;
+  line-height: 1;
+  padding: 1rem 2rem;
+  border: none;
+  box-shadow: 0 0 0 0 #444444 inset;
+  border-radius: 2px;
+  background-color: #1a1b1a;
+  color: #ffffff;
+  text-transform: uppercase;
+  transition: box-shadow 0.2s, color 0.2s 0.1s;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.button:not([disabled]):hover, button:not([disabled]):hover, input[type="button"]:not([disabled]):hover, input[type="submit"]:not([disabled]):hover {
+  box-shadow: 0 100px 0 0 #2a2a2a inset;
+  color: #ffffff;
+}
+
+[disabled].button, button[disabled], input[disabled][type="button"], input[disabled][type="submit"] {
+  opacity: 0.2;
+  cursor: normal;
+}
+
+.button.small, .button-small, .button[small], button.small, button-small, button[small], input[type="button"].small, input[type="button"][small], input[type="submit"].small, input[type="submit"][small] {
+  font-size: 0.75rem;
+  padding: 0.25rem 0.75rem;
+}
+
+.button.naked, .button-naked, .button[naked], button.naked, button-naked, button[naked], input[type="button"].naked, input[type="button"][naked], input[type="submit"].naked, input[type="submit"][naked] {
+  background: none;
+  box-shadow: 0 0 0 1px #1a1b1a inset;
+  color: #1a1b1a;
+}
+
+.button-group button, button-group button, .button-group .button, button-group .button {
+  border-radius: 0;
+  margin-right: 1px;
+}
+
+.button-group button:first-child, button-group button:first-child, .button-group .button:first-child, button-group .button:first-child {
+  border-radius: 2px 0 0 2px;
+}
+
+.button-group button:last-child, button-group button:last-child, .button-group .button:last-child, button-group .button:last-child {
+  border-radius: 0 2px 2px 0;
+}
+
+.button-group button.naked, button-group button.naked, .button-group button.ghost, button-group button.ghost, .button-group .button.naked, button-group .button.naked, .button-group .button.ghost, button-group .button.ghost {
+  margin-right: 0;
+  margin-left: -1px;
+}
+
+.button-group button.naked:first-child, button-group button.naked:first-child, .button-group button.ghost:first-child, button-group button.ghost:first-child, .button-group .button.naked:first-child, button-group .button.naked:first-child, .button-group .button.ghost:first-child, button-group .button.ghost:first-child {
+  margin: 0;
+}
+
+.content ul li {
+  padding-left: 1rem;
+  position: relative;
+}
+
+.content ul li:before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  display: block;
+  top: 0.5rem;
+  position: absolute;
+  left: 0;
+  background-color: #1a1b1a;
+  border-radius: 50%;
+}
+
+.content ul li + li {
+  margin-top: 0.5rem;
+}
+
+input[type="color"], input[type="password"], input[type="date"], input[type="datetime-local"], input[type="email"], input[type="file"], input[type="image"], input[type="month"], input[type="number"], input[type="search"], input[type="tel"], input[type="text"], input[type="time"], input[type="url"], input[type="week"] {
+  border: 1px solid rgba(26, 27, 26, 0.25);
+  border-radius: 2px;
+  line-height: 1rem;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  font-weight: 400;
+  width: 100%;
+  /* --------------------- */
+  /* 			states 					 */
+  /* --------------------- */
+}
+
+input[type="color"]:before, input[type="password"]:before, input[type="date"]:before, input[type="datetime-local"]:before, input[type="email"]:before, input[type="file"]:before, input[type="image"]:before, input[type="month"]:before, input[type="number"]:before, input[type="search"]:before, input[type="tel"]:before, input[type="text"]:before, input[type="time"]:before, input[type="url"]:before, input[type="week"]:before {
+  display: block;
+  width: 100px;
+  height: 100px;
+  background-color: red;
+}
+
+input[type="color"]:hover, input[type="password"]:hover, input[type="date"]:hover, input[type="datetime-local"]:hover, input[type="email"]:hover, input[type="file"]:hover, input[type="image"]:hover, input[type="month"]:hover, input[type="number"]:hover, input[type="search"]:hover, input[type="tel"]:hover, input[type="text"]:hover, input[type="time"]:hover, input[type="url"]:hover, input[type="week"]:hover {
+  border: 1px solid rgba(26, 27, 26, 0.5);
+}
+
+input[type="color"]:focus, input[type="password"]:focus, input[type="date"]:focus, input[type="datetime-local"]:focus, input[type="email"]:focus, input[type="file"]:focus, input[type="image"]:focus, input[type="month"]:focus, input[type="number"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="text"]:focus, input[type="time"]:focus, input[type="url"]:focus, input[type="week"]:focus {
+  border: 1px solid #1a1b1a;
+  box-shadow: 0 0 0.5rem 0 rgba(26, 27, 26, 0.1);
+}
+
+input[type="color"]:focus:hover, input[type="password"]:focus:hover, input[type="date"]:focus:hover, input[type="datetime-local"]:focus:hover, input[type="email"]:focus:hover, input[type="file"]:focus:hover, input[type="image"]:focus:hover, input[type="month"]:focus:hover, input[type="number"]:focus:hover, input[type="search"]:focus:hover, input[type="tel"]:focus:hover, input[type="text"]:focus:hover, input[type="time"]:focus:hover, input[type="url"]:focus:hover, input[type="week"]:focus:hover {
+  border: 1px solid #1a1b1a;
+}
+
+input[type="color"] {
+  padding: 0;
+  -webkit-appearance: none;
+  width: 2rem;
+  height: 2rem;
+  padding: 0.25rem;
+  border-radius: 50%;
+}
+
+input[type="color"]::-webkit-color-swatch-wrapper {
+  display: block;
+  margin: 0;
+  border: none;
+  padding: 0;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 2px;
+}
+
+input[type="color"]::-webkit-color-swatch {
+  display: block;
+  width: 1.4rem;
+  height: 1.4rem;
+  border: none;
+  border-radius: 50%;
+}
+
+input[type="password"] {
+  font-size: 1.25rem;
+  font-family: caption;
+  letter-spacing: 3px;
+}
+
+* input[type="checkbox"] {
+  width: 0;
+  height: 0;
+  opacity: 0;
+}
+
+* input[type=checkbox] + label {
+  padding-left: 1rem;
+  position: relative;
+  cursor: pointer;
+}
+
+* input[type=checkbox] + label:before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1rem;
+  height: 1rem;
+  background: #ffffff;
+  border-radius: 50%;
+}
+
+* input[type=checkbox] + label:after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0.25rem;
+  top: 0.25rem;
+  width: 0.5rem;
+  height: 0.5rem;
+  background: #1a1b1a;
+  border-radius: 50%;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+* input[type=checkbox]:checked + label:after {
+  opacity: 1;
+  transition: 0.3s;
+}
+
+* input[type=checkbox] + label:before {
+  box-shadow: 0 0 0 1px rgba(26, 27, 26, 0.25) inset;
+}
+
+* input[type=checkbox]:checked + label:before {
+  background-color: #1a1b1a;
+}
+
+* input[type=checkbox] + label:after {
+  transform: scale(0.7) rotate(-45deg) translateY(0rem);
+  background: none;
+  border-left: 2px solid black;
+  border-bottom: 2px solid black;
+  border-radius: 0;
+  width: 8px;
+  height: 4px;
+  margin: 0;
+  top: 3px;
+  left: 3px;
+  opacity: 0.15;
+  transition: 0.1s;
+}
+
+* input[type=checkbox]:checked + label:after {
+  transform: scale(1) rotate(-45deg) translateY(0rem);
+  border-color: white;
+}
+
+* input[type=checkbox] + label {
+  padding-left: 2rem;
+}
+
+* input[type="radio"] {
+  display: block;
+}
+
+* input[type="radio"] {
+  width: 0;
+  height: 0;
+  opacity: 0;
+}
+
+* input[type=radio] + label {
+  padding-left: 1rem;
+  position: relative;
+  cursor: pointer;
+}
+
+* input[type=radio] + label:before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1rem;
+  height: 1rem;
+  background: #ffffff;
+  border-radius: 100%;
+}
+
+* input[type=radio] + label:after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0.25rem;
+  top: 0.25rem;
+  width: 0.5rem;
+  height: 0.5rem;
+  background: #1a1b1a;
+  border-radius: 100%;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+* input[type=radio]:checked + label:after {
+  opacity: 1;
+  transition: 0.3s;
+}
+
+* input[type=radio] + label:before {
+  box-shadow: 0 0 0 1px rgba(26, 27, 26, 0.5) inset;
+  margin-right: 1rem;
+}
+
+* input[type=radio] + label:after {
+  border-radius: 50%;
+}
+
+* input[type=radio] + label {
+  padding-left: 2rem;
+}
+
+table {
+  max-width: 100%;
+}
+
+table tr td, table tr th, table thead td, table thead th {
+  padding: 1rem;
+  text-align: left;
+}
+
+table tr td:first-child, table tr th:first-child, table thead td:first-child, table thead th:first-child {
+  padding-left: 0rem;
+}
+
+table tr td:last-child, table tr th:last-child, table thead td:last-child, table thead th:last-child {
+  padding-right: 0rem;
+}
+
+table tr td.no-break, table tr th.no-break, table thead td.no-break, table thead th.no-break {
+  white-space: nowrap;
+}
+
+.content table tr, .content table thead {
+  border-bottom: 1px solid rgba(26, 27, 26, 0.25);
+}
+
+.content table tr td, .content table tr th, .content table thead td, .content table thead th {
+  font-weight: 400;
+  font-size: 0.875rem;
+  padding: 1rem;
+  text-align: left;
+}
+
+.content table tr td:first-child, .content table tr th:first-child, .content table thead td:first-child, .content table thead th:first-child {
+  white-space: nowrap;
+  padding-left: 1rem;
+}
+
+.content table tr td:last-child, .content table tr th:last-child, .content table thead td:last-child, .content table thead th:last-child {
+  padding-right: 1rem;
+}
+
+.content table thead th {
+  font-weight: 600;
+}
+
+/* -------------------------------------------------- */
+/*				@extend default typographic elements
+/* -------------------------------------------------- */
+/* --------------------------------------- */
+/*				@extend components/button
+/* ---------------------------------------- */
+/* --------------------------------------- */
+/*				@extend components/table
+/* ---------------------------------------- */
+/* --------------------------------------- */
+/*				@extend components/forms
+/* ---------------------------------------- */
+/* --------------------------------------- */
+/*				@extend components/content
+/* ---------------------------------------- */
+
+/*# sourceMappingURL=assets-classes.css.map */

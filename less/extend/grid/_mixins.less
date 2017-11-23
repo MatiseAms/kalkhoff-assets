@@ -1,0 +1,153 @@
+//
+//  Matise grid mixins
+//  _____________________________________________
+
+//
+//  Generates grid classes using aliases instead of column numbers
+//  ---------------------------------------------
+
+.generateAliases(@index, @breakpoint: false, @target: row) when (@index < length(@assets-column-aliases)) {
+    @key: extract(extract(@assets-column-aliases, @index), 1);
+    @value: extract(extract(@assets-column-aliases, @index), 2);
+
+    & when (@target = row) {
+        & when (@breakpoint = false) {
+            &.@{prefix}@{key} > .@{prefix}column {
+                width: @value;
+            }
+        }
+
+        & when not (@breakpoint = false) {
+            &.@{prefix}@{breakpoint}-@{key} > .@{prefix}row {
+                width: @value;
+            }
+        }
+    }
+
+    & when (@target = column) {
+        & when (@breakpoint = false) {
+            &.@{prefix}@{key} {
+                width: @value;
+            }
+        }
+
+        & when not (@breakpoint = false) {
+            &.@{prefix}@{breakpoint}-@{key} {
+                width: @value;
+            }
+        }
+    }
+
+    .generateAliases(@index + 1, @breakpoint, @target);
+}
+
+//
+//  Generates grid classes using column numbers
+//  ---------------------------------------------
+
+.generateClasses(@index, @breakpoint: false, @only: false, @target: row) when (@index <= @assets-grid-columns) {
+//    @colWidth: '@{prefix}column-width-@{index}';
+    @colWidth: (100% * ( @index / @assets-grid-columns ));
+
+    & when (@breakpoint = false) {
+        .generateAliases(1, @breakpoint, @target);
+
+        &.@{prefix}column-@{index} > .@{prefix}column {
+            width: @colWidth;
+        }
+
+        &.@{prefix}offset-@{index} > .@{prefix}column {
+            margin-left: @colWidth;
+        }
+
+        &.@{prefix}push-@{index} > .@{prefix}column {
+            margin-right: @colWidth;
+        }
+
+        &.@{prefix}pull-@{index} > .@{prefix}column {
+            margin-left: -@colWidth;
+        }
+    }
+
+    & when not (@breakpoint = false) {
+        & when (@only = false) {
+            .generateAliases(1, @breakpoint, @target);
+
+            & when (@target = row) {
+                &.@{prefix}@{breakpoint}-@{index} > .@{prefix}column {
+                    width: @colWidth;
+                }
+
+                &.@{prefix}offset-@{breakpoint}-@{index} > .@{prefix}column {
+                    margin-left: @colWidth;
+                }
+
+                &.@{prefix}push-@{breakpoint}-@{index} > .@{prefix}column {
+                    margin-right: @colWidth;
+                }
+
+                &.@{prefix}pull-@{breakpoint}-@{index} > .@{prefix}column {
+                    margin-left: -@colWidth;
+                }
+            }
+
+            & when (@target = column) {
+                &.@{prefix}@{breakpoint}-@{index} {
+                    width: @colWidth;
+                }
+
+                &.@{prefix}offset-@{breakpoint}-@{index} {
+                    margin-left: @colWidth;
+                }
+
+                &.@{prefix}push-@{breakpoint}-@{index} {
+                    margin-right: @colWidth;
+                }
+
+                &.@{prefix}pull-@{breakpoint}-@{index} {
+                    margin-left: -@colWidth;
+                }
+            }
+        }
+
+        & when not (@only = false) {
+            & when (@target = row) {
+                &.@{prefix}@{breakpoint}-@{only}-@{index} > .@{prefix}column {
+                    width: @colWidth;
+                }
+
+                &.@{prefix}offset-@{breakpoint}-@{only}-@{index} > .@{prefix}column {
+                    margin-left: @colWidth;
+                }
+
+                &.@{prefix}push-@{breakpoint}-@{only}-@{index} > .@{prefix}column {
+                    margin-right: @colWidth;
+                }
+
+                &.@{prefix}pull-@{breakpoint}-@{only}-@{index} > .@{prefix}column {
+                    margin-left: -@colWidth;
+                }
+            }
+
+            & when (@target = column) {
+                &.@{prefix}@{breakpoint}-@{only}-@{index} {
+                    width: @colWidth;
+                }
+
+                &.@{prefix}offset-@{breakpoint}-@{only}-@{index} {
+                    margin-left: @colWidth;
+                }
+
+                &.@{prefix}push-@{breakpoint}-@{only}-@{index} {
+                    margin-right: @colWidth;
+                }
+
+                &.@{prefix}pull-@{breakpoint}-@{only}-@{index} {
+                    margin-left: -@colWidth;
+                }
+            }
+        }
+    }
+
+    .generateClasses(@index + 1, @breakpoint, @only, @target);
+}

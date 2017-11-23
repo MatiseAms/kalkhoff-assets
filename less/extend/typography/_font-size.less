@@ -1,0 +1,82 @@
+// headers
+.header-default(){
+	.heading-font-family(); font-weight: @font-bold; margin: 0; padding: 0; text-align: left;
+	&.sub{
+		font-weight: @assets-font-regular;
+	}
+}
+
+.h1(){
+	.grid(0.75);
+	font-size:@grid-075; font-weight: @assets-font-bold; line-height: 1.25;
+	.assets-header-default();
+	.assets-grid-min-fontsize(0.75,24);
+}
+.h2(){
+	.grid(0.75);
+	font-size: @grid-075; font-weight: @assets-font-bold; line-height: 1.25;
+	.assets-header-default();
+	.assets-grid-min-fontsize(0.75,24);
+}
+.h3(){
+	.grid(0.4);
+	font-size: @grid-040; font-weight: @assets-font-bold; line-height: 1.5;
+	.assets-header-default();
+	.assets-grid-min-fontsize(0.4,20);
+}
+.assets-h4(){
+	font-size: rem(18); font-weight: @assets-font-bold; line-height: 1.75;
+}
+.assets-h5(){
+	font-size: rem(16); font-weight: @assets-font-bold; line-height: 1.25;
+}
+.assets-h6(){
+	font-size: rem(12); line-height: 1.25;
+	.assets-header-default();
+}
+
+// make font styles
+.assets-font-regular(){
+	font-weight: @assets-font-regular;
+}
+.assets-font-bold(){
+	font-weight: @assets-font-bold;
+}
+.assets-small(){
+	font-size: smaller;
+}
+.assets-del(){
+	text-decoration: line-through;
+}
+.assets-ins(){
+	text-decoration: underline;
+}
+.assets-sub(){
+	font-size: smaller; vertical-align: sub;
+}
+.assets-sup(){
+	font-size: smaller; vertical-align: sup;
+}
+
+.assets-p(){
+	font-family: @assets-body-font-family; font-size: rem(16); font-weight: 400; line-height: rem(24); margin: 0; padding: 0;
+	&.text-tiny{
+		font-size: rem(12);
+	}
+	&.text-small{
+		font-size: rem(14);
+	}
+	&.text-regular{
+		font-size: rem(16);
+	}
+	&.text-large{
+		font-size: rem(18);
+	}
+	&.text-xlarge{
+		font-size: rem(24);
+	}
+}
+
+.assets-blockquote(){
+	margin: 0; padding: 0.5rem  1rem;
+}
