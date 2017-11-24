@@ -9,46 +9,7 @@
             box-sizing: border-box !important;
 
             .generateClasses(1, false, false, column);
-
-            @media only screen and (min-width: 0px) and (max-width: 750px) {
-                .generateClasses(1, small, only, column);
-            }
-
-            @media only screen and (min-width: 0px) {
-                .generateClasses(1, small, false, column);
-            }
-
-            @media only screen and (min-width: 751px) and (max-width: 960px) {
-                .generateClasses(1, medium, only, column);
-            }
-
-            @media only screen and (min-width: 751px) {
-                .generateClasses(1, medium, false, column);
-            }
-
-            @media only screen and (min-width: 961px) and (max-width: 1280px) {
-                .generateClasses(1, large, only, column);
-            }
-
-            @media only screen and (min-width: 961px) {
-                .generateClasses(1, large, false, column);
-            }
-
-            @media only screen and (min-width: 1281px) and (max-width: 1920px) {
-                .generateClasses(1, xlarge, only, column);
-            }
-
-            @media only screen and (min-width: 1281px) {
-                .generateClasses(1, xlarge, false, column);
-            }
-
-            @media only screen and (min-width: 1921px) and (max-width: 9999px) {
-                .generateClasses(1, xxlarge, only, column);
-            }
-
-            @media only screen and (min-width: 1921px) {
-                .generateClasses(1, xxlarge, false, column);
-            }
+            .generateMediaQueries(1, column);
         }
 
         &row {
@@ -70,47 +31,10 @@
             }
 
             .generateClasses(1, false, false, row);
-
-            @media only screen and (min-width: 0px) and (max-width: 750px) {
-                .generateClasses(1, small, only, row);
-            }
-
-            @media only screen and (min-width: 0px) {
-                .generateClasses(1, small, false, row);
-            }
-
-            @media only screen and (min-width: 751px) and (max-width: 960px) {
-                .generateClasses(1, medium, only, row);
-            }
-
-            @media only screen and (min-width: 751px) {
-                .generateClasses(1, medium, false, row);
-            }
-
-            @media only screen and (min-width: 961px) and (max-width: 1280px) {
-                .generateClasses(1, large, only, row);
-            }
-
-            @media only screen and (min-width: 961px) {
-                .generateClasses(1, large, false, row);
-            }
-
-            @media only screen and (min-width: 1281px) and (max-width: 1920px) {
-                .generateClasses(1, xlarge, only, row);
-            }
-
-            @media only screen and (min-width: 1281px) {
-                .generateClasses(1, xlarge, false, row);
-            }
-
-            @media only screen and (min-width: 1921px) and (max-width: 9999px) {
-                .generateClasses(1, xxlarge, only, row);
-            }
-
-            @media only screen and (min-width: 1921px) {
-                .generateClasses(1, xxlarge, false, row);
-            }
-            .generateStyleHelpers(1);
+            .generateMediaQueries(1, row);
         }
     }
+
+    .generateStyleHelpers(1);
+    .generateDisplayRules(1);
 }
