@@ -5,11 +5,11 @@
   "main": "assets.scss",
   "scripts": {
     "test": "npm run build-sass && npm run build-less",
-		"build-sass": "npm run sass-extend && npm run sass-classes",
-		"build-less": "npm run less-extend && npm run less-classes",
-		"sass-extend": "node-sass --output-style expanded --source-map true assets.scss temp/sass-css/assets.css",
+    "build-sass": "npm run sass-extend && npm run sass-classes",
+    "build-less": "npm run less-extend && npm run less-classes",
+    "sass-extend": "node-sass --output-style expanded --source-map true assets.scss temp/sass-css/assets.css",
     "sass-classes": "node-sass --output-style expanded --source-map true assets-classes.scss temp/sass-css/assets-classes.css",
-		"less-extend": "lessc assets-classes.less temp/less-css/assets.css",
+    "less-extend": "lessc assets-classes.less temp/less-css/assets.css",
     "less-classes": "lessc assets-classes.less temp/less-css/assets-classes.css",
     "sass-less": "sass2less scss/**/*.scss 'less/**/*.less'",
     "sass2less": "sass2less scss/extend/grid/_functions.scss 'less/extend/grid/_functions.less'"
