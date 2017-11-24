@@ -1,6 +1,6 @@
-%button{
+%#{$prefix}button{
 	font-weight: 600; letter-spacing: 0.5px; display: inline-block; font-size: 1rem; line-height: 1; padding: 1rem 2rem; border: none; box-shadow: 0 0 0 0 color(Darkgray) inset; border-radius: 2px; background-color: color(Black); color: color(White); text-transform: uppercase;
-	@extend %heading-font-family; transition: box-shadow 0.2s, color 0.2s 0.1s; cursor: pointer; font-size: 14px;
+	@extend %#{$prefix}heading-font-family; transition: box-shadow 0.2s, color 0.2s 0.1s; cursor: pointer; font-size: 14px;
 
 	&:not([disabled]):hover{
 		box-shadow: 0 100px 0 0 color(Dark) inset; color: color(White);
@@ -21,7 +21,7 @@
 	}
 }
 $border-radius: 2px;
-%button-group{
+%#{$prefix}button-group{
 	button, .button{
 		border-radius: 0; margin-right: 1px;
 		&:first-child{

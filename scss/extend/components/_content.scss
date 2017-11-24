@@ -1,8 +1,8 @@
-%content{
+%#{$prefix}content{
 	//border: 1px solid red;
 }
 
-%content-ul{
+%#{$prefix}content-ul{
 	li{
 		padding-left: 1rem; position: relative;
 		&:before{

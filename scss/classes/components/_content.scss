@@ -1,6 +1,6 @@
 .content{
-	@extend %content !optional;
+	@extend %#{$prefix}content !optional;
 	ul{
-		@extend %content-ul !optional;
+		@extend %#{$prefix}content-ul !optional;
 	}
 }

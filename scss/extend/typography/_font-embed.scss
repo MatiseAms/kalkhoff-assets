@@ -35,7 +35,7 @@ $heading-font-family: #{$heading-font},serif; //
 //
 /* embed font family as list */
 //@include font-list($heading-font,$heading-font-name,$heading-font-weights,normal); //
-.heading-font-family, %heading-font-family{
+%#{$prefix}heading-font-family{
 	font-family: $heading-font-family; text-transform: uppercase;
 }
 //
@@ -48,7 +48,7 @@ $body-font-family: #{$body-font},sans-serif; //
 /* embed font family as list */
 @include font-list($body-font,$body-font-name,$body-font-weights,normal); //
 
-.body-font-family, %body-font-family{
+%#{$prefix}body-font-family{
 	font-family: $body-font-family; font-weight: normal;
 }
 //
@@ -61,6 +61,6 @@ $code-font-family: #{$code-font}, Monaco, courier, monospace, sans-serif; //
 /* embed font family as list */
 @include font-list($code-font,$code-font-name,$code-font-weights,normal); //
 
-.code-font-family, %code-font-family{
+%#{$prefix}code-font-family{
 	font-family: $code-font-family; font-weight: normal;
 }

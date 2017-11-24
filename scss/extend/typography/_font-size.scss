@@ -1,62 +1,62 @@
 // headers
-%header-default{
-	@extend %heading-font-family; font-weight: $font-bold; margin: 0; padding: 0; text-align: left;
+%#{$prefix}header-default{
+	@extend %#{$prefix}heading-font-family; font-weight: $font-bold; margin: 0; padding: 0; text-align: left;
 	&.sub{
 		font-weight: $font-regular;
 	}
 }
 
 $minus: 0.1066;
-%h1{
+%#{$prefix}h1{
 	font-size: grid(0.75); font-weight: $font-bold; line-height: 1.25;
-	@extend %header-default;
+	@extend %#{$prefix}header-default;
 	@include min-fontsize(0.75,24);
 }
-%h2{
+%#{$prefix}h2{
 	font-size: grid(0.75); font-weight: $font-bold; line-height: 1.25;
-	@extend %header-default;
+	@extend %#{$prefix}header-default;
 	@include min-fontsize(0.75,24);
 }
-%h3{
+%#{$prefix}h3{
 	font-size: grid(0.4); font-weight: $font-bold; line-height: 1.5;
-	@extend %header-default;
+	@extend %#{$prefix}header-default;
 	@include min-fontsize(0.4,20);
 }
-%h4{
+%#{$prefix}h4{
 	font-size: rem(18); font-weight: $font-bold; line-height: 1.75;
 }
-%h5{
+%#{$prefix}h5{
 	font-size: rem(16); font-weight: $font-bold; line-height: 1.25;
 }
-%h6{
+%#{$prefix}h6{
 	font-size: rem(12); line-height: 1.25;
-	@extend %header-default;
+	@extend %#{$prefix}header-default;
 }
 
 // make font styles
-%font-regular{
+%#{$prefix}font-regular{
 	font-weight: $font-regular;
 }
-%font-bold{
+%#{$prefix}font-bold{
 	font-weight: $font-bold;
 }
-%small{
+%#{$prefix}small{
 	font-size: smaller;
 }
-%del{
+%#{$prefix}del{
 	text-decoration: line-through;
 }
-%ins{
+%#{$prefix}ins{
 	text-decoration: underline;
 }
-%sub{
+%#{$prefix}sub{
 	font-size: smaller; vertical-align: sub;
 }
-%sup{
+%#{$prefix}sup{
 	font-size: smaller; vertical-align: sup;
 }
 
-%p{
+%#{$prefix}p{
 	font-family: $body-font-family; font-size: rem(16); font-weight: 400; line-height: rem(24); margin: 0; padding: 0;
 	&.text-tiny{
 		font-size: rem(12);
@@ -75,6 +75,6 @@ $minus: 0.1066;
 	}
 }
 
-%blockquote{
+%#{$prefix}blockquote{
 	margin: 0; padding: 0.5rem  1rem;
 }

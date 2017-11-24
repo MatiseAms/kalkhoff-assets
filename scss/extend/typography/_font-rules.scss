@@ -1,4 +1,4 @@
-%default-font-rules{
+%#{$prefix}default-font-rules{
 	h1, h2, h3, h4, h5, pre, span.code p{
 		&+h1{
 			margin-top: 0.75rem;

@@ -1,9 +1,9 @@
 table{
-	@extend %table;
+	@extend %#{$prefix}table;
 }
 
 .content{
 	table{
-		@extend %content-table;
+		@extend %#{$prefix}content-table;
 	}
 }

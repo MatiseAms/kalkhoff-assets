@@ -1,8 +1,8 @@
-%table{
-	max-width: 100%;
+%#{$prefix}table{
+	max-width: 100%#{$prefix};
 	tr, thead{
 		td, th{
-			padding: 1rem; text-align: left; @extend %p;
+			padding: 1rem; text-align: left; @extend %#{$prefix}p;
 			&:first-child{
 				padding-left: 0rem;
 			}
@@ -16,7 +16,7 @@
 	}
 }
 
-%content-table{
+%#{$prefix}content-table{
 	tr, thead{
 		border-bottom: 1px solid color(Black,0.25);
 		td, th{

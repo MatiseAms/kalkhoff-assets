@@ -1,6 +1,6 @@
-%input{
+%#{$prefix}input{
 	border: 1px solid color(Black,0.25); border-radius: 2px; line-height: 1rem; font-size: 1rem; padding: 0.5rem 1rem;
-	@extend %body-font-family; font-weight: $font-regular; width: 100%;
+	@extend %#{$prefix}body-font-family; font-weight: $font-regular; width: 100%;
 
 	/* --------------------- */
 	/* 			states 					 */
@@ -18,9 +18,9 @@
 		}
 	}
 }
-%input{
+%#{$prefix}input{
 	&-color{
-		@extend %input;
+		@extend %#{$prefix}input;
 		&{
 			padding: 0; -webkit-appearance: none; width: 2rem; height: 2rem; padding: 0.25rem; border-radius: 50%;
 		}
@@ -28,58 +28,58 @@
 			display: block; margin: 0; border: none; padding: 0; width: 2rem; height: 2rem; border-radius: 2px;
 		}
 		&::-webkit-color-swatch{
-			display: block; width: 1.4rem; height: 1.4rem; border: none; border-radius: 50%;
+			display: block; width: 1.4rem; height: 1.4rem; border: none; border-radius: 50%#{$prefix};
 		}
 	}
 	&-date{
-		@extend %input;
+		@extend %#{$prefix}input;
 	}
 	&-datetime-local{
-		@extend %input;
+		@extend %#{$prefix}input;
 	}
 	&-email{
-		@extend %input;
+		@extend %#{$prefix}input;
 	}
 	&-file{
-		@extend %input;
+		@extend %#{$prefix}input;
 	}
 	&-image{
-		@extend %input;
+		@extend %#{$prefix}input;
 	}
 	&-month{
-		@extend %input;
+		@extend %#{$prefix}input;
 	}
 	&-number{
-		@extend %input;
+		@extend %#{$prefix}input;
 		&::-webkit-inner-spin-button{
 			border: 1px solid red; width: 10px; height: 20px; display: none;
 		}
 	}
 	&-password{
-		@extend %input; font-size: 1.25rem; font-family: caption; letter-spacing: 3px;
+		@extend %#{$prefix}input; font-size: 1.25rem; font-family: caption; letter-spacing: 3px;
 	}
 	&-search{
-		@extend %input;
+		@extend %#{$prefix}input;
 	}
 	&-tel{
-		@extend %input;
+		@extend %#{$prefix}input;
 	}
 	&-text{
-		@extend %input;
+		@extend %#{$prefix}input;
 	}
 	&-time{
-		@extend %input;
+		@extend %#{$prefix}input;
 	}
 	&-url{
-		@extend %input;
+		@extend %#{$prefix}input;
 	}
 	&-week{
-		@extend %input;
+		@extend %#{$prefix}input;
 	}
 }
 
 *{
-	%input-checkbox{
+	%#{$prefix}input-checkbox{
 		@include input-checkbox(1rem,1rem,0, 0.25rem, color(White), color(Black), 50%);
 
 		@include input-checkbox-body{
@@ -100,7 +100,7 @@
 	}
 }
 *{
-	%input-radio{
+	%#{$prefix}input-radio{
 		display: block;
 		@include input-radio(1rem,1rem,0, 0.25rem, color(White), color(Black));
 		@include input-radio-body{
