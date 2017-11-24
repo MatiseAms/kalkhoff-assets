@@ -4,8 +4,6 @@
   "description": "Kalkhoff - Brand Appearance Guide Assets",
   "main": "assets.scss",
   "scripts": {
-    "cssvalidation": "node sass-less-check.js",
-    "cssvalidationdev": "nodemon sass-less-check.js",
     "test": "npm run build-sass && npm run build-less",
     "build-sass": "npm run sass-extend && npm run sass-classes",
     "build-less": "npm run less-extend && npm run less-classes",
@@ -14,7 +12,9 @@
     "less-extend": "lessc assets-classes.less temp/less-css/assets.css",
     "less-classes": "lessc assets-classes.less temp/less-css/assets-classes.css",
     "sass-less": "sass2less scss/**/*.scss 'less/**/*.less'",
-    "sass2less": "sass2less scss/extend/grid/_functions.scss 'less/extend/grid/_functions.less'"
+    "sass2less": "sass2less scss/extend/grid/_functions.scss 'less/extend/grid/_functions.less'",
+    "check": "node sass-less-check.js",
+    "check-dev": "nodemon sass-less-check.js"
   },
   "repository": {
     "type": "git",

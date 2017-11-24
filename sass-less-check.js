@@ -17,24 +17,46 @@ function getFiles(dir, files_) {
 let scssFiles = getFiles('scss');
 let lessFiles = getFiles('less');
 
-console.log('LESS folder is missing the following files:');
+let differentLess = [];
+let differentScss = [];
+
 scssFiles.forEach((file) => {
 	let lessPath = file.replace(/scss/g, 'less');
 	if (lessFiles.indexOf(lessPath) < 0) {
-		console.log('-', lessPath);
+		differentLess.push(lessPath);
 	}
-
 });
 
-console.log('SCSS folder is missing the following files:');
 lessFiles.forEach((file) => {
 	let scssPath = file.replace(/less/g, 'scss');
 	if (scssFiles.indexOf(scssPath) < 0) {
-		console.log('-', scssPath);
+		differentScss.push(scssPath);
 	}
-
 });
 
 
-//npm run cssvalidationdev
-//npm run cssvalidation
+// Log it like it's hot!
+if(differentLess.length > 0){
+	console.log('\x1b[33m%s\x1b[0m','\u26a0','LESS folder is missing the following files:');
+	differentLess.forEach(function(file){
+		console.log('\x1b[33m%s\x1b[0m','- '+ file);
+	});
+} else {
+	console.log('\x1b[32m%s\x1b[0m','\u2713','LESS is up to date');
+}
+
+if(differentScss.length > 0){
+	console.log('\x1b[33m%s\x1b[0m','\u26a0','SCSS folder is missing the following files:');
+	differentScss.forEach(function(file){
+		console.log('\x1b[33m%s\x1b[0m','- '+ file);
+	});
+} else {
+	console.log('\x1b[32m%s\x1b[0m','\u2713','Scss is up to date');
+}
+
+if(differentScss.length < 1 && differentLess.length < 1){
+	console.log('\x1b[32m%s\x1b[0m','\u2713','Oh yeahh...  File structure is the same.');
+}
+
+//npm run check-dev
+//npm run check
