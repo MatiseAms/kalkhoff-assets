@@ -1,0 +1,12 @@
+
+
+.letter-spacing(@font-size: rem(@base-font-size),@space: @base-letter-spacing){
+	& when @font-size > 10{
+		@debug "Give size in Rem";
+	}
+	@size: ((@font-size*@base-font-size)*@space)/1000;
+	@letter-spacing: rem(@size);
+}
+.ls(@font-size: rem(@base-font-size),@space: @base-letter-spacing){
+	@letter-spacing: .letter-spacing(@font-size,@space);
+}

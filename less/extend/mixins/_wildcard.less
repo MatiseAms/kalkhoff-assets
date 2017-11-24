@@ -1,0 +1,5 @@
+.wildcard(@value,@type:'class', @content){
+  &[#{@type}^="@value"],&[#{@type}*=" @value"]{
+    @content;
+  }
+}

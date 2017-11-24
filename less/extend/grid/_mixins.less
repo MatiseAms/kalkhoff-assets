@@ -48,24 +48,48 @@
 	@colWidth: (100% * (@index / @assets-grid-columns));
 
 	& when (@breakpoint = false) {
-		& when (@index = 1) {
-			.generateAliases(1, @breakpoint, @target);
+		& when (@target = row) {
+			& when (@index = 1) {
+				.generateAliases(1, @breakpoint, @target);
+			}
+
+			&.@{prefix}column-@{index} > .@{prefix}column {
+				width: @colWidth;
+			}
+
+			&.@{prefix}offset-@{index} > .@{prefix}column {
+				margin-left: @colWidth;
+			}
+
+			&.@{prefix}push-@{index} > .@{prefix}column {
+				margin-right: @colWidth;
+			}
+
+			&.@{prefix}pull-@{index} > .@{prefix}column {
+				margin-left: -@colWidth;
+			}
 		}
 
-		&.@{prefix}column-@{index} > .@{prefix}column {
-			width: @colWidth;
-		}
+		& when (@target = column) {
+			& when (@index = 1) {
+				.generateAliases(1, @breakpoint, @target);
+			}
 
-		&.@{prefix}offset-@{index} > .@{prefix}column {
-			margin-left: @colWidth;
-		}
+			&.@{prefix}column-@{index} {
+				width: @colWidth;
+			}
 
-		&.@{prefix}push-@{index} > .@{prefix}column {
-			margin-right: @colWidth;
-		}
+			&.@{prefix}offset-@{index} {
+				margin-left: @colWidth;
+			}
 
-		&.@{prefix}pull-@{index} > .@{prefix}column {
-			margin-left: -@colWidth;
+			&.@{prefix}push-@{index} {
+				margin-right: @colWidth;
+			}
+
+			&.@{prefix}pull-@{index} {
+				margin-left: -@colWidth;
+			}
 		}
 	}
 

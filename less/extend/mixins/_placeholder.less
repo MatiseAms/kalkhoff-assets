@@ -1,0 +1,22 @@
+.optional-at-root(@sel, @content) {
+  @at-root #{if(not &, @sel, selector-append(&, @sel))} {
+    @content;
+  }
+}
+.placeholder(@content, @atroot: false) {
+/*
+  & when @atroot == true{
+   .optional-at-root('::-webkit-input-placeholder', @content);
+    .optional-at-root(':-moz-placeholder', @content);
+    .optional-at-root('::-moz-placeholder', @content);
+    .optional-at-root(':-ms-input-placeholder', @content);  
+  }
+  & when @atroot == false {
+*/
+    &::placeholder{ @content; }
+    &::-webkit-input-placeholder{ @content; }
+    &:-moz-placeholder{ @content; }
+    &::-moz-placeholder{ @content; }
+    &:-ms-input-placeholder{ @content; }
+//   }
+}

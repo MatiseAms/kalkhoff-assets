@@ -1,0 +1,19 @@
+// =============================================================================
+// String Replace
+// =============================================================================
+
+.str-replace(@string, @search, @replace: ""){
+	.str-index(@string, @search);
+	@index: @string-index;
+
+	& when @index{
+		.str-length(@search)
+		.str-slice(@string, @index +@str-length);
+		.str-replace(@str-slice, @search, @replace);
+		.str-slice(@string, 1, @index - 1);
+		
+		@str-replace: @str-slice + @replace + @str-replace;
+	}
+
+	@str-replace: @string;
+}
