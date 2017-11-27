@@ -1,3 +1,6 @@
-//
-//  Less doesn't support functions
-//  _____________________________________________
+//  Returns vw size based on provided number of columns
+//  ---------------------------------------------
+
+.getVwFromColumns(@columns) {
+    @getVwFromColumns: (100vw * @columns/@assets-grid-columns);
+}
