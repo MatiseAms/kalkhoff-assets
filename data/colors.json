@@ -1,10 +1,8 @@
 {
 	"primary": {
-		"Black": "#1a1b1a",
-		"Dark": "#2a2a2a",
-		"Darkgray": "#444444",
-		"Midgray": "#aaaaaa",
-		"Lightgray": "#eeeeee",
+		"Black": "#101010",
+		"Dark": "#1a1b1a",
+		"Midgray": "#7f7f7f",
 		"Offwhite": "#f7f7f7",
 		"White": "#ffffff"
 	},
@@ -12,11 +10,13 @@
 		"Green": "#b4bb00",
 		"Lime": "#b6ce2f",
 		"Yellow": "#edd32d",
-		"Blue": "#1eaece",
-		"Red": "#dd0000",
-		"Brown": "#a16642",
-		"Turqouise": "#33d0ca",
+		"Darkbrown": "#4f3f35",
+		"Brown": "#ac846c",
 		"Orange": "#e86d02",
+		"Darkblue": "#14697c",
+		"Blue": "#1eaece",
+		"Turqouise": "#33d0ca",
+		"Red": "#dd0000",
 		"Pink": "#ea4c89",
 		"Purple": "#8b008b"
 	}

@@ -1,3 +1,6 @@
 %#{$prefix}basic-section{
-	margin: 20px; background-color: color(White);
+	margin: 20px; background-color: color(White); padding: grid(1);
+	&>.image.full-width{
+		margin-top: -grid(1); margin-left: -grid(1); @include calc("width","100% + #{grid(2)}");
+	}
 }

@@ -1,18 +1,29 @@
 @colors:
-	Black #1a1b1a,
-	Dark #2a2a2a,
-	Darkgray #444444,
-	Midgray #aaaaaa,
-	Lightgray #eeeeee,
-	Offwhite #f7f7f7,
-	White #ffffff,
-	Green #b4bb00,
-	Lime #b6ce2f,
-	Yellow #edd32d,
-	Blue #1eaece,
-	Red #dd0000,
-	Brown #a16642,
-	Turqouise #33d0ca,
-	Orange #e86d02,
-	Pink #ea4c89,
-	Purple #8b008b;
+		Black: #101010,
+		Dark: #1a1b1a,
+		Midgray: #7f7f7f,
+		Offwhite: #f7f7f7,
+		White: #ffffff,
+		Green: #b4bb00,
+		Lime: #b6ce2f,
+		Yellow: #edd32d,
+		Darkbrown: #4f3f35,
+		Brown: #ac846c,
+		Orange: #e86d02,
+		Darkblue: #14697c,
+		Blue: #1eaece,
+		Turqouise: #33d0ca,
+		Red: #dd0000,
+		Pink: #ea4c89,
+		Purple: #8b008b;
+
+.loop-color(@index) when (@index > 0) {
+	@pair: extract(@array, @index);
+	@name: e(extract(@pair, 1));
+	@color: e(extract(@pair, 2));
+
+	@@{prefix}color-@name: @color;
+
+	.loop-color(@index - 1);
+}
+.loop-color(length(@colors));
