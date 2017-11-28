@@ -1,3 +1,22 @@
+.getPercentageFromColumns(@columns, @property, @index: 1) {
+    & when (isnumber(@columns)) {
+        @{property}: (100% * (@columns / @assets-grid-columns));
+    }
+
+   & when not (isnumber(@columns)) {
+        & when (@index <= length(@assets-column-aliases)) {
+            @alias: extract(extract(@assets-column-aliases, @index), 1);
+            @value: extract(extract(@assets-column-aliases, @index), 2);
+
+           & when (@alias = @columns) {
+                @{property}: @value;
+            }
+
+           .getPercentageFromColumns(@columns, @property, @index + 1);
+        }
+    }
+}
+
 //  Returns vw size based on provided number of columns
 //  ---------------------------------------------
 
