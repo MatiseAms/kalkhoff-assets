@@ -1,0 +1,19 @@
+$small-only: mq(0,bp("small"));  //
+//
+$medium-only: mq(bp("small"),bp("medium"));  //
+$medium-up: mq(bp("small"),9999);  //
+$medium-down: mq(0,bp("medium"));  //
+//
+$large-only: mq(bp("medium"),bp("large"));  //
+$large-up: mq(bp("medium"),9999);  //
+$large-down: mq(0,bp("large"));  //
+//
+$xlarge-only: mq(bp("large"),bp("xlarge"));  //
+$xlarge-up: mq(bp("large"),9999);  //
+$xlarge-down: mq(0,bp("xlarge"));  //
+//
+$xxlarge-only: mq(bp("xlarge"),bp("xxlarge"));  //
+
+$mobile: mq(0,map-get($grid-breakpoints,"small")); //
+$landscape: "#{$grid-screen} and (orientation: landscape)"; //
+$portrait: "#{$grid-screen} and (orientation: portrait)";

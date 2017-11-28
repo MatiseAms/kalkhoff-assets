@@ -1,0 +1,37 @@
+$grid-columns: 24 !default; $a: (
+  padding: padding,
+  padding-top: padding-top,
+  padding-left: padding-left,
+  padding-right: padding-right,
+  padding-bottom: padding-right,
+  margin: margin,
+  margin-top: margin-top,
+  margin-left: margin-left,
+  margin-right: margin-right,
+  margin-bottom: margin-right,
+  top: top,
+  left: left,
+  right: right,
+  bottom: bottom,
+  width: width,
+  max-width: width,
+  min-width: width,
+  height: height,
+  min-height: height
+);
+
+
+@for $i from 1 through $grid-columns{
+	//	$v: $i/10;
+	$v: $i;
+	@if $v < 10{
+		$v: 0#{$v};
+	}
+	$width: (100/$grid-columns)*($i/1);
+	@each $class, $value in $a{
+		$together: #{$class}-#{$v};
+		.#{$prefix}#{$together}{
+			#{$value}: #{$width}vw;
+		}
+	}
+}

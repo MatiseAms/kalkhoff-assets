@@ -1,0 +1,37 @@
+.row{
+	max-width: $grid-row-width; width: 100%; margin: auto; @include createGridClasses(true); display: flex; justify-content: flex-start; flex-flow: row wrap;
+
+	@if $grid-cssgrid{
+		@supports (display: grid){
+			display: grid; //
+			grid-template-columns: repeat($grid-columns, 1fr); //
+			grid-gap: 0rem; //
+		}
+	}
+	&.center{
+		justify-items: center; justify-content: center;
+
+		@if $grid-cssgrid{
+			>.column{
+				align-self: center; justify-self: center;
+			}
+		}
+	}
+	&.right{
+		justify-items: right; justify-content: flex-end;
+
+		@if $grid-cssgrid{
+			>.column{
+				align-self: right; justify-self: right;
+			}
+		}
+	}
+}
+
+%col{
+	box-sizing: border-box !important;
+}
+.col, .column, .columns{
+	@extend %col;
+	@include createGridClasses(false);
+}
