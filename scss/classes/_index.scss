@@ -1,4 +1,26 @@
-@import
-	"typography/index",
-	"layout/index",
-	"components/index";
+/* --------------------------------------- */
+/*				@extend typography
+/* ---------------------------------------- */
+
+@import "typography/typography";
+
+
+/* --------------------------------------- */
+/*				@extend elements
+/* ---------------------------------------- */
+
+@import "elements/elements";
+
+
+/* --------------------------------------- */
+/*				@extend layout
+/* ---------------------------------------- */
+
+@import "layout/layout";
+
+
+/* --------------------------------------- */
+/*				@extend components
+/* ---------------------------------------- */
+
+@import "components/components"

@@ -1,0 +1,4 @@
+.footer{
+	@extend %#{$prefix}footer;
+	@debug "hoi";
+}

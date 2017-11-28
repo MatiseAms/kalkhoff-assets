@@ -1,0 +1,13 @@
+%#{$prefix}footer{
+	background-color: color(Black); color: color(White);
+
+	&--top{
+		padding: grid(3 0 0 0);
+	}
+	&--newsletter{
+		padding: grid(1 0 1 0);
+	}
+	&--bottom{
+		border: 1px solid red;
+	}
+}
