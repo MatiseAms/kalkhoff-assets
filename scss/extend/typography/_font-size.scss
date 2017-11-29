@@ -6,7 +6,6 @@
 	}
 }
 
-$minus: 0.1066;
 %#{$prefix}h1{
 	font-size: grid(0.75); font-weight: $font-bold; line-height: 1.25;
 	@extend %#{$prefix}header-default;
