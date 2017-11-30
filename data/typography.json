@@ -1,59 +1,59 @@
 {
-  "assets":{
-    "h1": {
-      "design-size": "96px",
-      "font-size": "grid(1.2)",
-      "font-family": "Roboto Condensed",
-      "font-weight": "bold",
-      "text-transform": "uppercase",
-      "line-height": "1",
-      "font-size-min": "48px",
-      "font-size-max": "144px",
-      "letter-spacing": "0"
-    },
-    "h2": {
-      "design-size": "60px",
-      "font-size": "grid(0.75)",
-      "font-family": "Roboto Condensed",
-      "font-weight": "bold",
-      "text-transform": "uppercase",
-      "line-height": "1",
-      "font-size-min": "30px",
-      "font-size-max": "90px",
-      "letter-spacing": "0"
-    },
-      "h3": {
-        "design-size": "40px",
-        "font-size": "grid(0.5)",
-        "font-family": "Roboto",
-        "font-weight": "normal",
-        "text-transform": "none",
-        "line-height": "1.25",
-        "font-size-min": "20px",
-        "font-size-max": "60px",
-        "letter-spacing": "-0.3"
-      },
-    "h4": {
-      "design-size": "32px",
-      "font-size": "grid(0.4)",
-      "font-family": "Roboto",
-      "font-weight": "normal",
-      "text-transform": "none",
-      "line-height": "1.5",
-      "font-size-min": "16px",
-      "font-size-max": "48px",
-      "letter-spacing": "-0.25"
-    },
-    "h5": {
-      "design-size": "24px",
-      "font-size": "grid(0.3)",
-      "font-family": "Roboto",
-      "font-weight": "normal",
-      "text-transform": "none",
-      "line-height": "1.5",
-      "font-size-min": "12px",
-      "font-size-max": "32px",
-      "letter-spacing": "-0.25"
-    }
-  }
+	"assets": {
+		"h1": [{
+			"design-size": "96px",
+			"font-size": "grid(1.2)",
+			"font-family": "Roboto Condensed",
+			"font-weight": "bold",
+			"text-transform": "uppercase",
+			"line-height": "1",
+			"font-size-min": "48px",
+			"font-size-max": "144px",
+			"letter-spacing": "0"
+		}],
+		"h2": [{
+			"design-size": "60px",
+			"font-size": "grid(0.75)",
+			"font-family": "Roboto Condensed",
+			"font-weight": "bold",
+			"text-transform": "uppercase",
+			"line-height": "1",
+			"font-size-min": "30px",
+			"font-size-max": "90px",
+			"letter-spacing": "0"
+		}],
+		"h3": [{
+			"design-size": "40px",
+			"font-size": "grid(0.5)",
+			"font-family": "Roboto",
+			"font-weight": "normal",
+			"text-transform": "none",
+			"line-height": "1.25",
+			"font-size-min": "20px",
+			"font-size-max": "60px",
+			"letter-spacing": "-0.3"
+		}],
+		"h4": [{
+			"design-size": "32px",
+			"font-size": "grid(0.4)",
+			"font-family": "Roboto",
+			"font-weight": "normal",
+			"text-transform": "none",
+			"line-height": "1.5",
+			"font-size-min": "16px",
+			"font-size-max": "48px",
+			"letter-spacing": "-0.25"
+		}],
+		"h5": [{
+			"design-size": "24px",
+			"font-size": "grid(0.3)",
+			"font-family": "Roboto",
+			"font-weight": "normal",
+			"text-transform": "none",
+			"line-height": "1.5",
+			"font-size-min": "12px",
+			"font-size-max": "32px",
+			"letter-spacing": "-0.25"
+		}]
+	}
 }

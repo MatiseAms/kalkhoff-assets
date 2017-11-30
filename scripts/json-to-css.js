@@ -3,7 +3,7 @@
  * @Date:   2017-11-30T13:34:08+01:00
  * @Email:  sil@matise.nl
  * @Last modified by:   silvandiepen
- * @Last modified time: 2017-11-30T13:34:18+01:00
+ * @Last modified time: 2017-11-30T14:06:40+01:00
  * @Copyright: Matise
  */
 
@@ -16,17 +16,26 @@ let flatten = require('flat');
 
 let delimiter = '-';
 let sourceFolder = 'data';
-let fileTypes = ['scss', 'less', 'css'];
-let filetTypes = [{
-  type: 'scss',
-  pattern: ''
-,{
-  type: 'less',
-  pattern: ''
-},{
-  type: 'css',
-  pattern: ''
-}]
+//let fileTypes = ['scss', 'less', 'css'];
+let fileTypes = [{
+		type: 'scss',
+		varPattern: '${{var}}: {{value}};',
+		listPatternParent: '${{var}}: ({{list}});',
+		listPattern: '"{{var}}":{{value}}'
+	}, {
+		type: 'less',
+		varPattern: '@{{var}}: {{value}};',
+		listPatternParent: '@{{var}}: {{list}};',
+		listPattern: '{{var}}: {{value}}'
+	},
+	{
+		type: 'css',
+		varPattern: '--{{var}}: {{value}};',
+		listPatternParent: '',
+		listPattern: ''
+	}
+];
+
 
 /**
  * Get all setting files from /data
@@ -50,7 +59,7 @@ function getFiles(dir, files_) {
  * Read the JSON file and convert to Objects with Arrays
  */
 function readData(file) {
-	return JSON.parse(fs.readFileSync(file, 'utf8'));
+	return ;
 }
 
 function stringValue(value) {
@@ -79,47 +88,49 @@ function stringValue(value) {
 }
 
 function removeKeys(value) {
-	return value;
+	return value.replace('-0-','-');
 }
 
-function jsonToStyle(file, pattern) {
+function objToStyle(file, type) {
+	let variable;
+	let newFile = [];
+
 	let data = flatten(file, {
 		delimiter: delimiter
 	});
 	let listData = flatten(file, {
-	delimiter: delimiter, safe: true
-		});
-		console.log(listData);
-	let variable;
-	let newFile = [];
-	console.log(typeof data);
+		delimiter: delimiter,
+		safe: true
+	});
+	// Do the variables
 	Object.keys(data).forEach((key) => {
-		variable = pattern.replace('{{var}}', removeKeys(key.toLowerCase())).replace('{{value}}', stringValue(data[key]));
+		variable = type.varPattern.replace('{{var}}', removeKeys(key.toLowerCase())).replace('{{value}}', stringValue(data[key]));
 		newFile.push(variable);
 	});
+
+	// Do the lists
+	Object.keys(listData).forEach((key) => {
+		if (typeof listData[key] === 'object') {
+			let array = listData[key];
+      let variable = key;
+      let newList = [];
+      console.log(key);
+
+			Object.keys(array).forEach((key) => {
+				let listItem;
+				let list = array[key];
+				Object.keys(list).forEach((key) => {
+					listItem = type.listPattern.replace('{{var}}', key).replace('{{value}}', stringValue(list[key]));
+					console.log(listItem);
+					newList.push(listItem);
+				});
+        newFile.push(type.listPatternParent.replace('{{var}}',variable).replace('{{list}}',newList.join(', \r\n')));
+			});
+		}
+	});
+
 	return newFile.join('\r\n');
 
-}
-
-/**
- * Convert the Data to specific language variables and lists
- */
-function convertData(file, type) {
-
-	let compiled;
-	switch (type) {
-		case 'scss':
-			compiled = jsonToStyle(file, '${{var}}: {{value}};');
-			break;
-		case 'css':
-			compiled = jsonToStyle(file, '--{{var}}: {{value}};');
-			break;
-		case 'less':
-			compiled = jsonToStyle(file, '@{{var}}: {{value}};');
-			break;
-
-	}
-	return compiled;
 }
 
 /**
@@ -150,10 +161,10 @@ jsonFiles.forEach((file) => {
 	fileTypes.forEach((type) => {
 
 		// Write New Files
-		let compiled = convertData(readData(file), type);
+		let compiled = objToStyle(JSON.parse(fs.readFileSync(file, 'utf8')), type);
 		let fileName = file.split('/')[file.split('/').length - 1].replace('.json', '');
 
-		fs.writeFileSync('test/compiled/' + fileName + '.' + type, compiled, function(err) {
+		fs.writeFileSync('test/compiled/' + fileName + '.' + type.type, compiled, function(err) {
 			console.log('woops, something went wrong!');
 		});
 
