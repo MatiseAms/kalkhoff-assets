@@ -1,14 +1,3 @@
-/**
- * @Author: Sil van Diepen <silvandiepen>
- * @Date:   2017-11-30T13:34:08+01:00
- * @Email:  sil@matise.nl
- * @Last modified by:   silvandiepen
- * @Last modified time: 2017-11-30T15:09:01+01:00
- * @Copyright: Matise
- */
-
-
-
 let fs = require('fs');
 let path = require('path');
 let flatten = require('flat');
@@ -19,17 +8,20 @@ let sourceFolder = 'data';
 //let fileTypes = ['scss', 'less', 'css'];
 let fileTypes = [{
 		type: 'scss',
+		dest: 'test/scss',
 		varPattern: '${{var}}: {{value}};',
 		listPatternParent: '${{var}}: ({{list}});',
-		listPattern: '"{{var}}":{{value}}'
+		listPattern: '"{{var}}":{{value}}',
 	}, {
 		type: 'less',
+		dest: 'test/less',
 		varPattern: '@{{var}}: {{value}};',
 		listPatternParent: '@{{var}}: {{list}};',
 		listPattern: '{{var}}: {{value}}'
 	},
 	{
 		type: 'css',
+		dest: 'test/css',
 		varPattern: '--{{var}}: {{value}};',
 		listPatternParent: '',
 		listPattern: ''
@@ -158,25 +150,25 @@ function objToStyle(file, type) {
 /**
  * Define the folder and get the files
  */
-
-let jsonFiles = getFiles(sourceFolder);
-
-const targetDir = 'test/compiled';
-const sep = path.sep;
-const initDir = path.isAbsolute(targetDir) ? sep : '';
-targetDir.split(sep).reduce((parentDir, childDir) => {
-	const curDir = path.resolve(parentDir, childDir);
-	if (!fs.existsSync(curDir)) {
-		fs.mkdirSync(curDir);
-	}
-	return curDir;
-}, initDir);
+function makeDirs() {
+	fileTypes.forEach((type) => {
+		const sep = path.sep;
+		const initDir = path.isAbsolute(type.dest) ? sep : '';
+		type.dest.split(sep).reduce((parentDir, childDir) => {
+			const curDir = path.resolve(parentDir, childDir);
+			if (!fs.existsSync(curDir)) {
+				fs.mkdirSync(curDir);
+			}
+			return curDir;
+		}, initDir);
+	});
+}
 
 /**
  * Convert all files
  */
 
-jsonFiles.forEach((file) => {
+getFiles(sourceFolder).forEach((file) => {
 
 	fileTypes.forEach((type) => {
 
@@ -184,7 +176,7 @@ jsonFiles.forEach((file) => {
 		let compiled = objToStyle(JSON.parse(fs.readFileSync(file, 'utf8')), type);
 		let fileName = file.split('/')[file.split('/').length - 1].replace('.json', '');
 
-		fs.writeFileSync('test/compiled/' + fileName + '.' + type.type, compiled, function(err) {
+		fs.writeFileSync(type.dest + '/' + fileName + '.' + type.type, compiled, function(err) {
 			console.log('woops, something went wrong!');
 		});
 
