@@ -7,6 +7,11 @@
 	}
 	@map-collect: @collection;
 }
+.flatten(@value,@separator,@replace){
+	.to-string(@value,@separator);
+	.str-replace(@to-string,@replace," ");
+	@flatten: @str-replace;
+}
 
 .str-to-list(@string, @separator: ".", @startAt: 1){
 	@string: str-replace(@string,"__","."); //

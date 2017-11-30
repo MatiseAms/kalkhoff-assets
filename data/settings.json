@@ -1,0 +1,16 @@
+{
+	"assets": {
+		"prefix": "kh-",
+		"border-radius": "2px",
+		"base-img-dir": "../img",
+		"base-font-size": "16",
+		"base-line-height": "1.5",
+		"base-letter-spacing": "50",
+		"base-fontpath": "/fonts",
+		"base-cap-height": "0.68",
+		"transition-time": "0.3",
+		"transition": ".3s",
+		"cubic-bezier": "cubic-bezier(0.75,0.75,0.25,0.50)",
+		"bezier": "cubic-bezier(0.75,0.75,0.25,0.50)"
+	}
+}
