@@ -3,7 +3,7 @@
  * @Date:   2017-11-30T10:56:37+01:00
  * @Email:  sil@matise.nl
  * @Last modified by:   silvandiepen
- * @Last modified time: 2017-11-30T13:20:10+01:00
+ * @Last modified time: 2017-11-30T13:33:55+01:00
  * @Copyright: Matise
  */
 
@@ -15,6 +15,16 @@ let flatten = require('flat');
 let delimiter = '-';
 let sourceFolder = 'data';
 let fileTypes = ['scss', 'less', 'css'];
+let filetTypes = [{
+  type: 'scss',
+  pattern: ''
+,{
+  type: 'less',
+  pattern: ''
+},{
+  type: 'css',
+  pattern: ''
+}]
 
 /**
  * Get all setting files from /data
