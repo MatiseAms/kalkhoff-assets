@@ -1,12 +1,3 @@
-/**
- * @Author: Sil van Diepen <silvandiepen>
- * @Date:   2017-11-30T13:34:08+01:00
- * @Email:  sil@matise.nl
- * @Last modified by:   silvandiepen
- * @Last modified time: 2017-11-30T15:09:01+01:00
- * @Copyright: Matise
- */
-
 
 
 let fs = require('fs');
@@ -53,13 +44,6 @@ function getFiles(dir, files_) {
 	}
 	console.log(files_);
 	return files_;
-}
-
-/**
- * Read the JSON file and convert to Objects with Arrays
- */
-function readData(file) {
-	return;
 }
 
 function stringValue(value) {
@@ -128,7 +112,6 @@ function objToStyle(file, type) {
 			Object.keys(array).forEach((key) => {
 				let listItem;
 				let list = array[key];
-				let tempList = [];
 
 				//  console.log(typeof array[key], array[key])
 				if (typeof array[key] === 'object') {
@@ -138,7 +121,7 @@ function objToStyle(file, type) {
 					});
 					newFile.push(type.listPatternParent.replace('{{var}}', variable).replace('{{list}}', newList.join(', \r\n')));
 				} else {
-					if (typeof key === "string") {
+					if (typeof key === 'string') {
 						isArray = true;
 						newList.push(array[key]);
 					}

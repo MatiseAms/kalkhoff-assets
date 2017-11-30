@@ -1,44 +1,46 @@
 {
-	"prefix": "kh-",
-	"grid": {
-		"row-width": "4096px",
-		"design-width": "1920px",
-		"columns": 24,
-		"screen": "only screen",
-		"cssgrid": false,
-		"breakpoints": [{
-			"small": 750,
-			"medium": 960,
-			"large": 1280,
-			"xlarge": 1920,
-			"xxlarge": 9999
-		}],
-		"parts": [{
-			"full": "1/1",
-			"half": "1/2",
-			"third": "1/3",
-			"two-third": "2/3",
-			"quarter": "1/4",
-			"three-quarter": "3/4",
-			"fifth": "1/5",
-			"two-fifth": "2/5",
-			"three-fifth": "3/5",
-			"four-fifth": "4/5",
-			"sixth": "1/6",
-			"five-sixth": "5/6"
-		}],
-		"structure": {
+  "prefix": "kh-",
+  "grid": {
+    "row-width": "4096px",
+    "design-width": "1920px",
+    "columns": 24,
+    "screen": "only screen",
+    "cssgrid": false,
+    "breakpoints": [{
+      "small": 750,
+      "medium": 960,
+      "large": 1280,
+      "xlarge": 1920,
+      "xxlarge": 9999
+    }],
+    "parts": [{
+      "full": "1/1",
+      "half": "1/2",
+      "third": "1/3",
+      "two-third": "2/3",
+      "quarter": "1/4",
+      "three-quarter": "3/4",
+      "fifth": "1/5",
+      "two-fifth": "2/5",
+      "three-fifth": "3/5",
+      "four-fifth": "4/5",
+      "sixth": "1/6",
+      "five-sixth": "5/6"
+    }],
+    "structure": {
       "build": false,
-			"direction": ["margin-top", "margin-left", "margin-bottom", "margin-right", "top", "left", "right", "bottom", ""],
-			"action": ["pull", "push"],
-			"method": ["grid"],
-			"breakpoints": [{"medium": 960}],
-			"pull": true,
-			"push": true,
-			"only": false,
-			"responsive": true
-		}
-	},
+      "direction": ["margin-top", "margin-left", "margin-bottom", "margin-right", "top", "left", "right", "bottom"],
+      "action": ["pull", "push"],
+      "method": ["grid"],
+      "breakpoints": [{
+        "medium": 960
+      }],
+      "pull": true,
+      "push": true,
+      "only": false,
+      "responsive": true
+    }
+  },
   "create": {
     "classes": {
       "column": [{
