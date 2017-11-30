@@ -8,16 +8,16 @@
 			&:before{
 				content: ""; display: block; position: absolute; left: 0; top: 0; width: $width; height: $height; background: $bg-body;
 				@if $round != 0{
-					border-radius: $round;
+					border-radius: 50%;
 				}
 			}
 			&:after{
-				content: ""; display: block; position: absolute; left: $spacing; top: $spacing; width: ($width - ($spacing*2)); height: ($width - ($spacing*2)); background: $bg-check; border-radius: $round; opacity: 0; transition: $transition;
+				content: ""; display: block; position: absolute; left: $spacing; top: $spacing; width: ($width - ($spacing*2)); height: ($width - ($spacing*2)); background: $bg-check; border-radius: 50%; opacity: 0; transition: $assets-transition;
 			}
 		}
 		input[type=radio]:checked{
 			&+label:after{
-				opacity: 1; transition: $transition;
+				opacity: 1; transition: $assets-transition;
 			}
 		}
 	}
@@ -32,16 +32,16 @@
 			&:before{
 				content: ""; display: block; position: absolute; left: 0; top: 0; width: $width; height: $height; background: $bg-body;
 				@if $round != 0{
-					border-radius: $round;
+					border-radius: 50%;
 				}
 			}
 			&:after{
-				content: ""; display: block; position: absolute; left: $spacing; top: $spacing; width: ($width - ($spacing*2)); height: ($width - ($spacing*2)); background: $bg-check; border-radius: $round; opacity: 0; transition: $transition;
+				content: ""; display: block; position: absolute; left: $spacing; top: $spacing; width: ($width - ($spacing*2)); height: ($width - ($spacing*2)); background: $bg-check; border-radius: $round; opacity: 0; transition: $assets-transition;
 			}
 		}
 		input[type=checkbox]:checked{
 			&+label:after{
-				opacity: 1; transition: $transition;
+				opacity: 1; transition: $assets-transition;
 			}
 		}
 	}

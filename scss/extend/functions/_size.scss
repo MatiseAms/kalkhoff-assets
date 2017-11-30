@@ -1,6 +1,6 @@
 
 @function calculateRem($size) {
-  $remSize: $size / #{$base-font-size}px;
+  $remSize: $size / #{$assets-base-font-size}px;
   @return $remSize * 1rem;
 }
 
@@ -10,7 +10,7 @@
   @return $value;
 }
 
-@function rem-calc($values, $base-value: $base-font-size) {
+@function rem-calc($values, $base-value: $assets-base-font-size) {
 	$max: length($values);
 	@if $max == 1 {
 		@return convert-to-rem(nth($values, 1), $base-value);

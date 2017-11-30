@@ -20,10 +20,10 @@
 //	@include font-face("#{$name}", font-files("#{$file}.woff", "#{$file}.ttf", "#{$file}.svg", "#{$file}.otf"), "#{$file}.eot", $weight, $type);
 	@font-face {
 		font-family: $name;
-		src:url("#{$base-fontpath}/#{$file}.eot?#iefix") format('embedded-opentype'),/* IE6-IE8 */
-  	  url("#{$base-fontpath}/#{$file}.woff") format('woff'),/* Pretty Modern Browsers */
-			url("#{$base-fontpath}/#{$file}.ttf") format('truetype'),/* Safari, Android, iOS */
-			url("#{$base-fontpath}/#{$file}.svg##{$name}") format('svg'); /* Legacy iOS */
+		src:url("#{$assets-base-fontpath}/#{$file}.eot?#iefix") format('embedded-opentype'),/* IE6-IE8 */
+  	  url("#{$assets-base-fontpath}/#{$file}.woff") format('woff'),/* Pretty Modern Browsers */
+			url("#{$assets-base-fontpath}/#{$file}.ttf") format('truetype'),/* Safari, Android, iOS */
+			url("#{$assets-base-fontpath}/#{$file}.svg##{$name}") format('svg'); /* Legacy iOS */
 		font-weight: $weight;
 		font-style: $type;
 	}
