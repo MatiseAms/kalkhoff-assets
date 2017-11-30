@@ -155,15 +155,13 @@ function makeDirs() {
 		}, initDir);
 	});
 }
+makeDirs();
 
 /**
  * Convert all files
  */
-
 getFiles(sourceFolder).forEach((file) => {
-
 	fileTypes.forEach((type) => {
-
 		// Write New Files
 		let compiled = objToStyle(JSON.parse(fs.readFileSync(file, 'utf8')), type);
 		let fileName = file.split('/')[file.split('/').length - 1].replace('.json', '');
@@ -171,6 +169,5 @@ getFiles(sourceFolder).forEach((file) => {
 		fs.writeFileSync(type.dest + '/' + fileName + '.' + type.type, compiled, function(err) {
 			console.log('woops, something went wrong!');
 		});
-
 	});
 });
