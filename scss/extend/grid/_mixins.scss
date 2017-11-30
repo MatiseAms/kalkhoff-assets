@@ -1,3 +1,10 @@
+// @Author: Sil van Diepen <silvandiepen>
+// @Date:   2017-11-30T10:41:32+01:00
+// @Email:  sil@matise.nl
+// @Last modified by:   silvandiepen
+// @Last modified time: 2017-11-30T10:53:02+01:00
+// @Copyright: Matise
+
 
 
 // Default use:
@@ -212,7 +219,7 @@
 					@if $grid-cssgrid == true{
 						@supports (display: grid){
 							$parts: ($a/$grid-columns) * $grid-columns; //
-							width: auto; grid-column: #{$parts} span; 
+							width: auto; grid-column: #{$parts} span;
 						}
 					}
 				}
