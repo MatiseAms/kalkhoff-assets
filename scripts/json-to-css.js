@@ -3,7 +3,7 @@
  * @Date:   2017-11-30T13:34:08+01:00
  * @Email:  sil@matise.nl
  * @Last modified by:   silvandiepen
- * @Last modified time: 2017-11-30T14:06:40+01:00
+ * @Last modified time: 2017-11-30T15:09:01+01:00
  * @Copyright: Matise
  */
 
@@ -59,36 +59,40 @@ function getFiles(dir, files_) {
  * Read the JSON file and convert to Objects with Arrays
  */
 function readData(file) {
-	return ;
+	return;
 }
 
 function stringValue(value) {
-	let quotes = true;
-	let noquotes = ['normal', 'regular', 'lowercase', 'uppercase', 'none', '0'];
-	if (value.indexOf('px') > -1) {
-		quotes = false;
-	}
-	if (value.indexOf('(') > -1 && value.indexOf(')') > -1) {
-		quotes = false;
-	}
-	if (value.charAt(0) === '#') {
-		quotes = false;
-	}
-	if (noquotes.includes(value)) {
-		quotes = false;
-	}
-	if (parseFloat(value)) {
-		quotes = false;
-	}
-	if (quotes) {
-		return '\'' + value + '\'';
+	if (typeof value == 'string') {
+		let quotes = true;
+		let noquotes = ['normal', 'regular', 'lowercase', 'uppercase', 'none', '0'];
+		if (value.indexOf('px') > -1) {
+			quotes = false;
+		}
+		if (value.indexOf('(') > -1 && value.indexOf(')') > -1) {
+			quotes = false;
+		}
+		if (value.charAt(0) === '#') {
+			quotes = false;
+		}
+		if (noquotes.includes(value)) {
+			quotes = false;
+		}
+		if (parseFloat(value)) {
+			quotes = false;
+		}
+		if (quotes) {
+			return '\'' + value + '\'';
+		} else {
+			return value;
+		}
 	} else {
 		return value;
 	}
 }
 
 function removeKeys(value) {
-	return value.replace('-0-','-');
+	return value.replace('-0-', '-');
 }
 
 function objToStyle(file, type) {
@@ -104,28 +108,46 @@ function objToStyle(file, type) {
 	});
 	// Do the variables
 	Object.keys(data).forEach((key) => {
-		variable = type.varPattern.replace('{{var}}', removeKeys(key.toLowerCase())).replace('{{value}}', stringValue(data[key]));
-		newFile.push(variable);
+		function isNumber(n) {
+			return !isNaN(parseFloat(n)) && isFinite(n);
+		}
+		if (!isNumber(key.split('-')[key.split('-').length - 1])) {
+			variable = type.varPattern.replace('{{var}}', removeKeys(key.toLowerCase())).replace('{{value}}', stringValue(data[key]));
+			newFile.push(variable);
+		}
 	});
 
 	// Do the lists
 	Object.keys(listData).forEach((key) => {
 		if (typeof listData[key] === 'object') {
 			let array = listData[key];
-      let variable = key;
-      let newList = [];
-      console.log(key);
+			let variable = key;
+			let newList = [];
+			let isArray = false;
 
 			Object.keys(array).forEach((key) => {
 				let listItem;
 				let list = array[key];
-				Object.keys(list).forEach((key) => {
-					listItem = type.listPattern.replace('{{var}}', key).replace('{{value}}', stringValue(list[key]));
-					console.log(listItem);
-					newList.push(listItem);
-				});
-        newFile.push(type.listPatternParent.replace('{{var}}',variable).replace('{{list}}',newList.join(', \r\n')));
+				let tempList = [];
+
+				//  console.log(typeof array[key], array[key])
+				if (typeof array[key] === 'object') {
+					Object.keys(list).forEach((key) => {
+						listItem = type.listPattern.replace('{{var}}', key).replace('{{value}}', stringValue(list[key]));
+						newList.push(listItem);
+					});
+					newFile.push(type.listPatternParent.replace('{{var}}', variable).replace('{{list}}', newList.join(', \r\n')));
+				} else {
+					if (typeof key === "string") {
+						isArray = true;
+						newList.push(array[key]);
+					}
+				}
 			});
+			if (isArray) {
+				newFile.push(type.listPatternParent.replace('{{var}}', variable).replace('{{list}}', newList.join(', \r')));
+			}
+
 		}
 	});
 
@@ -139,7 +161,6 @@ function objToStyle(file, type) {
 
 let jsonFiles = getFiles(sourceFolder);
 
-
 const targetDir = 'test/compiled';
 const sep = path.sep;
 const initDir = path.isAbsolute(targetDir) ? sep : '';
@@ -148,7 +169,6 @@ targetDir.split(sep).reduce((parentDir, childDir) => {
 	if (!fs.existsSync(curDir)) {
 		fs.mkdirSync(curDir);
 	}
-
 	return curDir;
 }, initDir);
 
