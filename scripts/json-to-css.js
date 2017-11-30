@@ -2,8 +2,8 @@
  * @Author: Sil van Diepen <silvandiepen>
  * @Date:   2017-11-30T10:56:37+01:00
  * @Email:  sil@matise.nl
- * @Last modified by:   stephan
- * @Last modified time: 2017-11-30T12:19:21+01:00
+ * @Last modified by:   silvandiepen
+ * @Last modified time: 2017-11-30T13:10:29+01:00
  * @Copyright: Matise
  */
 
@@ -41,6 +41,32 @@ function readData(file) {
 	return JSON.parse(fs.readFileSync(file, 'utf8'));
 }
 
+function stringValue(value) {
+	let quotes = true;
+  let noquotes = ['normal','regular','lowercase','uppercase','none','0'];
+	if (value.indexOf('px') > -1) {
+		quotes = false;
+	}
+	if (value.indexOf('(') > -1 && value.indexOf(')') > -1) {
+		quotes = false;
+	}
+	if (value.charAt(0) === '#') {
+		quotes = false;
+	}
+	if (noquotes.includes(value)) {
+		quotes = false;
+	}
+	if (parseFloat(value)) {
+		quotes = false;
+	}
+	let stringValue;
+	if (quotes) {
+		return '\'' + value + '\'';
+	} else {
+		return value;
+	}
+}
+
 function jsonToCss(file) {
 	let data = flatten(file, {
 		delimiter: delimiter
@@ -49,7 +75,7 @@ function jsonToCss(file) {
 	let newFile = [];
 	console.log(typeof data);
 	Object.keys(data).forEach((key, value) => {
-		variable = '--' + key.toLowerCase() + ': ' + value + ';';
+		variable = '--' + key.toLowerCase() + ': ' + stringValue(data[key]) + ';';
 		newFile.push(variable);
 	});
 	return newFile.join('\r\n');
@@ -63,23 +89,8 @@ function jsonToScss(file) {
 	let newFile = [];
 	console.log(typeof data);
 	Object.keys(data).forEach((key) => {
-		let quotes = true;
-		if (data[key].indexOf('px') > -1) {
-			quotes = false;
-		}
-		if (data[key].indexOf('(') > -1 && data[key].indexOf(')') > -1) {
-			quotes = false;
-		}
-		if (parseFloat(data[key])) {
-			quotes = false;
-		}
-		let stringValue;
-		if (quotes) {
-			stringValue = '\'' + data[key] + '\'';
-		} else {
-			stringValue = data[key];
-		}
-		variable = '$' + key.toLowerCase() + ': ' + stringValue + ';';
+
+		variable = '$' + key.toLowerCase() + ': ' + stringValue(data[key]) + ';';
 		newFile.push(variable);
 	});
 	return newFile.join('\r\n');
@@ -93,7 +104,7 @@ function jsonToLess(file) {
 	let newFile = [];
 	console.log(typeof data);
 	Object.keys(data).forEach((key, value) => {
-		variable = '@' + key.toLowerCase() + ': ' + value + ';';
+		variable = '@' + key.toLowerCase() + ': ' + stringValue(data[key]) + ';';
 		newFile.push(variable);
 	});
 	return newFile.join('\r\n');
@@ -153,7 +164,9 @@ jsonFiles.forEach((file) => {
 
 		// Write New Files
 		let compiled = convertData(readData(file), type);
-		fs.writeFileSync('test/compiled/compiled.' + type, compiled, function(err) {
+    let fileName = file.split('/')[file.split('/').length - 1].replace('.json','');
+
+		fs.writeFileSync('test/compiled/'+fileName+'.' + type, compiled, function(err) {
 			console.log('woops, something went wrong!');
 		});
 
