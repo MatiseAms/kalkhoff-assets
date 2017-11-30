@@ -3,7 +3,7 @@
  * @Date:   2017-11-30T10:56:37+01:00
  * @Email:  sil@matise.nl
  * @Last modified by:   silvandiepen
- * @Last modified time: 2017-11-30T13:18:18+01:00
+ * @Last modified time: 2017-11-30T13:20:10+01:00
  * @Copyright: Matise
  */
 
@@ -66,6 +66,9 @@ function stringValue(value) {
 		return value;
 	}
 }
+function removeKeys(value){
+  return value;
+}
 
 function jsonToStyle(file,pattern){
   let data = flatten(file, {
@@ -75,7 +78,7 @@ function jsonToStyle(file,pattern){
   let newFile = [];
   console.log(typeof data);
   Object.keys(data).forEach((key) => {
-    variable = pattern.replace('{{var}}',key.toLowerCase()).replace('{{value}}',data[key]);
+    variable = pattern.replace('{{var}}',removeKeys(key.toLowerCase())).replace('{{value}}',stringValue(data[key]));
     newFile.push(variable);
   });
   return newFile.join('\r\n');
