@@ -1,13 +1,13 @@
 {
 	"colors": {
-		"primary": {
+		"primary": [{
 			"Black": "#101010",
 			"Dark": "#1a1b1a",
 			"Midgray": "#7f7f7f",
 			"Offwhite": "#f7f7f7",
 			"White": "#ffffff"
-		},
-		"secondary":{
+		}],
+		"secondary":[{
 			"Green": "#b4bb00",
 			"Lime": "#b6ce2f",
 			"Yellow": "#edd32d",
@@ -20,6 +20,6 @@
 			"Red": "#dd0000",
 			"Pink": "#ea4c89",
 			"Purple": "#8b008b"
-		}
+		}]
 	}
 }

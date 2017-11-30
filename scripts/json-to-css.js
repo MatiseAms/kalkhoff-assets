@@ -3,7 +3,7 @@
  * @Date:   2017-11-30T10:56:37+01:00
  * @Email:  sil@matise.nl
  * @Last modified by:   silvandiepen
- * @Last modified time: 2017-11-30T13:10:29+01:00
+ * @Last modified time: 2017-11-30T13:18:18+01:00
  * @Copyright: Matise
  */
 
@@ -67,48 +67,21 @@ function stringValue(value) {
 	}
 }
 
-function jsonToCss(file) {
-	let data = flatten(file, {
+function jsonToStyle(file,pattern){
+  let data = flatten(file, {
 		delimiter: delimiter
 	});
-	let variable;
-	let newFile = [];
-	console.log(typeof data);
-	Object.keys(data).forEach((key, value) => {
-		variable = '--' + key.toLowerCase() + ': ' + stringValue(data[key]) + ';';
-		newFile.push(variable);
-	});
-	return newFile.join('\r\n');
+  let variable;
+  let newFile = [];
+  console.log(typeof data);
+  Object.keys(data).forEach((key) => {
+    variable = pattern.replace('{{var}}',key.toLowerCase()).replace('{{value}}',data[key]);
+    newFile.push(variable);
+  });
+  return newFile.join('\r\n');
+
 }
 
-function jsonToScss(file) {
-	let data = flatten(file, {
-		delimiter: delimiter
-	});
-	let variable;
-	let newFile = [];
-	console.log(typeof data);
-	Object.keys(data).forEach((key) => {
-
-		variable = '$' + key.toLowerCase() + ': ' + stringValue(data[key]) + ';';
-		newFile.push(variable);
-	});
-	return newFile.join('\r\n');
-}
-
-function jsonToLess(file) {
-	let data = flatten(file, {
-		delimiter: delimiter
-	});
-	let variable;
-	let newFile = [];
-	console.log(typeof data);
-	Object.keys(data).forEach((key, value) => {
-		variable = '@' + key.toLowerCase() + ': ' + stringValue(data[key]) + ';';
-		newFile.push(variable);
-	});
-	return newFile.join('\r\n');
-}
 /**
  * Convert the Data to specific language variables and lists
  */
@@ -118,17 +91,17 @@ function convertData(file, type) {
 	switch (type) {
 		case 'scss':
 			{
-				compiled = jsonToScss(file);
+        compiled = jsonToStyle(file,'${{var}}: {{value}};');
 				break;
 			}
 		case 'css':
 			{
-				compiled = jsonToCss(file);
+        compiled = jsonToStyle(file,'--{{var}}: {{value}};');
 				break;
 			}
 		case 'less':
 			{
-				compiled = jsonToLess(file);
+        compiled = jsonToStyle(file,'@{{var}}: {{value}};');
 				break;
 			}
 	}
