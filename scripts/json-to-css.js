@@ -1,12 +1,3 @@
-/**
- * @Author: Sil van Diepen <silvandiepen>
- * @Date:   2017-11-30T10:56:37+01:00
- * @Email:  sil@matise.nl
- * @Last modified by:   silvandiepen
- * @Last modified time: 2017-11-30T13:20:10+01:00
- * @Copyright: Matise
- */
-
 let fs = require('fs');
 let path = require('path');
 let flatten = require('flat');
@@ -43,7 +34,7 @@ function readData(file) {
 
 function stringValue(value) {
 	let quotes = true;
-  let noquotes = ['normal','regular','lowercase','uppercase','none','0'];
+	let noquotes = ['normal', 'regular', 'lowercase', 'uppercase', 'none', '0'];
 	if (value.indexOf('px') > -1) {
 		quotes = false;
 	}
@@ -59,29 +50,33 @@ function stringValue(value) {
 	if (parseFloat(value)) {
 		quotes = false;
 	}
-	let stringValue;
 	if (quotes) {
 		return '\'' + value + '\'';
 	} else {
 		return value;
 	}
 }
-function removeKeys(value){
-  return value;
+
+function removeKeys(value) {
+	return value;
 }
 
-function jsonToStyle(file,pattern){
-  let data = flatten(file, {
+function jsonToStyle(file, pattern) {
+	let data = flatten(file, {
 		delimiter: delimiter
 	});
-  let variable;
-  let newFile = [];
-  console.log(typeof data);
-  Object.keys(data).forEach((key) => {
-    variable = pattern.replace('{{var}}',removeKeys(key.toLowerCase())).replace('{{value}}',stringValue(data[key]));
-    newFile.push(variable);
-  });
-  return newFile.join('\r\n');
+	let listData = flatten(file, {
+	delimiter: delimiter, safe: true
+		});
+		console.log(listData);
+	let variable;
+	let newFile = [];
+	console.log(typeof data);
+	Object.keys(data).forEach((key) => {
+		variable = pattern.replace('{{var}}', removeKeys(key.toLowerCase())).replace('{{value}}', stringValue(data[key]));
+		newFile.push(variable);
+	});
+	return newFile.join('\r\n');
 
 }
 
@@ -93,20 +88,15 @@ function convertData(file, type) {
 	let compiled;
 	switch (type) {
 		case 'scss':
-			{
-        compiled = jsonToStyle(file,'${{var}}: {{value}};');
-				break;
-			}
+			compiled = jsonToStyle(file, '${{var}}: {{value}};');
+			break;
 		case 'css':
-			{
-        compiled = jsonToStyle(file,'--{{var}}: {{value}};');
-				break;
-			}
+			compiled = jsonToStyle(file, '--{{var}}: {{value}};');
+			break;
 		case 'less':
-			{
-        compiled = jsonToStyle(file,'@{{var}}: {{value}};');
-				break;
-			}
+			compiled = jsonToStyle(file, '@{{var}}: {{value}};');
+			break;
+
 	}
 	return compiled;
 }
@@ -140,9 +130,9 @@ jsonFiles.forEach((file) => {
 
 		// Write New Files
 		let compiled = convertData(readData(file), type);
-    let fileName = file.split('/')[file.split('/').length - 1].replace('.json','');
+		let fileName = file.split('/')[file.split('/').length - 1].replace('.json', '');
 
-		fs.writeFileSync('test/compiled/'+fileName+'.' + type, compiled, function(err) {
+		fs.writeFileSync('test/compiled/' + fileName + '.' + type, compiled, function(err) {
 			console.log('woops, something went wrong!');
 		});
 
