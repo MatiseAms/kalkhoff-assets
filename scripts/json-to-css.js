@@ -47,13 +47,6 @@ function getFiles(dir, files_) {
 	return files_;
 }
 
-/**
- * Read the JSON file and convert to Objects with Arrays
- */
-function readData(file) {
-	return;
-}
-
 function stringValue(value) {
 	if (typeof value == 'string') {
 		let quotes = true;
@@ -120,7 +113,6 @@ function objToStyle(file, type) {
 			Object.keys(array).forEach((key) => {
 				let listItem;
 				let list = array[key];
-				let tempList = [];
 
 				//  console.log(typeof array[key], array[key])
 				if (typeof array[key] === 'object') {
@@ -130,7 +122,7 @@ function objToStyle(file, type) {
 					});
 					newFile.push(type.listPatternParent.replace('{{var}}', variable).replace('{{list}}', newList.join(', \r\n')));
 				} else {
-					if (typeof key === "string") {
+					if (typeof key === 'string') {
 						isArray = true;
 						newList.push(array[key]);
 					}
