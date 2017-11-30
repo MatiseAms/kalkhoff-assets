@@ -43,8 +43,32 @@ function getFiles(dir, files_) {
 			files_.push(name);
 		}
 	}
-//	console.log(files_);
+	//	console.log(files_);
 	return files_;
+}
+
+// Store the used data before compiling;
+let stored = {};
+getFiles(sourceFolder).forEach((file) => {
+  Object.assign(JSON.parse(fs.readFileSync(file, 'utf8')), stored);
+  console.log(stored);
+});
+
+
+// Do functions when necessary;
+function doFunction(value) {
+  function grid(v) {
+    let grid = (100 / 24);
+    return grid * v + 'vw';
+  }
+  let thefunc = value.replace('{{','').replace('}}','');
+  let newvalue;
+  let func = thefunc.split('(')[0];
+  let parameters = value.replace( /(^.*\(|\).*$)/g, '' );
+  if(func === 'grid'){
+    newvalue = grid(parameters);
+  }
+	return newvalue;
 }
 
 function stringValue(value) {
@@ -66,6 +90,10 @@ function stringValue(value) {
 		if (parseFloat(value)) {
 			quotes = false;
 		}
+		// Do Functions
+		if (value.indexOf('{{') > -1) {
+			value = doFunction(value);
+  	}
 		if (quotes) {
 			return '\'' + value + '\'';
 		} else {
@@ -161,15 +189,15 @@ makeDirs();
  * Convert all files
  */
 getFiles(sourceFolder).forEach((file) => {
-  let fileName = file.split('/')[file.split('/').length - 1].replace('.json', '');
-  console.log('\x1b[33m%s\x1b[0m',fileName);
+	let fileName = file.split('/')[file.split('/').length - 1].replace('.json', '');
+	console.log('\x1b[33m%s\x1b[0m', fileName);
 
 	fileTypes.forEach((type) => {
 		// Write New Files
 		let compiled = objToStyle(JSON.parse(fs.readFileSync(file, 'utf8')), type);
 
-    console.log('\x1b[32m%s\x1b[0m','\t\u2713',type.type);
-    console.log('\x1b[32m%s\x1b[0m','\t'+ file + ' \u2192 ' + type.dest + '/' + fileName + '.' + type.type);
+		console.log('\x1b[32m%s\x1b[0m', '\t\u2713', type.type);
+		console.log('\x1b[32m%s\x1b[0m', '\t' + file + ' \u2192 ' + type.dest + '/' + fileName + '.' + type.type);
 
 		fs.writeFileSync(type.dest + '/' + fileName + '.' + type.type, compiled, function(err) {
 			console.log('woops, something went wrong!');
