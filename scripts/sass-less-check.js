@@ -1,3 +1,14 @@
+/**
+ * @Author: Sil van Diepen <silvandiepen>
+ * @Date:   2017-11-29T21:23:51+01:00
+ * @Email:  sil@matise.nl
+ * @Last modified by:   silvandiepen
+ * @Last modified time: 2017-11-30T11:12:00+01:00
+ * @Copyright: Matise
+ */
+
+
+
 let fs = require('fs');
 
 function getFiles(dir, files_) {
