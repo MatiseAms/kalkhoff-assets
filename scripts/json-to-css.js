@@ -8,20 +8,20 @@ let sourceFolder = 'data';
 //let fileTypes = ['scss', 'less', 'css'];
 let fileTypes = [{
 		type: 'scss',
-		dest: 'test/scss',
+		dest: 'scss/settings',
 		varPattern: '${{var}}: {{value}};',
 		listPatternParent: '${{var}}: ({{list}});',
 		listPattern: '"{{var}}":{{value}}',
 	}, {
 		type: 'less',
-		dest: 'test/less',
+		dest: 'less/settings',
 		varPattern: '@{{var}}: {{value}};',
 		listPatternParent: '@{{var}}: {{list}};',
 		listPattern: '{{var}}: {{value}}'
 	},
 	{
 		type: 'css',
-		dest: 'test/css',
+		dest: 'css/settings',
 		varPattern: '--{{var}}: {{value}};',
 		listPatternParent: '',
 		listPattern: ''
@@ -43,7 +43,7 @@ function getFiles(dir, files_) {
 			files_.push(name);
 		}
 	}
-	console.log(files_);
+//	console.log(files_);
 	return files_;
 }
 
@@ -161,10 +161,15 @@ makeDirs();
  * Convert all files
  */
 getFiles(sourceFolder).forEach((file) => {
+  let fileName = file.split('/')[file.split('/').length - 1].replace('.json', '');
+  console.log('\x1b[33m%s\x1b[0m',fileName);
+
 	fileTypes.forEach((type) => {
 		// Write New Files
 		let compiled = objToStyle(JSON.parse(fs.readFileSync(file, 'utf8')), type);
-		let fileName = file.split('/')[file.split('/').length - 1].replace('.json', '');
+
+    console.log('\x1b[32m%s\x1b[0m','\t\u2713',type.type);
+    console.log('\x1b[32m%s\x1b[0m','\t'+ file + ' \u2192 ' + type.dest + '/' + fileName + '.' + type.type);
 
 		fs.writeFileSync(type.dest + '/' + fileName + '.' + type.type, compiled, function(err) {
 			console.log('woops, something went wrong!');
