@@ -67,6 +67,18 @@
 			"font-size-max": "32px",
 			"letter-spacing": "-0.25"
 		}],
+		"h6": [{
+			"design-size": "24px",
+			"font-size-value": "0.3",
+			"font-size": "{{grid(0.3)}}",
+			"font-family": "Roboto",
+			"font-weight": "normal",
+			"text-transform": "none",
+			"line-height": "1.5",
+			"font-size-min": "12px",
+			"font-size-max": "32px",
+			"letter-spacing": "-0.25"
+		}],
 		"p": [{
 			"design-size": "16px",
 			"font-size-value": "0.2",
