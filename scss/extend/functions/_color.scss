@@ -7,7 +7,7 @@
 	@return mix(white, $color, $percentage);
 }
 
-@function color($value, $rgba: false, $colorset: $colors, $warning: true, $boolean: false){
+@function color($value, $rgba: false, $colorset: $colors-primary, $warning: true, $boolean: false){
 	@if $warning == true{
 		@if color-exist($value) == false{
 			@warn  "color: #{$value} doesn't exist";
@@ -23,11 +23,11 @@
 		}
 	}
 }
-@function color-exist($value, $colorset: $colors){
+@function color-exist($value, $colorset: $colors-primary){
 	$color: map-get($colorset, $value);
 	@if $color == null{
 		@if variable-exists(main-colors){
-			@if color($value, $rgba, $main-colors, false, true){
+			@if color($value, $rgba, $colors-secondary, false, true){
 				@return true;
 			}
 			@return false;
