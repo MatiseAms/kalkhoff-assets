@@ -8,16 +8,31 @@ module.exports = {
 	_isnumber: function(n) {
 		return !isNaN(parseFloat(n)) && isFinite(n);
 	},
+
 	/*
 	 The function to generate grid based values
 	*/
 	_grid: function(data, v) {
-		if (_isnumber(v)) {
+		function gridCalc(g){
 			let grid = (100 / data.grid.columns);
-			return grid * v + 'vw';
+			return grid * g + 'vw';
+		}
+		if (_isnumber(v)) {
+			return gridCalc(v);
 		} else {
-			console.log(v, 'is not a number');
-			return v;
+			if(v.split(' ').length > 1){
+					let multi =[];
+					v.split(' ').forEach(function(val){
+						if(_isnumber(val)){
+							multi.push(gridCalc(val));
+						} else {
+							console.log(val,' - Nan');
+						}
+					});
+					return multi.join(' ');
+			} else {
+				return v;
+			}
 		}
 	},
 
@@ -41,7 +56,7 @@ module.exports = {
 					if (value.toLowerCase() === searchColor.toLowerCase()) {
 						theColor = colorList[value];
 						if (transparency < 1) {
-							theColor = 'rgb(' + convert.hex.rgb(theColor.substring(1)).join(',') + ',' + transparency + ')';
+							theColor = 'rgba(' + convert.hex.rgb(theColor.substring(1)).join(',') + ',' + transparency + ')';
 						}
 					}
 				});
