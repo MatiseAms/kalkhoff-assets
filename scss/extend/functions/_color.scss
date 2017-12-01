@@ -8,37 +8,41 @@
 }
 
 @function color($value, $rgba: false, $colorset: $colors-primary, $warning: true, $boolean: false){
-	@if $warning == true{
-		@if color-exist($value) == false{
-			@warn  "color: #{$value} doesn't exist";
+	@if color-exist($value, $colorset) == false{
+		@if color-exist($value, $colors-secondary) == true{
+			@if $boolean == true{
+				@return true;
+			}
+			$colorset: $colors-secondary;
+		}@else{
+			@if $boolean == true{
+				@return false;
+			}
+			@if $warning == true{
+				@warn  "color: #{$value} doesn't exist";
+			}
+		}
+	} @else{
+		@if $boolean == true{
+			@return true;
 		}
 	}
-	@if $boolean == true{
-		@return color-exist($value);
+	@if $rgba != false{
+		@return rgba(map-get($colorset, $value),$rgba);
 	} @else{
-		@if $rgba != false{
-			@return rgba(map-get($colorset, $value),$rgba);
-		} @else{
-			@return map-get($colorset, $value);
-		}
+		@return map-get($colorset, $value);
 	}
 }
 @function color-exist($value, $colorset: $colors-primary){
 	$color: map-get($colorset, $value);
 	@if $color == null{
-		@if variable-exists(main-colors){
-			@if color($value, $rgba, $colors-secondary, false, true){
-				@return true;
-			}
-			@return false;
-		}
 		@return false;
 	} @else{
 		@return true;
 	}
 }
 
-@function colorByKey($key,$colorset: $colors, $return: "value"){
+@function colorByKey($key,$colorset: $colors-primary, $return: "value"){
 	$color-list: nth($colorset,$key); // List
 	$color-name: nth($color-list,1); // Name
 	$color-value: nth($color-list,2); // Value
