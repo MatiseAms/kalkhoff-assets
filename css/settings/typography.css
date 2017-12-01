@@ -1,5 +1,5 @@
 --assets-h1-design-size: 96px;
---assets-h1-font-size: grid(1.2);
+--assets-h1-font-size: 5vw;
 --assets-h1-font-family: 'Roboto Condensed';
 --assets-h1-font-weight: 'bold';
 --assets-h1-text-transform: uppercase;
@@ -8,7 +8,7 @@
 --assets-h1-font-size-max: 144px;
 --assets-h1-letter-spacing: 0;
 --assets-h2-design-size: 60px;
---assets-h2-font-size: grid(0.75);
+--assets-h2-font-size: 3.125vw;
 --assets-h2-font-family: 'Roboto Condensed';
 --assets-h2-font-weight: 'bold';
 --assets-h2-text-transform: uppercase;
@@ -17,7 +17,7 @@
 --assets-h2-font-size-max: 90px;
 --assets-h2-letter-spacing: 0;
 --assets-h3-design-size: 40px;
---assets-h3-font-size: grid(0.5);
+--assets-h3-font-size: 2.0833333333333335vw;
 --assets-h3-font-family: 'Roboto';
 --assets-h3-font-weight: normal;
 --assets-h3-text-transform: none;
@@ -26,7 +26,7 @@
 --assets-h3-font-size-max: 60px;
 --assets-h3-letter-spacing: -0.3;
 --assets-h4-design-size: 32px;
---assets-h4-font-size: grid(0.4);
+--assets-h4-font-size: 1.666666666666667vw;
 --assets-h4-font-family: 'Roboto';
 --assets-h4-font-weight: normal;
 --assets-h4-text-transform: none;
@@ -35,7 +35,7 @@
 --assets-h4-font-size-max: 48px;
 --assets-h4-letter-spacing: -0.25;
 --assets-h5-design-size: 24px;
---assets-h5-font-size: grid(0.3);
+--assets-h5-font-size: 1.25vw;
 --assets-h5-font-family: 'Roboto';
 --assets-h5-font-weight: normal;
 --assets-h5-text-transform: none;

@@ -2,7 +2,7 @@
 	"assets": {
 		"h1": [{
 			"design-size": "96px",
-			"font-size": "grid(1.2)",
+			"font-size": "{{grid(1.2)}}",
 			"font-family": "Roboto Condensed",
 			"font-weight": "bold",
 			"text-transform": "uppercase",
@@ -13,7 +13,7 @@
 		}],
 		"h2": [{
 			"design-size": "60px",
-			"font-size": "grid(0.75)",
+			"font-size": "{{grid(0.75)}}",
 			"font-family": "Roboto Condensed",
 			"font-weight": "bold",
 			"text-transform": "uppercase",
@@ -24,7 +24,7 @@
 		}],
 		"h3": [{
 			"design-size": "40px",
-			"font-size": "grid(0.5)",
+			"font-size": "{{grid(0.5)}}",
 			"font-family": "Roboto",
 			"font-weight": "normal",
 			"text-transform": "none",
@@ -35,7 +35,7 @@
 		}],
 		"h4": [{
 			"design-size": "32px",
-			"font-size": "grid(0.4)",
+			"font-size": "{{grid(0.4)}}",
 			"font-family": "Roboto",
 			"font-weight": "normal",
 			"text-transform": "none",
@@ -46,7 +46,7 @@
 		}],
 		"h5": [{
 			"design-size": "24px",
-			"font-size": "grid(0.3)",
+			"font-size": "{{grid(0.3)}}",
 			"font-family": "Roboto",
 			"font-weight": "normal",
 			"text-transform": "none",
