@@ -1,36 +1,42 @@
 // headers
 %#{$prefix}header-default{
-	@extend %#{$prefix}heading-font-family; font-weight: $font-bold; margin: 0; padding: 0; text-align: left;
+	font-family: $assets-headers-font-family; font-weight: $assets-headers-font-weight; line-height: $assets-headers-line-height; margin: 0; letter-spacing: $assets-headers-letter-spacing; padding: 0;
 	&.sub{
 		font-weight: $font-regular;
 	}
 }
 
 %#{$prefix}h1{
-	font-size: grid(0.75); font-weight: $font-bold; line-height: 1.25;
-	@extend %#{$prefix}header-default;
-	@include min-fontsize(0.75,24);
+	@extend %#{$prefix}header-default; font-family: $assets-h1-font-family; font-size: grid($assets-h1-font-size-value); font-weight: $assets-h1-font-weight; line-height: $assets-h1-line-height; letter-spacing: $assets-h1-letter-spacing;
+	@include min-fontsize($assets-h1-font-size-value,$assets-h1-min-font-size);
+	@include max-fontsize($assets-h1-font-size-value,$assets-h1-max-font-size);
 }
 %#{$prefix}h2{
-	font-size: grid(0.75); font-weight: $font-bold; line-height: 1.25;
-	@extend %#{$prefix}header-default;
-	@include min-fontsize(0.75,24);
+	font-family: $assets-h2-font-family; font-size: grid($assets-h2-font-size-value); font-weight: $assets-h2-font-weight; line-height: $assets-h2-line-height; letter-spacing: $assets-h2-letter-spacing;
+	@include min-fontsize($assets-h2-font-size-value,$assets-h2-min-font-size);
+	@include max-fontsize($assets-h2-font-size-value,$assets-h2-max-font-size);
 }
 %#{$prefix}h3{
-	font-size: grid(0.4); font-weight: $font-bold; line-height: 1.5;
-	@extend %#{$prefix}header-default;
-	@include min-fontsize(0.4,20);
+	font-family: $assets-h3-font-family; font-size: grid($assets-h3-font-size-value); font-weight: $assets-h3-font-weight; line-height: $assets-h3-line-height; letter-spacing: $assets-h3-letter-spacing;
+	@include min-fontsize($assets-h3-font-size-value,$assets-h3-min-font-size);
+	@include max-fontsize($assets-h3-font-size-value,$assets-h3-max-font-size);
 }
 %#{$prefix}h4{
-	font-size: rem(18); font-weight: $font-bold; line-height: 1.75;
+	font-family: $assets-h4-font-family; font-size: grid($assets-h4-font-size-value); font-weight: $assets-h4-font-weight; line-height: $assets-h4-line-height; letter-spacing: $assets-h4-letter-spacing;
+	@include min-fontsize($assets-h4-font-size-value,$assets-h4-min-font-size);
+	@include max-fontsize($assets-h4-font-size-value,$assets-h4-max-font-size);
 }
 %#{$prefix}h5{
-	font-size: rem(16); font-weight: $font-bold; line-height: 1.25;
+	font-family: $assets-h5-font-family; font-size: grid($assets-h5-font-size-value); font-weight: $assets-h5-font-weight; line-height: $assets-h5-line-height; letter-spacing: $assets-h5-letter-spacing;
+	@include min-fontsize($assets-h5-font-size-value,$assets-h5-min-font-size);
+	@include max-fontsize($assets-h5-font-size-value,$assets-h5-max-font-size);
 }
 %#{$prefix}h6{
-	font-size: rem(12); line-height: 1.25;
-	@extend %#{$prefix}header-default;
+	font-family: $assets-h6-font-family; font-size: grid($assets-h6-font-size-value); font-weight: $assets-h6-font-weight; line-height: $assets-h6-line-height; letter-spacing: $assets-h6-letter-spacing;
+	@include min-fontsize($assets-h6-font-size-value,$assets-h6-min-font-size);
+	@include max-fontsize($assets-h6-font-size-value,$assets-h6-max-font-size);
 }
+
 
 // make font styles
 %#{$prefix}font-regular{
@@ -54,6 +60,14 @@
 %#{$prefix}sup{
 	font-size: smaller; vertical-align: sup;
 }
+
+%#{$prefix}p{
+	font-size: grid($assets-p-font-size-value); font-weight: $assets-p-font-weight; line-height: $assets-p-line-height;
+	@extend %#{$prefix}header-default;
+	@include min-fontsize($assets-p-font-size-value,$assets-p-min-font-size);
+	@include max-fontsize($assets-p-font-size-value,$assets-p-max-font-size);
+}
+
 
 %#{$prefix}p{
 	font-family: $body-font-family; font-size: rem(16); font-weight: 400; line-height: rem(24); margin: 0; padding: 0;
