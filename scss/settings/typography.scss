@@ -53,6 +53,16 @@ $assets-h5-line-height: 1.5;
 $assets-h5-font-size-min: 12px;
 $assets-h5-font-size-max: 32px;
 $assets-h5-letter-spacing: -0.25;
+$assets-h6-design-size: 24px;
+$assets-h6-font-size-value: 0.3;
+$assets-h6-font-size: 1.25vw;
+$assets-h6-font-family: 'Roboto';
+$assets-h6-font-weight: normal;
+$assets-h6-text-transform: none;
+$assets-h6-line-height: 1.5;
+$assets-h6-font-size-min: 12px;
+$assets-h6-font-size-max: 32px;
+$assets-h6-letter-spacing: -0.25;
 $assets-p-design-size: 16px;
 $assets-p-font-size-value: 0.2;
 $assets-p-font-size: 0.8333333333333335vw;
@@ -109,6 +119,16 @@ $assets-h4: ("design-size":32px,
 "font-size-max":48px, 
 "letter-spacing":-0.25);
 $assets-h5: ("design-size":24px, 
+"font-size-value":0.3, 
+"font-size":1.25vw, 
+"font-family":'Roboto', 
+"font-weight":normal, 
+"text-transform":none, 
+"line-height":1.5, 
+"font-size-min":12px, 
+"font-size-max":32px, 
+"letter-spacing":-0.25);
+$assets-h6: ("design-size":24px, 
 "font-size-value":0.3, 
 "font-size":1.25vw, 
 "font-family":'Roboto', 
