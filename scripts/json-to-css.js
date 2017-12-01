@@ -1,6 +1,8 @@
 let fs = require('fs');
 let path = require('path');
 let flatten = require('flat');
+let _ = require('lodash');
+let functions = require('./css-functions.js');
 
 
 let delimiter = '-';
@@ -29,6 +31,7 @@ let fileTypes = [{
 ];
 
 
+
 /**
  * Get all setting files from /data
  */
@@ -50,23 +53,20 @@ function getFiles(dir, files_) {
 // Store the used data before compiling;
 let stored = {};
 getFiles(sourceFolder).forEach((file) => {
-  Object.assign(JSON.parse(fs.readFileSync(file, 'utf8')), stored);
-  console.log(stored);
+	let fileName = file.split('/')[file.split('/').length - 1].replace('.json', '');
+	Object.assign(stored, JSON.parse(fs.readFileSync(file, 'utf8')));
 });
-
 
 // Do functions when necessary;
 function doFunction(value) {
-  function grid(v) {
-    let grid = (100 / 24);
-    return grid * v + 'vw';
-  }
-  let thefunc = value.replace('{{','').replace('}}','');
+	let thefunc = value.replace('{{', '').replace('}}', '');
+	let func = thefunc.split('(')[0];
+	let parameters = value.replace(/(^.*\(|\).*$)/g, '');
   let newvalue;
-  let func = thefunc.split('(')[0];
-  let parameters = value.replace( /(^.*\(|\).*$)/g, '' );
-  if(func === 'grid'){
-    newvalue = grid(parameters);
+	if (typeof functions['_'+func] === "function") {
+		newvalue = functions['_'+func](stored, parameters);
+	} else{
+    newvalue = func+'('+parameters+')';
   }
 	return newvalue;
 }
@@ -93,7 +93,7 @@ function stringValue(value) {
 		// Do Functions
 		if (value.indexOf('{{') > -1) {
 			value = doFunction(value);
-  	}
+		}
 		if (quotes) {
 			return '\'' + value + '\'';
 		} else {
@@ -121,10 +121,8 @@ function objToStyle(file, type) {
 	});
 	// Do the variables
 	Object.keys(data).forEach((key) => {
-		function isNumber(n) {
-			return !isNaN(parseFloat(n)) && isFinite(n);
-		}
-		if (!isNumber(key.split('-')[key.split('-').length - 1])) {
+
+		if (!functions._isnumber(key.split('-')[key.split('-').length - 1])) {
 			variable = type.varPattern.replace('{{var}}', removeKeys(key.toLowerCase())).replace('{{value}}', stringValue(data[key]));
 			newFile.push(variable);
 		}
@@ -197,7 +195,7 @@ getFiles(sourceFolder).forEach((file) => {
 		let compiled = objToStyle(JSON.parse(fs.readFileSync(file, 'utf8')), type);
 
 		console.log('\x1b[32m%s\x1b[0m', '\t\u2713', type.type);
-		console.log('\x1b[32m%s\x1b[0m', '\t' + file + ' \u2192 ' + type.dest + '/' + fileName + '.' + type.type);
+		console.log('\x1b[32m%s\x1b[0m', '\t  ' + file + ' \u2192 ' + type.dest + '/' + fileName + '.' + type.type);
 
 		fs.writeFileSync(type.dest + '/' + fileName + '.' + type.type, compiled, function(err) {
 			console.log('woops, something went wrong!');

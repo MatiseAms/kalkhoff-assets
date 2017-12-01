@@ -39,6 +39,7 @@
     "rimraf": "^2.6.2"
   },
   "dependencies": {
+    "color.js": "^0.1.3",
     "flat": "^4.0.0",
     "less": "^2.7.3",
     "less-plugin-sass2less": "^1.1.0",
