@@ -1,25 +1,30 @@
+//
+//  Set given property to percentage size based on given number of columns
+//  ---------------------------------------------
+
 .getPercentageFromColumns(@columns, @property, @index: 1) {
     & when (isnumber(@columns)) {
-        @{property}: (100% * (@columns / @assets-grid-columns));
+            @{property}: (100% * (@columns / @assets-grid-columns));
     }
 
-   & when not (isnumber(@columns)) {
+    & when not (isnumber(@columns)) {
         & when (@index <= length(@assets-column-aliases)) {
             @alias: extract(extract(@assets-column-aliases, @index), 1);
             @value: extract(extract(@assets-column-aliases, @index), 2);
 
-           & when (@alias = @columns) {
-                @{property}: @value;
+            & when (@alias = @columns) {
+                    @{property}: @value;
             }
 
-           .getPercentageFromColumns(@columns, @property, @index + 1);
+            .getPercentageFromColumns(@columns, @property, @index + 1);
         }
     }
 }
 
-//  Returns vw size based on provided number of columns
+//
+//  Set given property to vw size based on given number of columns
 //  ---------------------------------------------
 
-.getVwFromColumns(@columns) {
-    @getVwFromColumns: (100vw * @columns/@assets-grid-columns);
+.getVwFromColumns(@columns, @property) {
+    @{property}: (100vw * @columns/@assets-grid-columns);
 }
