@@ -1,97 +1,79 @@
-// Color Function
+//
+//  Matise color functions
+//  _____________________________________________
 
-.shade(@color, @percentage){
-//	@return mix(black, @color, @percentage);
-	@shade: mix(black, @color, @percentage);
-}
-.tint(@color, @percentage){
-//	@return mix(white, @color, @percentage);
-	@tint: mix(white, @color, @percentage);
-}
+.setColorInProperty(@color, @property, @value: ~'') {
+	& when (@value = ~'') {
+			@{property}: @color;
+	}
 
-.color(@value, @rgba: false, @colorset: @colors, @warning: true, @boolean: false){
-	& when @warning == true{
-		.color-exist(@value);
-		& when @color-exist == false{
-			@warn  "color: #{@value} doesn't exist";
-		}
-	}
-	& when @boolean == true{
-		.color-exist(@value);
-	} 
-	& when @boolean == false{
-		& when not @rgba == false{
-			@return rgba(map-get(@colorset, @value),@rgba);
-		} @else{
-			@return map-get(@colorset, @value);
-		}
-	}
-}
-.color-exist(@value, @colorset: @colors){
-	@color: map-get(@colorset, @value);
-	& when @color == null{
-		& when variable-exists(main-colors){
-			.color(@value, @rgba, @main-colors, false, true);
-			
-			& when .color(@value, @rgba, @main-colors, false, true){
-				@color-exist: true;
-			}
-			@color-exist: false;
-		}
-		@color-exist: false;
-	} 
-	& when not @color == null{
-		@color-exist: true;
+	& when not (@value = ~'') {
+		@formattedValue: replace(e(@value), '%%color%%', @color);
+
+			@{property}: e(@formattedValue);
 	}
 }
 
-.colorByKey(@key,@colorset: @colors, @return: "value"){
-	@color-list: nth(@colorset,@key); // List
-	@color-name: nth(@color-list,1); // Name
-	@color-value: nth(@color-list,2); // Value
-	// Return
-	& when @return == "value"{
-		@return @color-value;
-	} 
-	& when @return == "name"{
-		@return @color-name;
-	} 
-	& when @return == "list"{
-		@return @color-list;
+.setShadeInProperty(@color, @percentage, @property, @value: ~'') {
+	@colorMix: mix(black, @color, @percentage);
+
+	& when (@value = ~'') {
+		@{property}: @colorMix;
+	}
+
+	& when not (@value = ~'') {
+		@formattedValue: replace(e(@value), '%%color%%', @colorMix);
+
+		@{property}: @formattedValue;
 	}
 }
 
-.color-brightness(@color,@percentage: true){
-	@sum: red(@color) + green(@color) + blue(@color);  // sum
-	@average: (((red(@color) / 255) * 100) + ((green(@color) / 255) * 100) + ((blue(@color) / 255) * 100)) / 3; // average
+.setTintInProperty(@color, @percentage, @property, @value: ~'') {
+	@colorMix: mix(white, @color, @percentage);
 
-	& when @percentage{
-		@color-brightness 100% * (@sum / (255*3));
-	} 
-	& when not @percentage{
-	//	@debug (@sum / (255*3) * 100);
-		@color-brightness: (@sum / (255*3) * 100);
+	& when (@value = ~'') {
+			@{property}: @colorMix;
+	}
+
+	& when not (@value = ~'') {
+		@formattedValue: replace(e(@value), '%%color%%', @colorMix);
+
+			@{property}: @formattedValue;
 	}
 }
 
-
-.contra(@value, @contrast: 50, @dark: color(Black), @light: color(White)){
-	@color: black;
-	.color-exist(@value);
-	& when @color-exist{
-		@contra: color(@value);
-	} 
-	& when {
-		@contra: @value;
-	}
-	.color-brightness(@color);
-	& when @color-brightness > @contrast{
-		@contra: @dark;
-	} @else{
-		@contra: @light;
-	}
+.setNativeRgbaInProperty(@hexCode, @opacity, @property) {
+	@{property}: rgba(red(@hexCode), green(@hexCode), blue(@hexCode), @opacity);
 }
 
-.native-rgba(@string, @opacity){
-	@return #{"rgba(#{@string}, #{@opacity})"};
-}
+//
+//.color-brightness(@color,@percentage: true){
+//	@sum: red(@color) + green(@color) + blue(@color);  // sum
+//	@average: (((red(@color) / 255) * 100) + ((green(@color) / 255) * 100) + ((blue(@color) / 255) * 100)) / 3; // average
+//
+//	& when @percentage{
+//		@color-brightness 100% * (@sum / (255*3));
+//	}
+//	& when not @percentage{
+//	//	@debug (@sum / (255*3) * 100);
+//		@color-brightness: (@sum / (255*3) * 100);
+//	}
+//}
+//
+//
+//.contra(@value, @contrast: 50, @dark: color(Black), @light: color(White)){
+//	@color: black;
+//	.color-exist(@value);
+//	& when @color-exist{
+//		@contra: color(@value);
+//	}
+//	& when {
+//		@contra: @value;
+//	}
+//	.color-brightness(@color);
+//	& when @color-brightness > @contrast{
+//		@contra: @dark;
+//	} @else{
+//		@contra: @light;
+//	}
+//}

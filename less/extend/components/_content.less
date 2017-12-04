@@ -1,14 +1,25 @@
-.assets-content(){
+.assets-content() {
 	//border: 1px solid red;
 }
 
-.assets-content-ul(){
-	li{
-		padding-left: 1rem; position: relative;
+.assets-content-ul() {
+	li {
+		padding-left: 1rem;
+		position: relative;
+
 		&:before{
-			content: ""; width: 6px; height: 6px; display: block; top: 0.5rem; position: absolute; left: 0; background-color: color(Black); border-radius: 50%;
+			.setColorInProperty(@assets-colors-primary-black, background-color);
+			content: "";
+			width: 6px;
+			height: 6px;
+			display: block;
+			top: 0.5rem;
+			position: absolute;
+			left: 0;
+			border-radius: 50%;
 		}
-		&+li{
+
+		& + li {
 			margin-top: 0.5rem;
 		}
 	}
