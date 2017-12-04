@@ -2,6 +2,48 @@
 //  Matise color functions
 //  _____________________________________________
 
+.setColorByKey(@needle, @property, @index: 1, @list: 'primary') {
+	& when (@list = 'primary') {
+		& when (@index < length(@assets-colors-primary)) {
+			@colorSet: @assets-colors-primary;
+			@key: extract(extract(@colorSet, @index), 1);
+			@value: extract(extract(@colorSet, @index), 2);
+
+			& when (@needle = @key) {
+				@{property}: @value;
+			}
+
+			.setColorByKey(@needle, @property, @index + 1, 'primary');
+		}
+
+		& when (@index = length(@assets-colors-primary)) {
+			@colorSet: @assets-colors-primary;
+			@key: extract(extract(@colorSet, @index), 1);
+			@value: extract(extract(@colorSet, @index), 2);
+
+			& when (@needle = @key) {
+				@{property}: @value;
+			}
+
+			.setColorByKey(@needle, @property, 1, 'secondary');
+		}
+	}
+
+	& when (@list = 'secondary') {
+		& when (@index < length(@assets-colors-secondary)) {
+			@colorSet: @assets-colors-secondary;
+			@key: extract(extract(@colorSet, @index), 1);
+			@value: extract(extract(@colorSet, @index), 2);
+
+			& when (@needle = @key) {
+				@{property}: @value;
+			}
+
+			.setColorByKey(@needle, @property, @index + 1, 'secondary');
+		}
+	}
+}
+
 .setColorInProperty(@color, @property, @value: ~'') {
 	& when (@value = ~'') {
 			@{property}: @color;
