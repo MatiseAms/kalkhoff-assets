@@ -1,6 +1,6 @@
 .assets-button() {
 	.heading-font-family();
-	.setColorInProperty(@assets-colors-primary-darkgray, box-shadow, '0 0 0 0 %%color%%');
+	.setColor(Darkgray, box-shadow, true, '0 0 0 0 %%var%%');
 	background-color: @assets-colors-primary-black;
 	font-weight: 600;
 	letter-spacing: 0.5px;
@@ -18,13 +18,13 @@
 
 	&-ghost,
 	&-naked{
-		.setColorInProperty(@assets-colors-primary-black, box-shadow, '0 0 0 1px %%color%% inset');
+		.setColor(Black, box-shadow, true, '0 0 0 1px %%var%% inset');
 		background: none;
 		color: @assets-colors-primary-black;
 	}
 
 	&:not([disabled]):hover{
-		.setColorInProperty(@assets-colors-primary-darkgray, box-shadow, '0 0 0 1px %%color%% inset');
+		.setColor(Darkgray, box-shadow, true, '0 0 0 1px %%var%% inset');
 		color: @assets-colors-primary-white;
 	}
 

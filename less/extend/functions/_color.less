@@ -2,18 +2,17 @@
 //  Matise color functions
 //  _____________________________________________
 
-.setColorByKey(@needle, @property, @index: 1, @list: 'primary') {
+.loopColors(@callback, @index: 1, @list: 'primary') {
 	& when (@list = 'primary') {
+
 		& when (@index < length(@assets-colors-primary)) {
 			@colorSet: @assets-colors-primary;
 			@key: extract(extract(@colorSet, @index), 1);
 			@value: extract(extract(@colorSet, @index), 2);
 
-			& when (@needle = @key) {
-				@{property}: @value;
-			}
+			@callback();
 
-			.setColorByKey(@needle, @property, @index + 1, 'primary');
+			.loopColors(@callback, @index + 1,'primary');
 		}
 
 		& when (@index = length(@assets-colors-primary)) {
@@ -21,71 +20,99 @@
 			@key: extract(extract(@colorSet, @index), 1);
 			@value: extract(extract(@colorSet, @index), 2);
 
-			& when (@needle = @key) {
-				@{property}: @value;
-			}
+			@callback();
 
-			.setColorByKey(@needle, @property, 1, 'secondary');
+			.loopColors(@callback, 1, 'secondary');
 		}
 	}
 
 	& when (@list = 'secondary') {
-		& when (@index < length(@assets-colors-secondary)) {
+		& when (@index <= length(@assets-colors-secondary)) {
 			@colorSet: @assets-colors-secondary;
 			@key: extract(extract(@colorSet, @index), 1);
 			@value: extract(extract(@colorSet, @index), 2);
 
-			& when (@needle = @key) {
-				@{property}: @value;
-			}
+			@callback();
 
-			.setColorByKey(@needle, @property, @index + 1, 'secondary');
+			.loopColors(@callback, @index + 1, 'secondary');
 		}
 	}
 }
 
-.setColorInProperty(@color, @property, @value: ~'') {
-	& when (@value = ~'') {
-			@{property}: @color;
+.setColor(@color, @property, @byKey: false, @where: ~'') {
+	& when (@byKey = true) {
+		@callback: {
+			& when (@color = @key) {
+				.formatOutput(@property, @value, @where);
+			}
+		};
+
+		.loopColors(@callback);
 	}
 
-	& when not (@value = ~'') {
-		@formattedValue: replace(e(@value), '%%color%%', @color);
-
-			@{property}: e(@formattedValue);
-	}
-}
-
-.setShadeInProperty(@color, @percentage, @property, @value: ~'') {
-	@colorMix: mix(black, @color, @percentage);
-
-	& when (@value = ~'') {
-		@{property}: @colorMix;
-	}
-
-	& when not (@value = ~'') {
-		@formattedValue: replace(e(@value), '%%color%%', @colorMix);
-
-		@{property}: @formattedValue;
+	& when not (@byKey = true) {
+		.formatOutput(@property, @color, @where);
 	}
 }
 
-.setTintInProperty(@color, @percentage, @property, @value: ~'') {
-	@colorMix: mix(white, @color, @percentage);
+.setShade(@color, @percentage, @property, @byKey: false, @where: ~'') {
+	& when (@byKey = true) {
+		@callback: {
+			& when (@color = @key) {
+				@colorMix: mix(black, @color, @percentage);
 
-	& when (@value = ~'') {
-			@{property}: @colorMix;
+				.formatOutput(@property, @colorMix, @where);
+			}
+		};
+
+		.loopColors(@callback);
 	}
 
-	& when not (@value = ~'') {
-		@formattedValue: replace(e(@value), '%%color%%', @colorMix);
+	& when not (@byKey = true) {
+		@colorMix: mix(black, @color, @percentage);
 
-			@{property}: @formattedValue;
+		.formatOutput(@property, @colorMix, @where);
 	}
 }
 
-.setNativeRgbaInProperty(@hexCode, @opacity, @property) {
-	@{property}: rgba(red(@hexCode), green(@hexCode), blue(@hexCode), @opacity);
+.setTint(@color, @percentage, @property, @byKey: false, @where: ~'') {
+	& when (@byKey = true) {
+		@callback: {
+			& when (@color = @key) {
+				@colorMix: mix(white, @color, @percentage);
+
+				.formatOutput(@property, @colorMix, @where);
+			}
+		};
+
+		.loopColors(@callback);
+	}
+
+	& when not (@byKey = true) {
+		@colorMix: mix(white, @color, @percentage);
+
+		.formatOutput(@property, @colorMix, @where);
+	}
+}
+
+.setNativeRgba(@color, @opacity, @property, @byKey: false, @where: ~'') {
+	& when (@byKey = true) {
+		@callback: {
+			& when (@color = @key) {
+				@rgbaColor: rgba(red(@color), green(@color), blue(@color), @opacity);
+
+				.formatOutput(@property, @rgbaColor, @where);
+			}
+		};
+
+		.loopColors(@callback);
+	}
+
+	& when not (@byKey = true) {
+		@rgbaColor: rgba(red(@color), green(@color), blue(@color), @opacity);
+
+		.formatOutput(@property, @rgbaColor, @where);
+	}
 }
 
 //
