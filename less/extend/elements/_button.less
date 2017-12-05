@@ -1,3 +1,7 @@
+//
+//  Matise buttons
+//  _____________________________________________
+
 .assets-button() {
 	.heading-font-family();
 	.setColor(Darkgray, box-shadow, true, '0 0 0 0 %%var%%');
@@ -30,11 +34,12 @@
 
 	&[disabled]{
 		opacity: 0.2;
-		cursor: normal;
+		cursor: initial;
 	}
 
 	&-small{
-		font-size: rem(12); padding: 0.25rem 0.75rem;
+		font-size: unit(12, rem);
+		padding: 0.25rem 0.75rem;
 	}
 
 	&-light{
@@ -56,7 +61,8 @@
 			border-radius: 0 @assets-border-radius @assets-border-radius 0;
 		}
 
-		&.naked, &.ghost{
+		&.naked,
+		&.ghost{
 			margin-right: 0;
 			margin-left: -1px;
 

@@ -1,8 +1,12 @@
+//
+//  Matise forms
+//  _____________________________________________
+
 .assets-input() {
 	.body-font-family();
+	.setColor(Black, border, true, '1px solid %%var%%');
 	font-weight: @assets-font-regular;
 	width: 100%;
-	border: 1px solid color(Black,0.25);
 	border-radius: 2px;
 	line-height: 1rem;
 	font-size: 1rem;
@@ -19,22 +23,23 @@
 	}
 
 	&:hover{
-		border: 1px solid color(Black,0.5);
+		.setNativeRgba(Black, 0.5, border, true, '1px solid %%var%%');
 	}
 
 	&:focus{
-		border: 1px solid color(Black,1);
-		box-shadow: 0 0 0.5rem 0 color(Black,0.1);
+		.setColor(Black, border, true, '1px solid %%var%%');
+		.setNativeRgba(Black, 0.1, box-shadow, true, '0 0 0.5rem 0 %%var%%');
 
 		&:hover{
-			border: 1px solid color(Black,1);
+			.setColor(Black, border, true, '1px solid %%var%%');
 		}
 	}
 }
 
-.assets-input(){
+.assets-input() {
 	&-color{
 		.assets-input();
+
 		& {
 			padding: 0;
 			-webkit-appearance: none;
@@ -130,16 +135,18 @@
 }
 
 * {
-	.assets-input-checkbox(){
-		.input-checkbox(1rem,1rem,0, 0.25rem, color(White), color(Black), 50%);
+	.assets-input-checkbox() {
+		.input-checkbox(1rem, 1rem, 0, 0.25rem, White, Black, 50%);
 
-		.input-checkbox-body(){
-			box-shadow: 0 0 0 1px color(Black,0.25) inset;
+		.input-checkbox-body() {
+			.setNativeRgba(Black, 0.1, box-shadow, true, '0 0 0 1px %%var%% inset');
 		}
-		.input-checkbox-body-checked(){
-			background-color: color(Black);
+
+		.input-checkbox-body-checked () {
+			.setColor(Black, background-color, true);
 		}
-		.input-checkbox-check(){
+
+		.input-checkbox-check() {
 			transform: scale(0.7) rotate(-45deg) translateY(0rem);
 			background: none;
 			border-left: 2px solid black;
@@ -153,11 +160,12 @@
 			opacity: 0.15;
 			transition: 0.1s;
 		}
-		.input-checkbox-check-checked(){
-			transform: scale(1) rotate(-45deg) translateY(0rem); border-color: white;
+		.input-checkbox-check-checked() {
+			transform: scale(1) rotate(-45deg) translateY(0rem);
+			border-color: white;
 		}
 
-		.input-checkbox-label(){
+		.input-checkbox-label() {
 			padding-left: 2rem;
 		}
 	}
@@ -165,11 +173,11 @@
 
 * {
 	.input-radio() {
-		.input-radio(1rem,1rem,0, 0.25rem, color(White), color(Black));
+		.input-radio(1rem,1rem,0, 0.25rem, White, Black);
 		display: block;
 
 		.input-radio-body() {
-			box-shadow: 0 0 0 1px color(Black,0.5) inset;
+			.setNativeRgba(Black, 0.5, box-shadow, true, '0 0 0 1px %%var%% inset');
 			margin-right: 1rem;
 		}
 

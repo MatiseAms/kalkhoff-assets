@@ -2,25 +2,31 @@
 //  Matise color functions
 //  _____________________________________________
 
-.loopColors(@callback, @index: 1, @list: 'primary') {
-	& when (@list = 'primary') {
+//
+//  Loop through primary and secondary colors and calls given callback
+//  ---------------------------------------------
 
+.loopColors(@callback, @index: 1, @list: 'primary') {
+	@loopColors-pattern-01: {
+		@key: extract(extract(@colorSet, @index), 1);
+		@value: extract(extract(@colorSet, @index), 2);
+
+		@callback();
+	};
+
+	& when (@list = 'primary') {
 		& when (@index < length(@assets-colors-primary)) {
 			@colorSet: @assets-colors-primary;
-			@key: extract(extract(@colorSet, @index), 1);
-			@value: extract(extract(@colorSet, @index), 2);
 
-			@callback();
+			@loopColors-pattern-01();
 
 			.loopColors(@callback, @index + 1,'primary');
 		}
 
 		& when (@index = length(@assets-colors-primary)) {
 			@colorSet: @assets-colors-primary;
-			@key: extract(extract(@colorSet, @index), 1);
-			@value: extract(extract(@colorSet, @index), 2);
 
-			@callback();
+			@loopColors-pattern-01();
 
 			.loopColors(@callback, 1, 'secondary');
 		}
@@ -29,15 +35,17 @@
 	& when (@list = 'secondary') {
 		& when (@index <= length(@assets-colors-secondary)) {
 			@colorSet: @assets-colors-secondary;
-			@key: extract(extract(@colorSet, @index), 1);
-			@value: extract(extract(@colorSet, @index), 2);
 
-			@callback();
+			@loopColors-pattern-01();
 
 			.loopColors(@callback, @index + 1, 'secondary');
 		}
 	}
 }
+
+//
+//  If parameter @byKey is set to true, sets given @property to the color matching given @color key
+//  ---------------------------------------------
 
 .setColor(@color, @property, @byKey: false, @where: ~'') {
 	& when (@byKey = true) {
@@ -54,6 +62,10 @@
 		.formatOutput(@property, @color, @where);
 	}
 }
+
+//
+//  If parameter @byKey is set to true, sets given @property to the color matching given color key and applies given shade @percentage
+//  ---------------------------------------------
 
 .setShade(@color, @percentage, @property, @byKey: false, @where: ~'') {
 	& when (@byKey = true) {
@@ -75,6 +87,10 @@
 	}
 }
 
+//
+//  If parameter @byKey is set to true, sets given @property to the color matching color key and applies given tint @percentage
+//  ---------------------------------------------
+
 .setTint(@color, @percentage, @property, @byKey: false, @where: ~'') {
 	& when (@byKey = true) {
 		@callback: {
@@ -94,6 +110,10 @@
 		.formatOutput(@property, @colorMix, @where);
 	}
 }
+
+//
+//  If parameter @byKey is set to true, sets given @property to the matching color key converted to rgba (using given @opacity)
+//  ---------------------------------------------
 
 .setNativeRgba(@color, @opacity, @property, @byKey: false, @where: ~'') {
 	& when (@byKey = true) {
@@ -116,19 +136,50 @@
 }
 
 //
-//.color-brightness(@color,@percentage: true){
-//	@sum: red(@color) + green(@color) + blue(@color);  // sum
-//	@average: (((red(@color) / 255) * 100) + ((green(@color) / 255) * 100) + ((blue(@color) / 255) * 100)) / 3; // average
-//
-//	& when @percentage{
-//		@color-brightness 100% * (@sum / (255*3));
-//	}
-//	& when not @percentage{
-//	//	@debug (@sum / (255*3) * 100);
-//		@color-brightness: (@sum / (255*3) * 100);
-//	}
-//}
-//
+//  Gets amount of brightness in given color (int or percentage value) and uses it in given callback
+//  ---------------------------------------------
+.getColorBrightness(@targetColor, @percentage: false, @byKey: false, @callback) {
+
+	//	Debugging is possible but only in grunt (and maybe gulp with some plugin) using JS expressions in less code,
+	//  probably worst practice ever and could give problems with server side compilation in Magento, we'll need to find some other way
+
+	//  @average: (((red(@color) / 255) * 100) + ((green(@color) / 255) * 100) + ((blue(@color) / 255) * 100)) / 3;
+	//	@debug: `(function() { console.log("@{average}")})()`
+
+	@getColorBrightness-pattern-01: {
+		& when (@percentage = true) {
+			@color-brightness: 100% * (@sum / (255*3));
+			@callback();
+		}
+
+		& when not (@percentage = true) {
+			@color-brightness: (@sum / (255 * 3) * 100);
+			@callback();
+		}
+	};
+
+	& when (@byKey = true) {
+		@colorLoopCallback: {
+			& when (@targetColor = @key) {
+				@color: @value;
+				@sum: red(@color) + green(@color) + blue(@color);
+
+				@getColorBrightness-pattern-01();
+			}
+		};
+
+		.loopColors(@colorLoopCallback);
+	}
+
+	& when not (@byKey= true) {
+		@color: @targetColor;
+		@sum: red(@color) + green(@color) + blue(@color);
+
+		@getColorBrightness-pattern-01();
+	}
+}
+
+//	WIP: usage and purpose of this function are unclear
 //
 //.contra(@value, @contrast: 50, @dark: color(Black), @light: color(White)){
 //	@color: black;
