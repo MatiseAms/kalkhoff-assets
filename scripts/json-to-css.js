@@ -52,7 +52,7 @@ function getFiles(dir, files_) {
 // Store the used data before compiling;
 let stored = {};
 getFiles(sourceFolder).forEach((file) => {
-	let fileName = file.split('/')[file.split('/').length - 1].replace('.json', '');
+	//	let fileName = file.split('/')[file.split('/').length - 1].replace('.json', '');
 	Object.assign(stored, JSON.parse(fs.readFileSync(file, 'utf8')));
 });
 
@@ -62,7 +62,7 @@ function doFunction(value) {
 	let func = thefunc.split('(')[0];
 	let parameters = value.replace(/(^.*\(|\).*$)/g, '');
 	let newvalue;
-	if (typeof functions['_' + func] === "function") {
+	if (typeof functions['_' + func] === 'function') {
 		newvalue = functions['_' + func](stored, parameters);
 	} else {
 		newvalue = func + '(' + parameters + ')';
