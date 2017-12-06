@@ -63,8 +63,8 @@
 
 %#{$prefix}p{
 	font-size: $assets-p-font-size; font-weight: $assets-p-font-weight; line-height: $assets-p-line-height;
-	@include min-fontsize($assets-p-font-size-value,$assets-p-min-font-size);
-	@include max-fontsize($assets-p-font-size-value,$assets-p-max-font-size);
+	@include min-fontsize($assets-p-font-size-value,$assets-p-font-size-min);
+	@include max-fontsize($assets-p-font-size-value,$assets-p-font-size-max);
 }
 
 %#{$prefix}blockquote{
