@@ -1,97 +1,199 @@
-// Color Function
+//
+//  Matise color functions
+//  _____________________________________________
 
-.shade(@color, @percentage){
-//	@return mix(black, @color, @percentage);
-	@shade: mix(black, @color, @percentage);
-}
-.tint(@color, @percentage){
-//	@return mix(white, @color, @percentage);
-	@tint: mix(white, @color, @percentage);
-}
+//
+//  Loop through primary and secondary colors and calls given callback
+//  ---------------------------------------------
 
-.color(@value, @rgba: false, @colorset: @colors, @warning: true, @boolean: false){
-	& when @warning == true{
-		.color-exist(@value);
-		& when @color-exist == false{
-			@warn  "color: #{@value} doesn't exist";
+.loopColors(@callback, @index: 1, @list: 'primary') {
+	@loopColors-pattern-01: {
+		@key: extract(extract(@colorSet, @index), 1);
+		@value: extract(extract(@colorSet, @index), 2);
+
+		@callback();
+	};
+
+	& when (@list = 'primary') {
+		& when (@index < length(@assets-colors-primary)) {
+			@colorSet: @assets-colors-primary;
+
+			@loopColors-pattern-01();
+
+			.loopColors(@callback, @index + 1,'primary');
+		}
+
+		& when (@index = length(@assets-colors-primary)) {
+			@colorSet: @assets-colors-primary;
+
+			@loopColors-pattern-01();
+
+			.loopColors(@callback, 1, 'secondary');
 		}
 	}
-	& when @boolean == true{
-		.color-exist(@value);
-	} 
-	& when @boolean == false{
-		& when not @rgba == false{
-			@return rgba(map-get(@colorset, @value),@rgba);
-		} @else{
-			@return map-get(@colorset, @value);
+
+	& when (@list = 'secondary') {
+		& when (@index <= length(@assets-colors-secondary)) {
+			@colorSet: @assets-colors-secondary;
+
+			@loopColors-pattern-01();
+
+			.loopColors(@callback, @index + 1, 'secondary');
 		}
 	}
 }
-.color-exist(@value, @colorset: @colors){
-	@color: map-get(@colorset, @value);
-	& when @color == null{
-		& when variable-exists(main-colors){
-			.color(@value, @rgba, @main-colors, false, true);
-			
-			& when .color(@value, @rgba, @main-colors, false, true){
-				@color-exist: true;
+
+//
+//  If parameter @byKey is set to true, sets given @property to the color matching given @color key
+//  ---------------------------------------------
+
+.setColor(@color, @property, @byKey: false, @where: ~'') {
+	& when (@byKey = true) {
+		@callback: {
+			& when (@color = @key) {
+				.formatOutput(@property, @value, @where);
 			}
-			@color-exist: false;
+		};
+
+		.loopColors(@callback);
+	}
+
+	& when not (@byKey = true) {
+		.formatOutput(@property, @color, @where);
+	}
+}
+
+//
+//  If parameter @byKey is set to true, sets given @property to the color matching given color key and applies given shade @percentage
+//  ---------------------------------------------
+
+.setShade(@color, @percentage, @property, @byKey: false, @where: ~'') {
+	& when (@byKey = true) {
+		@callback: {
+			& when (@color = @key) {
+				@colorMix: mix(black, @color, @percentage);
+
+				.formatOutput(@property, @colorMix, @where);
+			}
+		};
+
+		.loopColors(@callback);
+	}
+
+	& when not (@byKey = true) {
+		@colorMix: mix(black, @color, @percentage);
+
+		.formatOutput(@property, @colorMix, @where);
+	}
+}
+
+//
+//  If parameter @byKey is set to true, sets given @property to the color matching color key and applies given tint @percentage
+//  ---------------------------------------------
+
+.setTint(@color, @percentage, @property, @byKey: false, @where: ~'') {
+	& when (@byKey = true) {
+		@callback: {
+			& when (@color = @key) {
+				@colorMix: mix(white, @color, @percentage);
+
+				.formatOutput(@property, @colorMix, @where);
+			}
+		};
+
+		.loopColors(@callback);
+	}
+
+	& when not (@byKey = true) {
+		@colorMix: mix(white, @color, @percentage);
+
+		.formatOutput(@property, @colorMix, @where);
+	}
+}
+
+//
+//  If parameter @byKey is set to true, sets given @property to the matching color key converted to rgba (using given @opacity)
+//  ---------------------------------------------
+
+.setNativeRgba(@color, @opacity, @property, @byKey: false, @where: ~'') {
+	& when (@byKey = true) {
+		@callback: {
+			& when (@color = @key) {
+				@rgbaColor: rgba(red(@color), green(@color), blue(@color), @opacity);
+
+				.formatOutput(@property, @rgbaColor, @where);
+			}
+		};
+
+		.loopColors(@callback);
+	}
+
+	& when not (@byKey = true) {
+		@rgbaColor: rgba(red(@color), green(@color), blue(@color), @opacity);
+
+		.formatOutput(@property, @rgbaColor, @where);
+	}
+}
+
+//
+//  Gets amount of brightness in given color (int or percentage value) and uses it in given callback
+//  ---------------------------------------------
+.getColorBrightness(@targetColor, @percentage: false, @byKey: false, @callback) {
+
+	//	Debugging is possible but only in grunt (and maybe gulp with some plugin) using JS expressions in less code,
+	//  probably worst practice ever and could give problems with server side compilation in Magento, we'll need to find some other way
+
+	//  @average: (((red(@color) / 255) * 100) + ((green(@color) / 255) * 100) + ((blue(@color) / 255) * 100)) / 3;
+	//	@debug: `(function() { console.log("@{average}")})()`
+
+	@getColorBrightness-pattern-01: {
+		& when (@percentage = true) {
+			@color-brightness: 100% * (@sum / (255*3));
+			@callback();
 		}
-		@color-exist: false;
-	} 
-	& when not @color == null{
-		@color-exist: true;
+
+		& when not (@percentage = true) {
+			@color-brightness: (@sum / (255 * 3) * 100);
+			@callback();
+		}
+	};
+
+	& when (@byKey = true) {
+		@colorLoopCallback: {
+			& when (@targetColor = @key) {
+				@color: @value;
+				@sum: red(@color) + green(@color) + blue(@color);
+
+				@getColorBrightness-pattern-01();
+			}
+		};
+
+		.loopColors(@colorLoopCallback);
+	}
+
+	& when not (@byKey= true) {
+		@color: @targetColor;
+		@sum: red(@color) + green(@color) + blue(@color);
+
+		@getColorBrightness-pattern-01();
 	}
 }
 
-.colorByKey(@key,@colorset: @colors, @return: "value"){
-	@color-list: nth(@colorset,@key); // List
-	@color-name: nth(@color-list,1); // Name
-	@color-value: nth(@color-list,2); // Value
-	// Return
-	& when @return == "value"{
-		@return @color-value;
-	} 
-	& when @return == "name"{
-		@return @color-name;
-	} 
-	& when @return == "list"{
-		@return @color-list;
-	}
-}
-
-.color-brightness(@color,@percentage: true){
-	@sum: red(@color) + green(@color) + blue(@color);  // sum
-	@average: (((red(@color) / 255) * 100) + ((green(@color) / 255) * 100) + ((blue(@color) / 255) * 100)) / 3; // average
-
-	& when @percentage{
-		@color-brightness 100% * (@sum / (255*3));
-	} 
-	& when not @percentage{
-	//	@debug (@sum / (255*3) * 100);
-		@color-brightness: (@sum / (255*3) * 100);
-	}
-}
-
-
-.contra(@value, @contrast: 50, @dark: color(Black), @light: color(White)){
-	@color: black;
-	.color-exist(@value);
-	& when @color-exist{
-		@contra: color(@value);
-	} 
-	& when {
-		@contra: @value;
-	}
-	.color-brightness(@color);
-	& when @color-brightness > @contrast{
-		@contra: @dark;
-	} @else{
-		@contra: @light;
-	}
-}
-
-.native-rgba(@string, @opacity){
-	@return #{"rgba(#{@string}, #{@opacity})"};
-}
+//	WIP: usage and purpose of this function are unclear
+//
+//.contra(@value, @contrast: 50, @dark: color(Black), @light: color(White)){
+//	@color: black;
+//	.color-exist(@value);
+//	& when @color-exist{
+//		@contra: color(@value);
+//	}
+//	& when {
+//		@contra: @value;
+//	}
+//	.color-brightness(@color);
+//	& when @color-brightness > @contrast{
+//		@contra: @dark;
+//	} @else{
+//		@contra: @light;
+//	}
+//}
