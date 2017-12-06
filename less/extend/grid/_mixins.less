@@ -205,7 +205,7 @@
 	@property: extract(@assets-style-helper-properties, @index);
 
 	.@{prefix}@{property}-@{numberPrefix} {
-		@{property}: @value / 10;
+			@{property}: @value;
 	}
 
 	.generateHelperProperties(@index + 1, @numberPrefix, @value);
@@ -224,7 +224,7 @@
 		.generateHelperProperties(1, @numberPrefix, @colWidth);
 	}
 
-	& when (@index > 10) {
+	& when (@index >= 10) {
 		@numberPrefix: @index;
 		.generateHelperProperties(1, @numberPrefix, @colWidth);
 	}

@@ -33,30 +33,46 @@
 @create-classes-column-alias: true;
 @create-classes-column-only: true;
 @create-background-colors: true;
-@grid-breakpoints: small: 750, 
-medium: 960, 
-large: 1280, 
-xlarge: 1920, 
-xxlarge: 9999;
-@grid-parts: full: 1/1, 
-half: 1/2, 
-third: 1/3, 
-two-third: 2/3, 
-quarter: 1/4, 
-three-quarter: 3/4, 
-fifth: 1/5, 
-two-fifth: 2/5, 
-three-fifth: 3/5, 
-four-fifth: 4/5, 
-sixth: 1/6, 
-five-sixth: 5/6;
-@grid-structure-direction: margin-top, margin-left, margin-bottom, margin-right, top, left, right, bottom;
-@grid-structure-action: pull, push;
+
+@grid-breakpoints:
+small 750,
+medium 960,
+large 1280,
+xlarge 1920,
+xxlarge 9999;
+
+@grid-parts:
+full 1/1,
+half 1/2,
+third 1/3,
+two-third 2/3,
+quarter 1/4,
+three-quarter 3/4,
+fifth 1/5,
+two-fifth 2/5,
+three-fifth 3/5,
+four-fifth 4/5,
+sixth 1/6,
+five-sixth 5/6;
+
+@grid-structure-direction:
+margin-top,
+margin-left, 
+margin-bottom, 
+margin-right, 
+top, 
+left, 
+right, 
+bottom;
+
+@grid-structure-action: pull, push;
 @grid-structure-method: grid;
-@grid-structure-breakpoints: medium: 960;
-@create-classes-column: build: true, 
-pull: true, 
-push: false, 
-offset: false, 
-alias: true, 
-only: true;
+@grid-structure-breakpoints: medium 960;
+
+@create-classes-column:
+build true,
+pull true,
+push false,
+offset false,
+alias true,
+only true;
