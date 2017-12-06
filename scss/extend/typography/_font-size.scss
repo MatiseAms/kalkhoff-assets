@@ -8,35 +8,40 @@
 
 %#{$prefix}h1{
 	@extend %#{$prefix}header-default; font-family: $assets-h1-font-family; font-size: grid($assets-h1-font-size-value); font-weight: $assets-h1-font-weight; line-height: $assets-h1-line-height; letter-spacing: $assets-h1-letter-spacing; text-transform: $assets-h1-text-transform;
-	@include min-fontsize($assets-h1-font-size-value,$assets-h1-min-font-size);
-	@include max-fontsize($assets-h1-font-size-value,$assets-h1-max-font-size);
+	@include min-fontsize($assets-h1-font-size-value,$assets-h1-font-size-min);
+	@include max-fontsize($assets-h1-font-size-value,$assets-h1-font-size-max);
 }
 %#{$prefix}h2{
 	font-family: $assets-h2-font-family; font-size: grid($assets-h2-font-size-value); font-weight: $assets-h2-font-weight; line-height: $assets-h2-line-height; letter-spacing: $assets-h2-letter-spacing; text-transform: $assets-h2-text-transform;
-	@include min-fontsize($assets-h2-font-size-value,$assets-h2-min-font-size);
-	@include max-fontsize($assets-h2-font-size-value,$assets-h2-max-font-size);
+
+
+	@debug "value: #{$assets-h2-font-size-value}";
+	@debug "value: #{$assets-h2-font-size-min}";
+
+
+	@include min-fontsize($assets-h2-font-size-value,$assets-h2-font-size-min);
+	@include max-fontsize($assets-h2-font-size-value,$assets-h2-font-size-max);
 }
 %#{$prefix}h3{
 	font-family: $assets-h3-font-family; font-size: grid($assets-h3-font-size-value); font-weight: $assets-h3-font-weight; line-height: $assets-h3-line-height; letter-spacing: $assets-h3-letter-spacing; text-transform: $assets-h3-text-transform;
-	@include min-fontsize($assets-h3-font-size-value,$assets-h3-min-font-size);
-	@include max-fontsize($assets-h3-font-size-value,$assets-h3-max-font-size);
+	@include min-fontsize($assets-h3-font-size-value,$assets-h3-font-size-min);
+	@include max-fontsize($assets-h3-font-size-value,$assets-h3-font-size-max);
 }
 %#{$prefix}h4{
 	font-family: $assets-h4-font-family; font-size: grid($assets-h4-font-size-value); font-weight: $assets-h4-font-weight; line-height: $assets-h4-line-height; letter-spacing: $assets-h4-letter-spacing; text-transform: $assets-h4-text-transform;
-	@include min-fontsize($assets-h4-font-size-value,$assets-h4-min-font-size);
-	@include max-fontsize($assets-h4-font-size-value,$assets-h4-max-font-size);
+	@include min-fontsize($assets-h4-font-size-value,$assets-h4-font-size-min);
+	@include max-fontsize($assets-h4-font-size-value,$assets-h4-font-size-max);
 }
 %#{$prefix}h5{
 	font-family: $assets-h5-font-family; font-size: grid($assets-h5-font-size-value); font-weight: $assets-h5-font-weight; line-height: $assets-h5-line-height; letter-spacing: $assets-h5-letter-spacing; text-transform: $assets-h5-text-transform;
-	@include min-fontsize($assets-h5-font-size-value,$assets-h5-min-font-size);
-	@include max-fontsize($assets-h5-font-size-value,$assets-h5-max-font-size);
+	@include min-fontsize($assets-h5-font-size-value,$assets-h5-font-size-min);
+	@include max-fontsize($assets-h5-font-size-value,$assets-h5-font-size-max);
 }
 %#{$prefix}h6{
 	font-family: $assets-h6-font-family; font-size: grid($assets-h6-font-size-value); font-weight: $assets-h6-font-weight; line-height: $assets-h6-line-height; letter-spacing: $assets-h6-letter-spacing; text-transform: $assets-h6-text-transform;
-	@include min-fontsize($assets-h6-font-size-value,$assets-h6-min-font-size);
-	@include max-fontsize($assets-h6-font-size-value,$assets-h6-max-font-size);
+	@include min-fontsize($assets-h6-font-size-value,$assets-h6-font-size-min);
+	@include max-fontsize($assets-h6-font-size-value,$assets-h6-font-size-max);
 }
-
 
 // make font styles
 %#{$prefix}font-regular{

@@ -51,15 +51,17 @@
 	@return is-length($value) or is-percentage($value) or index("top" "right" "bottom" "left" "center", $value) != null;
 }
 
-@function strip-unit($number) {
-  $num: $number / ($number * 0 + 1);
-  @return $num;
+@function strip-unit($number){
+	@if type-of($number) == "number" and not unitless($number){
+		@return $number / ($number * 0 + 1);
+	}
+	@return $number;
 }
 
 
-@function even($number) {
-  @debug $number % 2;
-/*   @if $number % 2 == 0{
+@function even($number){
+	@debug $number % 2;
+	/*   @if $number % 2 == 0{
   $num: true;
 } @else { $num: false; }
 @return $num; */

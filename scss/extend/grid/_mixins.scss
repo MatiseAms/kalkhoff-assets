@@ -6,12 +6,12 @@
 
 
 @mixin min-($what,$columns,$min-width,$alt: false){
-  $mq: grid-mq-min($columns,$min-width);
+  $mq: grid-mq-min($columns,strip-unit($min-width));
   @media #{$mq}{
     @if $alt != false{
       #{$what}: $alt;
     } @else {
-      #{$what}: #{$min-width}px;
+      #{$what}: #{strip-unit($min-width)}px;
     }
     @content;
   }
@@ -64,12 +64,12 @@
 */
 
 @mixin max-($what,$columns,$width,$alt: false){
-  $mq: grid-mq-max($columns,$width);
+  $mq: grid-mq-max($columns,strip-unit($width));
   @media #{$mq}{
     @if $alt != false{
       #{$what}: $alt;
     } @else {
-      #{$what}: #{$width}px;
+      #{$what}: #{strip-unit($width)}px;
     }
     @content;
   }
