@@ -37,7 +37,6 @@
 	@include max-fontsize($assets-h6-font-size-value,$assets-h6-font-size-max);
 }
 
-
 // make font styles
 %#{$prefix}font-regular{
 	font-weight: $font-regular;
@@ -62,30 +61,9 @@
 }
 
 %#{$prefix}p{
-	font-size: grid($assets-p-font-size-value); font-weight: $assets-p-font-weight; line-height: $assets-p-line-height;
-	@extend %#{$prefix}header-default;
-	@include min-fontsize($assets-p-font-size-value,$assets-p-font-size-min);
-	@include max-fontsize($assets-p-font-size-value,$assets-p-font-size-max);
-}
-
-
-%#{$prefix}p{
-	font-family: $body-font-family; font-size: rem(16); font-weight: 400; line-height: rem(24); margin: 0; padding: 0;
-	&.text-tiny{
-		font-size: rem(12);
-	}
-	&.text-small{
-		font-size: rem(14);
-	}
-	&.text-regular{
-		font-size: rem(16);
-	}
-	&.text-large{
-		font-size: rem(18);
-	}
-	&.text-xlarge{
-		font-size: rem(24);
-	}
+	font-size: $assets-p-font-size; font-weight: $assets-p-font-weight; line-height: $assets-p-line-height;
+	@include min-fontsize($assets-p-font-size-value,$assets-p-min-font-size);
+	@include max-fontsize($assets-p-font-size-value,$assets-p-max-font-size);
 }
 
 %#{$prefix}blockquote{
