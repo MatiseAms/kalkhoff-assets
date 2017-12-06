@@ -1,7 +1,6 @@
 let fs = require('fs');
 let path = require('path');
 let flatten = require('flat');
-let _ = require('lodash');
 let functions = require('./css-functions.js');
 
 
