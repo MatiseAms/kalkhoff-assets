@@ -62,12 +62,12 @@ function doFunction(value) {
 	let thefunc = value.replace('{{', '').replace('}}', '');
 	let func = thefunc.split('(')[0];
 	let parameters = value.replace(/(^.*\(|\).*$)/g, '');
-  let newvalue;
-	if (typeof functions['_'+func] === "function") {
-		newvalue = functions['_'+func](stored, parameters);
-	} else{
-    newvalue = func+'('+parameters+')';
-  }
+	let newvalue;
+	if (typeof functions['_' + func] === "function") {
+		newvalue = functions['_' + func](stored, parameters);
+	} else {
+		newvalue = func + '(' + parameters + ')';
+	}
 	return newvalue;
 }
 
@@ -195,10 +195,10 @@ getFiles(sourceFolder).forEach((file) => {
 		let compiled = objToStyle(JSON.parse(fs.readFileSync(file, 'utf8')), type);
 
 		console.log('\x1b[32m%s\x1b[0m', '\t\u2713', type.type);
-		console.log('\x1b[32m%s\x1b[0m', '\t  ' + file + ' \u2192 ' + type.dest + '/' + fileName + '.' + type.type);
+		console.log('\x1b[32m%s\x1b[0m', '\t  ' + file + ' \u2192 ' + type.dest + '/_' + fileName + '.' + type.type);
 
-		fs.writeFileSync(type.dest + '/' + fileName + '.' + type.type, compiled, function(err) {
-			console.log('woops, something went wrong!');
+		fs.writeFileSync(type.dest + '/_' + fileName + '.' + type.type, compiled, function(err) {
+			console.log('woops, something went wrong!' + err);
 		});
 	});
 });
