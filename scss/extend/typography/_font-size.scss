@@ -13,6 +13,12 @@
 }
 %#{$prefix}h2{
 	font-family: $assets-h2-font-family; font-size: grid($assets-h2-font-size-value); font-weight: $assets-h2-font-weight; line-height: $assets-h2-line-height; letter-spacing: $assets-h2-letter-spacing; text-transform: $assets-h2-text-transform;
+
+
+	@debug "value: #{$assets-h2-font-size-value}";
+	@debug "value: #{$assets-h2-font-size-min}";
+
+
 	@include min-fontsize($assets-h2-font-size-value,$assets-h2-font-size-min);
 	@include max-fontsize($assets-h2-font-size-value,$assets-h2-font-size-max);
 }
@@ -62,8 +68,8 @@
 
 %#{$prefix}p{
 	font-size: $assets-p-font-size; font-weight: $assets-p-font-weight; line-height: $assets-p-line-height;
-	@include min-fontsize($assets-p-font-size-value,$assets-p-min-font-size);
-	@include max-fontsize($assets-p-font-size-value,$assets-p-max-font-size);
+	@include min-fontsize($assets-p-font-size-value,$assets-p-font-size-min);
+	@include max-fontsize($assets-p-font-size-value,$assets-p-font-size-max);
 }
 
 %#{$prefix}blockquote{
