@@ -11,5 +11,3 @@ Then to generate less source:
 And to test less and sass sources:
 
 ```npm run test```
-
-to test less and sass files
