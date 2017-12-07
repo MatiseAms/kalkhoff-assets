@@ -1,6 +1,7 @@
 module.exports = {
 	default: {
 		options: {
+			outFile: '<%= config.test.sass %>',
 			sourcemap: true,
 			outputStyle: 'expanded'
 		},

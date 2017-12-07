@@ -7,9 +7,7 @@
     "build-less": "npm run less-extend && npm run less-classes",
     "less-extend": "lessc assets-classes.less test/less-css/assets.css",
     "less-classes": "lessc assets-classes.less test/less-css/assets-classes.css",
-    "sass-less": "sass2less scss/**/*.scss 'less/**/*.less'",
-    "sass2less": "sass2less scss/extend/grid/_functions.scss 'less/extend/grid/_functions.less'",
-    "check": "node scripts/sass-less-check.js",
+
     "check-dev": "nodemon scripts/sass-less-check.js",
 
     "grunt": "./node_modules/.bin/grunt",
@@ -44,13 +42,11 @@
     "postcss-cli": "^4.1.1",
     "postcss-discard-duplicates": "^2.1.0",
     "rimraf": "^2.6.2",
-    "time-grunt": "^1.4.0"
-  },
-  "dependencies": {
+    "time-grunt": "^1.4.0",
     "color.js": "^0.1.3",
     "flat": "^4.0.0",
     "less": "^2.7.3",
-    "less-plugin-sass2less": "^1.1.0",
     "nodemon": "^1.12.1"
-  }
+  },
+  "dependencies": {}
 }

@@ -10,6 +10,8 @@
     "copy:fonts"
   ],
   "test": [
+    "clean:test",
+    "shell:check_src",
     "sass"
   ]
 }
