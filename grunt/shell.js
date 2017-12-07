@@ -4,5 +4,8 @@ module.exports = {
 	},
 	check_src: {
 		command: 'node scripts/sass-less-check.js'
+	},
+	compile_less: {
+		command: 'php scripts/less.php'
 	}
 };
