@@ -24,6 +24,7 @@
   "keywords": [
     "kalkhoff",
     "scss",
+    "less",
     "fonts",
     "assets"
   ],
@@ -32,7 +33,6 @@
   "devDependencies": {
     "autoprefixer": "^7.1.6",
     "cssnano": "^3.10.0",
-    "less-plugin-functions": "^1.0.0",
     "node-sass": "^4.6.0",
     "postcss-cli": "^4.1.1",
     "postcss-discard-duplicates": "^2.1.0",

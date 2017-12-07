@@ -62,8 +62,8 @@ function doFunction(value) {
 	let func = thefunc.split('(')[0];
 	let parameters = value.replace(/(^.*\(|\).*$)/g, '');
 	let newvalue;
-	if (typeof functions['_' + func] === 'function') {
-		newvalue = functions['_' + func](stored, parameters);
+	if (typeof functions[func] === 'function') {
+		newvalue = functions[func](stored, parameters);
 	} else {
 		newvalue = func + '(' + parameters + ')';
 	}
@@ -121,7 +121,7 @@ function objToStyle(file, type) {
 	// Do the variables
 	Object.keys(data).forEach((key) => {
 
-		if (!functions._isnumber(key.split('-')[key.split('-').length - 1])) {
+		if (!functions.isNumber(key.split('-')[key.split('-').length - 1])) {
 			variable = type.varPattern.replace('{{var}}', removeKeys(key.toLowerCase())).replace('{{value}}', stringValue(data[key]));
 			newFile.push(variable);
 		}
