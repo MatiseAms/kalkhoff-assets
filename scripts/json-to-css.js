@@ -18,7 +18,7 @@ let fileTypes = [{
 	dest: distFolder + 'less/settings',
 	varPattern: '@{{var}}: {{value}};',
 	listPatternParent: '@{{var}}: {{list}};',
-	listPattern: '{{var}}: {{value}}'
+	listPattern: '{{var}} {{value}}'
 }, {
 	type: 'css',
 	dest: distFolder + 'css/settings',
