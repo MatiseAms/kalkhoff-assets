@@ -1,0 +1,18 @@
+{
+  "default": [
+    "build"
+  ],
+  "build": [
+    "clean",
+    "copy:less",
+    "copy:sass",
+    "shell:generate_settings",
+    "copy:fonts"
+  ],
+  "test": [
+    "clean:test",
+    "shell:check_src",
+    "sass",
+    "shell:compile_less"
+  ]
+}

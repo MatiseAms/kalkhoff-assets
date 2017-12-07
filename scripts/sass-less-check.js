@@ -15,8 +15,8 @@ function getFiles(dir, files_) {
 	return files_;
 }
 
-let scssFiles = getFiles('scss');
-let lessFiles = getFiles('less');
+let scssFiles = getFiles('src/scss');
+let lessFiles = getFiles('src/less');
 
 let differentLess = [];
 let differentScss = [];

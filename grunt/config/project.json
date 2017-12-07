@@ -1,0 +1,18 @@
+{
+  "src": {
+    "root": "src/",
+    "less": "src/less/",
+    "sass": "src/sass/",
+    "fonts": "src/fonts/"
+  },
+  "dist": {
+    "root": "dist/",
+    "sass": "dist/scss/",
+    "less": "dist/less/"
+  },
+  "test": {
+    "root": "test/",
+    "sass": "test/generated-from-scss/",
+    "less": "test/generated-from-less/"
+  }
+}

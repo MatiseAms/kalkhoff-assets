@@ -1,0 +1,47 @@
+$prefix: "" !default;
+
+/*  Grid Specific values */
+$grid-row-width: 4096px !default; //
+$grid-design-width: 1920px !default; //
+$grid-columns: 24 !default; //
+$grid-screen: "only screen" !default; //
+$grid-cssgrid: false !default; $grid-breakpoints: (
+  "small": 750,
+  "medium": 960,
+  "large": 1280,
+  "xlarge": 1920,
+  "xxlarge": 9999
+) !default; //
+$grid-parts: (
+  "full": 1/1,
+  "half": 1/2,
+  "third": 1/3,
+  "two-third": 2/3,
+  "quarter": 1/4,
+  "three-quarter": 3/4,
+  "fifth": 1/5,
+  "two-fifth": 2/5,
+  "three-fifth": 3/5,
+  "four-fifth": 4/5,
+  "sixth": 1/6,
+  "five-sixth": 5/6
+) !default;
+//
+$create-classes-column: true !default; //
+$create-classes-column-pull: true !default; //
+$create-classes-column-push: false !default; //
+$create-classes-column-offset: false !default; //
+$create-classes-column-alias: true !default; //
+$create-classes-column-only: true !default; //
+$create-classes-background-colors: true !default; //
+
+// For structure classes
+$grid-structure: false !default; // (adds 1,7mb)
+$grid-structure-direction: ("margin-top","margin-left","margin-bottom","margin-right","top", "left","right", "bottom", "") !default; //
+$grid-structure-action: ("pull","push") !default; // Push and Pull
+$grid-structure-method: ("grid") !default; // Make classes based on Grid and Column
+$grid-structure-breakpoints: ("medium": 960) !default; //
+$grid-structure-pull: true !default; //
+$grid-structure-push: true !default; //
+$grid-structure-only: false !default; //
+$grid-structure-responsive: true !default; //

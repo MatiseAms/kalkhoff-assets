@@ -1,33 +1,31 @@
-let fs = require('fs');
-let path = require('path');
-let flatten = require('flat');
+let fs = require('fs'),
+	path = require('path'),
+	flatten = require('flat'),
+	functions = require('./css-functions.js');
 
+let delimiter = '-',
+	sourceFolder = 'src/settings',
+	distFolder = 'dist/';
 
-let delimiter = '-';
-let sourceFolder = 'data';
-//let fileTypes = ['scss', 'less', 'css'];
 let fileTypes = [{
-		type: 'scss',
-		dest: 'scss/settings',
-		varPattern: '${{var}}: {{value}};',
-		listPatternParent: '${{var}}: ({{list}});',
-		listPattern: '"{{var}}":{{value}}',
-	}, {
-		type: 'less',
-		dest: 'less/settings',
-		varPattern: '@{{var}}: {{value}};',
-		listPatternParent: '@{{var}}: {{list}};',
-		listPattern: '{{var}}: {{value}}'
-	},
-	{
-		type: 'css',
-		dest: 'css/settings',
-		varPattern: '--{{var}}: {{value}};',
-		listPatternParent: '',
-		listPattern: ''
-	}
-];
-
+	type: 'scss',
+	dest: distFolder + 'scss/settings',
+	varPattern: '${{var}}: {{value}};',
+	listPatternParent: '${{var}}: ({{list}});',
+	listPattern: '"{{var}}":{{value}}',
+}, {
+	type: 'less',
+	dest: distFolder + 'less/settings',
+	varPattern: '@{{var}}: {{value}};',
+	listPatternParent: '@{{var}}: {{list}};',
+	listPattern: '{{var}}: {{value}}'
+}, {
+	type: 'css',
+	dest: distFolder + 'css/settings',
+	varPattern: '--{{var}}: {{value}};',
+	listPatternParent: '',
+	listPattern: ''
+}];
 
 /**
  * Get all setting files from /data
@@ -43,8 +41,29 @@ function getFiles(dir, files_) {
 			files_.push(name);
 		}
 	}
-//	console.log(files_);
+	//	console.log(files_);
 	return files_;
+}
+
+// Store the used data before compiling;
+let stored = {};
+getFiles(sourceFolder).forEach((file) => {
+	//	let fileName = file.split('/')[file.split('/').length - 1].replace('.json', '');
+	Object.assign(stored, JSON.parse(fs.readFileSync(file, 'utf8')));
+});
+
+// Do functions when necessary;
+function doFunction(value) {
+	let thefunc = value.replace('{{', '').replace('}}', '');
+	let func = thefunc.split('(')[0];
+	let parameters = value.replace(/(^.*\(|\).*$)/g, '');
+	let newvalue;
+	if (typeof functions[func] === 'function') {
+		newvalue = functions[func](stored, parameters);
+	} else {
+		newvalue = func + '(' + parameters + ')';
+	}
+	return newvalue;
 }
 
 function stringValue(value) {
@@ -65,6 +84,10 @@ function stringValue(value) {
 		}
 		if (parseFloat(value)) {
 			quotes = false;
+		}
+		// Do Functions
+		if (value.indexOf('{{') > -1) {
+			value = doFunction(value);
 		}
 		if (quotes) {
 			return '\'' + value + '\'';
@@ -93,10 +116,8 @@ function objToStyle(file, type) {
 	});
 	// Do the variables
 	Object.keys(data).forEach((key) => {
-		function isNumber(n) {
-			return !isNaN(parseFloat(n)) && isFinite(n);
-		}
-		if (!isNumber(key.split('-')[key.split('-').length - 1])) {
+
+		if (!functions.isNumber(key.split('-')[key.split('-').length - 1])) {
 			variable = type.varPattern.replace('{{var}}', removeKeys(key.toLowerCase())).replace('{{value}}', stringValue(data[key]));
 			newFile.push(variable);
 		}
@@ -161,18 +182,18 @@ makeDirs();
  * Convert all files
  */
 getFiles(sourceFolder).forEach((file) => {
-  let fileName = file.split('/')[file.split('/').length - 1].replace('.json', '');
-  console.log('\x1b[33m%s\x1b[0m',fileName);
+	let fileName = file.split('/')[file.split('/').length - 1].replace('.json', '');
+	console.log('\x1b[33m%s\x1b[0m', fileName);
 
 	fileTypes.forEach((type) => {
 		// Write New Files
 		let compiled = objToStyle(JSON.parse(fs.readFileSync(file, 'utf8')), type);
 
-    console.log('\x1b[32m%s\x1b[0m','\t\u2713',type.type);
-    console.log('\x1b[32m%s\x1b[0m','\t'+ file + ' \u2192 ' + type.dest + '/' + fileName + '.' + type.type);
+		console.log('\x1b[32m%s\x1b[0m', '\t\u2713', type.type);
+		console.log('\x1b[32m%s\x1b[0m', '\t  ' + file + ' \u2192 ' + type.dest + '/_' + fileName + '.' + type.type);
 
-		fs.writeFileSync(type.dest + '/' + fileName + '.' + type.type, compiled, function(err) {
-			console.log('woops, something went wrong!');
+		fs.writeFileSync(type.dest + '/_' + fileName + '.' + type.type, compiled, function(err) {
+			console.log('woops, something went wrong!' + err);
 		});
 	});
 });
