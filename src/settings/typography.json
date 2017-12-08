@@ -85,6 +85,18 @@
 			"font-size-max": "32px",
 			"letter-spacing": "-0.25"
 		}],
+		"menu": [{
+			"design-size": "1rem",
+			"font-size-value": "1rem",
+			"font-size": "1rem",
+			"font-family": "Roboto",
+			"font-weight": "500",
+			"text-transform": "none",
+			"line-height": "{{grid(1)}}",
+			"font-size-min": "16px",
+			"font-size-max": "16px",
+			"letter-spacing": "0.5px"
+		}],
 		"p": [{
 			"design-size": "16px",
 			"font-size-value": "0.2",
