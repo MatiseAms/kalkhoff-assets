@@ -1,6 +1,6 @@
 {
   "name": "kalkhoff-assets",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Kalkhoff - Brand Appearance Guide Assets",
   "main": "dist/assets.scss",
   "scripts": {
