@@ -1,0 +1,8 @@
+{
+    "name": "matise/kalkhoff-assets",
+    "description": "Kalkhoff assets",
+    "type": "project",
+    "require": {
+        "oyejorge/less.php": "v1.7.0.14"
+    }
+}

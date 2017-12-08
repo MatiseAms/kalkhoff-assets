@@ -1,5 +1,11 @@
 {
 	"assets": {
+		"font-weight": [{
+			"light": "300",
+			"regular": "400",
+			"medium": "500",
+			"bold": "600"
+		}],
 		"headers": [{
 			"font-family": "Roboto Condensed",
 			"font-weight": "bold",

@@ -1,35 +1,31 @@
-let fs = require('fs');
-let path = require('path');
-let flatten = require('flat');
-let functions = require('./css-functions.js');
+let fs = require('fs'),
+	path = require('path'),
+	flatten = require('flat'),
+	functions = require('./css-functions.js');
 
+let delimiter = '-',
+	sourceFolder = 'src/settings',
+	distFolder = 'dist/';
 
-let delimiter = '-';
-let sourceFolder = 'data';
-//let fileTypes = ['scss', 'less', 'css'];
 let fileTypes = [{
-		type: 'scss',
-		dest: 'scss/settings',
-		varPattern: '${{var}}: {{value}};',
-		listPatternParent: '${{var}}: ({{list}});',
-		listPattern: '"{{var}}":{{value}}',
-	}, {
-		type: 'less',
-		dest: 'less/settings',
-		varPattern: '@{{var}}: {{value}};',
-		listPatternParent: '@{{var}}: {{list}};',
-		listPattern: '{{var}}: {{value}}'
-	},
-	{
-		type: 'css',
-		dest: 'css/settings',
-		varPattern: '--{{var}}: {{value}};',
-		listPatternParent: '',
-		listPattern: ''
-	}
-];
-
-
+	type: 'scss',
+	dest: distFolder + 'scss/settings',
+	varPattern: '${{var}}: {{value}};',
+	listPatternParent: '${{var}}: ({{list}});',
+	listPattern: '"{{var}}":{{value}}',
+}, {
+	type: 'less',
+	dest: distFolder + 'less/settings',
+	varPattern: '@{{var}}: {{value}};',
+	listPatternParent: '@{{var}}: {{list}};',
+	listPattern: '{{var}} {{value}}'
+}, {
+	type: 'css',
+	dest: distFolder + 'css/settings',
+	varPattern: '--{{var}}: {{value}};',
+	listPatternParent: '',
+	listPattern: ''
+}];
 
 /**
  * Get all setting files from /data
@@ -62,8 +58,8 @@ function doFunction(value) {
 	let func = thefunc.split('(')[0];
 	let parameters = value.replace(/(^.*\(|\).*$)/g, '');
 	let newvalue;
-	if (typeof functions['_' + func] === 'function') {
-		newvalue = functions['_' + func](stored, parameters);
+	if (typeof functions[func] === 'function') {
+		newvalue = functions[func](stored, parameters);
 	} else {
 		newvalue = func + '(' + parameters + ')';
 	}
@@ -121,7 +117,7 @@ function objToStyle(file, type) {
 	// Do the variables
 	Object.keys(data).forEach((key) => {
 
-		if (!functions._isnumber(key.split('-')[key.split('-').length - 1])) {
+		if (!functions.isNumber(key.split('-')[key.split('-').length - 1])) {
 			variable = type.varPattern.replace('{{var}}', removeKeys(key.toLowerCase())).replace('{{value}}', stringValue(data[key]));
 			newFile.push(variable);
 		}
