@@ -1,18 +1,18 @@
 
 $heading-font-weights: (
-	"Light": 300,
-	"Regular": 400,
-	"Bold": 600
+	"Light": $assets-font-weight-light,
+	"Regular": $assets-font-weight-regular,
+	"Bold": $assets-font-weight-bold
 ); //
 $body-font-weights: (
-	"Light": 300,
-	"Regular": 400,
-	"Medium": 500,
-	"Bold": 600
+	"Light": $assets-font-weight-light,
+	"Regular": $assets-font-weight-light,
+	"Medium": $assets-font-weight-medium,
+	"Bold": $assets-font-weight-bold
 ); //
 $code-font-weights: (
-	"Regular": 400,
-	"Bold": 600
+	"Regular": $assets-font-weight-regular,
+	"Bold": $assets-font-weight-bold
 ); //
 //
 $font-light: map-get($heading-font-weights,Light); //
