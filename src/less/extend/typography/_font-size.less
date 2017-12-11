@@ -1,70 +1,129 @@
-// headers
-.{@prefix}header-default(){
-	font-family: @assets-headers-font-family; font-weight: @assets-headers-font-weight; line-height: @assets-headers-line-height; margin: 0; letter-spacing: @assets-headers-letter-spacing; padding: 0; text-transform: @assets-headers-text-transform;
+//
+//  Matise grid typography font sizes
+//  _____________________________________________
+
+.assets-header-default() {
+	font-family: @assets-headers-font-family;
+	font-weight: @assets-headers-font-weight;
+	line-height: @assets-headers-line-height;
+	margin: 0;
+	letter-spacing: @assets-headers-letter-spacing;
+	padding: 0;
+	text-transform: @assets-headers-text-transform;
 }
 
-.{@prefix}h1(){
-	.{@prefix}header-default; font-family: @assets-h1-font-family; font-size: @assets-h1-font-size; font-weight: @assets-h1-font-weight; line-height: @assets-h1-line-height; letter-spacing: @assets-h1-letter-spacing; text-transform: @assets-h1-text-transform;
-	.assets-grid-min-fontsize(@assets-h1-font-size-value,@assets-h1-font-size-min);
-	.assets-grid-max-fontsize(@assets-h1-font-size-value,@assets-h1-font-size-max);
-}
-.{@prefix}h2(){
-	font-family: @assets-h2-font-family; font-size: @assets-h2-font-size; font-weight: @assets-h2-font-weight; line-height: @assets-h2-line-height; letter-spacing: @assets-h2-letter-spacing; text-transform: @assets-h2-text-transform;
-	.assets-grid-min-fontsize(@assets-h2-font-size-value,@assets-h2-font-size-min);
-	.assets-grid-max-fontsize(@assets-h2-font-size-value,@assets-h2-font-size-max);
-}
-.{@prefix}h3(){
-	font-family: @assets-h3-font-family; font-size: @assets-h3-font-size-value; font-weight: @assets-h3-font-weight; line-height: @assets-h3-line-height; letter-spacing: @assets-h3-letter-spacing; text-transform: @assets-h3-text-transform;
-	.assets-grid-min-fontsize(@assets-h3-font-size-value,@assets-h3-font-size-min);
-	.assets-grid-max-fontsize(@assets-h3-font-size-value,@assets-h3-font-size-max);
-}
-.{@prefix}h4(){
-	font-family: @assets-h4-font-family; font-size: @assets-h4-font-size-value; font-weight: @assets-h4-font-weight; line-height: @assets-h4-line-height; letter-spacing: @assets-h4-letter-spacing; text-transform: @assets-h4-text-transform;
-	.assets-grid-min-fontsize(@assets-h4-font-size-value,@assets-h4-font-size-min);
-	.assets-grid-max-fontsize(@assets-h4-font-size-value,@assets-h4-font-size-max);
-}
-.{@prefix}h5(){
-	font-family: @assets-h5-font-family; font-size: @assets-h5-font-size-value; font-weight: @assets-h5-font-weight; line-height: @assets-h5-line-height; letter-spacing: @assets-h5-letter-spacing; text-transform: @assets-h5-text-transform;
-	.assets-grid-min-fontsize(@assets-h5-font-size-value,@assets-h5-font-size-min);
-	.assets-grid-max-fontsize(@assets-h5-font-size-value,@assets-h5-font-size-max);
-}
-.{@prefix}h6(){
-	font-family: @assets-h6-font-family; font-size: @assets-h6-font-size-value; font-weight: @assets-h6-font-weight; line-height: @assets-h6-line-height; letter-spacing: @assets-h6-letter-spacing; text-transform: @assets-h6-text-transform;
-	.assets-grid-min-fontsize(@assets-h6-font-size-value,@assets-h6-font-size-min);
-	.assets-grid-max-fontsize(@assets-h6-font-size-value,@assets-h6-font-size-max);
+.assets-heading(@heading) {
+	& when (@heading = h1) {
+		.assets-header-default();
+		.assets-grid-min-fontsize(@assets-h1-font-size-value,@assets-h1-font-size-min);
+		.assets-grid-max-fontsize(@assets-h1-font-size-value,@assets-h1-font-size-max);
+		.getVwFromColumns(@assets-h1-font-size-value, font-size);
+		font-family: @assets-h1-font-family;
+		font-weight: @assets-h1-font-weight;
+		line-height: @assets-h1-line-height;
+		letter-spacing: @assets-h1-letter-spacing;
+		text-transform: @assets-h1-text-transform;
+	}
+
+	& when (@heading = h2) {
+		.assets-grid-min-fontsize(@assets-h2-font-size-value,@assets-h2-font-size-min);
+		.assets-grid-max-fontsize(@assets-h2-font-size-value,@assets-h2-font-size-max);
+		.getVwFromColumns(@assets-h2-font-size-value, font-size);
+		font-family: @assets-h2-font-family;
+		font-weight: @assets-h2-font-weight;
+		line-height: @assets-h2-line-height;
+		letter-spacing: @assets-h2-letter-spacing;
+		text-transform: @assets-h2-text-transform;
+	}
+
+	& when (@heading = h3) {
+		.assets-grid-min-fontsize(@assets-h3-font-size-value,@assets-h3-font-size-min);
+		.assets-grid-max-fontsize(@assets-h3-font-size-value,@assets-h3-font-size-max);
+		.getVwFromColumns(@assets-h3-font-size-value, font-size);
+		font-family: @assets-h3-font-family;
+		font-weight: @assets-h3-font-weight;
+		line-height: @assets-h3-line-height;
+		letter-spacing: @assets-h3-letter-spacing;
+		text-transform: @assets-h3-text-transform;
+	}
+
+	& when (@heading = h4) {
+		.assets-grid-min-fontsize(@assets-h4-font-size-value,@assets-h4-font-size-min);
+		.assets-grid-max-fontsize(@assets-h4-font-size-value,@assets-h4-font-size-max);
+		.getVwFromColumns(@assets-h4-font-size-value, font-size);
+		font-family: @assets-h4-font-family;
+		font-weight: @assets-h4-font-weight;
+		line-height: @assets-h4-line-height;
+		letter-spacing: @assets-h4-letter-spacing;
+		text-transform: @assets-h4-text-transform;
+	}
+
+	& when (@heading = h5) {
+		.assets-grid-min-fontsize(@assets-h5-font-size-value,@assets-h5-font-size-min);
+		.assets-grid-max-fontsize(@assets-h5-font-size-value,@assets-h5-font-size-max);
+		.getVwFromColumns(@assets-h5-font-size-value, font-size);
+		font-family: @assets-h5-font-family;
+		font-weight: @assets-h5-font-weight;
+		line-height: @assets-h5-line-height;
+		letter-spacing: @assets-h5-letter-spacing;
+		text-transform: @assets-h5-text-transform;
+	}
+
+	& when (@heading = h6) {
+		.assets-grid-min-fontsize(@assets-h6-font-size-value,@assets-h6-font-size-min);
+		.assets-grid-max-fontsize(@assets-h6-font-size-value,@assets-h6-font-size-max);
+		.getVwFromColumns(@assets-h6-font-size-value, font-size);
+		font-family: @assets-h6-font-family;
+		font-weight: @assets-h6-font-weight;
+		line-height: @assets-h6-line-height;
+		letter-spacing: @assets-h6-letter-spacing;
+		text-transform: @assets-h6-text-transform;
+	}
 }
 
+//
+//  Set font styles
+//  ---------------------------------------------
 
-// make font styles
-.{@prefix}font-regular(){
-	font-weight: regular;
+.assets-font-regular() {
+	font-weight: @assets-font-regular;
 }
-.{@prefix}font-bold(){
+
+.assets-font-bold() {
 	font-weight: bold;
 }
-.{@prefix}small(){
+
+.assets-small() {
 	font-size: smaller;
 }
-.{@prefix}del(){
+
+.assets-del() {
 	text-decoration: line-through;
 }
-.{@prefix}ins(){
+
+.assets-ins() {
 	text-decoration: underline;
 }
-.{@prefix}sub(){
-	font-size: smaller; vertical-align: sub;
-}
-.{@prefix}sup(){
-	font-size: smaller; vertical-align: sup;
+
+.assets-sub() {
+	font-size: smaller;
+	vertical-align: sub;
 }
 
-.{@prefix}p(){
-	font-size: @assets-p-font-size; font-weight: @assets-p-font-weight; line-height: @assets-p-line-height;
+.assets-sup() {
+	font-size: smaller;
+	vertical-align: sub;
+}
+
+.assets-p() {
 	.assets-grid-min-fontsize(@assets-p-font-size-value,@assets-p-font-size-min);
 	.assets-grid-min-fontsize(@assets-p-font-size-value,@assets-p-font-size-max);
+	font-size: @assets-p-font-size;
+	font-weight: @assets-p-font-weight;
+	line-height: @assets-p-line-height;
 }
 
 
-.{@prefix}blockquote(){
+.assets-blockquote() {
 	margin: 0; padding: 0.5rem  1rem;
 }

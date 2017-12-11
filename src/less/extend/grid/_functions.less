@@ -34,3 +34,25 @@
 .getVwFromColumns(@columns, @property) {
     @{property}: (100vw * @columns/@assets-grid-columns);
 }
+
+.assets-grid-min-fontsize(@columns, @fontSize, @alt: false) {
+    @fontSizeMin: unit(@fontSize);
+    @minimumScreenWidth: unit(((@fontSizeMin / @columns) * @assets-grid-columns), px);
+
+    & when (isnumber(@minimumScreenWidth)) {
+        @media only screen and (max-width: unit(@minimumScreenWidth, px)) {
+            font-size: unit(@fontSizeMin, px);
+        }
+    }
+}
+
+.assets-grid-max-fontsize(@columns, @fontSize, @alt: false) {
+    @fontSizeMax: unit(@fontSize);
+    @maximumScreenWidth: unit(((@fontSizeMax / @columns) * @assets-grid-columns), px);
+
+    & when (isnumber(@maximumScreenWidth)) {
+        @media only screen and (min-width: unit(@maximumScreenWidth, px)) {
+            font-size: unit(@fontSizeMax, px);
+        }
+    }
+}
