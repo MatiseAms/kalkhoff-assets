@@ -4,9 +4,6 @@
   "description": "Kalkhoff - Brand Appearance Guide Assets",
   "main": "dist/assets.scss",
   "scripts": {
-    "build-less": "npm run less-extend && npm run less-classes",
-    "less-extend": "lessc assets-classes.less test/less-css/assets.css",
-    "less-classes": "lessc assets-classes.less test/less-css/assets-classes.css",
     "check-dev": "nodemon scripts/sass-less-check.js",
     "grunt": "./node_modules/.bin/grunt",
     "build": "npm run grunt",
