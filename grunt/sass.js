@@ -5,8 +5,8 @@ module.exports = {
 			outputStyle: 'expanded'
 		},
 		files: {
-			'<%= config.test.sass %>assets.css': '<%= config.dist.root %>assets.scss',
-			'<%= config.test.sass %>assets-classes.css': '<%= config.dist.root %>assets-classes.scss'
+			'<%= config.test.scss %>assets.css': '<%= config.dist.root %>assets.scss',
+			'<%= config.test.scss %>assets-classes.css': '<%= config.dist.root %>assets-classes.scss'
 		}
 	}
 };

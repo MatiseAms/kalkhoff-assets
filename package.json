@@ -4,11 +4,10 @@
   "description": "Kalkhoff - Brand Appearance Guide Assets",
   "main": "dist/assets.scss",
   "scripts": {
-    "check-dev": "nodemon scripts/sass-less-check.js",
-    "grunt": "./node_modules/.bin/grunt",
-    "build": "npm run grunt",
-    "test": "npm run grunt -- test",
-    "prepublishOnly": "npm run grunt"
+    "check-dev": "nodemon scripts/scss-less-check.js",
+    "build": "grunt build",
+    "test": "grunt test",
+    "prepublishOnly": "grunt build"
   },
   "repository": {
     "type": "git",
@@ -34,6 +33,7 @@
     "grunt-contrib-copy": "^1.0.0",
     "grunt-sass": "^2.0.0",
     "grunt-shell": "^2.1.0",
+    "grunt-webfont": "^1.6.0",
     "jit-grunt": "^0.10.0",
     "less": "^2.7.3",
     "load-grunt-config": "^0.19.2",

@@ -5,8 +5,10 @@
   "build": [
     "clean",
     "copy:less",
-    "copy:sass",
+    "copy:scss",
+    "copy:json",
     "shell:generate_settings",
+    "webfont",
     "copy:fonts"
   ],
   "test": [

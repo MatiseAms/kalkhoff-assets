@@ -3,7 +3,7 @@ module.exports = {
 		command: 'node scripts/json-to-css.js'
 	},
 	check_src: {
-		command: 'node scripts/sass-less-check.js'
+		command: 'node scripts/scss-less-check.js'
 	},
 	compile_less: {
 		command: 'php scripts/less.php'

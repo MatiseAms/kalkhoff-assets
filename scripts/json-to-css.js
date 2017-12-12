@@ -19,13 +19,16 @@ let fileTypes = [{
 	varPattern: '@{{var}}: {{value}};',
 	listPatternParent: '@{{var}}: {{list}};',
 	listPattern: '{{var}} {{value}}'
-}, {
-	type: 'css',
-	dest: distFolder + 'css/settings',
-	varPattern: '--{{var}}: {{value}};',
-	listPatternParent: '',
-	listPattern: ''
 }];
+
+// css option
+// {
+// 	type: 'css',
+// 	dest: distFolder + 'css/settings',
+// 	varPattern: '--{{var}}: {{value}};',
+// 	listPatternParent: '',
+// 	listPattern: ''
+// }
 
 /**
  * Get all setting files from /data

@@ -5,16 +5,18 @@ module.exports = {
 			cwd: '<%= config.src.root %>',
 			src: [
 				'**/*.less',
+				'!icons/**'
 			],
 			dest: '<%= config.dist.root %>'
 		}]
 	},
-	sass: {
+	scss: {
 		files: [{
 			expand: true,
 			cwd: '<%= config.src.root %>',
 			src: [
 				'**/*.scss',
+				'!icons/**'
 			],
 			dest: '<%= config.dist.root %>'
 		}]
@@ -31,6 +33,16 @@ module.exports = {
 				'*.woff'
 			],
 			dest: '<%= config.dist.root %>fonts/'
+		}]
+	},
+	json: {
+		files: [{
+			expand: true,
+			cwd: '<%= config.src.root %>',
+			src: [
+				'settings/*.json'
+			],
+			dest: '<%= config.dist.root %>'
 		}]
 	}
 };
