@@ -1,25 +1,25 @@
 {
 	"colors": {
 		"primary": [{
-			"Black": "#101010",
-			"Dark": "#1a1b1a",
-			"Midgray": "#7f7f7f",
-			"Offwhite": "#f7f7f7",
-			"White": "#ffffff"
+			"khBlack": "#101010",
+			"khDark": "#1a1b1a",
+			"khMidgray": "#7f7f7f",
+			"khOffwhite": "#f7f7f7",
+			"khWhite": "#ffffff"
 		}],
 		"secondary": [{
-			"Green": "#b4bb00",
-			"Lime": "#b6ce2f",
-			"Yellow": "#edd32d",
-			"Darkbrown": "#4f3f35",
-			"Brown": "#ac846c",
-			"Orange": "#e86d02",
-			"Darkblue": "#14697c",
-			"Blue": "#1eaece",
-			"Turqouise": "#33d0ca",
-			"Red": "#dd0000",
-			"Pink": "#ea4c89",
-			"Purple": "#8b008b"
+			"khGreen": "#b4bb00",
+			"khLime": "#b6ce2f",
+			"khYellow": "#edd32d",
+			"khDarkbrown": "#4f3f35",
+			"khBrown": "#ac846c",
+			"khOrange": "#e86d02",
+			"khDarkblue": "#14697c",
+			"khBlue": "#1eaece",
+			"khTurqouise": "#33d0ca",
+			"khRed": "#dd0000",
+			"khPink": "#ea4c89",
+			"khPurple": "#8b008b"
 		}]
 	}
 }

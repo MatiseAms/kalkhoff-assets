@@ -8,13 +8,13 @@
 //  ---------------------------------------------
 
 .formatOutput(@property, @value, @where) {
-
     & when (@where = ~'') {
         @{property}: @value;
     }
 
     & when not (@where = ~'') {
-        @formattedValue: replace(e(@where), '%%var%%', @value);
+        @stringValue: ~'@{value}';
+        @formattedValue: replace(@where, '%%var%%', @stringValue);
 
         @{property}: e(@formattedValue);
     }

@@ -15,16 +15,16 @@
 	};
 
 	& when (@list = 'primary') {
-		& when (@index < length(@assets-colors-primary)) {
-			@colorSet: @assets-colors-primary;
+		& when (@index < length(@colors-primary)) {
+			@colorSet: @colors-primary;
 
 			@loopColors-pattern-01();
 
 			.loopColors(@callback, @index + 1,'primary');
 		}
 
-		& when (@index = length(@assets-colors-primary)) {
-			@colorSet: @assets-colors-primary;
+		& when (@index = length(@colors-primary)) {
+			@colorSet: @colors-primary;
 
 			@loopColors-pattern-01();
 
@@ -33,8 +33,8 @@
 	}
 
 	& when (@list = 'secondary') {
-		& when (@index <= length(@assets-colors-secondary)) {
-			@colorSet: @assets-colors-secondary;
+		& when (@index <= length(@colors-secondary)) {
+			@colorSet: @colors-secondary;
 
 			@loopColors-pattern-01();
 

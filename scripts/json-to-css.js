@@ -12,7 +12,7 @@ let fileTypes = [{
 	dest: distFolder + 'scss/settings',
 	varPattern: '${{var}}: {{value}};',
 	listPatternParent: '${{var}}: ({{list}});',
-	listPattern: '"{{var}}":{{value}}',
+	listPattern: '"{{var}}" {{value}}',
 }, {
 	type: 'less',
 	dest: distFolder + 'less/settings',
