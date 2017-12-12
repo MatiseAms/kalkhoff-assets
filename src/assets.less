@@ -1,3 +1,28 @@
 //@media-common: true;
-@import
-	"less/extend/_extend.less";
+@import "less/extend/_extend.less";
+
+body {
+	.setColor(khPurple, background-color, true);
+}
+
+.loopHeadings(@index: 1) when (@index <= 6) {
+	@heading: ~'h@{index}';
+
+	@{heading} {
+		.assets-heading(@heading);
+		font-family: @heading-font;
+	}
+
+	.loopHeadings(@index + 1);
+}
+
+.loopHeadings();
+.default-font-rules();
+
+button {
+	.assets-button();
+}
+
+div {
+	width: unit(12rem, px);
+}

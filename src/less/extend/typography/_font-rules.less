@@ -21,12 +21,16 @@
     }
 
     p {
-        .wildcard("button",true) {
+        @font-rules__p-wildcard-content: {
             margin-top: 2rem;
-        }
+        };
+
+        .wildcard("button", @font-rules__p-wildcard-content);
+
         & + p {
             margin-top: 0.5rem;
         }
+
         & + table {
             margin-top: 1rem;
         }
