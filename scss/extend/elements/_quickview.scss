@@ -1,0 +1,257 @@
+$extending-class: "%#{$prefix}quickview";
+#{$extending-class}{
+	$c: c($c);
+	&--trigger{
+		$c: c($c); z-index: 6; $trigger-size: 30; cursor: pointer; position: absolute; width: rem($trigger-size); height: rem($trigger-size); display: block; transform: translate(-50%,-50%); border-radius: 50%;
+		&:before{d
+			font-family: $UI-font-family; line-height: rem(31); text-align: center; font-size: rem(10); transform: scale(0); position: absolute; left: 0; top: 0; width: 100%; height: 100%; display: block; background: red; z-index: 1; border-radius: 50%; background-color: color(Black); color: color(White); box-shadow: 0 0 0 2px color(Weblightgrey,0.5) inset; content: icon(plus,$UI-iconset);
+		}
+		&__info{
+			$c: c($c); //
+			left: 0; top: 0; position: absolute; background-color: color(Black); height: 4.75rem; line-height: 4.75rem; padding: 0 0 0 4.75rem ; margin: -23px 0 0 -23px; border-radius: 2.375rem; z-index: 1; display: inline-block; max-width: 3rem; transform: scale(0); overflow: hidden; color: color(White); $ext: "%#{$pre}-p";
+			@extend #{$ext};
+			&-text{
+				$c: c($c); //
+				opacity: 0; transform: translateX(50%); width: auto; display: inline-block; font-family: inherit; white-space: nowrap; padding: 0 2rem 0 1rem;
+			}
+		}
+		&__circles{
+			$c: c($c); position: absolute; left: 50%; top: 50%; height: 100%; width: 100%; display: block; transform: translate(-50%,-50%); z-index: 4;
+			&-ring1, &-ring2{
+				transition: default("transition") default("bezier"); display: block; border-radius: 50%; content: ""; position: absolute; left: 50%; top: 50%; z-index: 5;
+			}
+			&-ring1{
+				$c: c($c); animation: quickviewRing1 5s infinite; transform: translate(-50%,-50%) scale(1); text-align: center; line-height: rem(45); content: "a"; opacity: 0.66; width: 170%; height: 170%;
+			}
+			&-ring2{
+				$c: c($c); animation: quickviewRing2 5s infinite; opacity: 0.33; width: 240%; height: 240%; transform: translate(-50%,-50%) scale(1);
+			}
+			&-icon{
+				$c: c($c); transform: scale(1); z-index: 2; position: relative; box-shadow: 0 0 1.5rem 0 color(Black,0.5);
+				&, &:before{
+					border-radius: 50%; position: absolute; top: 0; left: 0; display: block; width: 100%; height: 100%; transition: transform default("transition") default("bezier");
+				}
+				&:before{
+					font-family: $UI-font-family; line-height: rem(26); text-align: center; font-size: rem(16); content: icon(plus,$UI-iconset); transform: scale(1); letter-spacing: -7px;
+				}
+			}
+		}
+
+		&__info{
+			$c-circles: get-c("circles",$c);
+			&+#{$c-circles}{
+				z-index: 2;
+			}
+		}
+
+		/* Set Variables */
+		$c-circles: get-c("circles",$c); //
+		$c-info: get-c("info",$c); //
+		$c-info-text: get-c("info-text",$c); //
+		$c-text: get-c("info-text",$c); //
+		$c-icon: get-c("circles-icon",$c); //
+		$c-ring1: get-c("circles-ring1",$c); //
+		$c-ring2: get-c("circles-ring2",$c); //
+
+
+
+		&:hover{
+			// Hover on info
+			&:before{
+				animation: bumpIn 0.3s forwards;
+			}
+			// Hover on info
+			#{$c-info}{
+				animation: quickviewInfo 0.8s default("bezier") forwards;
+			}
+			// Hover on info
+			#{$c-info-text}{
+				max-width: 999px; animation: quickviewInfoText default("transition") 0.75s default("bezier") forwards;
+			}
+			// Hover on Icon;
+			#{$c-icon}{
+				animation: bumpIn 0.3s forwards;
+			}
+			// Hover on Icon;
+			#{$c-ring1}{
+				animation: quickviewHoverRing1 1s default("bezier") forwards;
+			}
+			#{$c-ring2}{
+				animation: quickviewHoverRing2 1s default("bezier") forwards;
+			}
+		}
+
+		// Set Quickview Info to the left
+		&.left{
+			#{$c-info}{
+				left: auto; right: 0; padding: 0 4.75rem 0 0; margin: -23px -23px 0 0 ;
+			}
+			#{$c-text}{
+				padding: 0 1rem 0 2rem;
+			}
+		}
+		&.dark{
+			&:before{
+				background-color: color(Black); box-shadow: 0 0 0 2px color(Weblightgrey,0.5) inset; color: color(White);
+			}
+			#{$c-circles}{
+				&-ring1, &-ring2{
+					box-shadow: 0 0 0 2px color(Black) inset;
+				}
+				&-icon{
+					background-color: color(Black); box-shadow: 0 0 1rem 0.25rem color(Black,0.5);
+					&:before{
+						color: color(White);
+					}
+				}
+			}
+
+			&:hover{
+				#{$c-info}+#{$c-circles}{
+					#{$c-circles}-ring1, #{$c-circles}-ring2{
+						box-shadow: 0 0 0 2px color(Weblightgrey) inset;
+					}
+				}
+			}
+			&:active{
+				// Hover on Icon;
+				#{$c-icon}{
+					background-color: color(White); color: color(Black);
+					&:before{
+						color: color(Black);
+					}
+				}
+				&:before{
+					background-color: color(White); color: color(Black) !important; box-shadow: 0 0 0 2px color(White,0.5) inset;
+				}
+			}
+		}
+		&.grey{
+			&:before{
+				background-color: color(White); box-shadow: 0 0 0 2px color(Grey,0.5) inset; color: color(Black);
+			}
+			#{$c-info}{
+				background-color: color(White); color: color(Black);
+			}
+			#{$c-circles}{
+				&-ring1, &-ring2{
+					box-shadow: 0 0 0 2px color(Grey) inset;
+				}
+				&-icon{
+					background-color: color(Grey);
+					&:before{
+						color: color(White);
+					}
+				}
+			}
+			&:hover{
+				box-shadow: none;
+				&:before{
+					background-color: color(Black,0.1); color: color(White); box-shadow: none;
+				}
+				#{$c-info}{
+					&+#{$c-circles}{
+						z-index: 5;
+						#{$c-icon}{
+							background-color: color(White); box-shadow: 0 0 0 2px color(Black,0.5) inset; color: color(Black);
+							&:before{
+								color: color(Black);
+							}
+						}
+					}
+				}
+				#{$c-icon}{
+					box-shadow: 0 0 30px 10px color(Black,0);
+				}
+			}
+
+			&:active{
+				// Hover on Icon;
+				$c-icon: get-c("circles-icon",$c);
+				#{$c-icon}{
+					background-color: color(Black); color: color(White) !important; box-shadow: 0 0 0 2px color(Grey,1) inset;
+					&:before{
+						color: color(White);
+					}
+				}
+				#{$c-info}+#{$c-circles}{
+					#{$c-icon}{
+						background-color: color(Black); color: color(White); box-shadow: 0 0 0 2px color(Black,0.5) inset;
+						&:before{
+							color: color(White);
+						}
+					}
+				}
+			}
+		}
+		&.light{
+			#{$c-circles}{
+				&-ring1, &-ring2{
+					box-shadow: 0 0 0 2px color(Weblightgrey) inset;
+				}
+				&-icon{
+					background-color: color(White);
+					&:before{
+						color: color(Black);
+					}
+				}
+			}
+
+			&:active{
+				// Hover on Icon;
+				#{$c-icon}{
+					background-color: color(Black); color: color(White); box-shadow: 0 0 0 2px color(Black,0.5) inset;
+					&:before{
+						box-shadow: 0 0 0 2px color(Black,0.5) inset; color: color(White);
+					}
+				}
+				&:before{
+					background-color: color(White); color: color(Black) !important; box-shadow: 0 0 0 2px color(White,0.5) inset;
+				}
+			}
+		}
+		&.button-light{
+			#{$c-circles}{
+				&-ring1, &-ring2{
+					box-shadow: 0 0 0 2px color(White) inset; opacity: 1;
+				}
+
+				&-ring1{
+					animation: quickviewButtonRing1 5s infinite;
+				}
+				&-ring2{
+					animation: quickviewButtonRing2 5s infinite;
+				}
+
+				&-icon{
+					background-color: color(White);
+					&:before{
+						color: color(Black);
+					}
+				}
+			}
+
+			&:active{
+				// Hover on Icon;
+				#{$c-icon}{
+					background-color: color(Black); color: color(White); box-shadow: 0 0 0 2px color(Black,0.5) inset;
+					&:before{
+						box-shadow: 0 0 0 2px color(Black,0.5) inset; color: color(White);
+					}
+				}
+				&:before{
+					background-color: color(White); color: color(Black) !important; box-shadow: 0 0 0 2px color(White,0.5) inset;
+				}
+			}
+		}
+	}
+}
+
+$extending-class-qb: "%#{$pre}-quickview-button";
+#{$extending-class-qb}{
+	$ext: "%#{$pre}-button-dark-naked";
+	@extend #{$ext}; padding-right: 72px; position: relative; overflow: visible;
+	span{
+		position: absolute; right: 0; top: 50%;
+	}
+}
