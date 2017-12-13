@@ -8,8 +8,11 @@
     "copy:scss",
     "copy:json",
     "shell:generate_settings",
-    "webfont",
     "copy:fonts"
+  ],
+  "build-with-fonts": [
+    "build",
+    "webfont"
   ],
   "test": [
     "clean:test",

@@ -4,8 +4,8 @@
   "description": "Kalkhoff - Brand Appearance Guide Assets",
   "main": "dist/assets.scss",
   "scripts": {
-    "check-dev": "nodemon scripts/scss-less-check.js",
     "build": "grunt build",
+    "build-with-fonts": "grunt build-with-fonts",
     "test": "grunt test",
     "prepublishOnly": "grunt build"
   },
