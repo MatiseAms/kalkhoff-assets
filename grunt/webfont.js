@@ -1,42 +1,84 @@
-var grunt = require('grunt');
+let grunt = require('grunt');
 
 // function log(log) {
-// 	grunt.log.write(log);
+// 	grunt.log.write(`\n${log}\n\n`);
 // }
 
 function config() {
-	var allConfigs = {};
-	var fonts = [];
-	grunt.file.expand('./src/icons/*').forEach(function(dirFull, index) {
-		var dirArray = dirFull.split('/');
+	let allConfigs = {};
+	let fonts = [];
+	grunt.file.expand('./src/icons/*').forEach(function(fontDirFull, index) {
+		let fontDirArray = fontDirFull.split('/');
+		let fontDir = fontDirArray[fontDirArray.length - 1];
+		let fontWeights = [];
 
-		var dir = dirArray[dirArray.length - 1];
+		if (fontDir.charAt(0) === '_') {
+			return;
+		}
 
-		var codepoint = parseInt('0x' + String.fromCharCode(97 + index) + '1001');
-		if (dir.charAt(0) !== '_') {
-			fonts.push(dir);
-			allConfigs[dir] = {
-				src: dirFull + '/*.svg',
+		grunt.file.expand(fontDirFull + '/*').forEach(function(dirFull) {
+			let dirArray = dirFull.split('/');
+			let dir = dirArray[dirArray.length - 1];
+			if (parseInt(dir)) {
+				fontWeights.push(dir);
+			}
+		});
+
+		if (fontWeights.length > 0) {
+			fontWeights.forEach(function(weight) {
+				let codepoint = parseInt('0x' + String.fromCharCode(97 + index) + '1001');
+				fonts.push(fontDir + '-' + weight);
+				allConfigs[fontDir + '-' + weight] = {
+					src: fontDirFull + '/' + weight + '/*.svg',
+					dest: '<%= config.dist.fonts %>',
+					destCss: '<%= config.dist.scss %>icons/' + fontDir + '-' + weight,
+					options: {
+						stylesheet: 'scss',
+						template: '<%= config.src.icons %>_templates/iconFile.scss',
+						relativeFontPath: '',
+						fontFilename: fontDir + '-' + weight,
+						startCodepoint: codepoint,
+						types: 'eot,woff,ttf,svg,woff2',
+						htmlDemo: false,
+						templateOptions: {
+							baseClass: fontDir,
+							classPrefix: fontDir + '-'
+						},
+						customOutputs: [{
+							template: '<%= config.src.icons %>_templates/iconFile.less',
+							dest: '<%= config.dist.less %>icons/' + fontDir + '-' + weight + '/icons.less'
+						}, {
+							template: '<%= config.src.icons %>_templates/iconFile.jsontmpl',
+							dest: '<%= config.dist.root %>icons/' + fontDir + '-' + weight + '/icons.json'
+						}]
+					}
+				};
+			});
+		} else {
+			let codepoint = parseInt('0x' + String.fromCharCode(97 + index) + '1001');
+			fonts.push(fontDir);
+			allConfigs[fontDir] = {
+				src: fontDirFull + '/*.svg',
 				dest: '<%= config.dist.fonts %>',
-				destCss: '<%= config.dist.scss %>icons/' + dir,
+				destCss: '<%= config.dist.scss %>icons/' + fontDir,
 				options: {
 					stylesheet: 'scss',
 					template: '<%= config.src.icons %>_templates/iconFile.scss',
 					relativeFontPath: '',
-					fontFilename: dir,
+					fontFilename: fontDir,
 					startCodepoint: codepoint,
 					types: 'eot,woff,ttf,svg,woff2',
 					htmlDemo: false,
 					templateOptions: {
-						baseClass: dir,
-						classPrefix: dir + '-'
+						baseClass: fontDir,
+						classPrefix: fontDir + '-'
 					},
 					customOutputs: [{
 						template: '<%= config.src.icons %>_templates/iconFile.less',
-						dest: '<%= config.dist.less %>icons/' + dir + '/icons.less'
+						dest: '<%= config.dist.less %>icons/' + fontDir + '/icons.less'
 					}, {
 						template: '<%= config.src.icons %>_templates/iconFile.jsontmpl',
-						dest: '<%= config.dist.root %>icons/' + dir + '/icons.json'
+						dest: '<%= config.dist.root %>icons/' + fontDir + '/icons.json'
 					}]
 				}
 			};
@@ -47,7 +89,7 @@ function config() {
 }
 
 function importFile(fonts) {
-	var options = {
+	let options = {
 		template: './src/icons/_templates/importFile.scss',
 		dest: './dist/scss/icons/_all.scss',
 		templateOptions: {
@@ -55,7 +97,7 @@ function importFile(fonts) {
 			test: 'testje'
 		}
 	};
-	var imports = grunt.template.process(
+	let imports = grunt.template.process(
 		grunt.file.read(options.template), {
 			data: options.templateOptions
 		}
