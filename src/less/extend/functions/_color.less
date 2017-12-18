@@ -136,64 +136,47 @@
 }
 
 //
-//  Gets amount of brightness in given color (int or percentage value) and uses it in given callback
+//  Based on given color calculates its brightness and sets given property to dark or light given colors to create a contrast
 //  ---------------------------------------------
-.getColorBrightness(@targetColor, @percentage: false, @byKey: false, @callback) {
 
-	//	Debugging is possible but only in grunt (and maybe gulp with some plugin) using JS expressions in less code,
-	//  probably worst practice ever and could give problems with server side compilation in Magento, we'll need to find some other way
+.setContrast(
+    @color,
+    @property,
+    @byKey: false,
+    @dark: @colors-primary-khblack,
+    @light: @colors-primary-khwhite,
+    @where: ~'',
+    @contrast: 50
+) {
+    & when (@byKey = true) {
+        @colorLoopCallback: {
+            & when (@key = @color) {
+                @sum: red(@value) + green(@value) + blue(@value);
+                @color-brightness: 100% * (@sum / (255 * 3));
 
-	//  @average: (((red(@color) / 255) * 100) + ((green(@color) / 255) * 100) + ((blue(@color) / 255) * 100)) / 3;
-	//	@debug: `(function() { console.log("@{average}")})()`
+                & when (@color-brightness < @contrast) {
+                    @{property}: @light;
+                }
 
-	@getColorBrightness-pattern-01: {
-		& when (@percentage = true) {
-			@color-brightness: 100% * (@sum / (255*3));
-			@callback();
-		}
+                & when not (@color-brightness < @contrast) {
+                    @{property}: @dark;
+                }
+            }
+        };
 
-		& when not (@percentage = true) {
-			@color-brightness: (@sum / (255 * 3) * 100);
-			@callback();
-		}
-	};
+        .loopColors(@colorLoopCallback);
+    }
 
-	& when (@byKey = true) {
-		@colorLoopCallback: {
-			& when (@targetColor = @key) {
-				@color: @value;
-				@sum: red(@color) + green(@color) + blue(@color);
+    & when not (@byKey = true) {
+        @sum: red(@color) + green(@color) + blue(@color);
+        @color-brightness: 100% * (@sum / (255 * 3));
 
-				@getColorBrightness-pattern-01();
-			}
-		};
+        & when (@color-brightness < @contrast) {
+                @{property}: @light;
+        }
 
-		.loopColors(@colorLoopCallback);
-	}
-
-	& when not (@byKey= true) {
-		@color: @targetColor;
-		@sum: red(@color) + green(@color) + blue(@color);
-
-		@getColorBrightness-pattern-01();
-	}
+        & when not (@color-brightness < @contrast) {
+                @{property}: @dark;
+        }
+    }
 }
-
-//	WIP: usage and purpose of this function are unclear
-//
-//.contra(@value, @contrast: 50, @dark: color(Black), @light: color(White)){
-//	@color: black;
-//	.color-exist(@value);
-//	& when @color-exist{
-//		@contra: color(@value);
-//	}
-//	& when {
-//		@contra: @value;
-//	}
-//	.color-brightness(@color);
-//	& when @color-brightness > @contrast{
-//		@contra: @dark;
-//	} @else{
-//		@contra: @light;
-//	}
-//}
