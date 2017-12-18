@@ -1,12 +1,3 @@
-// @Author: Sil van Diepen <silvandiepen>
-// @Date:   2017-11-29T21:23:53+01:00
-// @Email:  sil@matise.nl
-// @Last modified by:   silvandiepen
-// @Last modified time: 2017-12-01T14:46:56+01:00
-// @Copyright: Matise
-
-
-
 @function bp($bp){
 	$breakpoint: map-get($grid-breakpoints,$bp);
 	@return $breakpoint;

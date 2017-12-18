@@ -1,7 +1,25 @@
-%#{$prefix}-color-dot{
-	width: 1rem; height: 1rem; background-color: var(--this-color); display: inline-block; border-radius: 50%; position: relative;
+%#{$prefix}color-dot{
+	width: rem(20); height: rem(20); background-color: var(--this-color); display: inline-block; border-radius: 50%; position: relative; border: 0;
+	&+.color-dot{
+		margin-left: rem(14);
+	}
 
 	&:before{
-		position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 0.5rem; height: 0.5rem; background-color: color(White);
+		content: ""; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%) scale(0); width: 0.5rem; height: 0.5rem; background-color: color(White); display: block; border-radius: 50%;
+	}
+	&.active:before{
+		animation: colorPopIn 0.5s forwards;
+	}
+}
+
+@keyframes colorPopIn{
+	0%{
+		transform: translate(-50%,-50%) scale(0);
+	}
+	75%{
+		transform: translate(-50%,-50%) scale(1.5);
+	}
+	100%{
+		transform: translate(-50%,-50%) scale(1);
 	}
 }

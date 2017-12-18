@@ -9,8 +9,7 @@
 
 @function color($value, $rgba: false, $colorset: $colors-primary, $warning: true, $boolean: false){
 	$colorName: $value; //
-	$prefixed: str-insert($value,"kh",0); //
-	@debug $prefixed;
+	$prefixed: str-insert(to-string($value),"kh",0); //
 
 	@if color-exist($value, $colorset) == false{
 		// check if prefixed version exists;
@@ -74,17 +73,10 @@
 @function color-brightness($color,$percentage: true){
 	@if color($color, false,$colors-primary, false,true){
 		$color: color($color);  //
-		@debug "this is a color";
-		@debug $color;
 	}
-
 
 	$sum: red($color) + green($color) + blue($color);  // sum
 	$average: (((red($color) / 255) * 100) + ((green($color) / 255) * 100) + ((blue($color) / 255) * 100)) / 3; // average
-	//@debug "red: #{red($color)} / green: #{green($color)} / blue: #{blue($color)}";
-
-
-	//@debug $average;
 	@if $percentage{
 		@return percentage($sum / (255*3));
 	} @else{
