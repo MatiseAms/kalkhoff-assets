@@ -1,14 +1,16 @@
-.assets-content() {
-	//border: 1px solid red;
-}
+//
+//  Matise components
+//  _____________________________________________
 
 .assets-content-ul() {
+	list-style: none;
+
 	li {
 		padding-left: 1rem;
 		position: relative;
 
 		&:before{
-			.setColor(@colors-primary-black, background-color, true);
+			.setColor(khBlack, background-color, true);
 			content: "";
 			width: 6px;
 			height: 6px;
