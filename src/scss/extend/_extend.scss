@@ -1,13 +1,10 @@
 @import
-  "../settings/colors",
-  "../settings/button",
-  "../settings/grid",
-  "../settings/settings",
-  "../settings/typography",
+  "settings",
 	"grid/grid",
 	"functions/functions",
 	"mixins/mixins",
 	"typography/typography",
 	"layout/layout",
 	"elements/elements",
-	"components/components";
+	"components/components",
+  "icons";

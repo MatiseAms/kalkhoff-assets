@@ -1,0 +1,31 @@
+%#{$prefix}product{
+	content: "";
+	&--block{
+		background-color: color(White); padding: grid(1);
+		&__text{
+			//
+			&--title{
+				//
+			}
+		}
+		&__image{
+			width: 100%; height: grid(6);
+			@include calc("width","100% + #{grid(2)}"); margin-left: -grid(1);
+			figure{
+				top: 0; position: absolute; left: 0; height: 100%;
+			}
+		}
+		&__settings{
+			display: flex; padding: 1rem 0;
+			div{
+				text-align: right; width: 50%;
+				&:first-child{
+					text-align: left;
+				}
+			}
+		}
+		&__bottom{
+			border-top: 1px solid color(Midgray); padding: grid(0.5 0 0 0);
+		}
+	}
+}

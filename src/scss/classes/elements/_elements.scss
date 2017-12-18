@@ -1,17 +1,23 @@
 /* --------------------------------------- */
-/*				@extend components/button
+/*				@extend elements/button
 	/* ---------------------------------------- */
 
 @import "button";
 
 /* --------------------------------------- */
-/*				@extend components/forms
+/*				@extend elements/forms
 		/* ---------------------------------------- */
 
 @import "forms";
 
 /* --------------------------------------- */
-/*				@extend components/table
+/*				@extend elements/table
 	/* ---------------------------------------- */
 
 @import "table";
+
+/* --------------------------------------- */
+/*				@extend elements/color-dot
+	/* ---------------------------------------- */
+
+@import "color-dot";
