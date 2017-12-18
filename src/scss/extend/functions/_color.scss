@@ -8,13 +8,27 @@
 }
 
 @function color($value, $rgba: false, $colorset: $colors-primary, $warning: true, $boolean: false){
+	$colorName: $value; //
+	$prefixed: str-insert($value,"kh",0); //
+	@debug $prefixed;
+
 	@if color-exist($value, $colorset) == false{
-		@if color-exist($value, $colors-secondary) == true{
+		// check if prefixed version exists;
+		@if color-exist($prefixed, $colorset) == true{
+			$colorName: $prefixed;
+			@if $boolean == true{
+				@return true;
+			}
+		}
+		// check if color exists in alternative colorset;
+		@elseif color-exist($value, $colors-secondary) == true{
 			@if $boolean == true{
 				@return true;
 			}
 			$colorset: $colors-secondary;
-		}@else{
+		}
+		// otherwise throw warning;
+		@else{
 			@if $boolean == true{
 				@return false;
 			}
@@ -27,10 +41,11 @@
 			@return true;
 		}
 	}
+	// return the color;
 	@if $rgba != false{
-		@return rgba(map-get($colorset, $value),$rgba);
+		@return rgba(map-get($colorset, $colorName),$rgba);
 	} @else{
-		@return map-get($colorset, $value);
+		@return map-get($colorset, $colorName);
 	}
 }
 @function color-exist($value, $colorset: $colors-primary){
@@ -57,6 +72,13 @@
 }
 
 @function color-brightness($color,$percentage: true){
+	@if color($color, false,$colors-primary, false,true){
+		$color: color($color);  //
+		@debug "this is a color";
+		@debug $color;
+	}
+
+
 	$sum: red($color) + green($color) + blue($color);  // sum
 	$average: (((red($color) / 255) * 100) + ((green($color) / 255) * 100) + ((blue($color) / 255) * 100)) / 3; // average
 	//@debug "red: #{red($color)} / green: #{green($color)} / blue: #{blue($color)}";

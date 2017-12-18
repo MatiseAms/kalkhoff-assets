@@ -13,12 +13,6 @@
 }
 %#{$prefix}h2{
 	font-family: $assets-h2-font-family; font-size: grid($assets-h2-font-size-value); font-weight: $assets-h2-font-weight; line-height: $assets-h2-line-height; letter-spacing: $assets-h2-letter-spacing; text-transform: $assets-h2-text-transform;
-
-
-	@debug "value: #{$assets-h2-font-size-value}";
-	@debug "value: #{$assets-h2-font-size-min}";
-
-
 	@include min-fontsize($assets-h2-font-size-value,$assets-h2-font-size-min);
 	@include max-fontsize($assets-h2-font-size-value,$assets-h2-font-size-max);
 }
