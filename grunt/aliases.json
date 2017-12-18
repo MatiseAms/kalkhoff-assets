@@ -2,6 +2,10 @@
   "default": [
     "build"
   ],
+  "dev": [
+    "build",
+    "watch"
+  ],
   "build": [
     "clean",
     "copy:less",

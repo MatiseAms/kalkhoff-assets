@@ -1,8 +1,8 @@
 let grunt = require('grunt');
 
-// function log(log) {
-// 	grunt.log.write(`\n${log}\n\n`);
-// }
+function log(log) {
+	grunt.log.write(`\n${log}\n\n`);
+}
 
 function config() {
 	let allConfigs = {};
@@ -97,6 +97,7 @@ function importFile(fonts) {
 			test: 'testje'
 		}
 	};
+	log(fonts);
 	let imports = grunt.template.process(
 		grunt.file.read(options.template), {
 			data: options.templateOptions
