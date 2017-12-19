@@ -1,0 +1,25 @@
+// Import glyphs
+
+<%= typeof icons %>
+<%= Object.keys(icons).length %>
+<%= Object.keys(icons)[0] %>
+
+
+
+<% if(icons.length > 0){ %>@import<% } %>
+<% for (var i = 0; i < Object.keys(icons).length; i++) { %><% if(i == (icons.length - 1)){ %>  "<%= Object.keys(icons)[i] %>/_icons";<% } else { %>  "<%= Object.keys(icons)[i] %>/_icons", <% } %>
+<% } %>//
+// Include icons
+<% for (var i = 0; i < icons.length; i++) { %>
+$<%= icons[i] %>-font: "<%= icons[i] %>"; //
+$<%= icons[i] %>-font-name: "<%= icons[i] %>"; //
+$<%= icons[i] %>-font-family: #{$<%= icons[i] %>-font},sans-serif; //
+// include <%= icons[i] %> font
+@include font-include($<%= icons[i] %>-font,$<%= icons[i] %>-font-name,normal,normal);
+%<%= icons[i] %>-font-family{ font-family: $<%= icons[i] %>-font-family; }
+<% } %>//
+// Collect all icons
+<% if(icons.length > 0){ %>$icons-merged: map-collect(<% for (var i = 0; i < icons.length; i++) { %><% if(i == (icons.length - 1)){ %>$<%= icons[i] %>-iconset<% } else { %>$<%= icons[i] %>-iconset,<% } %><% } %>);<% } %>
+{ "icons": {
+  <% for (var i = 0; i < icons.length; i++) { %><% if(i == (icons.length - 1)){ %><%= icons[i] %>: $<%= icons[i] %>-iconset<% } else { %><%= icons[i] %>: $<%= icons[i] %>-iconset,<% } %><% } %>
+}
