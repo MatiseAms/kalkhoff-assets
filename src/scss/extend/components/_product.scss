@@ -9,10 +9,10 @@
 			}
 		}
 		&__image{
-			width: 100%; height: grid(6);
-			@include calc("width","100% + #{grid(2)}"); margin-left: -grid(1);
-			figure{
-				top: 0; position: absolute; left: 0; height: 100%;
+			width: 100%; height: grid(6); position: relative;
+			@include calc("width","100% + #{grid(2)}"); margin-left: -grid(1); border: 1px solid red; padding: 0 grid(1);
+			&__image-figure{
+				width: 100%; @include calc("width","100% - #{$grid-2}"); border: 1px solid red; top: 0; position: absolute; left: grid(1); height: 100%;
 			}
 		}
 		&__settings{

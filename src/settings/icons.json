@@ -1,18 +1,5 @@
-// Import glyphs
-
-object
-1
-icons
-
-
-
-
-  "icons/_icons", 
-//
-// Include icons
-//
-// Collect all icons
-
-{ "icons": {
-  
+{
+  "icons":{
+    "test":1
+  }
 }
