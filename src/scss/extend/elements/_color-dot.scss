@@ -1,5 +1,13 @@
 %#{$prefix}color-dot{
-	width: rem(20); height: rem(20); background-color: var(--this-color); display: inline-block; border-radius: 50%; position: relative; border: 0;
+	// width: rem(20); height: rem(20); background-color: var(--this-color); display: inline-block; border-radius: 50%; position: relative; border: 0;
+	display: inline-block;
+
+	input[type="radio"]{
+		@include input-radio(rem(20),rem(20),0, rem(5), var(--this-color), color(White));
+		@include input-radio-body{
+			box-shadow: none;
+		}
+	}
 	&+.color-dot{
 		margin-left: rem(14);
 	}
@@ -9,17 +17,5 @@
 	}
 	&.active:before{
 		animation: colorPopIn 0.5s forwards;
-	}
-}
-
-@keyframes colorPopIn{
-	0%{
-		transform: translate(-50%,-50%) scale(0);
-	}
-	75%{
-		transform: translate(-50%,-50%) scale(1.5);
-	}
-	100%{
-		transform: translate(-50%,-50%) scale(1);
 	}
 }

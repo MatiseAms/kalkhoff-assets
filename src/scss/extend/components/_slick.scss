@@ -1,7 +1,7 @@
 /* Slider */
 
 %#{$prefix}slick{
-	position: relative; display: block; box-sizing: border-box; user-select: none; touch-action: pan-y; -webkit-tap-highlight-color: transparent;
+	position: relative; display: block; box-sizing: border-box; user-select: none; touch-action: pan-y; -webkit-tap-highlight-color: transparent; overflow: hidden;
 
 	.slick-list{
 		position: relative; display: block; margin: 0; padding: 0;
@@ -38,7 +38,6 @@
 		&.slick-loading img{
 			display: none;
 		}
-		display: none;
 		&.dragging img{
 			pointer-events: none;
 		}

@@ -10,9 +10,21 @@
 		}
 		&__image{
 			width: 100%; height: grid(6); position: relative;
-			@include calc("width","100% + #{grid(2)}"); margin-left: -grid(1); border: 1px solid red; padding: 0 grid(1);
+			.slick-slide{
+				height: grid(6);
+				&:nth-child(0){
+					background-color: red;
+				}
+				&:nth-child(1){
+					background-color: blue;
+				}
+				&:nth-child(2){
+					background-color: green;
+				}
+			}
+			@include calc("width","100% + #{grid(2)}"); margin-left: -grid(1); padding: 0 grid(1);
 			&__image-figure{
-				width: 100%; @include calc("width","100% - #{$grid-2}"); border: 1px solid red; top: 0; position: absolute; left: grid(1); height: 100%;
+				width: 100%; @include calc("width","100% - #{$grid-2}"); top: 0; position: absolute; left: grid(1); height: 100%;
 			}
 		}
 		&__settings{
