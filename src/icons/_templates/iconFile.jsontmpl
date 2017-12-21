@@ -1,8 +1,10 @@
 {
   "<%= baseClass %>": {
-<% for (var glyphIdx = 0; glyphIdx < glyphs.length; glyphIdx++) { %>    "<%= glyphs[glyphIdx] %>": ""<% if((glyphIdx + 1) < glyphs.length) { %>,<% } %>
-<% } %>  },
-  "weights":[
+    "icons": {
+<% for (var glyphIdx = 0; glyphIdx < glyphs.length; glyphIdx++) { %>      "<%= glyphs[glyphIdx] %>": ""<% if((glyphIdx + 1) < glyphs.length) { %>,<% } %>
+<% } %>    },
+    "weights":[
 <% for (var weightIdx = 0; weightIdx < weights.length; weightIdx++) { %>    <%= weights[weightIdx] %><% if((weightIdx + 1) < weights.length) { %>,<% } %>
-<% } %>  ]
+<% } %>    ]
+  }
 }
