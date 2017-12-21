@@ -1,5 +1,5 @@
 {
-  "button":{
+  "button": {
     "font-family": "Roboto",
     "background-color": "{{color(Black,.5)}}",
     "padding": "{{grid(1 2 3 5)}}"

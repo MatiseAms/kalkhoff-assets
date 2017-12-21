@@ -5,7 +5,7 @@ module.exports = {
 			cwd: '<%= config.src.root %>',
 			src: [
 				'**/*.less',
-				'icons/**'
+				'!icons/_templates/*'
 			],
 			dest: '<%= config.dist.root %>'
 		}]
@@ -16,7 +16,7 @@ module.exports = {
 			cwd: '<%= config.src.root %>',
 			src: [
 				'**/*.scss',
-				'icons/**'
+				'!icons/_templates/*'
 			],
 			dest: '<%= config.dist.root %>'
 		}]
