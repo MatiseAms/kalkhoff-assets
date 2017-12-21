@@ -16,7 +16,8 @@
   ],
   "build-with-fonts": [
     "build",
-    "webfont"
+    "webfont",
+    "icon_font_loader"
   ],
   "icons": [
     "webfont"
