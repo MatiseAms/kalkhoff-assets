@@ -1,5 +1,8 @@
 .product{
 	@extend %#{$prefix}product;
+	&--overview{
+		@extend %#{$prefix}product--overview;
+	}
 	&--block{
 		@extend %#{$prefix}product--block;
 		&__image{
