@@ -9,17 +9,25 @@
 			}
 		}
 		&__image{
-			width: 100%; height: grid(6); position: relative;
+			width: 100%; position: relative;
+			@include calc("width","100% + #{grid(2)}"); margin-left: -grid(1); padding-bottom: 20px;
+			.bike-shadow{
+				height: 40px; width: 90%; overflow: hidden; filter: blur(23px) grayscale(100%); bottom: 21px; transform: scale(1,0.1); position: relative; left: 5%;
+				img{
+					position: absolute; bottom: 0; height: 600%; width: 100%; max-width: 90%;
+				}
+			}
+
 			.slick-slide{
-				height: grid(6);
-				&:nth-child(0){
-					background-color: red;
+				height: grid(6); opacity: 0;
+				&.slick-current{
+					opacity: 1;
 				}
-				&:nth-child(1){
-					background-color: blue;
+				img{
+					max-width: 100%;
 				}
-				&:nth-child(2){
-					background-color: green;
+				>div,>div>div{
+					height: 100%; width: 100%;
 				}
 			}
 			@include calc("width","100% + #{grid(2)}"); margin-left: -grid(1); padding: 0 grid(1);

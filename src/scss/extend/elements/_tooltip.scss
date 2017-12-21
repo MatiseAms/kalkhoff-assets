@@ -1,0 +1,27 @@
+%#{$prefix}tooltip{
+	&[title], &[data-title], &[data-tooltip]{
+		&:before{
+			position: absolute; left: -10px; bottom: calc(100% + 10px); display: block; padding: 0 0.5rem; background-color: color(Black); color: color(White); z-index: 1; font-size: rem(12); opacity: 0; line-height: 1.5rem; height: 1.5rem;
+		}
+		&:after{
+			content: ""; display: block; position: absolute; left: 0; bottom: calc(100% + 10px); background-color: color(Black); width: rem(10); height: rem(10); transform: translateY(50%)  translateX(50%) rotate(45deg); z-index: 2; opacity: 0;
+		}
+		&:hover{
+			&:before{
+				opacity: 1;
+			}
+			&:after{
+				opacity: 1;
+			}
+		}
+	}
+	&[title]:before{
+		content: attr(title);
+	}
+	&[data-title]:before{
+		content: attr(data-title);
+	}
+	&[data-tooltip]:before{
+		content: attr(data-tooltip);
+	}
+}

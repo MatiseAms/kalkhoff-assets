@@ -102,7 +102,7 @@
 			"font-size-value": "0.2",
 			"font-size": "{{grid(0.2)}}",
 			"font-family": "Roboto",
-			"font-weight": "normal",
+			"font-weight": "400",
 			"text-transform": "none",
 			"line-height": "1.75",
 			"font-size-min": "14px",

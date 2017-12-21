@@ -1,6 +1,5 @@
 %#{$prefix}color-dot{
-	// width: rem(20); height: rem(20); background-color: var(--this-color); display: inline-block; border-radius: 50%; position: relative; border: 0;
-	display: inline-block;
+	position: relative; display: inline-block;
 
 	input[type="radio"]{
 		@include input-radio(rem(20),rem(20),0, rem(5), var(--this-color), color(White));
@@ -9,13 +8,7 @@
 		}
 	}
 	&+.color-dot{
-		margin-left: rem(14);
+		margin-left: rem(20);
 	}
-
-	&:before{
-		content: ""; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%) scale(0); width: 0.5rem; height: 0.5rem; background-color: color(White); display: block; border-radius: 50%;
-	}
-	&.active:before{
-		animation: colorPopIn 0.5s forwards;
-	}
+	@extend %#{$prefix}tooltip;
 }
