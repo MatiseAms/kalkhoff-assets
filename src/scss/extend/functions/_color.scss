@@ -32,7 +32,7 @@
 				@return false;
 			}
 			@if $warning == true{
-				@warn  "color: #{$value} doesn't exist";
+				//	@warn  "color: #{$value} doesn't exist";
 			}
 		}
 	} @else{

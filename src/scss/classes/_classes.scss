@@ -1,9 +1,14 @@
 // @Author: silvandiepen
 // @Date:   2017-11-30T10:41:32+01:00
 // @Last modified by:   silvandiepen
-// @Last modified time: 2017-12-20T15:20:04+01:00
+// @Last modified time: 2017-12-27T16:08:10+01:00
 
 
+/* --------------------------------------- */
+/*				@extend components
+/* ---------------------------------------- */
+
+@import "../icons/include";
 
 /* --------------------------------------- */
 /*				@extend components
@@ -38,3 +43,9 @@
 /* ---------------------------------------- */
 
 @import "components/components";
+
+/* --------------------------------------- */
+/*				@extend components
+/* ---------------------------------------- */
+
+@import "icons/icons";

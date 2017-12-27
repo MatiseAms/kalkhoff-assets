@@ -24,7 +24,7 @@ $icons: () !default;
 		}
 	}
 	@if $returnValue == ""{
-		@warn "return value from icon is empty";
+		//	@warn "return value from icon is empty";
 	}
 	@return $returnValue;
 }
