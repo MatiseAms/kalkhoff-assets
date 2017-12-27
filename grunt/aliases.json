@@ -12,15 +12,9 @@
     "copy:scss",
     "copy:json",
     "shell:generate_settings",
-    "copy:fonts"
-  ],
-  "build-with-fonts": [
-    "build",
+    "copy:fonts",
     "webfont",
     "icon_font_loader"
-  ],
-  "icons": [
-    "webfont"
   ],
   "test": [
     "clean:test",

@@ -10,11 +10,15 @@ Then to generate less and sass assets/sources:
 
 `npm run build`
 
+For development/watch you can run the build with watch by using:
+
+`npm run dev`
+
 And to test less and sass sources:
 
 `npm run test`
 
-## Icon Font
+## Icon Fonts
 
 In order to make the icon font generation work, you will need to install a few dependencies local on your device:
 
@@ -26,6 +30,8 @@ Install the software to generate icons:
 
 `brew install batik fontforge ttfautohint ttf2eot`
 
-To include icon font generation in the build use: 
 
-`npm run build-with-fonts`
+### Combined settings
+
+Most settings are defined in the settings folder (json files). All these settings get automatically converted into less and scss settings. Make sure to
+use these files in order to keep consistency

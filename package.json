@@ -6,8 +6,6 @@
   "scripts": {
     "build": "grunt build",
     "dev": "grunt dev",
-    "icons": "grunt icons",
-    "build-with-fonts": "grunt build-with-fonts",
     "test": "grunt test",
     "prepublishOnly": "grunt build"
   },
