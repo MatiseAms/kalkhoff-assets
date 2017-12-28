@@ -5,7 +5,7 @@
 <% for (var glyphIdx = 0; glyphIdx < glyphs.length; glyphIdx++) { %>     { "name": "<%= glyphs[glyphIdx] %>", "unicode": "<% if (addLigatures) { %><%= glyphs[glyphIdx] %><% } else { %>U+<%= codepoints[glyphIdx] %><% } %>" }<% if((glyphIdx + 1) < glyphs.length) { %>,<% } %>
 <% } %>    ],
     "weights":[
-<% for (var weightIdx = 0; weightIdx < weights.length; weightIdx++) { %>    <%= weights[weightIdx] %><% if((weightIdx + 1) < weights.length) { %>,<% } %>
+<% for (var weightIdx = 0; weightIdx < weights.length; weightIdx++) { %>    "<%= weights[weightIdx] %>"<% if((weightIdx + 1) < weights.length) { %>,<% } %>
 <% } %>    ]
   }
 }
