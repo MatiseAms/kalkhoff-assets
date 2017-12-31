@@ -18,3 +18,20 @@ input[type="password"]{
 		@extend %#{$prefix}input-radio;
 	}
 }
+
+.dark-form{
+	@extend %#{$prefix}dark-form;
+	&-container{
+		@extend %#{$prefix}dark-form-container;
+	}
+	&-field{
+		@extend %#{$prefix}dark-form-field;
+	}
+}
+input[type=text], input[type=search]{
+	&.dark-form{
+		&-input{
+			@extend %#{$prefix}dark-form-input;
+		}
+	}
+}

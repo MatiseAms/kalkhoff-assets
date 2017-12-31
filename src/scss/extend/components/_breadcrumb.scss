@@ -1,0 +1,39 @@
+%#{$prefix}breadcrumb{
+	border: 2px solid red; all: initial;
+	*{
+		all: unset;
+	}
+	ul, li{
+		list-style-type: none;
+	}
+	ul{
+		li{
+			padding: 0; display: inline-block;
+			&:before{
+				@include reset();
+			}
+			&~li{
+				&:before{
+					left: auto; top: auto; background: none; position: relative; width: auto; height: auto; display: inline-block; content: "\00a0/\00a0"; opacity: 0.5;
+				}
+			}
+			a{
+				@extend %#{$prefix}p; opacity: 0.5; font-weight: $assets-font-weight-medium;
+			}
+			&:last-child{
+				a{
+					opacity: 1;
+				}
+			}
+		}
+	}
+
+	// Dark mode
+
+	&.dark{
+		color: color(White);
+		ul li a{
+			font-weight: $assets-font-weight-regular;
+		}
+	}
+}

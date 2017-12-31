@@ -1,0 +1,8 @@
+{
+  "assets": {
+    "nav-mobile": [{
+      "item-height": "45px",
+      "show-count": 4
+    }]
+  }
+}

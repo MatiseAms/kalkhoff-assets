@@ -1,0 +1,48 @@
+.#{$prefix}navM{
+	@extend %#{$prefix}navM;
+	&--container{
+		@extend %#{$prefix}navM--container;
+	}
+	&--list{
+		@extend %#{$prefix}navM--list;
+		&__item{
+			@extend %#{$prefix}navM--list__item;
+			&-text{
+				@extend %#{$prefix}navM--list__item-text;
+			}
+			&-link{
+				@extend %#{$prefix}navM--list__item-link;
+			}
+		}
+	}
+	&--sublist{
+		@extend %#{$prefix}navM--sublist;
+		&__container{
+			@extend %#{$prefix}navM--sublist__container;
+		}
+		&__item{
+			@extend %#{$prefix}navM--sublist__item;
+			&-text{
+				@extend %#{$prefix}navM--sublist__item-text;
+			}
+			&-link{
+				@extend %#{$prefix}navM--sublist__item-link;
+			}
+		}
+	}
+	&--seclist{
+		@extend %#{$prefix}navM--sublist;
+		&__container{
+			@extend %#{$prefix}navM--sublist__container;
+		}
+		&__item{
+			@extend %#{$prefix}navM--sublist__item;
+			&-text{
+				@extend %#{$prefix}navM--sublist__item-text;
+			}
+			&-link{
+				@extend %#{$prefix}navM--sublist__item-link;
+			}
+		}
+	}
+}

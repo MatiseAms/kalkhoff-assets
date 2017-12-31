@@ -6,9 +6,85 @@
 		@include input-radio-body{
 			box-shadow: none;
 		}
+		@include input-body{
+			transform: rotate(0deg); transition: $assets-transition;
+		}
+		@include input-body-checked{
+			transform: scale(1.2);
+		}
+		@include input-radio-check{
+			opacity: 1; transform: scale(0); transition: transform 0.15s 0.3s; box-shadow: 0 0 2px 0 color(Black,0.25);
+		}
+		@include input-radio-check-checked{
+			opacity: 1; transform: scale(1); transition: transform 0.15s 0.3s;
+		}
 	}
-	&+.color-dot{
+	&+.#{$prefix}color-dot{
 		margin-left: rem(20);
 	}
 	@extend %#{$prefix}tooltip;
+}
+
+@mixin color-dot-colors($prefix: "",$pre: false){
+	@each $color-name,$color-value in $colors{
+		@if $pre{
+			&.#{$prefix}#{$color-name}, //
+			&.#{$prefix}#{str-replace($color-name,"kh","")}, //
+			&.#{$prefix}#{to-lower-case(str-replace($color-name,"kh",""))}, //
+			&[data-primary-color=#{$color-name}], //
+			&[data-primary-color=#{to-lower-case(str-replace($color-name,"kh",""))}]{
+				// background-color: $color-value;
+				input[type="radio"]{
+					@include input-radio-body{
+						background-color: $color-value;
+						@if str-replace($color-name,"kh","") == "white"{
+							box-shadow: 0 0 2px 0 color(Black,0.25);
+						}
+					}
+				}
+			}
+		}@else{
+			.#{$prefix}#{$color-name}, //
+			.#{$prefix}#{str-replace($color-name,"kh","")}, //
+			.#{$prefix}#{to-lower-case(str-replace($color-name,"kh",""))}{
+				input[type="radio"]{
+					@include input-radio-body{
+						background-color: $color-value;
+
+						@if str-replace($color-name,"kh","") == "white"{
+							box-shadow: 0 0 2px 0 color(Black,0.25);
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+
+@mixin color-dot-dual($prefix: "",$pre: false){
+	@each $color-name,$color-value in $colors{
+		@if $pre{
+			&.#{$prefix}#{$color-name}, //
+			&.#{$prefix}#{str-replace($color-name,"kh","")}, //
+			&.#{$prefix}#{to-lower-case(str-replace($color-name,"kh",""))}{
+				// background-color: $color-value;
+				input[type="radio"]{
+					@include input-radio-body{
+						background-image: linear-gradient(to right bottom, rgba($color-value,0) 50%, rgba($color-value,1) 50%);
+					}
+				}
+			}
+		}@else{
+			.#{$prefix}#{$color-name}, //
+			.#{$prefix}#{str-replace($color-name,"kh","")}, //
+			.#{$prefix}#{to-lower-case(str-replace($color-name,"kh",""))}{
+				input[type="radio"]{
+					@include input-radio-body{
+						background-image: linear-gradient(to right bottom, rgba($color-value,0) 50%, rgba($color-value,1) 50%);
+					}
+				}
+			}
+		}
+	}
 }

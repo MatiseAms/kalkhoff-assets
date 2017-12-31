@@ -1,11 +1,17 @@
 
 /* --------------------------------------- */
-/*				@extend components/forms
+/*				@extend layout/forms
 	/* ---------------------------------------- */
 
 @import "footer";
 /* --------------------------------------- */
-/*				@extend components/forms
+/*				@extend layout/forms
 		/* ---------------------------------------- */
 
 @import "section";
+
+/* --------------------------------------- */
+/*				@extend layout/navigation
+		/* ---------------------------------------- */
+
+@import "navigation";

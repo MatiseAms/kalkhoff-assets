@@ -62,4 +62,25 @@ functions.color = (data, v) => {
 	return theColor;
 };
 
+
+/*
+ Return assets setting from settings
+*/
+functions.assets = (data, v) => {
+	//	console.log(v);
+
+	let theValue = null;
+	let vArray = v.split('.');
+	if (vArray.length > 1) {
+		if (vArray.length == 3) {
+			theValue = data[vArray[0]][vArray[1]][0][vArray[2]];
+		}
+	}
+	if (theValue === null) {
+		theValue = v;
+	}
+	return theValue;
+};
+
+
 module.exports = functions;

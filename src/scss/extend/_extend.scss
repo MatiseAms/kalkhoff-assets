@@ -1,6 +1,18 @@
 
 @import
-  "settings",
+  "settings";
+
+/* Combine Colors into one variable
+  	*/
+$colors: ();
+@each $color in $colors-primary{
+	$colors: append($colors,$color);
+}
+@each $color in $colors-secondary{
+	$colors: append($colors,$color);
+}
+
+@import
 	"grid/grid",
 	"functions/functions",
 	"mixins/mixins",

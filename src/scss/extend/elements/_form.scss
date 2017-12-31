@@ -1,6 +1,6 @@
 %#{$prefix}input{
 	border: 1px solid color(Black,0.25); border-radius: 2px; line-height: 1rem; font-size: 1rem; padding: 0.5rem 1rem;
-	@extend %#{$prefix}body-font-family; font-weight: $font-regular; width: 100%;
+	@extend %#{$prefix}body-font-family; font-weight: $font-regular; width: 100%; caret-color: color(Black,0.5);
 
 	/* --------------------- */
 	/* 			states 					 */
@@ -111,6 +111,31 @@
 		}
 		@include input-radio-label{
 			padding-left: 2rem;
+		}
+	}
+}
+
+%#{$prefix}dark-form{
+	content: "";
+	&-container{
+		content: ""; // border: 1px solid yellow; padding: grid(1);
+	}
+	&-input{
+		background: none; color: color(White); transition: padding-left #{$assets-transition} #{$assets-bezier};
+		@extend %#{$prefix}h4; caret-color: color(White,0.5);
+		&:placeholder-shown{
+			padding-left: 0;
+		}
+		&:focus{
+			&:placeholder-shown{
+				padding-left: 1rem;
+			}
+		}
+	}
+	&-field{
+		display: block; border-left: 2px solid white; position: relative;
+		&:before{
+			content: ""; display: block; width: 2rem; height: 100%; position: absolute; left: 0; top: 0; z-index: 1; background-image: linear-gradient(to right, color(Black,1), color(Black,0));
 		}
 	}
 }
