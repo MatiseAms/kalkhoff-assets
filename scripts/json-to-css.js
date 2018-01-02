@@ -10,9 +10,9 @@ let delimiter = '-',
 let fileTypes = [{
 	type: 'scss',
 	dest: distFolder + 'scss/settings',
-	varPattern: '${{var}}: {{value}};',
-	listPatternParent: '${{var}}: ({{list}});',
-	listPattern: '"{{var}}": {{value}}',
+	varPattern: '${{var}}: {{value}}; //',
+	listPatternParent: '${{var}}: (\n{{list}}\n); //',
+	listPattern: '\t"{{var}}": {{value}}',
 }, {
 	type: 'less',
 	dest: distFolder + 'less/settings',
@@ -54,6 +54,10 @@ getFiles(sourceFolder).forEach((file) => {
 	//	let fileName = file.split('/')[file.split('/').length - 1].replace('.json', '');
 	Object.assign(stored, JSON.parse(fs.readFileSync(file, 'utf8')));
 });
+
+function removeKeys(value) {
+	return value.replace('-0-', '-');
+}
 
 // Do functions when necessary;
 function doFunction(value) {
@@ -102,10 +106,6 @@ function stringValue(value) {
 	}
 }
 
-function removeKeys(value) {
-	return value.replace('-0-', '-');
-}
-
 function objToStyle(file, type) {
 	let variable;
 	let newFile = [];
@@ -122,7 +122,7 @@ function objToStyle(file, type) {
 
 		if (!functions.isNumber(key.split('-')[key.split('-').length - 1])) {
 			variable = type.varPattern.replace('{{var}}', removeKeys(key.toLowerCase())).replace('{{value}}', stringValue(data[key]));
-			newFile.push(variable);
+			newFile.push(removeKeys(variable));
 		}
 	});
 

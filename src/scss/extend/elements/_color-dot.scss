@@ -50,8 +50,8 @@
 				input[type="radio"]{
 					@include input-radio-body{
 						background-color: $color-value;
-						@if color-brightness($color-value) > 80{
-							box-shadow: 0 0 2px 0 color(Black,0.25);
+						@if color-brightness($color-value) > $assets-elements-color-dot-shadow-brightness{
+							box-shadow: #{$assets-elements-color-dot-shadow-size} #{$assets-elements-color-dot-shadow-color};
 						}
 					}
 				}
@@ -71,8 +71,8 @@
 				input[type="radio"]{
 					@include input-radio-body{
 						background-image: linear-gradient(to right bottom, rgba($color-value,0) 50%, rgba($color-value,1) 50%);
-						@if color-brightness($color-value) > 80{
-							box-shadow: 0 0 2px 0 color(Black,0.25);
+						@if color-brightness($color-value) > $assets-elements-color-dot-shadow-brightness{
+							box-shadow: #{$assets-elements-color-dot-shadow-size} #{$assets-elements-color-dot-shadow-color};
 						}
 					}
 				}
@@ -85,8 +85,8 @@
 					@include input-radio-body{
 						background-image: linear-gradient(to right bottom, rgba($color-value,0) 50%, rgba($color-value,1) 50%);
 						@debug #{$color-name};
-						@if color-brightness($color-value) > 80{
-							box-shadow: 0 0 2px 0 color(Black,0.25);
+						@if color-brightness($color-value) > $assets-elements-color-dot-shadow-brightness{
+							box-shadow: #{$assets-elements-color-dot-shadow-size} #{$assets-elements-color-dot-shadow-color};
 						}
 					}
 				}
