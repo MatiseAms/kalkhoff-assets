@@ -2,7 +2,7 @@
 	position: relative; display: inline-block;
 
 	input[type="radio"]{
-		@include input-radio(rem(20),rem(20),0, rem(5), var(--this-color), color(White));
+		@include input-radio($assets-elements-color-dot-width,$assets-elements-color-dot-height,0, $assets-elements-color-dot-gutter, var(--this-color), color(White));
 		@include input-radio-body{
 			box-shadow: none;
 		}
@@ -10,7 +10,7 @@
 			transform: rotate(0deg); transition: $assets-transition;
 		}
 		@include input-body-checked{
-			transform: scale(1.2);
+			transform: scale($assets-elements-color-dot-active-scale);
 		}
 		@include input-radio-check{
 			opacity: 1; transform: scale(0); transition: transform 0.15s 0.3s; box-shadow: 0 0 2px 0 color(Black,0.25);
@@ -20,7 +20,7 @@
 		}
 	}
 	&+.#{$prefix}color-dot{
-		margin-left: rem(20);
+		margin: $assets-elements-color-dot-margin;
 	}
 	@extend %#{$prefix}tooltip;
 }
@@ -37,8 +37,8 @@
 				input[type="radio"]{
 					@include input-radio-body{
 						background-color: $color-value;
-						@if str-replace($color-name,"kh","") == "white"{
-							box-shadow: 0 0 2px 0 color(Black,0.25);
+						@if color-brightness($color-value) > $assets-elements-color-dot-shadow-brightness{
+							box-shadow: #{$assets-elements-color-dot-shadow-size} #{$assets-elements-color-dot-shadow-color};
 						}
 					}
 				}
@@ -50,8 +50,7 @@
 				input[type="radio"]{
 					@include input-radio-body{
 						background-color: $color-value;
-
-						@if str-replace($color-name,"kh","") == "white"{
+						@if color-brightness($color-value) > 80{
 							box-shadow: 0 0 2px 0 color(Black,0.25);
 						}
 					}
@@ -72,6 +71,9 @@
 				input[type="radio"]{
 					@include input-radio-body{
 						background-image: linear-gradient(to right bottom, rgba($color-value,0) 50%, rgba($color-value,1) 50%);
+						@if color-brightness($color-value) > 80{
+							box-shadow: 0 0 2px 0 color(Black,0.25);
+						}
 					}
 				}
 			}
@@ -82,6 +84,10 @@
 				input[type="radio"]{
 					@include input-radio-body{
 						background-image: linear-gradient(to right bottom, rgba($color-value,0) 50%, rgba($color-value,1) 50%);
+						@debug #{$color-name};
+						@if color-brightness($color-value) > 80{
+							box-shadow: 0 0 2px 0 color(Black,0.25);
+						}
 					}
 				}
 			}

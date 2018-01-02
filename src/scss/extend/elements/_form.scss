@@ -131,6 +131,10 @@
 				padding-left: 1rem;
 			}
 		}
+		// Only for Chrome & Safari
+		&::-webkit-search-cancel-button{
+			position: relative; right: 120px; -webkit-appearance: none; height: 0.5rem; width: 0.5rem; background-image: linear-gradient(to right bottom, transparent 40%, white 50%, transparent 60%), linear-gradient(to left bottom, transparent 40%, white 50%, transparent 60%) ;
+		}
 	}
 	&-field{
 		display: block; border-left: 2px solid white; position: relative;

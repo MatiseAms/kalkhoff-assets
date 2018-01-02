@@ -31,17 +31,17 @@
 		}
 	}
 	&--seclist{
-		@extend %#{$prefix}navM--sublist;
-		&__container{
-			@extend %#{$prefix}navM--sublist__container;
-		}
+		@extend %#{$prefix}navM--seclist;
+		// &__container{
+		// 	@extend %#{$prefix}navM--seclist__container;
+		// }
 		&__item{
-			@extend %#{$prefix}navM--sublist__item;
+			@extend %#{$prefix}navM--seclist__item;
 			&-text{
-				@extend %#{$prefix}navM--sublist__item-text;
+				@extend %#{$prefix}navM--seclist__item-text;
 			}
 			&-link{
-				@extend %#{$prefix}navM--sublist__item-link;
+				@extend %#{$prefix}navM--seclist__item-link;
 			}
 		}
 	}
