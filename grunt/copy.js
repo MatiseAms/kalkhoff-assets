@@ -40,7 +40,8 @@ module.exports = {
 			expand: true,
 			cwd: '<%= config.src.root %>',
 			src: [
-				'settings/*.json'
+				'settings/*.json',
+				'settings/*.js'
 			],
 			dest: '<%= config.dist.root %>'
 		}]

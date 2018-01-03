@@ -1,6 +1,6 @@
 {
   "name": "kalkhoff-assets",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "Kalkhoff - Brand Appearance Guide Assets",
   "main": "dist/assets.scss",
   "scripts": {
@@ -32,7 +32,7 @@
     "grunt-contrib-clean": "^1.1.0",
     "grunt-contrib-copy": "^1.0.0",
     "grunt-contrib-watch": "^1.0.0",
-    "grunt-icon-font-loader": "^0.1.4",
+    "grunt-icon-font-loader": "^0.1.7",
     "grunt-sass": "^2.0.0",
     "grunt-shell": "^2.1.0",
     "grunt-webfont": "^1.6.0",
@@ -44,7 +44,10 @@
     "postcss-cli": "^4.1.1",
     "postcss-discard-duplicates": "^2.1.0",
     "rimraf": "^2.6.2",
-    "time-grunt": "^1.4.0"
+    "time-grunt": "^1.4.0",
+    "babel-eslint": "^8.1.2"
   },
-  "dependencies": {}
+  "dependencies": {
+    "eslint": "^4.14.0"
+  }
 }

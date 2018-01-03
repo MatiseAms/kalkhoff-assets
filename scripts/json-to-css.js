@@ -39,11 +39,14 @@ function getFiles(dir, files_) {
 	files_ = files_ || [];
 	var files = fs.readdirSync(dir);
 	for (var i in files) {
-		var name = dir + '/' + files[i];
-		if (fs.statSync(name).isDirectory()) {
-			getFiles(name, files_);
-		} else {
-			files_.push(name);
+		if (files[i].split('.')[files[i].split('.').length - 1] === 'json') {
+			console.log(files[i]);
+			var name = dir + '/' + files[i];
+			if (fs.statSync(name).isDirectory()) {
+				getFiles(name, files_);
+			} else {
+				files_.push(name);
+			}
 		}
 	}
 	//	console.log(files_);

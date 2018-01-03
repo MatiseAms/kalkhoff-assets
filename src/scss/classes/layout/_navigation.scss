@@ -1,47 +1,104 @@
-.#{$prefix}navM{
-	@extend %#{$prefix}navM;
+
+/* --------------------------------------- */
+/*				Mobile navigation
+/* ---------------------------------------- */
+
+.#{$prefix}nav_main{
+	@extend %#{$prefix}nav_main;
 	&--container{
-		@extend %#{$prefix}navM--container;
+		@extend %#{$prefix}nav_main--container;
 	}
 	&--list{
-		@extend %#{$prefix}navM--list;
+		@extend %#{$prefix}nav_main--list;
 		&__item{
-			@extend %#{$prefix}navM--list__item;
+			@extend %#{$prefix}nav_main--list__item;
 			&-text{
-				@extend %#{$prefix}navM--list__item-text;
+				@extend %#{$prefix}nav_main--list__item-text;
 			}
 			&-link{
-				@extend %#{$prefix}navM--list__item-link;
+				@extend %#{$prefix}nav_main--list__item-link;
 			}
 		}
 	}
 	&--sublist{
-		@extend %#{$prefix}navM--sublist;
+		@extend %#{$prefix}nav_main--sublist;
 		&__container{
-			@extend %#{$prefix}navM--sublist__container;
+			@extend %#{$prefix}nav_main--sublist__container;
 		}
 		&__item{
-			@extend %#{$prefix}navM--sublist__item;
+			@extend %#{$prefix}nav_main--sublist__item;
 			&-text{
-				@extend %#{$prefix}navM--sublist__item-text;
+				@extend %#{$prefix}nav_main--sublist__item-text;
 			}
 			&-link{
-				@extend %#{$prefix}navM--sublist__item-link;
+				@extend %#{$prefix}nav_main--sublist__item-link;
 			}
 		}
 	}
 	&--seclist{
-		@extend %#{$prefix}navM--seclist;
+		@extend %#{$prefix}nav_main--seclist;
 		// &__container{
-		// 	@extend %#{$prefix}navM--seclist__container;
+		// 	@extend %#{$prefix}nav_main--seclist__container;
 		// }
 		&__item{
-			@extend %#{$prefix}navM--seclist__item;
+			@extend %#{$prefix}nav_main--seclist__item;
 			&-text{
-				@extend %#{$prefix}navM--seclist__item-text;
+				@extend %#{$prefix}nav_main--seclist__item-text;
 			}
 			&-link{
-				@extend %#{$prefix}navM--seclist__item-link;
+				@extend %#{$prefix}nav_main--seclist__item-link;
+			}
+		}
+	}
+}
+/* --------------------------------------- */
+/*				Mobile navigation
+/* ---------------------------------------- */
+
+.#{$prefix}nav_mobile{
+	@extend %#{$prefix}nav_mobile;
+	&--container{
+		@extend %#{$prefix}nav_mobile--container;
+	}
+	&--list{
+		@extend %#{$prefix}nav_mobile--list;
+		&__item{
+			@extend %#{$prefix}nav_mobile--list__item;
+			&-text{
+				@extend %#{$prefix}nav_mobile--list__item-text;
+			}
+			&-link{
+				@extend %#{$prefix}nav_mobile--list__item-link;
+			}
+		}
+	}
+	&--sublist{
+		@extend %#{$prefix}nav_mobile--sublist;
+		&__container{
+			@extend %#{$prefix}nav_mobile--sublist__container;
+		}
+		&__item{
+			@extend %#{$prefix}nav_mobile--sublist__item;
+			&-text{
+				@extend %#{$prefix}nav_mobile--sublist__item-text;
+			}
+			&-link{
+				@extend %#{$prefix}nav_mobile--sublist__item-link;
+			}
+		}
+	}
+	&--seclist{
+		@extend %#{$prefix}nav_mobile--seclist;
+		// &__container{
+		// 	@extend %#{$prefix}nav_mobile--seclist__container;
+		// }
+		&__item{
+			@extend %#{$prefix}nav_mobile--seclist__item;
+			&-text{
+				@extend %#{$prefix}nav_mobile--seclist__item-text;
+			}
+			&-link{
+				@extend %#{$prefix}nav_mobile--seclist__item-link;
 			}
 		}
 	}
