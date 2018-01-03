@@ -12,12 +12,14 @@ let fileTypes = [{
 	dest: distFolder + 'scss/settings',
 	varPattern: '${{var}}: {{value}}; //',
 	listPatternParent: '${{var}}: (\n{{list}}\n); //',
+	listSubPatternParent: '\t"{{var}}": (\n{{list}}\n\t) //',
 	listPattern: '\t"{{var}}": {{value}}',
 }, {
 	type: 'less',
 	dest: distFolder + 'less/settings',
 	varPattern: '@{{var}}: {{value}};',
 	listPatternParent: '@{{var}}: {{list}};',
+	listSubPatternParent: '\t"{{var}}": (\n{{list}}\n\t) //',
 	listPattern: '{{var}} {{value}}'
 }];
 
@@ -117,9 +119,9 @@ function objToStyle(file, type) {
 		delimiter: delimiter,
 		safe: true
 	});
+
 	// Do the variables
 	Object.keys(data).forEach((key) => {
-
 		if (!functions.isNumber(key.split('-')[key.split('-').length - 1])) {
 			variable = type.varPattern.replace('{{var}}', removeKeys(key.toLowerCase())).replace('{{value}}', stringValue(data[key]));
 			newFile.push(removeKeys(variable));
@@ -127,40 +129,28 @@ function objToStyle(file, type) {
 	});
 
 	// Do the lists
-	Object.keys(listData).forEach((key) => {
-		if (typeof listData[key] === 'object') {
-			let array = listData[key];
-			let variable = key;
-			let newList = [];
-			let isArray = false;
+	function stringify(object, iteration) {
+		let list = [];
 
-			Object.keys(array).forEach((key) => {
-				let listItem;
-				let list = array[key];
-
-				//  console.log(typeof array[key], array[key])
-				if (typeof array[key] === 'object') {
-					Object.keys(list).forEach((key) => {
-						listItem = type.listPattern.replace('{{var}}', key).replace('{{value}}', stringValue(list[key]));
-						newList.push(listItem);
-					});
-					newFile.push(type.listPatternParent.replace('{{var}}', variable).replace('{{list}}', newList.join(', \r\n')));
+		Object.keys(object).forEach((key) => {
+			if (typeof object[key][0] === 'object') {
+				if (iteration > 0) {
+					list.push(type.listSubPatternParent.replace('{{var}}', removeKeys(key.toLowerCase())).replace('{{list}}', stringify(object[key][0], iteration + 1)));
 				} else {
-					if (typeof key === 'string') {
-						isArray = true;
-						newList.push(array[key]);
-					}
+					list.push(type.listPatternParent.replace('{{var}}', removeKeys(key.toLowerCase())).replace('{{list}}', stringify(object[key][0], iteration + 1)));
 				}
-			});
-			if (isArray) {
-				newFile.push(type.listPatternParent.replace('{{var}}', variable).replace('{{list}}', newList.join(', \r')));
+			} else if (Object.prototype.toString.call(object[key]) === '[object Array]') {
+				list.push(type.listPatternParent.replace('{{var}}', removeKeys(key.toLowerCase())).replace('{{list}}', '"' + object[key].join('", \r\n"') + '"'));
+			} else {
+				list.push(type.listPattern.replace('{{var}}', key).replace('{{value}}', stringValue(object[key])));
 			}
+		});
+		return list.join(', \r\n');
+	}
 
-		}
-	});
+	newFile.push(stringify(listData, 0));
 
 	return newFile.join('\r\n');
-
 }
 
 /**
