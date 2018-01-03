@@ -132,19 +132,19 @@ function objToStyle(file, type) {
 	});
 
 	// Do the lists
-	function stringify(object, iteration) {
+	function stringify(object, iteration, inObjectList = false) {
 		let list = [];
 
 		Object.keys(object).forEach((key) => {
 			if (typeof object[key][0] === 'object') {
 				if (iteration > 0) {
-					list.push(type.listSubPatternParent.replace('{{var}}', removeKeys(key.toLowerCase())).replace('{{list}}', stringify(object[key][0], iteration + 1)));
+					list.push(type.listSubPatternParent.replace('{{var}}', removeKeys(key.toLowerCase())).replace('{{list}}', stringify(object[key][0], iteration + 1, true)));
 				} else {
-					list.push(type.listPatternParent.replace('{{var}}', removeKeys(key.toLowerCase())).replace('{{list}}', stringify(object[key][0], iteration + 1)));
+					list.push(type.listPatternParent.replace('{{var}}', removeKeys(key.toLowerCase())).replace('{{list}}', stringify(object[key][0], iteration + 1, true)));
 				}
 			} else if (Object.prototype.toString.call(object[key]) === '[object Array]') {
 				list.push(type.listPatternParent.replace('{{var}}', removeKeys(key.toLowerCase())).replace('{{list}}', '"' + object[key].join('", \r\n"') + '"'));
-			} else {
+			} else if (inObjectList) {
 				list.push(type.listPattern.replace('{{var}}', key).replace('{{value}}', stringValue(object[key])));
 			}
 		});

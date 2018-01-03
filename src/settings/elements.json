@@ -1,10 +1,6 @@
 {
   "assets": {
     "elements": {
-      "hoi": [
-        "hoi1",
-        "hoi2"
-      ],
       "color-dot": [{
         "class": "color-dot",
         "width": "20px",
