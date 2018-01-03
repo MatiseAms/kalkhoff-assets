@@ -13,7 +13,7 @@
 			transform: scale($assets-elements-color-dot-active-scale);
 		}
 		@include input-radio-check{
-			opacity: 1; transform: scale(0); transition: transform 0.15s 0.3s; box-shadow: 0 0 2px 0 color(Black,0.25);
+			opacity: 1; transform: scale(0); transition: transform 0.15s 0.3s; box-shadow: #{$assets-elements-color-dot-shadow-size} #{$assets-elements-color-dot-shadow-color};
 		}
 		@include input-radio-check-checked{
 			opacity: 1; transform: scale(1); transition: transform 0.15s 0.3s;
