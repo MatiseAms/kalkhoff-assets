@@ -1,26 +1,58 @@
-// headers
-%#{$prefix}header-default{
+/*
+	Header Default
+	*/
+@mixin assets-header-default{
 	font-family: $assets-headers-font-family; font-weight: $assets-headers-font-weight; line-height: $assets-headers-line-height; margin: 0; letter-spacing: $assets-headers-letter-spacing; padding: 0; text-transform: $assets-headers-text-transform;
 	&.sub{
 		font-weight: $font-regular;
 	}
 }
+%#{$prefix}header-default{
+	@include assets-header-default;
+}
 
-%#{$prefix}h1{
-	@extend %#{$prefix}header-default; font-family: $assets-h1-font-family; font-size: grid($assets-h1-font-size-value); font-weight: $assets-h1-font-weight; line-height: $assets-h1-line-height; letter-spacing: $assets-h1-letter-spacing; text-transform: $assets-h1-text-transform;
+/*
+	H1
+	*/
+@mixin assets-h1{
+	font-family: $assets-h1-font-family; font-size: grid($assets-h1-font-size-value); font-weight: $assets-h1-font-weight; line-height: $assets-h1-line-height; letter-spacing: $assets-h1-letter-spacing; text-transform: $assets-h1-text-transform;
 	@include min-fontsize($assets-h1-font-size-value,$assets-h1-font-size-min);
 	@include max-fontsize($assets-h1-font-size-value,$assets-h1-font-size-max);
 }
-%#{$prefix}h2{
+%#{$prefix}h1{
+	@include assets-header-default;
+	@include assets-h1;
+}
+
+
+/*
+	H2
+	*/
+@mixin assets-h2{
 	font-family: $assets-h2-font-family; font-size: grid($assets-h2-font-size-value); font-weight: $assets-h2-font-weight; line-height: $assets-h2-line-height; letter-spacing: $assets-h2-letter-spacing; text-transform: $assets-h2-text-transform;
 	@include min-fontsize($assets-h2-font-size-value,$assets-h2-font-size-min);
 	@include max-fontsize($assets-h2-font-size-value,$assets-h2-font-size-max);
 }
-%#{$prefix}h3{
+%#{$prefix}h2{
+	@include assets-header-default;
+	@include assets-h1;
+}
+
+
+/*
+	H3
+	*/
+@mixin assets-h3{
 	font-family: $assets-h3-font-family; font-size: grid($assets-h3-font-size-value); font-weight: $assets-h3-font-weight; line-height: $assets-h3-line-height; letter-spacing: $assets-h3-letter-spacing; text-transform: $assets-h3-text-transform;
 	@include min-fontsize($assets-h3-font-size-value,$assets-h3-font-size-min);
 	@include max-fontsize($assets-h3-font-size-value,$assets-h3-font-size-max);
 }
+
+%#{$prefix}h3{
+	@include assets-header-default;
+	@include assets-h3;
+}
+
 %#{$prefix}h4{
 	font-family: $assets-h4-font-family; font-size: grid($assets-h4-font-size-value); font-weight: $assets-h4-font-weight; line-height: $assets-h4-line-height; letter-spacing: $assets-h4-letter-spacing; text-transform: $assets-h4-text-transform;
 	@include min-fontsize($assets-h4-font-size-value,$assets-h4-font-size-min);
@@ -60,10 +92,13 @@
 	font-size: smaller; vertical-align: sup;
 }
 
-%#{$prefix}p{
+@mixin assets-p{
 	font-size: $assets-p-font-size; font-weight: $assets-p-font-weight; line-height: $assets-p-line-height; font-family: $assets-p-font-family;
 	@include min-fontsize($assets-p-font-size-value,$assets-p-font-size-min);
 	@include max-fontsize($assets-p-font-size-value,$assets-p-font-size-max);
+}
+%#{$prefix}p{
+	@include assets-p;
 }
 
 %#{$prefix}blockquote{

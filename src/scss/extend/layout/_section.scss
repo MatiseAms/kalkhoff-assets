@@ -1,9 +1,9 @@
 %#{$prefix}basic-section{
 	background-color: color(White); padding: grid(1);
-	@include bgBorder(color(Offwhite), 0 1 1 1);
+	@include bgBorder(color(khBlack), 0 1 1 1);
 
 	&:first-of-type{
-		@include bgBorder(color(Offwhite), 1 1 1 1);
+		@include bgBorder(color(khBlack), 1 1 1 1);
 	}
 
 	&>.image.full-width{

@@ -18,7 +18,7 @@ module.exports = {
 	rules: {
 		'no-mixed-spaces-and-tabs': 0,
 		'no-tabs': 0,
-		'indent': ['warn', 'tab'],
+		'indent': 0,
 		'space-before-function-paren': 0,
 		'no-unused-vars': ['warn'],
 		'semi': 0,
