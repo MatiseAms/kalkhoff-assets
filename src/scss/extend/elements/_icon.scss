@@ -1,0 +1,12 @@
+@mixin assets-icons{
+	@each $set-name, $iconset in $icons{
+		@each $icon-name,$icon-value in $iconset{
+			.icon-#{$icon-name}:before{
+				content: #{$icon-value}; font-family: #{$set-name};
+			}
+		}
+	}
+}
+%#{$prefix}icons{
+	@include assets-icons;
+}

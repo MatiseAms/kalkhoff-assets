@@ -16,11 +16,12 @@ $colors: ();
 	"grid/grid",
 	"functions/functions",
 	"mixins/mixins",
-	"typography/typography",
-	"layout/layout",
-	"elements/elements",
-	"components/components";
-// "icons";
+	"typography/typography";
 
 @import
-"../icons/all";
+	"../icons/all";
+
+@import
+	"elements/elements",
+	"components/components",
+	"layout/layout";

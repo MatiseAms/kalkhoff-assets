@@ -6,7 +6,7 @@
 	@extend %#{$prefix}nav_main;
 	@extend %#{$prefix}nav_mobile;
 	&--container{
-		@extend %#{$prefix}nav_mobile--container;
+		@extend %#{$prefix}nav_main--container;
 		@extend %#{$prefix}nav_mobile--container;
 	}
 	&--list{

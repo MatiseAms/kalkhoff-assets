@@ -21,17 +21,21 @@ input[type="password"]{
 
 .dark-form{
 	@extend %#{$prefix}dark-form;
+	//@extend %#{$prefix}mobile_dark-form;
 	&-container{
 		@extend %#{$prefix}dark-form-container;
+		//	@extend %#{$prefix}mobile_dark-form-container;
 	}
 	&-field{
 		@extend %#{$prefix}dark-form-field;
+		//	@extend %#{$prefix}mobile_dark-form-field;
 	}
 }
 input[type=text], input[type=search]{
 	&.dark-form{
 		&-input{
 			@extend %#{$prefix}dark-form-input;
+			//	@extend %#{$prefix}dark-form-mobile-input;
 		}
 	}
 }

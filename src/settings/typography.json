@@ -86,15 +86,27 @@
       "letter-spacing": "-0.25"
     }],
     "menu": [{
-      "design-size": "1rem",
-      "font-size-value": "1rem",
-      "font-size": "1rem",
+      "design-size": "16px",
+      "font-size-value": "0.2",
+      "font-size": "16px",
       "font-family": "Roboto",
       "font-weight": "{{assets(assets.font-weight.medium)}}",
       "text-transform": "none",
       "line-height": "{{grid(1)}}",
       "font-size-min": "16px",
       "font-size-max": "16px",
+      "letter-spacing": "0.5px"
+    }],
+    "menu-small": [{
+      "design-size": "12px",
+      "font-size-value": "0.2",
+      "font-size": "12px",
+      "font-family": "Roboto",
+      "font-weight": "{{assets(assets.font-weight.regular)}}",
+      "text-transform": "none",
+      "line-height": "1",
+      "font-size-min": "12px",
+      "font-size-max": "12px",
       "letter-spacing": "0.5px"
     }],
     "p": [{

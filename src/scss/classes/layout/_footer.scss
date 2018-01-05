@@ -1,3 +1,13 @@
-.footer{
+.#{$prefix}footer{
 	@extend %#{$prefix}footer;
+
+	&--top{
+		@extend %#{$prefix}footer--top;
+	}
+	&--newsletter{
+		@extend %#{$prefix}footer--newsletter;
+	}
+	&--bottom{
+		@extend %#{$prefix}footer--bottom;
+	}
 }

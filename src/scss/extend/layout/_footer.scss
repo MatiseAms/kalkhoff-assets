@@ -2,12 +2,45 @@
 	background-color: color(Black); color: color(White);
 
 	&--top{
-		padding: grid(3 0 0 0);
+		padding: grid(3 0 1 0);
+		h4{
+			@include assets-menu;
+		}
+		ul{
+			li{
+				display: block;
+				a{
+					@include assets-menu; color: color(khMidgray); font-weight: $assets-font-weight-regular; line-height: 2;
+					&:hover{
+						color: color(khWhite);
+					}
+				}
+				&.icon-item{
+					display: inline-block; width: 20px; margin-right: 20px;
+					a{
+						text-indent: -999em; display: block; width: 20px; height: 20px;
+					}
+				}
+			}
+		}
 	}
 	&--newsletter{
-		padding: grid(1 0 1 0);
+		padding: grid(1 0 1 0); padding: grid(1 0);
 	}
 	&--bottom{
-		border: 1px solid red;
+		display: flex; padding: 1rem; background-color: color(khDark);
+		@include assets-menu-small; color: color(khMidgray);
+		.footnote{
+			flex-grow: 1; border: 1px solid red;
+			ul{
+				li{
+					padding: 1rem;
+					@include assets-icons;
+				}
+			}
+		}
+		.languageSwitcher{
+			flex-grow: 1; text-align: right; border: 1px solid blue;
+		}
 	}
 }

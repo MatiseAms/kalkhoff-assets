@@ -118,11 +118,15 @@
 %#{$prefix}dark-form{
 	content: "";
 	&-container{
-		content: ""; // border: 1px solid yellow; padding: grid(1);
+		display: flex; width: 100%;
+		label{
+			@include assets-menu; display: inline-block; padding-right: 20px;
+		}
 	}
+
 	&-input{
 		background: none; color: color(White); transition: padding-left #{$assets-transition} #{$assets-bezier};
-		@extend %#{$prefix}h4; caret-color: color(White,0.5);
+		@include assets-h4; caret-color: color(White,0.5);
 		&:placeholder-shown{
 			padding-left: 0;
 		}
@@ -133,13 +137,30 @@
 		}
 		// Only for Chrome & Safari
 		&::-webkit-search-cancel-button{
-			position: relative; right: 120px; -webkit-appearance: none; height: 0.5rem; width: 0.5rem; background-image: linear-gradient(to right bottom, transparent 40%, white 50%, transparent 60%), linear-gradient(to left bottom, transparent 40%, white 50%, transparent 60%) ;
+			position: relative; right: 120px; -webkit-appearance: none; height: 0.5rem; width: 0.5rem; background-image: linear-gradient(to right bottom, transparent 40%, white 50%, transparent 60%), linear-gradient(to left bottom, transparent 40%, white 50%, transparent 60%);
 		}
 	}
 	&-field{
-		display: block; border-left: 2px solid white; position: relative;
+		flex-grow: 1; display: block; border-left: 2px solid white; position: relative;
 		&:before{
 			content: ""; display: block; width: 2rem; height: 100%; position: absolute; left: 0; top: 0; z-index: 1; background-image: linear-gradient(to right, color(Black,1), color(Black,0));
+		}
+	}
+}
+
+@media #{$small-only}{
+	%#{$prefix}mobile_dark-form{
+		&-container{
+			display: block;
+			label{
+				display: block;
+			}
+		}
+		&-input{
+			display: block;
+		}
+		&-field{
+			display: block;
 		}
 	}
 }
