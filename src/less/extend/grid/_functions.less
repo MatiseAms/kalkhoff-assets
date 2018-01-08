@@ -34,6 +34,9 @@
 .getVwFromColumns(@columns, @property) {
     @{property}: (100vw * @columns/@assets-grid-columns);
 }
+.grid(@columns, @property){
+	.getVwFromColumns(@columns, @property);
+}
 
 .assets-grid-min-fontsize(@columns, @fontSize, @alt: false) {
     @fontSizeMin: unit(@fontSize);
