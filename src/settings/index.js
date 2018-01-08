@@ -14,7 +14,7 @@ let typography = require('./typography.json');
 // import settings from './settings.json';
 // import typography from './typography.json';
 
-export default {
+module.export = {
 	button,
 	colors,
 	elements,
