@@ -3,8 +3,8 @@
 
 .DS_Store
 
-package-lock.json
-
 /dist
 
 /vendor
+
+.eslintrc.json
