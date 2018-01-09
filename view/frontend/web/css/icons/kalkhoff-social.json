@@ -1,0 +1,12 @@
+{
+  "kalkhoff-social": {
+    "title": "kalkhoff-social",
+    "icons": [
+     { "name": "facebook", "unicode": "U+c1001" },
+     { "name": "instagram", "unicode": "U+c1002" },
+     { "name": "youtube", "unicode": "U+c1003" }
+    ],
+    "weights":[
+    ]
+  }
+}

@@ -1,0 +1,58 @@
+.bgBorder(@color, @position){
+	// Set background tile
+	@bg-image: linear-gradient(@color,@color); //
+	@bg-size: 20px_20px; //
+	@bg-sizes: ();	//
+	@bg-images: (); //
+	@bg-repeats: (); //
+	@bg-positions: (); //
+
+	// Set background tile
+	@when length(@position) > 1{
+		@for @i from 1 through length(@position){
+			@bg-images: append(@bg-images,@bg-image);
+			@when nth(@position,@i) == 1{
+				@bg-sizes: append(@bg-sizes,@bg-size);
+			} 
+			@when not nth(@position,@i) == 1{
+				@bg-sizes: append(@bg-sizes,0_0);
+			}
+			@when @i == 1{
+				@bg-repeats: append(@bg-repeats,repeat-x); @bg-positions: append(@bg-positions,top/left);
+			}
+			@when @i == 2{
+				@bg-repeats: append(@bg-repeats,repeat-y); @bg-positions: append(@bg-positions,top/right);
+			}
+			@when @i == 3{
+				@bg-repeats: append(@bg-repeats,repeat-x); @bg-positions: append(@bg-positions,bottom/left);
+			}
+			@when @i == 4{
+				@bg-repeats: append(@bg-repeats,repeat-y); @bg-positions: append(@bg-positions,top/left);
+			}
+		}
+	} 
+	@when not length(@position) > 1{
+		@bg-sizes: append(@bg-sizes,@bg-size); @bg-images: append(@bg-images,@bg-image);
+		@when @position == "top"{
+			@bg-positions: append(@bg-positions,top-left); @bg-repeats: append(@bg-repeats,repeat/x);
+		}
+		@when position == "right"{
+			@bg-positions: append(@bg-positions,top-right); @bg-repeats: append(@bg-repeats,repeat/y);
+		}
+		@when position == "bottom"{
+			@bg-positions: append(@bg-positions,bottom-left); @bg-repeats: append(@bg-repeats,repeat/x);
+		}
+		@when position == "left"{
+			@bg-positions: append(@bg-positions,top-left); @bg-repeats: append(@bg-repeats,repeat/y);
+		}
+	}
+	// Set Backgrounds
+	.flatten(@bg-images,", ","/");
+	background-image: @flatten; 
+	.flatten(@bg-sizes,", ","_"); 
+	background-size: @flatten; 
+	.flatten(@bg-repeats,", ","/"); 
+	background-repeat: @flatten; 
+	.flatten(@bg-positions,", ","/");
+	background-position: @flatten; 
+}

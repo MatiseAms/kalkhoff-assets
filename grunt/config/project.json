@@ -12,6 +12,9 @@
     "less": "dist/less/",
     "fonts": "dist/fonts/"
   },
+  "magento": {
+    "component": "view/frontend/web/css/"
+  },
   "test": {
     "root": "test/",
     "scss": "test/generated-from-scss/",

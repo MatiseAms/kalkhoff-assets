@@ -1,0 +1,18 @@
+.button, input[type="button"], input[type="submit"]{
+	@extend %#{$prefix}button;
+	&.naked, &-naked, &[naked]{
+		@extend %#{$prefix}button-naked;
+	}
+	&.small, &-small, &[small]{
+		@extend %#{$prefix}button-small;
+	}
+}
+.button-group, button-group{
+	@extend %#{$prefix}button-group;
+}
+
+
+// Specific Buttons
+.button-compare{
+	@extend %#{$prefix}button-compare;
+}

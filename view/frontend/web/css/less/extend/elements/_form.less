@@ -1,0 +1,192 @@
+//
+//  Matise forms
+//  _____________________________________________
+
+.assets-input() {
+	.body-font-family();
+	.setColor(Black, border, true, '1px solid %%var%%');
+	font-weight: @assets-font-regular;
+	width: 100%;
+	border-radius: 2px;
+	line-height: 1rem;
+	font-size: 1rem;
+	padding: 0.5rem 1rem;
+
+	/* --------------------- */
+	/* 			states 		 */
+	/* --------------------- */
+	&:before{
+		display: block;
+		width: 100px;
+		height: 100px;
+		background-color: red;
+	}
+
+	&:hover{
+		.setNativeRgba(Black, 0.5, border, true, '1px solid %%var%%');
+	}
+
+	&:focus{
+		.setColor(Black, border, true, '1px solid %%var%%');
+		.setNativeRgba(Black, 0.1, box-shadow, true, '0 0 0.5rem 0 %%var%%');
+
+		&:hover{
+			.setColor(Black, border, true, '1px solid %%var%%');
+		}
+	}
+}
+
+.assets-input() {
+	&-color{
+		.assets-input();
+
+		& {
+			padding: 0;
+			-webkit-appearance: none;
+			width: 2rem;
+			height: 2rem;
+			padding: 0.25rem;
+			border-radius: 50%;
+		}
+
+		&::-webkit-color-swatch-wrapper{
+			display: block;
+			margin: 0;
+			border: none;
+			padding: 0;
+			width: 2rem;
+			height: 2rem;
+			border-radius: 2px;
+		}
+
+		&::-webkit-color-swatch{
+			display: block;
+			width: 1.4rem;
+			height: 1.4rem;
+			border: none;
+			border-radius: 50%;
+		}
+	}
+
+	&-date{
+		.assets-input();
+	}
+
+	&-datetime-local{
+		.assets-input();
+	}
+
+	&-email{
+		.assets-input();
+	}
+
+	&-file{
+		.assets-input();
+	}
+
+	&-image{
+		.assets-input();
+	}
+
+	&-month{
+		.assets-input();
+	}
+
+	&-number{
+		.assets-input();
+		&::-webkit-inner-spin-button{
+			border: 1px solid red;
+			width: 10px;
+			height: 20px;
+			display: none;
+		}
+	}
+
+	&-password{
+		.assets-input();
+		font-size: 1.25rem;
+		font-family: caption;
+		letter-spacing: 3px;
+	}
+
+	&-search{
+		.assets-input();
+	}
+
+	&-tel{
+		.assets-input();
+	}
+
+	&-text{
+		.assets-input();
+	}
+
+	&-time{
+		.assets-input();
+	}
+
+	&-url{
+		.assets-input();
+	}
+
+	&-week{
+		.assets-input();
+	}
+}
+
+* {
+	.assets-input-checkbox() {
+		.input-checkbox(1rem, 1rem, 0, 0.25rem, White, Black, 50%);
+
+		.input-checkbox-body() {
+			.setNativeRgba(Black, 0.1, box-shadow, true, '0 0 0 1px %%var%% inset');
+		}
+
+		.input-checkbox-body-checked () {
+			.setColor(Black, background-color, true);
+		}
+
+		.input-checkbox-check() {
+			transform: scale(0.7) rotate(-45deg) translateY(0rem);
+			background: none;
+			border-left: 2px solid black;
+			border-bottom: 2px solid black;
+			border-radius: 0;
+			width: 8px;
+			height: 4px;
+			margin: 0;
+			top: 3px;
+			left: 3px;
+			opacity: 0.15;
+			transition: 0.1s;
+		}
+		.input-checkbox-check-checked() {
+			transform: scale(1) rotate(-45deg) translateY(0rem);
+			border-color: white;
+		}
+
+		.input-checkbox-label() {
+			padding-left: 2rem;
+		}
+	}
+}
+
+* {
+	.input-radio() {
+		.input-radio(1rem,1rem,0, 0.25rem, White, Black);
+		display: block;
+
+		.input-radio-body() {
+			.setNativeRgba(Black, 0.5, box-shadow, true, '0 0 0 1px %%var%% inset');
+			margin-right: 1rem;
+		}
+
+		.input-radio-check() {
+			border-radius: 50%;
+		}
+
+		.input-radio-label() {
+			padding-left: 2rem;
+		}
+	}
+}

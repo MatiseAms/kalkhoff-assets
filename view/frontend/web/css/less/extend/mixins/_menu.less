@@ -1,0 +1,161 @@
+// The mixin
+.menu(
+  @width: 2rem,
+  @height: .25rem,
+  @gutter: .5rem,
+  @color: white,
+  @round: 0,
+  @transition-duration: .3s
+) {
+
+  @detachedVars: {
+    // Set margins
+    @margin: @height + @gutter;
+    @margin-left: @width / 2;
+    @margin-top: @height / 2;
+
+    // Set specific styles for each bar
+    @top: @height + @gutter;
+
+    @menu-height: @height;
+    @menu-gutter: @gutter;
+    @menu-color: @color;
+    @menu-margin: @margin;
+    @menu-margin-left: @margin-left;
+    @menu-margin-top: @margin-top;
+    @menu-top: @top;
+  };
+
+  @detachedStyles: {
+
+    // The code for the span
+
+    user-select: none;
+    position: absolute;
+    margin: @margin-top auto @margin -@margin-left;
+    text-indent: -999em;
+    top: 50%;
+    left: 50%;
+    cursor: pointer;
+
+    // Set styles to bars
+
+    &,
+    &:before,
+    &:after {
+      display: block;
+      width: @width;
+      height: @height;
+      background-color: @color;
+      transition: @transition-duration;
+      opacity: 1;
+
+      & when not (@round = 0) {
+        border-radius: @round;
+      }
+    }
+
+    // Bottom and top bar
+
+    &:before,
+    &:after {
+      position: absolute;
+      content: "";
+    }
+
+    // Top bar
+
+    &:before {
+      top: -@top;
+    }
+
+    // Bottom bar
+
+    &:after {
+      top: @top;
+    }
+  };
+
+  & when (ispixel(@width) = true) {
+    @width: unit(@width, rem);
+    @detachedVars();
+  }
+
+  & when (ispixel(@height) = true) {
+    @height: unit(@height, rem);
+    @detachedVars();
+  }
+
+  & when (ispixel(@gutter) = true){
+    @gutter: unit(@gutter, rem);
+    @detachedVars();
+  }
+}
+
+.menu-close(@content, @menu-height, @menu-gutter) {
+  &:before, &:after{
+    top: 0;
+    margin-top: (@menu-height/2) + (@menu-gutter + @menu-height);
+    @content();
+  }
+
+  & {
+    background-color: transparent;
+  }
+
+  &:before{ transform: translateY(@menu-gutter + @menu-height) rotate(45deg); }
+  &:after{ transform: translateY(@menu-gutter + @menu-height) rotate(-45deg); }
+}
+
+.menu-reset(@content, @menu-color, @menu-top) {
+  &:before, &:after {
+    margin-top: 0; @content();
+  }
+
+  & {
+    background-color: @menu-color;
+  }
+
+  &:before {
+    transform: translateY(0) rotate(0deg);
+    top: -@menu-top;
+  }
+
+  &:after {
+    transform: translateY(0) rotate(0deg);
+    top: @menu-top;
+  }
+}
+
+.menu-body(@content){
+	&,
+    &:before,
+    &:after {
+      @content();
+    }
+}
+
+.menu-body-first(@content){
+  &:before{
+    @content();
+  }
+}
+
+.menu-body-middle(@content){
+  & {
+    @content();
+  }
+}
+
+.menu-body-last(@content){
+  &:after{
+    @content();
+  }
+}
+
+.menu-body-close(@content){
+	&:before,
+    &:after{
+      @content();
+    }
+}

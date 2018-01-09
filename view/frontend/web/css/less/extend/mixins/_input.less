@@ -1,0 +1,334 @@
+// WIP - not clear usage of parent(), input-type() and input-list() mixins
+
+@transition: @assets-transition;
+
+.input-radio(@width: 1rem, @height: 1rem, @margin: 0, @spacing: 0.2rem, @bg-body: White, @bg-check: Black, @round: 100%) {
+	width: 0; 
+	height: 0; 
+	opacity: 0;
+	
+	.parent() {
+		input[type=radio] + label {
+			padding-left: @width + @margin; 
+			position: relative; 
+			cursor: pointer;
+			
+			&:before {
+				.setColor(@bg-body, background, true);
+				content: ""; 
+				display: block;
+				position: absolute; 
+				left: 0; 
+				top: 0; 
+				width: @width; 
+				height: @height;
+				
+				& when not(@round = 0) {
+					border-radius: @round;
+				}
+			}
+			
+			&:after {
+				.setColor(@bg-check, background, true);
+				content: ""; 
+				display: block; 
+				position: absolute; 
+				left: @spacing; 
+				top: @spacing; 
+				width: (@width - (@spacing * 2)); 
+				height: (@width - (@spacing * 2));
+				border-radius: @round; 
+				opacity: 0; 
+				transition: @transition;
+			}
+		}
+		
+		input[type=radio]:checked {
+			& + label:after{
+				opacity: 1; 
+				transition: @transition;
+			}
+		}
+	}
+}
+
+.input-checkbox(@width: 1rem, @height: 1rem, @margin: 0, @spacing: 0.2rem, @bg-body: White, @bg-check: Black, @round: 50%) {
+	width: 0; 
+	height: 0; 
+	opacity: 0;
+	
+	.parent() {
+		input[type=checkbox] + label{
+			padding-left: @width + @margin; 
+			position: relative; 
+			cursor: pointer;
+			
+			&:before{
+				.setColor(@bg-body, background, true);
+				content: ""; 
+				display: block; 
+				position: absolute; 
+				left: 0; 
+				top: 0; 
+				width: @width; 
+				height: @height;
+				
+				& when not (@round = 0) {
+					border-radius: @round;
+				}
+			}
+			
+			&:after{
+				.setColor(@bg-check, background, true);
+				content: ""; 
+				display: block; 
+				position: absolute; 
+				left: @spacing; 
+				top: @spacing; 
+				width: (@width - (@spacing * 2)); 
+				height: (@width - (@spacing * 2));
+				border-radius: @round; 
+				opacity: 0; 
+				transition: @transition;
+			}
+		}
+		
+		input[type=checkbox]:checked{
+			& + label:after {
+				opacity: 1; 
+				transition: @transition;
+			}
+		}
+	}
+}
+
+
+.input-element(@el, @inputType: ~'', @content: ~'') {
+
+	//	in order to print styles @content will need to be a detached rule e.g @content: { background: #000 }
+	.generateInputElementClasses(@_el, @_type, @_content) {
+		& when (@_el = "body") {
+			.parent() {
+				input@{_type} + label {
+					&:before{
+						@_content();
+					}
+				}
+			}
+		}
+
+		& when (@_el = "body-checked") {
+			.parent() {
+				input@{_type}:checked + label {
+					&:before {
+						@_content();
+					}
+				}
+			}
+		}
+
+		& when (@_el = "label") {
+			.parent() {
+				input@{_type} + label {
+					@_content();
+				}
+			}
+		}
+
+		& when (@_el = "label-checked") {
+			.parent() {
+				input@{_type}:checked + label {
+					@_content();
+				}
+			}
+		}
+
+		& when (@_el = "focus") {
+			input@{_type}:focus + label {
+				@_content();
+			}
+		}
+
+		& when (@_el = "focus-checked") {
+			input@{_type}:checked:focus + label {
+				@_content();
+			}
+		}
+
+		& when (@_el = "check") {
+			.parent() {
+				input@{_type} + label:after {
+					@_content();
+				}
+			}
+		}
+
+		& when (@_el = "check-checked") {
+			.parent() {
+				input@{_type}:checked + label:after {
+					@_content();
+				}
+			}
+		}
+	}
+	
+	& when (@inputType = ~'') {
+		@type: @inputType;
+		
+		.generateInputElementClasses(@el, @type);
+	}
+	
+	& when not (@inputType = ~'') {
+		@type: "[type=@{inputType}]";
+	}
+}
+
+.input-body(@content) {
+	.input-element("body", @content);
+}
+
+.input-checkbox-body(@content){
+	.input-element("body","checkbox", @content);
+}
+
+.input-radio-body(@content){
+	.input-element("body","radio", @content);
+}
+
+.input-label(@content){
+	.input-element("label", @content);
+}
+
+.input-radio-label(@content){
+	.input-element("label","radio", @content);
+}
+
+.input-checkbox-label(@content){
+	.input-element("label","checkbox", @content);
+}
+
+.input-focus(@content){
+	.input-element("focus", @content);
+}
+
+.input-radio-focus(@content){
+	.input-element("focus","radio", @content);
+}
+
+.input-checkbox-focus(@content){
+	.input-element("focus","checkbox", @content);
+}
+
+.input-focus-checked(@content){
+	.input-element("focus-checked", @content);
+}
+
+.input-radio-focus-checked(@content){
+	.input-element("focus-checked","radio", @content);
+}
+
+.input-checkbox-focus-checked(@content){
+	.input-element("focus-checked","checkbox", @content);
+}
+
+.input-check(@content){
+	.input-element("check", @content);
+}
+
+.input-radio-check(@content){
+	.input-element("check","radio", @content);
+}
+
+.input-checkbox-check(@content){
+	.input-element("check","checkbox", @content);
+}
+
+.input-check-checked(@content){
+	.input-element("check-checked", @content);
+}
+
+.input-radio-check-checked(@content){
+	.input-element("check-checked","radio", @content);
+}
+
+.input-checkbox-check-checked(@content){
+	.input-element("check-checked","checkbox", @content);
+}
+
+.input-body-checked(@content){
+	.input-element("body-checked", @content);
+}
+
+.input-radio-body-checked(@content){
+	.input-element("body-checked","radio", @content);
+}
+
+.input-checkbox-body-checked(@content){
+	.input-element("body-checked","checkbox", @content);
+}
+
+.input-radio-body-checked(@content){
+	.input-element("body-checked","radio", @content);
+}
+
+.input-checkbox-body-checked(@content){
+	.input-element("body-checked","checkbox", @content);
+}
+
+.input-label-checked(@content){
+	.input-element("label-checked", @content);
+}
+
+.input-radio-label-checked(@content){
+	.input-element("label-checked","radio", @content);
+}
+
+.input-checkbox-label-checked(@content){
+	.input-element("label-checked","checkbox", @content);
+}
+
+@input-types: 
+  button button,
+  checkbox check,
+  color button,
+  date button,
+  datetime text,
+  datetime-local text,
+  email text ,
+  file text,
+  hidden hidden,
+  image text,
+  month text,
+  number text,
+  password text,
+  radio radio,
+  range slider,
+  reset button,
+  search text,
+  submit button,
+  tel text,
+  text text,
+  time text,
+  url text,
+  week text
+;
+
+//.input-type(@type, @content){
+//	input{
+//		.input-list(@type, @content);
+//	}
+//}
+
+//.input-list(@type, @content) {
+//	@i: 0; @list: "";
+//	@each @input in @input-types{
+//		& when nth(@input,2) == @type{
+//			@i: @i + 1;
+//			& when @i>1{
+//				@list: @list + ",";
+//			}
+//			@list: @list + "&[type=\"#{nth(@input,1)}\"]";
+//		}
+//	}
+//	@return @list;
+//}

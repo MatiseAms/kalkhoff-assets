@@ -1,0 +1,20 @@
+$assets-nav-mobile-item-height: 45px; //
+$assets-nav-mobile-show-count: 4; //
+$assets-nav-hamburger-width: 1rem; //
+$assets-nav-hamburger-height: 2px; //
+$assets-nav-hamburger-gutter: 3px; //
+$assets-nav-hamburger-color: #ffffff; //
+$assets-nav-hamburger-roundness: 0; //
+$assets-nav-hamburger-transition-duration: .3s; //
+$assets-nav-mobile: (
+	"item-height": 45px, 
+	"show-count": 4
+); //, 
+$assets-nav-hamburger: (
+	"width": 1rem, 
+	"height": 2px, 
+	"gutter": 3px, 
+	"color": #ffffff, 
+	"roundness": 0, 
+	"transition-duration": .3s
+); //

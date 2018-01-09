@@ -1,4 +1,5 @@
 module.exports = {
+
 	less: {
 		files: [{
 			expand: true,
@@ -44,6 +45,29 @@ module.exports = {
 				'settings/*.js'
 			],
 			dest: '<%= config.dist.root %>'
+		}]
+	},
+	images: {
+		files: [{
+			expand: true,
+			cwd: '<%= config.src.root %>',
+			src: [
+				'images/*.png',
+				'images/*.jpg',
+				'images/*.gif',
+				'images/*.svg'
+			],
+			dest: '<%= config.dist.root %>images/'
+		}]
+	},
+	magento_component: {
+		files: [{
+			expand: true,
+			cwd: '<%= config.dist.root %>',
+			src: [
+				'**/*'
+			],
+			dest: '<%= config.magento.component %>'
 		}]
 	}
 };

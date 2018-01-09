@@ -1,0 +1,18 @@
+.product{
+	@extend %#{$prefix}product;
+	&--overview{
+		@extend %#{$prefix}product--overview;
+	}
+	&--block{
+		@extend %#{$prefix}product--block;
+		&__image{
+			@extend %#{$prefix}product--block__image;
+		}
+		&__settings{
+			@extend %#{$prefix}product--block__settings;
+		}
+		&__bottom{
+			@extend %#{$prefix}product--block__bottom;
+		}
+	}
+}

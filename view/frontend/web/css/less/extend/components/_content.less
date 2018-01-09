@@ -1,0 +1,28 @@
+//
+//  Matise components
+//  _____________________________________________
+
+.assets-content-ul() {
+	list-style: none;
+
+	li {
+		padding-left: 1rem;
+		position: relative;
+
+		&:before{
+			.setColor(khBlack, background-color, true);
+			content: "";
+			width: 6px;
+			height: 6px;
+			display: block;
+			top: 0.5rem;
+			position: absolute;
+			left: 0;
+			border-radius: 50%;
+		}
+
+		& + li {
+			margin-top: 0.5rem;
+		}
+	}
+}

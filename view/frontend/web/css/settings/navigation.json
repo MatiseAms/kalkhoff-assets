@@ -1,0 +1,18 @@
+{
+  "assets": {
+    "nav":{
+      "mobile": [{
+        "item-height": "45px",
+        "show-count": 4
+      }],
+      "hamburger": [{
+        "width": "1rem",
+        "height": "2px",
+        "gutter": "3px",
+        "color": "{{color(khWhite)}}",
+        "roundness": 0,
+        "transition-duration": ".3s"
+      }]
+    }
+  }
+}

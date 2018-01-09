@@ -1,0 +1,182 @@
+//
+//  Matise color functions
+//  _____________________________________________
+
+//
+//  Loop through primary and secondary colors and calls given callback
+//  ---------------------------------------------
+
+.loopColors(@callback, @index: 1, @list: 'primary') {
+	@loopColors-pattern-01: {
+		@key: extract(extract(@colorSet, @index), 1);
+		@value: extract(extract(@colorSet, @index), 2);
+
+		@callback();
+	};
+
+	& when (@list = 'primary') {
+		& when (@index < length(@colors-primary)) {
+			@colorSet: @colors-primary;
+
+			@loopColors-pattern-01();
+
+			.loopColors(@callback, @index + 1,'primary');
+		}
+
+		& when (@index = length(@colors-primary)) {
+			@colorSet: @colors-primary;
+
+			@loopColors-pattern-01();
+
+			.loopColors(@callback, 1, 'secondary');
+		}
+	}
+
+	& when (@list = 'secondary') {
+		& when (@index <= length(@colors-secondary)) {
+			@colorSet: @colors-secondary;
+
+			@loopColors-pattern-01();
+
+			.loopColors(@callback, @index + 1, 'secondary');
+		}
+	}
+}
+
+//
+//  If parameter @byKey is set to true, sets given @property to the color matching given @color key
+//  ---------------------------------------------
+
+.setColor(@color, @property, @byKey: false, @where: ~'') {
+	& when (@byKey = true) {
+		@callback: {
+			& when (@color = @key) {
+				.formatOutput(@property, @value, @where);
+			}
+		};
+
+		.loopColors(@callback);
+	}
+
+	& when not (@byKey = true) {
+		.formatOutput(@property, @color, @where);
+	}
+}
+
+//
+//  If parameter @byKey is set to true, sets given @property to the color matching given color key and applies given shade @percentage
+//  ---------------------------------------------
+
+.setShade(@color, @percentage, @property, @byKey: false, @where: ~'') {
+	& when (@byKey = true) {
+		@callback: {
+			& when (@color = @key) {
+				@colorMix: mix(black, @color, @percentage);
+
+				.formatOutput(@property, @colorMix, @where);
+			}
+		};
+
+		.loopColors(@callback);
+	}
+
+	& when not (@byKey = true) {
+		@colorMix: mix(black, @color, @percentage);
+
+		.formatOutput(@property, @colorMix, @where);
+	}
+}
+
+//
+//  If parameter @byKey is set to true, sets given @property to the color matching color key and applies given tint @percentage
+//  ---------------------------------------------
+
+.setTint(@color, @percentage, @property, @byKey: false, @where: ~'') {
+	& when (@byKey = true) {
+		@callback: {
+			& when (@color = @key) {
+				@colorMix: mix(white, @color, @percentage);
+
+				.formatOutput(@property, @colorMix, @where);
+			}
+		};
+
+		.loopColors(@callback);
+	}
+
+	& when not (@byKey = true) {
+		@colorMix: mix(white, @color, @percentage);
+
+		.formatOutput(@property, @colorMix, @where);
+	}
+}
+
+//
+//  If parameter @byKey is set to true, sets given @property to the matching color key converted to rgba (using given @opacity)
+//  ---------------------------------------------
+
+.setNativeRgba(@color, @opacity, @property, @byKey: false, @where: ~'') {
+	& when (@byKey = true) {
+		@callback: {
+			& when (@color = @key) {
+				@rgbaColor: rgba(red(@color), green(@color), blue(@color), @opacity);
+
+				.formatOutput(@property, @rgbaColor, @where);
+			}
+		};
+
+		.loopColors(@callback);
+	}
+
+	& when not (@byKey = true) {
+		@rgbaColor: rgba(red(@color), green(@color), blue(@color), @opacity);
+
+		.formatOutput(@property, @rgbaColor, @where);
+	}
+}
+
+//
+//  Based on given color calculates its brightness and sets given property to dark or light given colors to create a contrast
+//  ---------------------------------------------
+
+.setContrast(
+    @color,
+    @property,
+    @byKey: false,
+    @dark: @colors-primary-khblack,
+    @light: @colors-primary-khwhite,
+    @where: ~'',
+    @contrast: 50
+) {
+    & when (@byKey = true) {
+        @colorLoopCallback: {
+            & when (@key = @color) {
+                @sum: red(@value) + green(@value) + blue(@value);
+                @color-brightness: 100% * (@sum / (255 * 3));
+
+                & when (@color-brightness < @contrast) {
+                    @{property}: @light;
+                }
+
+                & when not (@color-brightness < @contrast) {
+                    @{property}: @dark;
+                }
+            }
+        };
+
+        .loopColors(@colorLoopCallback);
+    }
+
+    & when not (@byKey = true) {
+        @sum: red(@color) + green(@color) + blue(@color);
+        @color-brightness: 100% * (@sum / (255 * 3));
+
+        & when (@color-brightness < @contrast) {
+                @{property}: @light;
+        }
+
+        & when not (@color-brightness < @contrast) {
+                @{property}: @dark;
+        }
+    }
+}

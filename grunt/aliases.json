@@ -11,10 +11,12 @@
     "copy:less",
     "copy:scss",
     "copy:json",
+    "copy:images",
     "shell:generate_settings",
     "copy:fonts",
     "webfont",
-    "icon_font_loader"
+    "icon_font_loader",
+		"copy:magento_component"
   ],
   "test": [
     "clean:test",

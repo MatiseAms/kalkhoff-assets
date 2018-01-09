@@ -1,0 +1,53 @@
+
+// Settings for kalkhoff-frame
+@import "kalkhoff-frame"; //
+//
+$kalkhoff-frame-font-name: "kalkhoff-frame"; //
+$kalkhoff-frame-font-file-name: "kalkhoff-frame"; //
+$kalkhoff-frame-font-family: #{$kalkhoff-frame-font-name},sans-serif; //
+%kalkhoff-frame-font-family{ font-family: $kalkhoff-frame-font-family; } //
+
+
+// Settings for kalkhoff-social
+@import "kalkhoff-social"; //
+//
+$kalkhoff-social-font-name: "kalkhoff-social"; //
+$kalkhoff-social-font-file-name: "kalkhoff-social"; //
+$kalkhoff-social-font-family: #{$kalkhoff-social-font-name},sans-serif; //
+%kalkhoff-social-font-family{ font-family: $kalkhoff-social-font-family; } //
+
+
+// Settings for kalkhoff-UI
+@import "kalkhoff-UI"; //
+//
+$kalkhoff-UI-font-name: "kalkhoff-UI"; //
+$kalkhoff-UI-font-file-name: "kalkhoff-UI"; //
+$kalkhoff-UI-font-family: #{$kalkhoff-UI-font-name},sans-serif; //
+%kalkhoff-UI-font-family{ font-family: $kalkhoff-UI-font-family; } //
+
+$kalkhoff-UI-font-weights: (
+	"200" : 200,
+	"400" : 400,
+	"600" : 600,
+	"800" : 800
+); //
+//
+
+$kalkhoff-UI-font-weight-200: 200; //
+$kalkhoff-UI-font-weight-400: 400; //
+$kalkhoff-UI-font-weight-600: 600; //
+$kalkhoff-UI-font-weight-800: 800; //
+
+
+// Collect all fonts
+$icons-merged: map-collect(
+	map-get($kalkhoff-frame-iconset,'icons'),
+	map-get($kalkhoff-social-iconset,'icons'),
+	map-get($kalkhoff-UI-iconset,'icons')
+); //
+//
+$icons: (
+	"kalkhoff-frame": $kalkhoff-frame-iconset,
+	"kalkhoff-social": $kalkhoff-social-iconset,
+	"kalkhoff-UI": $kalkhoff-UI-iconset
+); //

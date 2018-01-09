@@ -1,0 +1,37 @@
+//
+//  Matise grid structure
+//  _____________________________________________
+
+.@{prefix} {
+    &column {
+        box-sizing: border-box !important;
+
+        .generateClasses(1, false, false, column);
+        .generateMediaQueries(1, column);
+    }
+
+    &row {
+        max-width: @assets-row__max-width;
+        width: 100%;
+        margin: auto;
+        display: flex;
+        justify-content: flex-start;
+        flex-flow: row wrap;
+
+        &.@{prefix}center {
+            justify-items: center;
+            justify-content: center;
+        }
+
+        &.@{prefix}right {
+            justify-items: right;
+            justify-content: flex-end;
+        }
+
+        .generateClasses(1, false, false, row);
+        .generateMediaQueries(1, row);
+    }
+}
+
+.generateStyleHelpers(1);
+.generateDisplayRules(1);

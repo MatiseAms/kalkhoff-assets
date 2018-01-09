@@ -1,0 +1,75 @@
+
+/* --------------------------------------- */
+/*				Main navigation
+/* ---------------------------------------- */
+.@{prefix}nav_main{
+	.@{prefix}nav_main();
+	.@{prefix}nav_mobile();
+	&--container{
+		.@{prefix}nav_main--container();
+		.@{prefix}nav_mobile--container();
+	}
+	&--list{
+		.@{prefix}nav_main--list();
+		.@{prefix}nav_mobile--list();
+		&__item{
+			.@{prefix}nav_main--list__item();
+			.@{prefix}nav_mobile--list__item();
+			&-text{
+				.@{prefix}nav_main--list__item-text();
+				.@{prefix}nav_mobile--list__item-text();
+			}
+			&-link{
+				.@{prefix}nav_main--list__item-link();
+				.@{prefix}nav_mobile--list__item-link();
+			}
+		}
+	}
+	&--sublist{
+		.@{prefix}nav_main--sublist();
+		.@{prefix}nav_mobile--sublist();
+		&__container{
+			.@{prefix}nav_main--sublist__container();
+			.@{prefix}nav_mobile--sublist__container();
+		}
+		&__item{
+			.@{prefix}nav_main--sublist__item();
+			.@{prefix}nav_mobile--sublist__item();
+			&__sub{
+				.@{prefix}nav_main--sublist__item__sub();
+				.@{prefix}nav_mobile--sublist__item__sub();
+			}
+			&-text{
+				.@{prefix}nav_main--sublist__item-text();
+				.@{prefix}nav_mobile--sublist__item-text();
+			}
+			&-link{
+				.@{prefix}nav_main--sublist__item-text();
+				.@{prefix}nav_mobile--sublist__item-text();
+			}
+		}
+	}
+	&--seclist{
+		.@{prefix}nav_main--seclist();
+		.@{prefix}nav_mobile--seclist();
+		// &__container{
+		// 	.@{prefix}nav_main--seclist__container();
+		// }
+		&__item{
+			.@{prefix}nav_main--seclist__item();
+			.@{prefix}nav_mobile--seclist__item();
+			&-text{
+				.@{prefix}nav_main--seclist__item-text();
+				.@{prefix}nav_mobile--seclist__item-text();
+			}
+			&-link{
+				.@{prefix}nav_main--seclist__item-link();
+				.@{prefix}nav_mobile--seclist__item-link();
+			}
+		}
+	}
+	&--search{
+		.@{prefix}nav_main--search();
+		.@{prefix}nav_mobile--search();
+	}
+}
