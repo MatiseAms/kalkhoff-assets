@@ -1,8 +1,17 @@
 {
     "name": "matise/kalkhoff-assets",
     "description": "Kalkhoff assets",
-    "type": "project",
+    "type": "magento2-module",
+    "version": "1.0.0",
     "require": {
         "oyejorge/less.php": "v1.7.0.14"
+    },
+    "autoload": {
+        "files": [
+            "src/registration.php"
+        ],
+        "psr-4": {
+            "Matise\\Kalkhoff-assets\\": "src"
+        }
     }
 }
