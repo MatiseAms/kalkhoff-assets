@@ -23,6 +23,11 @@ let fileTypes = [{
 	listPattern: '{{var}} {{value}}'
 }];
 
+
+String.prototype.replaceAll = function(search, replacement) {
+	var target = this;
+	return target.split(search).join(replacement);
+};
 // css option
 // {
 // 	type: 'css',
@@ -184,6 +189,10 @@ getFiles(sourceFolder).forEach((file) => {
 	fileTypes.forEach((type) => {
 		// Write New Files
 		let compiled = objToStyle(JSON.parse(fs.readFileSync(file, 'utf8')), type);
+
+		// Fix for less lists;
+		compiled = compiled.replaceAll(';,', ';');
+
 
 		console.log('\x1b[32m%s\x1b[0m', '\t\u2713', type.type);
 		console.log('\x1b[32m%s\x1b[0m', '\t  ' + file + ' \u2192 ' + type.dest + '/_' + fileName + '.' + type.type);

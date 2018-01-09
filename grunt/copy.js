@@ -66,7 +66,9 @@ module.exports = {
 			cwd: '<%= config.dist.root %>',
 			src: [
 				'**/*',
-				'!view',
+				'!**/*.scss',
+				'!**/scss',
+				'!view'
 			],
 			dest: '<%= config.magento.component %>'
 		}]
