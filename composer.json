@@ -8,10 +8,10 @@
     },
     "autoload": {
         "files": [
-            "registration.php"
+            "src/registration.php"
         ],
         "psr-4": {
-            "Matise\\Kalkhoff-assets\\": ""
+            "Matise\\Kalkhoff-assets\\": "src"
         }
     }
 }
