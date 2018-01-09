@@ -1,20 +1,20 @@
 input{
 	&[type="color"], &[type="date"], &[type="datetime-local"], &[type="email"], &[type="file"], &[type="image"], &[type="month"], &[type="number"], &[type="password"], &[type="search"], &[type="tel"], &[type="text"], &[type="time"], &[type="url"], &[type="week"]{
-		@extend %input;
+		.assets-input();
 	}
 }
 
 input[type="color"]{
-	@extend %input-color;
+	.assets-input-color();
 }
 input[type="password"]{
-	@extend %input-password;
+	.assets-input-password();
 }
 *{
 	input[type="checkbox"]{
-		@extend %input-checkbox;
+		.assets-input-checkbox();
 	}
 	input[type="radio"]{
-		@extend %input-radio;
+		.assets-input-radio();
 	}
 }

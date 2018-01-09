@@ -1,12 +1,12 @@
 .button, button, input[type="button"], input[type="submit"]{
-	@extend %button;
+	.button();
 	&.naked, &-naked, &[naked]{
-		@extend %button-naked;
+		.button-naked();
 	}
 	&.small, &-small, &[small]{
-		@extend %button-small;
+		.button-small();
 	}
 }
 .button-group, button-group{
-	@extend %button-group;
+	.button-group();
 }
