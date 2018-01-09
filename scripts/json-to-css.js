@@ -183,22 +183,25 @@ makeDirs();
  * Convert all files
  */
 getFiles(sourceFolder).forEach((file) => {
+
 	let fileName = file.split('/')[file.split('/').length - 1].replace('.json', '');
 	console.log('\x1b[33m%s\x1b[0m', fileName);
+	if (fileName.charAt(0) !== "_") {
 
-	fileTypes.forEach((type) => {
-		// Write New Files
-		let compiled = objToStyle(JSON.parse(fs.readFileSync(file, 'utf8')), type);
+		fileTypes.forEach((type) => {
+			// Write New Files
+			let compiled = objToStyle(JSON.parse(fs.readFileSync(file, 'utf8')), type);
 
-		// Fix for less lists;
-		compiled = compiled.replaceAll(';,', ';');
+			// Fix for less lists;
+			compiled = compiled.replaceAll(';,', ';');
 
 
-		console.log('\x1b[32m%s\x1b[0m', '\t\u2713', type.type);
-		console.log('\x1b[32m%s\x1b[0m', '\t  ' + file + ' \u2192 ' + type.dest + '/_' + fileName + '.' + type.type);
+			console.log('\x1b[32m%s\x1b[0m', '\t\u2713', type.type);
+			console.log('\x1b[32m%s\x1b[0m', '\t  ' + file + ' \u2192 ' + type.dest + '/_' + fileName + '.' + type.type);
 
-		fs.writeFileSync(type.dest + '/_' + fileName + '.' + type.type, compiled, function(err) {
-			console.log('woops, something went wrong!' + err);
+			fs.writeFileSync(type.dest + '/_' + fileName + '.' + type.type, compiled, function(err) {
+				console.log('woops, something went wrong!' + err);
+			});
 		});
-	});
+	}
 });

@@ -8,11 +8,9 @@
         "gutter": "5px",
         "active-scale": "1.2",
         "margin": "0 0 0 20px",
-        "shadow": [{
-          "brightness": "80",
-          "size": "0 0 2px 0",
-          "color": "{{color(khBlack,0.25)}}"
-        }]
+        "shadow-brightness": "80",
+        "shadow-size": "0 0 2px 0",
+        "shadow-color": "{{color(khBlack,0.25)}}"
       }]
     }
   }
