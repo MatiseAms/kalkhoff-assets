@@ -1,0 +1,6 @@
+.#{$prefix}search{
+	@extend %#{$prefix}search;
+	&--mobile{
+		@extend %#{$prefix}search--mobile;
+	}
+}

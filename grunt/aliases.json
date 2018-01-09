@@ -16,7 +16,8 @@
     "copy:fonts",
     "webfont",
     "icon_font_loader",
-		"copy:magento_component"
+		"copy:magento_component",
+		"copy:magento_files"
   ],
   "test": [
     "clean:test",

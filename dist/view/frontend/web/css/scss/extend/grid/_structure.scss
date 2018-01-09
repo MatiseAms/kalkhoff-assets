@@ -1,0 +1,53 @@
+@mixin createStructures($pre: null){
+	@for $i from 1 through $grid-columns{
+		//	$v: $i/10;
+		$v: $i; $width: (100/$grid-columns)*($i/10);
+		@each $method in $grid-structure-method{
+			@each $action in $grid-structure-action{
+				@each $direction in $grid-structure-direction{
+					$className: "";
+					@if $direction != ""{
+						$className: #{$pre}#{$method}-#{$action}-#{$direction}-#{$v};
+					} @else{
+						$className: #{$pre}#{$method}-#{$action}-#{$v};
+					}
+					.#{$prefix}#{$className}{
+						// Set if its columns (percentage) or grid (relative to viewport)
+						$margin: "";
+						@if $method == "grid"{
+							$margin: grid($i);
+						} @elseif $method == "column"{
+							$margin: percentage((1/$grid-columns)*$i);
+						}
+						// Create classes with minus for pull or + for else/push
+						@if $action == "pull"{
+							#{$direction}: -#{$margin};
+						} @else{
+							#{$direction}: #{$margin};
+						}
+					}
+				}
+			}
+		}
+	}
+}
+@if $grid-structure == true{
+	$min-width: 0; //
+	@include createStructures();
+
+	@each $bp-name,$bp-value in $grid-structure-breakpoints{
+		$mq-only: "#{$grid-screen} and (min-width: #{$min-width}px) and (max-width: #{$bp-value}px)"; //
+		$mq: "#{$grid-screen} and (min-width: #{$min-width}px)"; //
+		$min-width: $bp-value + 1;
+		@if $grid-structure-responsive{
+			@if $grid-structure-only{
+				@media #{$mq-only}{
+					@include createStructures("#{$bp-name}-only-");
+				}
+			}
+			@media #{$mq}{
+				@include createStructures("#{$bp-name}-");
+			}
+		}
+	}
+}

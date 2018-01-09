@@ -1,0 +1,42 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" >
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
+<metadata>
+Created by FontForge 20170925 at Tue Jan  9 09:20:37 2018
+ By Sil van Diepen
+</metadata>
+<defs>
+<font id="kalkhoff-frame" horiz-adv-x="512" >
+  <font-face 
+    font-family="kalkhoff-frame"
+    font-weight="400"
+    font-stretch="normal"
+    units-per-em="512"
+    panose-1="2 0 5 9 0 0 0 0 0 0"
+    ascent="448"
+    descent="-64"
+    bbox="17 0 486.857 448.407"
+    underline-thickness="25"
+    underline-position="-76"
+    unicode-range="U+B1001-B1004"
+  />
+<missing-glyph 
+d="M17 0v341h136v-341h-136zM34 17h102v307h-102v-307z" />
+    <glyph glyph-name=".notdef" 
+d="M17 0v341h136v-341h-136zM34 17h102v307h-102v-307z" />
+    <glyph glyph-name=".null" horiz-adv-x="0" 
+ />
+    <glyph glyph-name="nonmarkingreturn" 
+ />
+    <glyph glyph-name="diamant" unicode="&#xb1001;" 
+d="M27 193l125 197l-3 8l-4 13q-2 7 3 12t12 3.5t9 -8.5l293 30q11 1 13 -9l10 -38q2 -4 1 -8t-4 -7l-232 -240q-2 -2 -4 -3q-4 -3 -9 -2q-2 0 -3 1l-203 41q-4 1 -5 4q-1 2 0 5zM157 374l-115 -181l183 -37zM245 177l215 222l-6 23l-277 -30z" />
+    <glyph glyph-name="mixte" unicode="&#xb1002;" 
+d="M266 176l175 220l-5 15l-139 -116q-28 -27 -57 -34zM52 203q1 -3 7.5 -10t8.5 -8q8 -1 183 -29l-31 100l-151 -39q-14 -10 -17 -14zM216 269l-14 46q-62 -45 -105 -77q6 1 53 13.5t66 17.5zM473 365q3 -10 -6 -14h-4q-7 0 -9 7l-4 10l-177 -223q-4 -4 -9 -4h-1h-1v0h-1
+q-184 29 -195 31q-13 3 -25 24q-4 7 -2 12q3 7 158 120l-3 13q-4 10 6 13t13 -7l23 -73h1q21 5 51 32l144 119l-4 9q-3 10 7 13.5t13 -6.5z" />
+    <glyph glyph-name="trapez" unicode="&#xb1003;" 
+d="M27 194l125 197q-2 8 2.5 13.5t11.5 4.5t9 -8l38 -121l239 165q1 1 4 2q13 5 16 -8q6 -26 13 -51q2 -4 1 -8t-5 -7l-231 -227q-1 -2 -3 -3q-5 -3 -10 -2q-2 0 -3 1l-203 41q-4 1 -5 4t0 5zM460 387l-8 29l-231 -161l24 -79zM226 157l-31 99l-1 2l-37 117l-115 -181z" />
+    <glyph glyph-name="wave" unicode="&#xb1004;" 
+d="M227 259l4 -4q38 -34 100 -33q117 92 117 211q0 13 10.5 15t13.5 -11q9 -29 14 -42q3 -9 -4.5 -14.5t-14.5 -1.5q-16 -75 -78.5 -140t-137.5 -97q-6 -2 -10 0l-210 44q-4 1 -5 4q-1 2 0 5l130 210q-3 9 2 14.5t12 4.5t9 -9zM231 157l-27 90q-1 2 -1 4l-42 138l-119 -192z
+M298 198q-33 6 -58 19l14 -45q22 12 44 26z" />
+  </font>
+</defs></svg>

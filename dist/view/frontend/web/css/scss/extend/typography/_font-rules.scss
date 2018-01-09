@@ -1,0 +1,77 @@
+%#{$prefix}default-font-rules{
+	h1, h2, h3, h4, h5, pre, span.code p{
+		&+h1{
+			margin-top: 0.75rem;
+		}
+		&+p{
+			margin-top: 2rem;
+		}
+		&+.row{
+			margin-top: 1rem;
+		}
+		&+h1, &+h2, &+h3, &+h4, &+h5, &+p{
+			margin-top: 1rem;
+		}
+	}
+	span.code, pre{
+		&+h1, &+h2, &+h3, &+h4, &+h5{
+			margin-top: 2rem;
+		}
+	}
+	p{
+		@include wildcard("button",true){
+			margin-top: 2rem;
+		}
+		&+p{
+			margin-top: 0.5rem;
+		}
+		&+table{
+			margin-top: 1rem;
+		}
+	}
+	h1, h2, h3, h4, h5{
+		&+p{
+			margin-top: grid(0.25);
+		}
+		&+table{
+			margin-top: 1rem;
+		}
+		&+ul{
+			margin-top: 1rem;
+		}
+	}
+	h2, h3, h4{
+		&+h5{
+			margin-top: grid(0.2);
+		}
+	}
+
+	table{
+		&+h1, &+h2, &+h3, &+h4, &+h5, &+p{
+			margin-top: 2rem;
+		}
+	}
+	blockquote{
+		&+h1, &+h2, &+h3, &+h4, &+h5, &+p{
+			margin-top: 1rem;
+		}
+	}
+	ul, blockquote{
+		&+h1, &+h2, &+h3, &+h4, &+h5, &+p{
+			margin-top: 1rem;
+		}
+	}
+	h5{
+		&+p{
+			margin-top: 200px;
+		}
+	}
+
+
+
+	div, p{
+		&+table, &+h1, &+h2, &+h3, &+h4, &+h5, &+ul{
+			margin-top: grid(0.5);
+		}
+	}
+}

@@ -1,0 +1,48 @@
+.browser(@browser,@version: null, @content){
+  & when @browser == 'safari'{
+    & when @version{
+      & when @version == 9{
+        @supports (overflow:-webkit-marquee) and (justify-content:inherit) {
+          @content;
+        }
+      }
+    } & when  @version == '6>7'{
+      @media screen and (-webkit-min-device-pixel-ratio:0) and (min-color-index:0)
+      { @content; }
+    } @else {
+      @media screen and (min-color-index:0) and(-webkit-min-device-pixel-ratio:0){
+        @supports (overflow:-webkit-marquee) and (justify-content:inherit) {
+          @content;
+        }
+      }
+    }
+  }
+  & when  @browser == 'firefox'{
+    @-moz-document url-prefix() {
+      @content;
+    }
+  }
+  & when  @browser == 'chrome'{
+
+    /* Chrome 22-28+ */
+    & when @version == '22-28'{
+      @media screen and(-webkit-min-device-pixel-ratio:0) {
+        @content;
+      }
+    }
+
+    /* Chrome 29+ */
+    & when  @version == '29+' {
+      @media screen and (-webkit-min-device-pixel-ratio:0) and (min-resolution:.001dpcm) {
+        @content;
+      }
+    }
+
+    & when not @version {
+      // newest
+      @media screen and (-webkit-min-device-pixel-ratio:0) and (min-resolution:.001dpcm) {
+        @content;
+      }
+    }
+  }
+}

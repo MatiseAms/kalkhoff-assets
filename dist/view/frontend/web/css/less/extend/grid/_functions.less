@@ -1,0 +1,61 @@
+//
+//  Matise grid functions
+//  _____________________________________________
+
+//ToDo UI: integrate .formatOutput() helper in these mixins, calls in already styled homepage elements will need to be modified accordingly
+
+//
+//  Set given property to percentage size based on given number of columns
+//  ---------------------------------------------
+
+.getPercentageFromColumns(@columns, @property, @index: 1) {
+    & when (isnumber(@columns)) {
+            @{property}: (100% * (@columns / @assets-grid-columns));
+    }
+
+    & when not (isnumber(@columns)) {
+        & when (@index <= length(@assets-column-aliases)) {
+            @alias: extract(extract(@assets-column-aliases, @index), 1);
+            @value: extract(extract(@assets-column-aliases, @index), 2);
+
+            & when (@alias = @columns) {
+                    @{property}: @value;
+            }
+
+            .getPercentageFromColumns(@columns, @property, @index + 1);
+        }
+    }
+}
+
+//
+//  Set given property to vw size based on given number of columns
+//  ---------------------------------------------
+
+.getVwFromColumns(@columns, @property) {
+    @{property}: (100vw * @columns/@assets-grid-columns);
+}
+.grid(@columns, @property){
+	.getVwFromColumns(@columns, @property);
+}
+
+.assets-grid-min-fontsize(@columns, @fontSize, @alt: false) {
+    @fontSizeMin: unit(@fontSize);
+    @minimumScreenWidth: unit(((@fontSizeMin / @columns) * @assets-grid-columns), px);
+
+    & when (isnumber(@minimumScreenWidth)) {
+        @media only screen and (max-width: unit(@minimumScreenWidth, px)) {
+            font-size: unit(@fontSizeMin, px);
+        }
+    }
+}
+
+.assets-grid-max-fontsize(@columns, @fontSize, @alt: false) {
+    @fontSizeMax: unit(@fontSize);
+    @maximumScreenWidth: unit(((@fontSizeMax / @columns) * @assets-grid-columns), px);
+
+    & when (isnumber(@maximumScreenWidth)) {
+        @media only screen and (min-width: unit(@maximumScreenWidth, px)) {
+            font-size: unit(@fontSizeMax, px);
+        }
+    }
+}

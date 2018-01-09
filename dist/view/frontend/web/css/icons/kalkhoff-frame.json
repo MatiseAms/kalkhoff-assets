@@ -1,0 +1,13 @@
+{
+  "kalkhoff-frame": {
+    "title": "kalkhoff-frame",
+    "icons": [
+     { "name": "diamant", "unicode": "U+b1001" },
+     { "name": "mixte", "unicode": "U+b1002" },
+     { "name": "trapez", "unicode": "U+b1003" },
+     { "name": "wave", "unicode": "U+b1004" }
+    ],
+    "weights":[
+    ]
+  }
+}

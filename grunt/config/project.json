@@ -13,7 +13,7 @@
     "fonts": "dist/fonts/"
   },
   "magento": {
-    "component": "view/frontend/web/css/"
+    "component": "dist/view/frontend/web/css/"
   },
   "test": {
     "root": "test/",

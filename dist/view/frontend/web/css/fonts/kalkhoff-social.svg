@@ -1,0 +1,42 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" >
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
+<metadata>
+Created by FontForge 20170925 at Tue Jan  9 09:20:38 2018
+ By Sil van Diepen
+</metadata>
+<defs>
+<font id="kalkhoff-social" horiz-adv-x="512" >
+  <font-face 
+    font-family="kalkhoff-social"
+    font-weight="400"
+    font-stretch="normal"
+    units-per-em="512"
+    panose-1="2 0 5 9 0 0 0 0 0 0"
+    ascent="448"
+    descent="-64"
+    bbox="0 0 512 384"
+    underline-thickness="25"
+    underline-position="-76"
+    unicode-range="U+C1001-C1003"
+  />
+<missing-glyph 
+d="M17 0v341h136v-341h-136zM34 17h102v307h-102v-307z" />
+    <glyph glyph-name=".notdef" 
+d="M17 0v341h136v-341h-136zM34 17h102v307h-102v-307z" />
+    <glyph glyph-name=".null" horiz-adv-x="0" 
+ />
+    <glyph glyph-name="nonmarkingreturn" 
+ />
+    <glyph glyph-name="facebook" unicode="&#xc1001;" 
+d="M427 384q9 0 15 -6t6 -15v-342q0 -9 -6 -15t-15 -6h-98v149h50l8 58h-58v37q0 9 2 14.5t8.5 9.5t18.5 4h31v52q-18 2 -45 2q-34 0 -54.5 -20t-20.5 -57v-42h-50v-58h50v-149h-184q-9 0 -15 6t-6 15v342q0 3 1 5.5l2 5t3 4.5t4.5 3l5 2t5.5 1h342z" />
+    <glyph glyph-name="instagram" unicode="&#xc1002;" 
+d="M256 346q-53 0 -78 -1q-21 -1 -35 -6q-13 -5 -22.5 -14.5t-14.5 -21.5q-5 -15 -6 -36q-1 -24 -1 -76q0 -53 1 -77q1 -21 6 -35q5 -13 14.5 -22t22.5 -14q14 -6 35 -7q25 -1 78 -1t78 1q21 1 35 7q13 5 22.5 14t14.5 22q5 14 6 35q1 24 1 77q0 52 -1 76q-1 21 -6 36
+q-5 12 -14.5 21.5t-22.5 14.5q-14 5 -35 6q-25 1 -78 1zM256 380q54 0 79 -1q27 -1 47 -8q19 -8 33.5 -22.5t22.5 -33.5t9 -46q1 -25 1 -78t-1 -78q-1 -27 -9 -46q-8 -20 -22.5 -34.5t-33.5 -21.5q-20 -8 -47 -9q-25 -1 -79 -1t-79 1q-27 1 -47 9q-19 7 -33.5 21.5
+t-22.5 34.5q-8 19 -9 46q-1 25 -1 78t1 78q1 26 9 46q8 19 22.5 33.5t33.5 22.5q20 7 47 8q25 1 79 1zM256 288q27 0 49.5 -13t36 -35.5t13.5 -48.5q0 -41 -29 -69.5t-70 -28.5t-70 28.5t-29 69t29 69t70 28.5zM256 128q27 0 45.5 18.5t18.5 44.5t-18.5 44.5t-45.5 18.5
+t-45.5 -18.5t-18.5 -44.5t18.5 -44.5t45.5 -18.5zM335 292q0 5 2 9t5 7t7.5 5t8.5 2q10 0 17 -7t7 -16t-7 -16t-16.5 -7t-16.5 7t-7 16z" />
+    <glyph glyph-name="youtube" unicode="&#xc1003;" 
+d="M0 213q0 18 1.5 39t2.5 32l1 12q5 35 20 51q7 7 16.5 11.5t15 6t15 2.5t10.5 2q18 1 61.5 2.5t78.5 1.5l34 1q108 -1 179 -6q35 -4 52 -21q6 -7 11.5 -20t6.5 -22l2 -9q5 -42 5 -83v-40q0 -19 -1.5 -39.5t-2.5 -32.5l-1 -11q-5 -36 -20 -51q-17 -18 -52 -22
+q-32 -2 -76.5 -3.5t-73.5 -1.5h-29q-133 1 -174 5q-1 0 -10.5 1.5t-15 3t-15 6t-16 11.5t-12 19.5t-6.5 22.5l-2 9q-5 41 -5 83v40zM203 126l138 71l-138 72v-143z" />
+  </font>
+</defs></svg>

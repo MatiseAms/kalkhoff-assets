@@ -1,0 +1,6 @@
+.content{
+	@extend %#{$prefix}content !optional;
+	ul{
+		@extend %#{$prefix}content-ul !optional;
+	}
+}

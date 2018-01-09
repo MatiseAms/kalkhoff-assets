@@ -1,0 +1,22 @@
+//
+//  Matise input placeholders
+//  _____________________________________________
+
+.assets-placeholder(@content, @atroot: false) {
+
+    & when (@atroot = true) {
+        &::placeholder & { @content(); }
+        &::-webkit-input-placeholder & { @content(); }
+        &:-moz-placeholder & { @content(); }
+        &::-moz-placeholder & { @content(); }
+        &:-ms-input-placeholder & { @content(); }
+    }
+
+    & when (@atroot = false) {
+        &::placeholder { @content(); }
+        &::-webkit-input-placeholder { @content(); }
+        &:-moz-placeholder { @content(); }
+        &::-moz-placeholder { @content(); }
+        &:-ms-input-placeholder { @content(); }
+    }
+}

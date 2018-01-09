@@ -1,0 +1,258 @@
+//
+//  Matise grid mixins
+//  _____________________________________________
+
+//
+//  Generates grid classes using aliases instead of column numbers
+//  ---------------------------------------------
+
+.generateAliases(@index, @breakpoint: false, @target: row) when (@index < length(@assets-column-aliases)) {
+	@key: extract(extract(@assets-column-aliases, @index), 1);
+	@value: extract(extract(@assets-column-aliases, @index), 2);
+
+	& when (@target = row) {
+		& when (@breakpoint = false) {
+			&.@{prefix}@{key} > .@{prefix}column {
+				width: @value;
+			}
+		}
+
+		& when not (@breakpoint = false) {
+			&.@{prefix}@{breakpoint}-@{key} > .@{prefix}column {
+				width: @value;
+			}
+		}
+	}
+
+	& when (@target = column) {
+		& when (@breakpoint = false) {
+			&.@{prefix}@{key}{
+				width: @value;
+			}
+		}
+
+		& when not (@breakpoint = false) {
+			&.@{prefix}@{breakpoint}-@{key}{
+				width: @value;
+			}
+		}
+	}
+	.generateAliases(@index + 1, @breakpoint, @target);
+}
+
+//
+//  Generates grid classes using column numbers
+//  ---------------------------------------------
+
+.generateClasses(@index, @breakpoint: false, @only: false, @target: row) when (@index <= @assets-grid-columns) {
+	@colWidth: (100% * (@index / @assets-grid-columns));
+
+	& when (@breakpoint = false) {
+		& when (@target = row) {
+			& when (@index = 1) {
+				.generateAliases(1, @breakpoint, @target);
+			}
+
+			&.@{prefix}column-@{index} > .@{prefix}column {
+				width: @colWidth;
+			}
+
+			&.@{prefix}offset-@{index} > .@{prefix}column {
+				margin-left: @colWidth;
+			}
+
+			&.@{prefix}push-@{index} > .@{prefix}column {
+				margin-right: @colWidth;
+			}
+
+			&.@{prefix}pull-@{index} > .@{prefix}column {
+				margin-left: -@colWidth;
+			}
+		}
+
+		& when (@target = column) {
+			& when (@index = 1) {
+				.generateAliases(1, @breakpoint, @target);
+			}
+
+			&.@{prefix}column-@{index} {
+				width: @colWidth;
+			}
+
+			&.@{prefix}offset-@{index} {
+				margin-left: @colWidth;
+			}
+
+			&.@{prefix}push-@{index} {
+				margin-right: @colWidth;
+			}
+
+			&.@{prefix}pull-@{index} {
+				margin-left: -@colWidth;
+			}
+		}
+	}
+
+	& when not (@breakpoint = false) {
+		& when (@only = false) {
+			& when (@index = 1) {
+				.generateAliases(1, @breakpoint, @target);
+			}
+
+			& when (@target = row) {
+				&.@{prefix}@{breakpoint}-@{index} > .@{prefix}column {
+					width: @colWidth;
+				}
+
+				&.@{prefix}offset-@{breakpoint}-@{index} > .@{prefix}column {
+					margin-left: @colWidth;
+				}
+
+				&.@{prefix}push-@{breakpoint}-@{index} > .@{prefix}column {
+					margin-right: @colWidth;
+				}
+
+				&.@{prefix}pull-@{breakpoint}-@{index} > .@{prefix}column {
+					margin-left: -@colWidth;
+				}
+			}
+
+			& when (@target = column) {
+				&.@{prefix}@{breakpoint}-@{index}{
+					width: @colWidth;
+				}
+
+				&.@{prefix}offset-@{breakpoint}-@{index}{
+					margin-left: @colWidth;
+				}
+
+				&.@{prefix}push-@{breakpoint}-@{index}{
+					margin-right: @colWidth;
+				}
+
+				&.@{prefix}pull-@{breakpoint}-@{index}{
+					margin-left: -@colWidth;
+				}
+			}
+		}
+
+		& when not (@only = false) {
+			& when (@target = row) {
+				&.@{prefix}@{breakpoint}-@{only}-@{index} > .@{prefix}column {
+					width: @colWidth;
+				}
+
+				&.@{prefix}offset-@{breakpoint}-@{only}-@{index} > .@{prefix}column {
+					margin-left: @colWidth;
+				}
+
+				&.@{prefix}push-@{breakpoint}-@{only}-@{index} > .@{prefix}column {
+					margin-right: @colWidth;
+				}
+
+				&.@{prefix}pull-@{breakpoint}-@{only}-@{index} > .@{prefix}column {
+					margin-left: -@colWidth;
+				}
+			}
+
+			& when (@target = column) {
+				&.@{prefix}@{breakpoint}-@{only}-@{index}{
+					width: @colWidth;
+				}
+
+				&.@{prefix}offset-@{breakpoint}-@{only}-@{index}{
+					margin-left: @colWidth;
+				}
+
+				&.@{prefix}push-@{breakpoint}-@{only}-@{index}{
+					margin-right: @colWidth;
+				}
+
+				&.@{prefix}pull-@{breakpoint}-@{only}-@{index}{
+					margin-left: -@colWidth;
+				}
+			}
+		}
+	}
+	.generateClasses(@index + 1, @breakpoint, @only, @target);
+}
+
+//
+//  Generates media queries and call classes generator
+//  ---------------------------------------------
+
+.generateMediaQueries(@index, @target) when (@index < length(@assets-grid-breakpoints)) {
+	@breakpoint: extract(extract(@assets-grid-breakpoints, @index), 1);
+	@minWidth: extract(extract(@assets-grid-breakpoints, @index), 2);
+	@maxWidth: extract(extract(@assets-grid-breakpoints, @index), 3);
+
+	@media only screen and (min-width: @minWidth) and (max-width: @maxWidth) {
+		.generateClasses(1, @breakpoint, only, @target);
+	}
+
+	@media only screen and (min-width: @minWidth) {
+		.generateClasses(1, @breakpoint, false, @target);
+	}
+
+	.generateMediaQueries(@index + 1, @target);
+}
+
+//
+//  Generates style rules for helpers based on properties array
+//  ---------------------------------------------
+
+.generateHelperProperties(@index, @numberPrefix, @value) when (@index < length(@assets-style-helper-properties)) {
+	@property: extract(@assets-style-helper-properties, @index);
+
+	.@{prefix}@{property}-@{numberPrefix} {
+			@{property}: @value;
+	}
+
+	.generateHelperProperties(@index + 1, @numberPrefix, @value);
+}
+
+//
+//  Generates style helpers classes based on given column width
+//  ---------------------------------------------
+
+.generateStyleHelpers(@index) when (@index <= @assets-grid-columns) {
+	@colWidth: (100vw * (@index / @assets-grid-columns));
+	@numberPrefix: @index;
+
+	& when (@index < 10) {
+		@numberPrefix: e(~'0@{index}');
+		.generateHelperProperties(1, @numberPrefix, @colWidth);
+	}
+
+	& when (@index >= 10) {
+		@numberPrefix: @index;
+		.generateHelperProperties(1, @numberPrefix, @colWidth);
+	}
+
+	.generateStyleHelpers(@index + 1);
+}
+
+//
+//  Generates responsive hide rules
+//  ---------------------------------------------
+
+.generateDisplayRules(@index) when (@index <= length(@assets-grid-breakpoints)) {
+	@breakpoint: extract(extract(@assets-grid-breakpoints, @index), 1);
+	@minWidth: extract(extract(@assets-grid-breakpoints, @index), 2);
+	@maxWidth: extract(extract(@assets-grid-breakpoints, @index), 3);
+	@lastMaxWidth: extract(extract(@assets-grid-breakpoints, length(@assets-grid-breakpoints)), 3);
+
+	@media only screen and (min-width: @minWidth) and (max-width: @maxWidth) {
+		.hide-for-@{breakpoint}-only {
+			display: none;
+		}
+	}
+
+	@media only screen and (min-width: @minWidth) and (max-width: @lastMaxWidth) {
+		.hide-for-@{breakpoint}-up {
+			display: none;
+		}
+	}
+
+	.generateDisplayRules(@index + 1);
+}
