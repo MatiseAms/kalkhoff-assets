@@ -1,3 +1,4 @@
+& when (@media-common = true) {
 
 .calculateRem(@size) {
   @remSize: @size / @base-font-size,px;
@@ -59,4 +60,6 @@
 .spc(@value){
   @size: space(@value);
   @spc: @size;
+}
+
 }

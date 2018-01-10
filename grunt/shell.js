@@ -7,5 +7,8 @@ module.exports = {
 	},
 	compile_less: {
 		command: 'php scripts/less.php'
+	},
+	magentize: {
+		command: 'node scripts/magentize-less.js'
 	}
 };

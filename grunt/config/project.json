@@ -7,10 +7,10 @@
     "fonts": "src/fonts/"
   },
   "dist": {
-    "root": "dist/",
     "scss": "dist/scss/",
     "less": "dist/less/",
-    "fonts": "dist/fonts/"
+    "fonts": "dist/fonts/",
+    "root": "dist/"
   },
   "magento": {
     "component": "dist/view/frontend/web/css/"

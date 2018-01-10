@@ -1,3 +1,4 @@
+& when (@media-common = true) {
 .browser(@browser,@version: null, @content){
   & when @browser == 'safari'{
     & when @version{
@@ -45,4 +46,6 @@
       }
     }
   }
+}
+
 }

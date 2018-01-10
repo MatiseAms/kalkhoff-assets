@@ -1,3 +1,4 @@
+& when (@media-common = true) {
 @function slugify($value,$accepted: 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'){
  $slug: null;
  $value: to-string($value);
@@ -40,4 +41,6 @@ $c: ();
 }
 @function get-c($value,$c){
   @return map-get($c,$value);
+}
+
 }

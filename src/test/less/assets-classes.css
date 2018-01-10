@@ -7,21 +7,21 @@
 /* --------------------------------------- */
 /*				@extend components/breadcrumb
 /* ---------------------------------------- */
-.kh--breadcrumb {
+.kh-breadcrumb {
   all: initial;
 }
-.kh--breadcrumb * {
+.kh-breadcrumb * {
   all: unset;
 }
-.kh--breadcrumb ul,
-.kh--breadcrumb li {
+.kh-breadcrumb ul,
+.kh-breadcrumb li {
   list-style-type: none;
 }
-.kh--breadcrumb ul li {
+.kh-breadcrumb ul li {
   padding: 0;
   display: inline-block;
 }
-.kh--breadcrumb ul li ~ li:before {
+.kh-breadcrumb ul li ~ li:before {
   left: auto;
   top: auto;
   background: none;
@@ -32,7 +32,7 @@
   content: "\00a0/\00a0";
   opacity: 0.5;
 }
-.kh--breadcrumb ul li a {
+.kh-breadcrumb ul li a {
   font-size: 0.83333333vw;
   font-weight: 400;
   line-height: 1.75;
@@ -40,22 +40,22 @@
   font-weight: 500;
 }
 @media only screen and (max-width: 1920px) {
-  .kh--breadcrumb ul li a {
+  .kh-breadcrumb ul li a {
     font-size: 16px;
   }
 }
 @media only screen and (max-width: 1920px) {
-  .kh--breadcrumb ul li a {
+  .kh-breadcrumb ul li a {
     font-size: 16px;
   }
 }
-.kh--breadcrumb ul li:last-child a {
+.kh-breadcrumb ul li:last-child a {
   opacity: 1;
 }
-.kh--breadcrumb.dark {
+.kh-breadcrumb.dark {
   color: khWhite;
 }
-.kh--breadcrumb.dark ul li a {
+.kh-breadcrumb.dark ul li a {
   font-weight: 400;
 }
 /* --------------------------------------- */

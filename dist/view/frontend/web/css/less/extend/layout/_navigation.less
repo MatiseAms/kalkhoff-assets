@@ -1,3 +1,4 @@
+& when (@media-common = true) {
 @media @{medium-up}{
 	.@{prefix}nav_main(){
 		content: ""; height: calc(100vh - #{grid(3)}); position: relative; width: 100%; z-index: 1;
@@ -174,4 +175,6 @@
 			display: block;
 		}
 	}
+}
+
 }

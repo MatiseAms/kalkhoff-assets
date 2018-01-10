@@ -17,11 +17,14 @@
     "webfont",
     "icon_font_loader",
 		"copy:magento_component",
-		"copy:magento_files"
+		"copy:magento_files",
+		"shell:magentize"
   ],
   "test": [
     "clean:test",
     "shell:check_src",
+		"sass",
+		"less:test",
     "shell:compile_less"
   ]
 }

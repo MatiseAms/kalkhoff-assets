@@ -1,3 +1,4 @@
+& when (@media-common = true) {
 @mixin font-list($title,$name,$weights,$type: normal){
 	$italic: '';
 	@if $type == 'italic'{
@@ -59,4 +60,6 @@
 	// this method assumes the direction is down and the margin is $base-line-height
 	padding-top: $baseline-distance + em;
 	margin-bottom: $base-line-height - $baseline-distance + em;
+}
+
 }

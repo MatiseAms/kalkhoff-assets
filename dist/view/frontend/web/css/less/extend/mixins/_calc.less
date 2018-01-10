@@ -1,3 +1,4 @@
+& when (@media-common = true) {
 @mixin calc($prop, $expr) {
   $properties: str-to-list($prop,',');
   $expressions: str-to-list($expr,',');
@@ -9,4 +10,6 @@
       #{$property}: calc(#{$expression});
     }
   }
+}
+
 }
