@@ -1,12 +1,6 @@
-.button, button, input[type="button"], input[type="submit"]{
-	.button();
-	&.naked, &-naked, &[naked]{
-		.button-naked();
-	}
-	&.small, &-small, &[small]{
-		.button-small();
-	}
+.@{prefix}button{
+	.assets-button()
 }
-.button-group, button-group{
-	.button-group();
+.@{prefix}button-group{
+	.assets-button-group()
 }

@@ -1,5 +1,4 @@
 module.exports = {
-
 	less: {
 		files: [{
 			expand: true,

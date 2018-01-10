@@ -3,8 +3,8 @@
 //  _____________________________________________
 
 .assets-button() {
-	.heading-font-family();
-	.setColor(khDark, box-shadow, true, '0 0 0 0 %%var%%');
+	.assets-heading-font-family();
+	box-shadow: 0 0 0 0 @colors-primary-khblack;
 	background-color: @colors-primary-khblack;
 	font-weight: 600;
 	letter-spacing: 0.5px;
@@ -20,15 +20,15 @@
 	cursor: pointer;
 	font-size: 14px;
 
-	&-ghost,
-	&-naked{
-		.setColor(khBlack, box-shadow, true, '0 0 0 1px %%var%% inset');
+	&.@{prefix}button-ghost,
+	&.@{prefix}button-naked{
+		box-shadow: 0 0 0 0 @colors-primary-khblack;
 		background: none;
 		color: @colors-primary-khblack;
 	}
 
 	&:not([disabled]):hover{
-		.setColor(khDarkgray, box-shadow, true, '0 0 0 1px %%var%% inset');
+		box-shadow: 0 0 0 0 @colors-primary-khdark;
 		color: @colors-primary-khwhite;
 	}
 
@@ -37,12 +37,12 @@
 		cursor: initial;
 	}
 
-	&-small{
+	&.@{prefix}button-small{
 		font-size: unit(12, px);
 		padding: 0.25rem 0.75rem;
 	}
 
-	&-light{
+	&.@{prefix}button-light{
 		opacity: 0.5;
 	}
 }
@@ -61,8 +61,8 @@
 			border-radius: 0 @assets-border-radius @assets-border-radius 0;
 		}
 
-		&.naked,
-		&.ghost{
+		&.@{prefix}button-naked,
+		&.@{prefix}button-ghost{
 			margin-right: 0;
 			margin-left: -1px;
 
@@ -71,8 +71,4 @@
 			}
 		}
 	}
-}
-
-.button {
-	.assets-button();
 }
