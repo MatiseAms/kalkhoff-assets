@@ -13,11 +13,11 @@
 					}
 				}
 			}
-			@each $flag, $position in $assets-flags{
-				&.flag-#{$flag} a:before{
-					background-position: -#{decimal-round((nth($position,1) / 2.66))} -#{decimal-round((nth($position,2) / 2.66) - 4px)};
-				}
-			}
+			// @each $flag, $position in $assets-flags{
+			// 	&.flag-#{$flag} a:before{
+			// 		background-position: -#{decimal-round((nth($position,1) / 2.66))} -#{decimal-round((nth($position,2) / 2.66) - 4px)};
+			// 	}
+			// }
 		}
 	}
 }

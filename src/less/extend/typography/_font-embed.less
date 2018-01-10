@@ -30,9 +30,9 @@ $font-bold: map-get($heading-font-weights,Bold); //
 	Use font-include for single fonts
 	and font-list for a list using the $*-font-weights list
 */
-@heading-font: "Roboto Condensed"; //
-@heading-font-name: "RobotoCondensed-"; //
-@heading-font-family: "@{heading-font}", serif; //
+@assets-heading-font: "Roboto Condensed"; //
+@assets-heading-font-name: "RobotoCondensed-"; //
+@assets-heading-font-family: "@{assets-heading-font}", serif; //
 //
 /* embed sing font weight */
 // @include font-list($heading-font,$heading-font-name,$heading-font-weights,normal);
@@ -40,37 +40,37 @@ $font-bold: map-get($heading-font-weights,Bold); //
 //
 /* embed font family as list */
 //@include font-list($heading-font,$heading-font-name,$heading-font-weights,normal); //
-.heading-font-family() {
-    font-family: @heading-font-family;
+.assets-heading-font-family() {
+    font-family: @assets-heading-font-family;
     text-transform: uppercase;
 }
 
 //
-@body-font: "Roboto"; //
-@body-font-name: "Roboto-"; //
-@body-font-family: "@{body-font}", sans-serif; //
+@assets-body-font: "Roboto"; //
+@assets-body-font-name: "Roboto-"; //
+@assets-body-font-family: "@{assets-body-font}", sans-serif; //
 /* embed sing font weight */
 //@include font-include($body-font,$body-font-name,normal,normal);
 //
 /* embed font family as list */
 //@include font-list($body-font,$body-font-name,$body-font-weights,normal); //
 
-.body-font-family() {
-    font-family: @body-font-family;
+.assets-body-font-family() {
+    font-family: @assets-body-font-family;
     font-weight: normal;
 }
 
 //
-@code-font: "Roboto Mono"; //
-@code-font-name: "RobotoMono-"; //
-@code-font-family: "@{code-font}", Monaco, courier, monospace, sans-serif; //
+@assets-code-font: "Roboto Mono"; //
+@assets-code-font-name: "RobotoMono-"; //
+@assets-code-font-family: "@{assets-assets-code-font}", Monaco, courier, monospace, sans-serif; //
 /* embed sing font weight */
 //@include font-include($body-font,$body-font-name,normal,normal);
 //
 /* embed font family as list */
 //@include font-list($code-font,$code-font-name,$code-font-weights,normal); //
 
-.code-font-family() {
-    font-family: @code-font-family;
+.assets-code-font-family() {
+    font-family: @assets-code-font-family;
     font-weight: normal;
 }
