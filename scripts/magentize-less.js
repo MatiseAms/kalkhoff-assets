@@ -10,9 +10,8 @@ const processFile = function(file, callback) {
 		if (err) {
 			throw err;
 		}
-		console.log(fileData.substring(0, 15));
 		if (fileData.substring(0, 15) === '//@media-common') {
-			console.log('woooohoooooooo');
+			//	console.log('woooohoooooooo');
 		}
 		if (fs.statSync(file).size > 10 && fileData.substring(0, 15) === '//@media-common') {
 			fileData = mediaCommon + fileData + '\n}';
