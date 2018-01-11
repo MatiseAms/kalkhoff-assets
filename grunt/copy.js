@@ -65,22 +65,9 @@ module.exports = {
 			cwd: '<%= config.dist.root %>',
 			src: [
 				'**/*',
-				'!**/*.scss',
-				'!**/scss',
-				'!view'
+				'!scss'
 			],
 			dest: '<%= config.magento.component %>'
-		}]
-	},
-	magento_files: {
-		files: [{
-			expand: true,
-			cwd: '<%= config.src.root %>',
-			src: [
-				'registration.php',
-				'etc/*',
-			],
-			dest: '<%= config.dist.root %>'
 		}]
 	}
 };

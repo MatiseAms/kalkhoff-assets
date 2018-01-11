@@ -1,7 +1,7 @@
 let fs = require('fs');
 let path = require('path');
 
-let sourceFolder = 'dist/view/frontend/web/css/less/';
+let sourceFolder = 'magento-dist/view/frontend/web/css/less/';
 
 const processFile = function(file, callback) {
 

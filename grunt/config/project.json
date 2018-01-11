@@ -13,7 +13,7 @@
     "root": "dist/"
   },
   "magento": {
-    "component": "dist/view/frontend/web/css/"
+    "component": "magento-dist/view/frontend/web/css/"
   },
   "test": {
     "root": "test/",

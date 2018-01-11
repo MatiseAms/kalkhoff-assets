@@ -5,3 +5,7 @@
 /vendor
 
 .eslintrc.json
+
+/test
+
+/dist
