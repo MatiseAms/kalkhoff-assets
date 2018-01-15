@@ -1,16 +1,16 @@
 & when (@media-common = true) {
 //@media-common
-.kh-footer{
+.@{prefix}footer{
 	.assets-footer();
+	&--top{
+		.assets-footer--top();
+	}
+	&--newsletter{
+		.assets-footer--newsletter();
+	}
+	&--bottom{
+		.assets-footer--bottom();
+	}
 }
-.kh-footer--top{
-	.assets-footer--top();
-}
-// .@{prefix}footer--newsletter{
-// 	.assets-footer--newsletter();
-// }
-// .@{prefix}footer--bottom{
-// 	.assets-footer--bottom();
-// }
 
 }
