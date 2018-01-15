@@ -30,12 +30,36 @@
 //
 //  Set given property to vw size based on given number of columns
 //  ---------------------------------------------
-
 .getVwFromColumns(@columns, @property) {
     @{property}: (100vw * @columns/@assets-grid-columns);
 }
+
+.propertyType(@orientation,@property,@value) when (@orientation = 4) {
+  @{property}-left: (100vw * @value/@assets-grid-columns);
+}
+
+.propertyType(@orientation,@property,@value) when (@orientation = 3) {
+  @{property}-bottom: (100vw * @value/@assets-grid-columns);
+}
+
+.propertyType(@orientation,@property,@value) when (@orientation = 2) {
+  @{property}-right: (100vw * @value/@assets-grid-columns);
+}
+
+.propertyType(@orientation,@property,@value) when (@orientation = 1) {
+  @{property}-top: (100vw * @value/@assets-grid-columns);
+}
+
+.generateProperties(@n,@property,@columns,@i:1) when (@n >= @i){
+	.propertyType(@i, @property, extract(@columns, @i));
+
+	.generateProperties(@n,@property,@columns,( @i + 1 ));
+}
+
+
 .grid(@columns, @property){
-	.getVwFromColumns(@columns, @property);
+	.generateProperties(length(@columns),@property,@columns);
+	// .propertyType(length(@columns),@property,extract(@columns, 4));
 }
 
 .assets-grid-min-fontsize(@columns, @fontSize, @alt: false) {
