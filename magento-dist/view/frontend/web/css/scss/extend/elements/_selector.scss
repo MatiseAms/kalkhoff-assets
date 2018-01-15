@@ -1,23 +1,49 @@
 %#{$prefix}selector{
-	display: inline-block; line-height: 1px; margin: 0 0.5rem; background-color: color(khBlack); border-radius: $assets-border-radius;
-	ul{
-		li{
+	display: inline-block; line-height: 1px; margin: 0 0.5rem; background-color: color(khBlack); border-radius: $assets-border-radius; position: relative;
+
+	.selector--active{
+		a{
+			display: block; padding: 0.5rem; position: relative;
+		}
+		&[class^="flag-"], &[class*=" flag-"]{
 			a{
-				display: block; padding: 0.5rem; position: relative;
-			}
-			&[class^="flag-"], &[class*=" flag-"]{
-				a{
-					padding-left: calc(1rem + 18px);
-					&:before{
-						background-color: purple; content: ""; width: 18px; height: 12px; position: absolute; left: 0.5rem; top: 0; background-image: url("#{$assets-image-path}flags-m.png"); background-size: 288px auto;
-					}
+				padding-left: calc(1rem + 18px);
+				&:before{
+					content: ""; width: 18px; height: 12px; position: absolute; left: 0.5rem; top: 0; background-image: url("#{$assets-image-path}flags-m.png"); background-size: 288px auto;
 				}
 			}
-			// @each $flag, $position in $assets-flags{
-			// 	&.flag-#{$flag} a:before{
-			// 		background-position: -#{decimal-round((nth($position,1) / 2.66))} -#{decimal-round((nth($position,2) / 2.66) - 4px)};
-			// 	}
-			// }
+		}
+		&:hover{
+			&+ul{
+				max-height: 300px;
+			}
+		}
+	}
+	.selector--list{
+		position: absolute; bottom: 100%; max-height: 0; transition: max-height $assets-transition; overflow: hidden; border-radius: $assets-border-radius; box-shadow: 0 0 40px 10px color(khBlack,0);
+		&:hover{
+			max-height: 300px; box-shadow: 0 0 40px 10px color(khBlack);
+		}
+		li{
+			display: block; padding: 0rem; background-color: color(khDark);
+			a{
+				cursor: pointer; text-align: left; display: block; padding: 0.75rem 1rem; color: color(khWhite); line-height: 1; white-space: nowrap;
+				&:hover{
+					background-color: color(khBlack);
+				}
+			}
+		}
+	}
+	select.selector--touch{
+		display: none; color: color(White); border: none; background-color: color(khBlack); border-radius: $assets-border-radius;
+	}
+
+	@media (hover: none){
+		.selector--active, .selector--list{
+			display: none;
+		}
+		select.selector--touch{
+			display: block;
 		}
 	}
 }

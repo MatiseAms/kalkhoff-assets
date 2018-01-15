@@ -41,6 +41,12 @@
 		@include assets-menu-small; color: color(khMidgray);
 		.footnote{
 			flex-grow: 1;
+			span, a{
+				display: inline-block;
+			}
+			a{
+				margin-left: 1rem; text-decoration: underline;
+			}
 		}
 		.languageSwitcher{
 			flex-grow: 1; text-align: right;

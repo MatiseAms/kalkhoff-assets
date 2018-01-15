@@ -4,7 +4,7 @@ let elements = require('./elements.json');
 let grid = require('./grid.json');
 let navigation = require('./navigation.json');
 let settings = require('./settings.json');
-//let flags = require('./flags.json');
+let flags = require('./flags.json');
 let typography = require('./typography.json');
 
 // import button from './button.json';
@@ -22,6 +22,6 @@ module.export = {
 	grid,
 	navigation,
 	settings,
-	// flags,
+	flags,
 	typography
 };
