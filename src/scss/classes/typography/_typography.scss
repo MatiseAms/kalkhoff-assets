@@ -42,11 +42,14 @@ sub{
 sup{
 	@extend	%#{$prefix}sup !optional;
 }
-
 p{
 	@extend %#{$prefix}p !optional;
 }
-
+.content{
+	li{
+		@extend %#{$prefix}p !optional;
+	}
+}
 blockquote{
 	@extend %#{$prefix}blockquote !optional;
 }

@@ -3,10 +3,22 @@
 }
 
 %#{$prefix}content-ul{
-	li{
+	>li{
 		padding-left: 1rem; position: relative;
 		&:before{
 			content: ""; width: 6px; height: 6px; display: block; top: 0.5rem; position: absolute; left: 0; background-color: color(Black); border-radius: 50%;
+		}
+		&+li{
+			margin-top: 0.5rem;
+		}
+	}
+}
+%#{$prefix}content-ol{
+	counter-reset: ol-list;
+	>li{
+		counter-increment: ol-list; padding-left: 1rem; position: relative;
+		&:before{
+			content: counter(ol-list); display: block; top: 0rem; position: absolute; left: 0; font-size: 12px; font-weight: bold; top: 0.25rem;
 		}
 		&+li{
 			margin-top: 0.5rem;

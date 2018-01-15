@@ -3,4 +3,7 @@
 	ul{
 		@extend %#{$prefix}content-ul !optional;
 	}
+	ol{
+		@extend %#{$prefix}content-ol !optional;
+	}
 }
