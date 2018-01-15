@@ -1,17 +1,17 @@
-@small-only: ~"only screen and (max-width: unit(@grid-breakpoints-small, px))";
+@small-only: ~"only screen and (max-width: " unit(@grid-breakpoints-small, px) ~")";
 
-@medium-down: ~"only screen and (max-width: unit(@grid-breakpoints-medium, px))";
-@medium-only: ~"only screen and (min-width:unit(@grid-breakpoints-small, px)) and (max-width: unit(@grid-breakpoints-medium, px))";
-@medium-up: "only screen and (min-width:unit(@grid-breakpoints-small, px)))";
+@medium-down: ~"only screen and (max-width: " unit(@grid-breakpoints-medium, px) ~")";
+@medium-only: ~"only screen and (min-width: " unit(@grid-breakpoints-small, px) ~") and (max-width: " unit(@grid-breakpoints-medium, px) ~")";
+@medium-up: "only screen and (min-width: " unit(@grid-breakpoints-small, px) ~")";
 
-@large-down: ~"only screen and (max-width: unit(@grid-breakpoints-large, px))";
-@large-only: ~"only screen and (min-width:unit(@grid-breakpoints-medium, px)) and (max-width: unit(@grid-breakpoints-large, px))";
-@large-up: ~"only screen and (min-width:unit(@grid-breakpoints-medium, px)))";
+@large-down: ~"only screen and (max-width: " unit(@grid-breakpoints-large, px) ~")";
+@large-only: ~"only screen and (min-width: " unit(@grid-breakpoints-medium, px) ~") and (max-width: " unit(@grid-breakpoints-large, px) ~")";
+@large-up: ~"only screen and (min-width: " unit(@grid-breakpoints-medium, px) ~")";
 
-@xlarge-down: ~"only screen and (max-width: unit(@grid-breakpoints-xlarge, px))";
-@xlarge-only: ~"only screen and (min-width:unit(@grid-breakpoints-large, px)) and (max-width: unit(@grid-breakpoints-xlarge, px))";
-@xlarge-up: ~"only screen and (min-width:unit(@grid-breakpoints-large, px)))";
+@xlarge-down: ~"only screen and (max-width: " unit(@grid-breakpoints-xlarge, px) ~")";
+@xlarge-only: ~"only screen and (min-width: " unit(@grid-breakpoints-large, px) ~") and (max-width: " unit(@grid-breakpoints-xlarge, px) ~")";
+@xlarge-up: ~"only screen and (min-width: " unit(@grid-breakpoints-large, px) ~")";
 
-@xxlarge-down: ~"only screen and (max-width: unit(@grid-breakpoints-xxlarge, px))";
-@xxlarge-only: ~"only screen and (min-width:unit(@grid-breakpoints-xlarge, px)) and (max-width: unit(@grid-breakpoints-xxlarge, px))";
-@xxlarge-up: ~"only screen and (min-width:unit(@grid-breakpoints-xlarge, px)))";
+@xxlarge-down: ~"only screen and (max-width: " unit(@grid-breakpoints-xxlarge, px) ~")";
+@xxlarge-only: ~"only screen and (min-width: " unit(@grid-breakpoints-xlarge, px) ~") and (max-width: " unit(@grid-breakpoints-xxlarge, px) ~")";
+@xxlarge-up: ~"only screen and (min-width: " unit(@grid-breakpoints-xlarge, px) ~")";

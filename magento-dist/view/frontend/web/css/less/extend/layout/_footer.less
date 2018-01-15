@@ -1,46 +1,57 @@
-.@{prefix}footer(){
-	.assets-color(Black,'background-color');  .assets-color(White,'color');
+.assets-footer(){
+	background-color: @colors-primary-khblack; color: @colors-primary-khwhite;
+}
 
-	&--top{
-		.grid(3 0 1 0,'padding');
-		h4{
-			@assets-menu();
-		}
-		ul{
-			li{
-				display: block;
-				a{
-					.assets-menu(); .assets-color(khMidgray,'color'); font-weight: @assets-font-weight-regular; line-height: 2;
-					&:hover{
-						.assets-color(khWhite,'color');
-					}
-				}
-				&.icon-item{
-					display: inline-block; width: 20px; margin-right: 20px;
-					a{
-						text-indent: -999em; display: block; width: 20px; height: 20px;
-					}
-				}
-			}
-		}
+.assets-footer--top(){
+	.grid(3 0 1 0, padding);
+	h4{
+		.assets-heading(h4);
 	}
-	&--newsletter{
-		.assets-grid(1 0 1 0, 'padding');
-	}
-	&--bottom{
-		display: flex; padding: 1rem; .assets-color(khDark,'background-color');
-		.assets-menu-small(); .color(khMidgray,'color');
-		.footnote{
-			flex-grow: 1; border: 1px solid red;
-			span, a{
-				display: inline-block;
-			}
+	ul{
+		li{
+			display: block;
 			a{
-				margin-left: 1rem; text-decoration: underline;
+				// .assets-menu();
+				color: @colors-primary-khmidgray; font-weight: @assets-font-weight-regular; line-height: 2;
+				&:hover{
+					color: @colors-primary-khwhite;
+				}
+			}
+			&.icon-item{
+				display: inline-block; width: 20px; margin-right: 20px;
+				a{
+					text-indent: -999em; display: block; width: 20px; height: 20px;
+				}
 			}
 		}
-		.languageSwitcher{
-			flex-grow: 1; text-align: right;
+	}
+	@media @small-only{ display: none; }
+}
+.assets-footer--newsletter(){
+	.grid(1 0, padding);
+}
+.assets-footer--bottom(){
+	display: flex;
+}
+.assets-footer--bottom__content(){
+	.grid(0.5 1, padding); background-color: @colors-primary-khdark;
+	// .assets-menu-small();
+	color: @colors-primary-khmidgray;
+	.footnote{
+		flex-grow: 1; border: 1px solid red;
+		span, a{
+			display: inline-block;
 		}
+		a{
+			margin-left: 1rem; text-decoration: underline;
+		}
+		@media @small-only{ display: block; line-height: 1.5;
+			span{ display: block; }
+		}
+	}
+	@media @small-only{ display: block; .grid(1, padding); }
+	.languageSwitcher{
+		flex-grow: 1; text-align: right;
+		@media @small-only{ .grid(2, margin-top); display: block; text-align: left;  }
 	}
 }
