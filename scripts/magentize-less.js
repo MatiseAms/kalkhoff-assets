@@ -17,6 +17,10 @@ const processFile = function(file, callback) {
 			fileData = mediaCommon + fileData + '\n}';
 			callback(file, fileData);
 		}
+		if (fs.statSync(file).size > 10 && fileData.substring(0, 15) === '// @media-common') {
+			fileData = mediaCommon + fileData + '\n}';
+			callback(file, fileData);
+		}
 	});
 };
 

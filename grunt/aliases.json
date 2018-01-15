@@ -25,5 +25,16 @@
     "sass",
     "less:test",
     "shell:compile_less"
-  ]
+  ],
+	"test-less":[
+		"clean",
+		"copy:less",
+		"shell:generate_settings",
+		"copy:fonts",
+		"webfont",
+		"icon_font_loader",
+		"clean:test",
+		"less:test",
+		"shell:compile_less"
+	]
 }

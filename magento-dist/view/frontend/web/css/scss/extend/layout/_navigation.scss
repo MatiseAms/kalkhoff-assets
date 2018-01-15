@@ -2,7 +2,7 @@
 	%#{$prefix}nav_main{
 		$c: c($c); content: ""; height: calc(100vh - #{grid(3)}); position: relative; width: 100%; z-index: 1;
 		&--container{
-			$c: c($c); position: absolute; left: 20px; top: 20px; width: calc(100% - 40px);
+			$c: c($c); position: absolute; left: 20px; top: 20px; width: calc(100vw - 40px);
 		}
 		&--list{
 			$c: c($c); position: absolute; width: 50%; padding-left: grid(0.5);
@@ -17,9 +17,17 @@
 				&:before{
 					@include reset(); content: none;
 				}
+				// Make deeper structure dissapear
+				li{
+					overflow: hidden; max-height: 0; transition: max-height $assets-transition 0.2s; opacity: 0;
+				}
+				//&:nth-child(1), 
 				&:hover{
 					>div{
 						max-height: 1000px; z-index: 2;
+					}
+					li{
+						max-height: 800px; opacity: 1;
 					}
 				}
 				&-text{
@@ -29,17 +37,20 @@
 				&-link{
 					$c: c($c); content: ""; position: relative; z-index: 100;
 				}
+				&:hover{
+					#{get-c("item-text",$c)}{
+						color: color(khGreen);
+					}
+				}
 			}
 		}
 		&--sublist{
-			$c: c($c); position: relative; padding: grid(1.5); display: flex;
+			$c: c($c); position: relative; padding: grid(1.5); padding-bottom: grid(3); display: flex; flex-flow: row wrap;
 			&__container{
-				$c: c($c); position: absolute; left: 0; top: grid(1); width: 100%; height: auto; transition: max-height 0.5s $assets-bezier; max-height: 0; overflow: hidden; z-index: 1; background-color: color(khWhite);
+				$c: c($c); position: absolute; left: 0; top: grid(1); width: 100%; height: auto; transition: max-height 0.5s $assets-bezier; max-height: 0; z-index: 1; background-color: color(khWhite);
 			}
 			&__item{
-				$c: c($c); display: block; flex-grow: 1; background-image: none; background-size: 0 0;
-
-
+				$c: c($c); display: block; background-image: none; background-size: 0 0; width: calc(100% / 3);
 				&:before{
 					@include reset(); content: none;
 				}
@@ -50,17 +61,51 @@
 				&-link{
 					$c: c($c); content: "";
 				}
+				&-image{
+					$c: c($c); content: ""; position: absolute; top: 0; left: 50vw; display: block; width: calc(50vw - 20px); height: 100%; max-height: 0; transition: max-height $assets-transition; background-color: color(khWhite); margin-left: -20px; background-size: cover; overflow: hidden; height: calc(100% + #{grid(1)});
+					&.image-type-bike{
+						z-index: 2; background-color: color(khWhite);
+						img{
+							position: absolute; right: 0; top: grid(1); width: 100%; max-width: 100%; z-index: 2; transition: transform $assets-transition; transform: translateY(#{grid(1)});
+						}
+						&:after{
+							content: ""; display: block; background-color: color(khBlack); width: 100%; position: absolute; right: 0; bottom: 0; z-index: 1; height: 0;
+						}
+					}
+					&.image-type-segment{
+						img{
+							position: absolute; top: 0; right: 0; width: 100%; max-width: 100%; z-index: 2;
+						}
+					}
+				}
 				&__sub{
 					$c: c($c); display: block;
 					#{get-c("item-text",$c)}{
 						@include assets-p;
 					}
+					>li{
+						width: 100%;
+					}
 				}
 				&.active{
 					color: color(khGreen);
 				}
+				&:hover{
+					>#{get-c("item-text",$c)}{
+						color: color(khGreen);
+					}
+					>#{get-c("item-image",$c)}{
+						max-height: 999px;
+						img{
+							transform: translateY(0);
+						}
+						&:after{
+							height: grid(1);
+						}
+					}
+				}
 				&.segment{
-					margin-top: 1rem;
+					margin-top: 1rem; color: color(khMidgray); margin-bottom: 0.5rem;
 					@include assets-button-text;
 				}
 			}
@@ -88,7 +133,7 @@
 }
 
 @media #{$small-only}{
-	%#{$prefix}nav_mobile{
+	%#{$prefix}nav_main_mobile{
 		content: ""; width: 100%; background-color: color(khDark); min-height: 100vh; overflow: scroll; height: 100vh;
 
 		&--container{
@@ -117,7 +162,7 @@
 		&--sublist{
 			content: ""; max-height: #{$assets-nav-mobile-show-count * $assets-nav-mobile-item-height}; overflow: scroll; padding-top: $assets-nav-mobile-item-height; padding-bottom: #{$assets-nav-mobile-item-height * 2};
 			&__container{
-				overflow: hidden; max-height: 0; content: ""; position: relative; transition: max-height 0.5s $assets-bezier;
+				max-height: 0; content: ""; position: relative; transition: max-height 0.5s $assets-bezier;
 				&:before, &:after{
 					content: ""; height: $assets-nav-mobile-item-height; width: 100%; position: absolute; display: block; background-image: linear-gradient(to bottom, color(White,1), color(White,0)); z-index: 2;
 				}
@@ -142,6 +187,9 @@
 				}
 				&__sub{
 					content: "";
+				}
+				&__image{
+					border: 1px solid red; content: "";
 				}
 				&.active{
 					color: color(khGreen);
