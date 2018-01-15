@@ -58,8 +58,22 @@
 
 
 .grid(@columns, @property){
-	.generateProperties(length(@columns),@property,@columns);
-	// .propertyType(length(@columns),@property,extract(@columns, 4));
+	& when ( length(@columns) = 1){
+		// all orientations (top, right, bottom, left), result ex. margin: 12vw;
+		.getVwFromColumns(@columns,@property);
+	}
+	& when ( length(@columns) = 2){
+		// top and bottom
+		.propertyType(1,@property,extract(@columns, 1));
+		.propertyType(3,@property,extract(@columns, 1));
+
+		// left and right
+		.propertyType(2,@property,extract(@columns, 2));
+		.propertyType(4,@property,extract(@columns, 2));
+	}
+	& when ( length(@columns) > 2){
+		.generateProperties(length(@columns),@property,@columns);
+	}
 }
 
 .assets-grid-min-fontsize(@columns, @fontSize, @alt: false) {
