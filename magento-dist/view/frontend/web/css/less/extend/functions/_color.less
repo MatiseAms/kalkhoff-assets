@@ -47,13 +47,14 @@
 
 //
 //  If parameter @byKey is set to true, sets given @property to the color matching given @color key
+//	Parameter where gives you the possibility to place variables inside value like border: .setColor(khBlack, border, true, 1, '1px solid %%var%%');
 //  ---------------------------------------------
 
-.setColor(@color, @property, @byKey: false, @where: ~'') {
+.setColor(@color, @property, @byKey: false, @alpha: 1, @where: ~'') {
 	& when (@byKey = true) {
 		@callback: {
 			& when (@color = @key) {
-				.formatOutput(@property, @value, @where);
+				.formatOutput(@property, rgba(red(@value), green(@value), blue(@value), @alpha), @where);
 			}
 		};
 
@@ -61,7 +62,7 @@
 	}
 
 	& when not (@byKey = true) {
-		.formatOutput(@property, @color, @where);
+		.formatOutput(@property, rgba(red(@color), green(@color), blue(@color), @alpha), @where);
 	}
 }
 
