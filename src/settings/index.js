@@ -16,7 +16,7 @@ let images = require('./images.json');
 // import settings from './settings.json';
 // import typography from './typography.json';
 
-module.export = {
+module.exports = {
 	button,
 	colors,
 	elements,
