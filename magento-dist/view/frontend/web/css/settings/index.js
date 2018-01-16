@@ -6,6 +6,7 @@ let navigation = require('./navigation.json');
 let settings = require('./settings.json');
 let flags = require('./flags.json');
 let typography = require('./typography.json');
+let images = require('./images.json');
 
 // import button from './button.json';
 // import colors from './colors.json';
@@ -23,5 +24,6 @@ module.export = {
 	navigation,
 	settings,
 	flags,
-	typography
+	typography,
+	images
 };

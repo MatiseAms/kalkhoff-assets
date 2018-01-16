@@ -1,115 +1,115 @@
-$assets-font-weight-light: 300; //
-$assets-font-weight-regular: 400; //
-$assets-font-weight-medium: 500; //
-$assets-font-weight-bold: 600; //
-$assets-headers-font-family: 'Roboto Condensed'; //
-$assets-headers-font-weight: 600; //
-$assets-headers-text-transform: uppercase; //
-$assets-headers-line-height: 1; //
-$assets-headers-letter-spacing: 0; //
-$assets-h1-design-size: 96px; //
-$assets-h1-font-size-value: 1.2; //
-$assets-h1-font-size: 5vw; //
-$assets-h1-font-family: 'Roboto Condensed'; //
-$assets-h1-font-weight: 600; //
-$assets-h1-text-transform: uppercase; //
-$assets-h1-line-height: 1; //
-$assets-h1-font-size-min: 48px; //
-$assets-h1-font-size-max: 144px; //
-$assets-h1-letter-spacing: 0; //
-$assets-h2-design-size: 60px; //
-$assets-h2-font-size-value: 0.75; //
-$assets-h2-font-size: 3.125vw; //
-$assets-h2-font-family: 'Roboto Condensed'; //
-$assets-h2-font-weight: 600; //
-$assets-h2-text-transform: uppercase; //
-$assets-h2-line-height: 1; //
-$assets-h2-font-size-min: 30px; //
-$assets-h2-font-size-max: 90px; //
-$assets-h2-letter-spacing: 0; //
-$assets-h3-design-size: 40px; //
-$assets-h3-font-size-value: 0.5; //
-$assets-h3-font-size: 2.0833333333333335vw; //
-$assets-h3-font-family: 'Roboto'; //
-$assets-h3-font-weight: normal; //
-$assets-h3-text-transform: none; //
-$assets-h3-line-height: 1.25; //
-$assets-h3-font-size-min: 20px; //
-$assets-h3-font-size-max: 60px; //
-$assets-h3-letter-spacing: -0.3; //
-$assets-h4-design-size: 32px; //
-$assets-h4-font-size-value: 0.4; //
-$assets-h4-font-size: 1.666666666666667vw; //
-$assets-h4-font-family: 'Roboto'; //
-$assets-h4-font-weight: 400; //
-$assets-h4-text-transform: none; //
-$assets-h4-line-height: 1.5; //
-$assets-h4-font-size-min: 16px; //
-$assets-h4-font-size-max: 48px; //
-$assets-h4-letter-spacing: -0.25; //
-$assets-h5-design-size: 24px; //
-$assets-h5-font-size-value: 0.3; //
-$assets-h5-font-size: 1.25vw; //
-$assets-h5-font-family: 'Roboto'; //
-$assets-h5-font-weight: 400; //
-$assets-h5-text-transform: none; //
-$assets-h5-line-height: 1.5; //
-$assets-h5-font-size-min: 12px; //
-$assets-h5-font-size-max: 32px; //
-$assets-h5-letter-spacing: -0.25; //
-$assets-h6-design-size: 24px; //
-$assets-h6-font-size-value: 0.3; //
-$assets-h6-font-size: 1.25vw; //
-$assets-h6-font-family: 'Roboto'; //
-$assets-h6-font-weight: 400; //
-$assets-h6-text-transform: none; //
-$assets-h6-line-height: 1.5; //
-$assets-h6-font-size-min: 12px; //
-$assets-h6-font-size-max: 32px; //
-$assets-h6-letter-spacing: -0.25; //
-$assets-menu-design-size: 16px; //
-$assets-menu-font-size-value: 0.2; //
-$assets-menu-font-size: 16px; //
-$assets-menu-font-family: 'Roboto'; //
-$assets-menu-font-weight: 500; //
-$assets-menu-text-transform: none; //
-$assets-menu-line-height: 4.166666666666667vw; //
-$assets-menu-font-size-min: 16px; //
-$assets-menu-font-size-max: 16px; //
-$assets-menu-letter-spacing: 0.5px; //
-$assets-menu-small-design-size: 12px; //
-$assets-menu-small-font-size-value: 0.2; //
-$assets-menu-small-font-size: 12px; //
-$assets-menu-small-font-family: 'Roboto'; //
-$assets-menu-small-font-weight: 400; //
-$assets-menu-small-text-transform: none; //
-$assets-menu-small-line-height: 1; //
-$assets-menu-small-font-size-min: 12px; //
-$assets-menu-small-font-size-max: 12px; //
-$assets-menu-small-letter-spacing: 0.5px; //
-$assets-p-design-size: 16px; //
-$assets-p-font-size-value: 0.2; //
-$assets-p-font-size: 0.8333333333333335vw; //
-$assets-p-font-family: 'Roboto'; //
-$assets-p-font-weight: 400; //
-$assets-p-text-transform: none; //
-$assets-p-line-height: 1.75; //
-$assets-p-font-size-min: 16px; //
-$assets-p-font-size-max: 16px; //
-$assets-p-letter-spacing: 0; //
+$assets-font-weight-light: 300 !default; //
+$assets-font-weight-regular: 400 !default; //
+$assets-font-weight-medium: 500 !default; //
+$assets-font-weight-bold: 600 !default; //
+$assets-headers-font-family: 'Roboto Condensed' !default; //
+$assets-headers-font-weight: 600 !default; //
+$assets-headers-text-transform: uppercase !default; //
+$assets-headers-line-height: 1 !default; //
+$assets-headers-letter-spacing: 0 !default; //
+$assets-h1-design-size: 96px !default; //
+$assets-h1-font-size-value: 1.2 !default; //
+$assets-h1-font-size: 5vw !default; //
+$assets-h1-font-family: 'Roboto Condensed' !default; //
+$assets-h1-font-weight: 600 !default; //
+$assets-h1-text-transform: uppercase !default; //
+$assets-h1-line-height: 1 !default; //
+$assets-h1-font-size-min: 48px !default; //
+$assets-h1-font-size-max: 144px !default; //
+$assets-h1-letter-spacing: 0 !default; //
+$assets-h2-design-size: 60px !default; //
+$assets-h2-font-size-value: 0.75 !default; //
+$assets-h2-font-size: 3.125vw !default; //
+$assets-h2-font-family: 'Roboto Condensed' !default; //
+$assets-h2-font-weight: 600 !default; //
+$assets-h2-text-transform: uppercase !default; //
+$assets-h2-line-height: 1 !default; //
+$assets-h2-font-size-min: 30px !default; //
+$assets-h2-font-size-max: 90px !default; //
+$assets-h2-letter-spacing: 0 !default; //
+$assets-h3-design-size: 40px !default; //
+$assets-h3-font-size-value: 0.5 !default; //
+$assets-h3-font-size: 2.0833333333333335vw !default; //
+$assets-h3-font-family: 'Roboto' !default; //
+$assets-h3-font-weight: normal !default; //
+$assets-h3-text-transform: none !default; //
+$assets-h3-line-height: 1.25 !default; //
+$assets-h3-font-size-min: 20px !default; //
+$assets-h3-font-size-max: 60px !default; //
+$assets-h3-letter-spacing: -0.3 !default; //
+$assets-h4-design-size: 32px !default; //
+$assets-h4-font-size-value: 0.4 !default; //
+$assets-h4-font-size: 1.666666666666667vw !default; //
+$assets-h4-font-family: 'Roboto' !default; //
+$assets-h4-font-weight: 400 !default; //
+$assets-h4-text-transform: none !default; //
+$assets-h4-line-height: 1.5 !default; //
+$assets-h4-font-size-min: 16px !default; //
+$assets-h4-font-size-max: 48px !default; //
+$assets-h4-letter-spacing: -0.25 !default; //
+$assets-h5-design-size: 24px !default; //
+$assets-h5-font-size-value: 0.3 !default; //
+$assets-h5-font-size: 1.25vw !default; //
+$assets-h5-font-family: 'Roboto' !default; //
+$assets-h5-font-weight: 400 !default; //
+$assets-h5-text-transform: none !default; //
+$assets-h5-line-height: 1.5 !default; //
+$assets-h5-font-size-min: 12px !default; //
+$assets-h5-font-size-max: 32px !default; //
+$assets-h5-letter-spacing: -0.25 !default; //
+$assets-h6-design-size: 24px !default; //
+$assets-h6-font-size-value: 0.3 !default; //
+$assets-h6-font-size: 1.25vw !default; //
+$assets-h6-font-family: 'Roboto' !default; //
+$assets-h6-font-weight: 400 !default; //
+$assets-h6-text-transform: none !default; //
+$assets-h6-line-height: 1.5 !default; //
+$assets-h6-font-size-min: 12px !default; //
+$assets-h6-font-size-max: 32px !default; //
+$assets-h6-letter-spacing: -0.25 !default; //
+$assets-menu-design-size: 16px !default; //
+$assets-menu-font-size-value: 0.2 !default; //
+$assets-menu-font-size: 16px !default; //
+$assets-menu-font-family: 'Roboto' !default; //
+$assets-menu-font-weight: 500 !default; //
+$assets-menu-text-transform: none !default; //
+$assets-menu-line-height: 4.166666666666667vw !default; //
+$assets-menu-font-size-min: 16px !default; //
+$assets-menu-font-size-max: 16px !default; //
+$assets-menu-letter-spacing: 0.5px !default; //
+$assets-menu-small-design-size: 12px !default; //
+$assets-menu-small-font-size-value: 0.2 !default; //
+$assets-menu-small-font-size: 12px !default; //
+$assets-menu-small-font-family: 'Roboto' !default; //
+$assets-menu-small-font-weight: 400 !default; //
+$assets-menu-small-text-transform: none !default; //
+$assets-menu-small-line-height: 1 !default; //
+$assets-menu-small-font-size-min: 12px !default; //
+$assets-menu-small-font-size-max: 12px !default; //
+$assets-menu-small-letter-spacing: 0.5px !default; //
+$assets-p-design-size: 16px !default; //
+$assets-p-font-size-value: 0.2 !default; //
+$assets-p-font-size: 0.8333333333333335vw !default; //
+$assets-p-font-family: 'Roboto' !default; //
+$assets-p-font-weight: 400 !default; //
+$assets-p-text-transform: none !default; //
+$assets-p-line-height: 1.75 !default; //
+$assets-p-font-size-min: 16px !default; //
+$assets-p-font-size-max: 16px !default; //
+$assets-p-letter-spacing: 0 !default; //
 $assets-font-weight: (
 	"light": 300, 
 	"regular": 400, 
 	"medium": 500, 
 	"bold": 600
-); //, 
+) !default; //, 
 $assets-headers: (
 	"font-family": 'Roboto Condensed', 
 	"font-weight": 600, 
 	"text-transform": uppercase, 
 	"line-height": 1, 
 	"letter-spacing": 0
-); //, 
+) !default; //, 
 $assets-h1: (
 	"design-size": 96px, 
 	"font-size-value": 1.2, 
@@ -121,7 +121,7 @@ $assets-h1: (
 	"font-size-min": 48px, 
 	"font-size-max": 144px, 
 	"letter-spacing": 0
-); //, 
+) !default; //, 
 $assets-h2: (
 	"design-size": 60px, 
 	"font-size-value": 0.75, 
@@ -133,7 +133,7 @@ $assets-h2: (
 	"font-size-min": 30px, 
 	"font-size-max": 90px, 
 	"letter-spacing": 0
-); //, 
+) !default; //, 
 $assets-h3: (
 	"design-size": 40px, 
 	"font-size-value": 0.5, 
@@ -145,7 +145,7 @@ $assets-h3: (
 	"font-size-min": 20px, 
 	"font-size-max": 60px, 
 	"letter-spacing": -0.3
-); //, 
+) !default; //, 
 $assets-h4: (
 	"design-size": 32px, 
 	"font-size-value": 0.4, 
@@ -157,7 +157,7 @@ $assets-h4: (
 	"font-size-min": 16px, 
 	"font-size-max": 48px, 
 	"letter-spacing": -0.25
-); //, 
+) !default; //, 
 $assets-h5: (
 	"design-size": 24px, 
 	"font-size-value": 0.3, 
@@ -169,7 +169,7 @@ $assets-h5: (
 	"font-size-min": 12px, 
 	"font-size-max": 32px, 
 	"letter-spacing": -0.25
-); //, 
+) !default; //, 
 $assets-h6: (
 	"design-size": 24px, 
 	"font-size-value": 0.3, 
@@ -181,7 +181,7 @@ $assets-h6: (
 	"font-size-min": 12px, 
 	"font-size-max": 32px, 
 	"letter-spacing": -0.25
-); //, 
+) !default; //, 
 $assets-menu: (
 	"design-size": 16px, 
 	"font-size-value": 0.2, 
@@ -193,7 +193,7 @@ $assets-menu: (
 	"font-size-min": 16px, 
 	"font-size-max": 16px, 
 	"letter-spacing": 0.5px
-); //, 
+) !default; //, 
 $assets-menu-small: (
 	"design-size": 12px, 
 	"font-size-value": 0.2, 
@@ -205,7 +205,7 @@ $assets-menu-small: (
 	"font-size-min": 12px, 
 	"font-size-max": 12px, 
 	"letter-spacing": 0.5px
-); //, 
+) !default; //, 
 $assets-p: (
 	"design-size": 16px, 
 	"font-size-value": 0.2, 
@@ -217,4 +217,4 @@ $assets-p: (
 	"font-size-min": 16px, 
 	"font-size-max": 16px, 
 	"letter-spacing": 0
-); //
+) !default; //

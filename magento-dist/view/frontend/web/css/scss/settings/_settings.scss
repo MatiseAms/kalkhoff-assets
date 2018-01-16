@@ -1,13 +1,13 @@
-$assets-prefix: 'kh-'; //
-$assets-border-radius: 2px; //
-$assets-base-img-dir: '../img'; //
-$assets-base-font-size: 16; //
-$assets-base-line-height: 1.5; //
-$assets-base-letter-spacing: 50; //
-$assets-base-fontpath: '/fonts'; //
-$assets-base-cap-height: 0.68; //
-$assets-transition-time: 0.3; //
-$assets-transition: .3s; //
-$assets-cubic-bezier: cubic-bezier(0.75,0.75,0.25,0.50); //
-$assets-bezier: cubic-bezier(0.75,0.75,0.25,0.50); //
-$assets-image-path: '/static/'; //
+$assets-prefix: 'kh-' !default; //
+$assets-border-radius: 2px !default; //
+$assets-base-image-dir: '../img' !default; //
+$assets-base-font-size: 16 !default; //
+$assets-base-line-height: 1.5 !default; //
+$assets-base-letter-spacing: 50 !default; //
+$assets-base-fontpath: '/fonts' !default; //
+$assets-base-cap-height: 0.68 !default; //
+$assets-transition-time: 0.3 !default; //
+$assets-transition: .3s !default; //
+$assets-cubic-bezier: cubic-bezier(0.75,0.75,0.25,0.50) !default; //
+$assets-bezier: cubic-bezier(0.75,0.75,0.25,0.50) !default; //
+$assets-image-path: '/static/' !default; //

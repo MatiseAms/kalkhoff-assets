@@ -19,6 +19,11 @@
 	&-ghost, &-naked{
 		background: none; box-shadow: 0 0 0 1px  color(Black,1) inset; color: color(Black,1);
 	}
+	@each $color-name,$color-value in $colors{
+		&.button-#{to-lower-case($color-name)}, &.button-#{$color-name}{
+			background-color: $color-value; color: contra($color-value);
+		}
+	}
 }
 
 $border-radius: 2px;

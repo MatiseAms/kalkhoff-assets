@@ -1,15 +1,18 @@
 @each $iconlevel in $icons{
+	$tempset: "";
 	@each $iconset in $iconlevel{
 		@if type-of($iconset) == "string"{
 			.iconset-#{$iconset}{
 				font-family: "#{$iconset}";
 			}
+			$tempset: $iconset;
+		} @else{
+			@each $icon in map-get($iconset,"icons"){
+				.icon-#{nth($icon,1)}:before{
+					content: nth($icon,2); font-family: #{$tempset};
+				}
+			}
+			//		@debug $iconset;
 		}
 	}
-}
-@each $icon in $icons-merged{
-	.icon-#{nth($icon,1)}:before{
-		content: nth($icon,2);
-	}
-	//@debug ".icon-#{nth($icon,1)}:before{ content: #{nth($icon,2)}; }";
 }

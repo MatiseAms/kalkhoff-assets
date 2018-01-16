@@ -1,0 +1,10 @@
+{
+  "assets": {
+    "image":{
+      "logo": {
+        "regular": "kalkhoff.svg",
+				"mark": "kalkhoff.svg"
+      }
+    }
+  }
+}

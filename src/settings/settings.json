@@ -2,7 +2,7 @@
   "assets": {
     "prefix": "kh-",
     "border-radius": "2px",
-    "base-img-dir": "../img",
+    "base-image-dir": "../img",
     "base-font-size": "16",
     "base-line-height": "1.5",
     "base-letter-spacing": "50",

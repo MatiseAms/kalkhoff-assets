@@ -1,27 +1,27 @@
-$colors-primary-khblack: #101010; //
-$colors-primary-khdark: #1a1b1a; //
-$colors-primary-khmidgray: #7f7f7f; //
-$colors-primary-khoffwhite: #f7f7f7; //
-$colors-primary-khwhite: #ffffff; //
-$colors-secondary-khgreen: #b4bb00; //
-$colors-secondary-khlime: #b6ce2f; //
-$colors-secondary-khyellow: #edd32d; //
-$colors-secondary-khdarkbrown: #4f3f35; //
-$colors-secondary-khbrown: #ac846c; //
-$colors-secondary-khorange: #e86d02; //
-$colors-secondary-khdarkblue: #14697c; //
-$colors-secondary-khblue: #1eaece; //
-$colors-secondary-khturqouise: #33d0ca; //
-$colors-secondary-khred: #dd0000; //
-$colors-secondary-khpink: #ea4c89; //
-$colors-secondary-khpurple: #8b008b; //
+$colors-primary-khblack: #101010 !default; //
+$colors-primary-khdark: #1a1b1a !default; //
+$colors-primary-khmidgray: #7f7f7f !default; //
+$colors-primary-khoffwhite: #f7f7f7 !default; //
+$colors-primary-khwhite: #ffffff !default; //
+$colors-secondary-khgreen: #b4bb00 !default; //
+$colors-secondary-khlime: #b6ce2f !default; //
+$colors-secondary-khyellow: #edd32d !default; //
+$colors-secondary-khdarkbrown: #4f3f35 !default; //
+$colors-secondary-khbrown: #ac846c !default; //
+$colors-secondary-khorange: #e86d02 !default; //
+$colors-secondary-khdarkblue: #14697c !default; //
+$colors-secondary-khblue: #1eaece !default; //
+$colors-secondary-khturqouise: #33d0ca !default; //
+$colors-secondary-khred: #dd0000 !default; //
+$colors-secondary-khpink: #ea4c89 !default; //
+$colors-secondary-khpurple: #8b008b !default; //
 $colors-primary: (
 	"khBlack": #101010, 
 	"khDark": #1a1b1a, 
 	"khMidgray": #7f7f7f, 
 	"khOffwhite": #f7f7f7, 
 	"khWhite": #ffffff
-); //, 
+) !default; //, 
 $colors-secondary: (
 	"khGreen": #b4bb00, 
 	"khLime": #b6ce2f, 
@@ -35,4 +35,4 @@ $colors-secondary: (
 	"khRed": #dd0000, 
 	"khPink": #ea4c89, 
 	"khPurple": #8b008b
-); //
+) !default; //

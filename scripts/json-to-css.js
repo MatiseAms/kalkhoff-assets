@@ -10,8 +10,8 @@ let delimiter = '-',
 let fileTypes = [{
 	type: 'scss',
 	dest: distFolder + 'scss/settings',
-	varPattern: '${{var}}: {{value}}; //',
-	listPatternParent: '${{var}}: (\n{{list}}\n); //',
+	varPattern: '${{var}}: {{value}} !default; //',
+	listPatternParent: '${{var}}: (\n{{list}}\n) !default; //',
 	listSubPatternParent: '\t"{{var}}": (\n{{list}}\n\t) //',
 	listPattern: '\t"{{var}}": {{value}}',
 }, {
