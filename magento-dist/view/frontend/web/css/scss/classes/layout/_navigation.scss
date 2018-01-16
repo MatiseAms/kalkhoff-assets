@@ -60,6 +60,7 @@
 	&--seclist{
 		@extend %#{$prefix}nav_main--seclist;
 		@extend %#{$prefix}nav_main_mobile--seclist;
+		@extend %#{$prefix}nav_main_medium--seclist;
 		// &__container{
 		// 	@extend %#{$prefix}nav_main--seclist__container;
 		// }
@@ -73,6 +74,7 @@
 			&-link{
 				@extend %#{$prefix}nav_main--seclist__item-link;
 				@extend %#{$prefix}nav_main_mobile--seclist__item-link;
+				@extend %#{$prefix}nav_main_medium--seclist__item-link;
 			}
 		}
 	}

@@ -98,6 +98,12 @@
 					@include reset(); content: none;
 				}
 
+				&:hover{
+					>a{
+						color: color(khGreen);
+					}
+				}
+
 				&-image{
 					opacity: 0; $c: c($c); content: ""; position: absolute; top: 0; left: 50vw; display: block; width: calc(50vw - 20px); height: 100%; transition: max-height $assets-transition, opacity $assets-transition $assets-transition; margin-left: -20px; background-size: cover; overflow: hidden; height: calc(100% + #{grid(1)});
 					&.image-type-bike{
@@ -148,9 +154,6 @@
 						width: 100%;
 					}
 				}
-				&.active{
-					color: color(khGreen);
-				}
 				// &:hover{
 				// }
 				li+.segment{
@@ -175,7 +178,10 @@
 				&-link{
 					$c: c($c); padding: 0 grid(0.25); display: block;
 					&:before{
-						display: block; color: color(khWhite,0.5); font-family: $kalkhoff-UI-font-family; font-size: 1rem;
+						display: block; color: color(khWhite,0.5); font-family: $kalkhoff-UI-font-family; font-size: 1.25rem; font-weight: 600;
+					}
+					&.icon-shop{
+						font-weight: 800;
 					}
 					&:hover:before{
 						color: color(khWhite,1);
@@ -192,6 +198,22 @@
 	}
 }
 
+@media #{$medium-only}{
+	%#{$prefix}nav_main_medium{
+		&--seclist{
+			.kh-logo{
+				background-size: auto 10px;
+			}
+			&__item{
+				&-link{
+					&:before{
+						font-size: 1rem;
+					}
+				}
+			}
+		}
+	}
+}
 @media #{$small-only}{
 	%#{$prefix}nav_main_mobile{
 		content: ""; width: 100%; background-color: color(khDark); min-height: 100vh; overflow: scroll; height: 100vh;
