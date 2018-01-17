@@ -124,7 +124,7 @@
 				@include assets-button-text;
 			}
 
-			@debug #{&};
+			// @debug #{&};
 
 			&+.segment{
 				margin-top: 1rem;

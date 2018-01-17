@@ -1,16 +1,22 @@
 .#{$prefix}footer{
 	@extend %#{$prefix}footer;
 
-	&--top{
-		@extend %#{$prefix}footer--top;
+	&__top{
+		@extend %#{$prefix}footer__top;
 	}
-	&--newsletter{
-		@extend %#{$prefix}footer--newsletter;
+	&__newsletter{
+		@extend %#{$prefix}footer__newsletter;
 	}
-	&--bottom{
-		@extend %#{$prefix}footer--bottom;
-		&__content{
-			@extend %#{$prefix}footer--bottom__content;
+	&__bottom{
+		@extend %#{$prefix}footer__bottom;
+		&Content{
+			@extend %#{$prefix}footer__bottomContent;
 		}
+	}
+	&__footnote{
+		@extend %#{$prefix}footer__footnote;
+	}
+	&__languageSwitcher{
+		@extend %#{$prefix}footer__languageSwitcher;
 	}
 }

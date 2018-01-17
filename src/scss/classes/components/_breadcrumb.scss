@@ -1,3 +1,12 @@
 .#{$prefix}breadcrumb{
 	@extend %#{$prefix}breadcrumb;
+	&__list{
+		@extend %#{$prefix}breadcrumb__list;
+	}
+	&__item{
+		@extend %#{$prefix}breadcrumb__item;
+	}
+	&--dark{
+		@extend %#{$prefix}breadcrumb--dark;
+	}
 }
