@@ -35,3 +35,6 @@ Install the software to generate icons:
 
 Most settings are defined in the settings folder (json files). All these settings get automatically converted into less and scss settings. Make sure to
 use these files in order to keep consistency
+
+## Rules 🤡
+For class naming, use strict bem naming (`.{{block}}__{{element}}--{{modifier}}`), if you don't we will chase you till the end of time! More info: http://getbem.com/naming/

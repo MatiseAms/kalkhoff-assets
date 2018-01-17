@@ -2,6 +2,9 @@
 	width: grid(6);
 	header{ background-color: color(Black); padding: grid(0.5 1);
 		h4{ color: color(White); margin: 0; padding: 0;  }
+		&.slider{
+			.slide{ width: grid(6); }
+		}
 	}
 	footer{ background-color: color(Dark); height: grid(1); padding: grid(0 1);
 		p{ line-height: grid(1); color: color(Midgray); }
