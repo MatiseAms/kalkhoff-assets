@@ -1,3 +1,13 @@
 .#{$prefix}usp{
 	@extend %#{$prefix}usp;
+	&__header{
+		@extend %#{$prefix}usp__header;
+	}
+	&__item{
+		@extend %#{$prefix}usp__item;
+	}
+	&__footer{
+		@extend %#{$prefix}usp__footer;
+	}
+
 }
