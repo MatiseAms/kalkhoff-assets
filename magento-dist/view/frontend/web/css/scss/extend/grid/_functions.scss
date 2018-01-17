@@ -49,6 +49,8 @@
 }
 
 @function grid-mq-min($columns,$width){
+	// @debug $columns;
+
 	@if unit($columns) == "rem"{
 		@debug "please just use Grid units!"; //
 		$one-column: $grid-design-width / $grid-columns; //
