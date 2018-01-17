@@ -55,7 +55,10 @@
 		}
 		&__text{
 			$c: c($c);
-			@include assets-p; content: ""; display: block; padding: calc(#{grid(0.5)} - 10px) grid(0.5); line-height: 20px;
+			@include assets-p; content: ""; display: block; padding: 0 grid(0.5); line-height: grid(1); height: grid(1);
+			@include min-("height",1,60){
+				line-height: 60px;
+			}
 		}
 		&__link{
 			$c: c($c); content: ""; position: relative; z-index: 100;
@@ -189,7 +192,10 @@
 		------*/
 
 		&__secList{
-			$c: c($c); position: absolute; top: 0; right: 0; width: 50%; height: grid(1); background-color: color(khBlack); z-index: 3; padding-left: grid(0.25);
+			$c: c($c); position: absolute; top: 0; right: 0; width: 50%; background-color: color(khBlack); z-index: 3; padding-left: grid(0.25); padding: 0 grid(0.5); line-height: grid(1); height: grid(1);
+			@include min-("height",1,60){
+				line-height: 60px;
+			}
 		}
 		&__secItem{
 			$c: c($c); display: inline-block; line-height: grid(1); position: relative; z-index: 2;
@@ -214,7 +220,10 @@
 		}
 
 		.kh-logo{
-			position: absolute; right: 0; height: grid(1); width: calc(50vw - 20px); z-index: 1; background-image: url("#{$assets-base-image-dir}/#{$assets-image-logo-regular}"); background-repeat: no-repeat; background-size: auto 15px; background-position: right grid(1.5) center;
+			position: absolute; right: 0; height: grid(1); width: calc(50vw - 20px); z-index: 1; background-image: url("#{$assets-base-image-dir}/#{$assets-image-logo-regular}"); background-repeat: no-repeat; background-size: auto 15px; background-position: right grid(1.5) center; line-height: grid(1); height: grid(1);
+			@include min-("height",1,60){
+				line-height: 60px;
+			}
 		}
 
 		&__search{
@@ -223,20 +232,6 @@
 	}
 }
 
-@media #{$medium-only}{
-	%#{$prefix}navMain--medium{
-		&__secList{
-			.kh-logo{
-				background-size: auto 10px;
-			}
-		}
-		&__secLink{
-			&:before{
-				font-size: 1rem;
-			}
-		}
-	}
-}
 @media #{$small-only}{
 	%#{$prefix}navMain--mobile{
 		content: ""; width: 100%; background-color: color(khDark); min-height: 100vh; overflow: scroll; height: 100vh;

@@ -66,10 +66,6 @@
 	&__secList{
 		@extend %#{$prefix}navMain__secList;
 		@extend %#{$prefix}navMain--mobile__secList;
-		@extend %#{$prefix}navMain--medium__secList;
-		// &__container{
-		// 	@extend %#{$prefix}navMain__seccontainer;
-		// }
 	}
 	&__secItem{
 		@extend %#{$prefix}navMain__secItem;
@@ -82,7 +78,6 @@
 	&__secLink{
 		@extend %#{$prefix}navMain__secLink;
 		@extend %#{$prefix}navMain--mobile__secLink;
-		@extend %#{$prefix}navMain--medium__secLink;
 	}
 
 	&__search{
