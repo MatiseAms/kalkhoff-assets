@@ -2,12 +2,12 @@
 	background-color: color(Black); color: color(White);
 }
 @media #{$small-only}{
-	%#{$prefix}footer--top{
+	%#{$prefix}footer__top{
 		display: none;
 	}
 }
 @media #{$medium-up}{
-	%#{$prefix}footer--top{
+	%#{$prefix}footer__top{
 		padding: grid(3 0 1 0);
 		h4{
 			@include assets-menu;
@@ -31,39 +31,41 @@
 		}
 	}
 }
-%#{$prefix}footer--newsletter{
+%#{$prefix}footer__newsletter{
 	padding: grid(1 0 1 0); padding: grid(1 0);
 }
-%#{$prefix}footer--bottom{
+%#{$prefix}footer__bottom{
 	display: flex;
-	&__content{
+	&Content{
 		background-color: color(khDark); padding: grid(0.5 1); display: flex;
 		@include assets-menu-small; color: color(khMidgray);
-		.footnote{
-			flex-grow: 1;
-			span, a{
-				display: inline-block;
-			}
-			a{
-				margin-left: 1rem; text-decoration: underline;
-			}
-		}
-		.languageSwitcher{
-			flex-grow: 1; text-align: right;
-		}
 	}
 }
+%#{$prefix}footer__footnote{
+	flex-grow: 1;
+	span, a{
+		display: inline-block;
+	}
+	a{
+		margin-left: 1rem; text-decoration: underline;
+	}
+}
+
+%#{$prefix}footer__languageSwitcher{
+	flex-grow: 1; text-align: right;
+}
+
 @media #{$small-only}{
-	%#{$prefix}footer--bottom__content{
+	%#{$prefix}footer__bottomContent{
 		display: block; padding: grid(1);
-		.footnote{
-			display: block; line-height: 1.5;
-			span{
-				display: block;
-			}
+	}
+	%#{$prefix}footer__footnote{
+		display: block; line-height: 1.5;
+		span{
+			display: block;
 		}
-		.languageSwitcher{
-			margin-top: grid(2); display: block; text-align: left;
-		}
+	}
+	%#{$prefix}footer__languageSwitcher{
+		margin-top: grid(2); display: block; text-align: left;
 	}
 }
