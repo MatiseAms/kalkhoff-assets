@@ -30,7 +30,7 @@ $heading-font-name: "RobotoCondensed-"; //
 $heading-font-family: #{$heading-font},serif; //
 //
 /* embed sing font weight */
-@include font-list($heading-font,$heading-font-name,$heading-font-weights,normal);
+// @include font-list($heading-font,$heading-font-name,$heading-font-weights,normal);
 
 //
 /* embed font family as list */
@@ -46,7 +46,7 @@ $body-font-family: #{$body-font},sans-serif; //
 //@include font-include($body-font,$body-font-name,normal,normal);
 //
 /* embed font family as list */
-@include font-list($body-font,$body-font-name,$body-font-weights,normal); //
+// @include font-list($body-font,$body-font-name,$body-font-weights,normal); //
 
 %#{$prefix}body-font-family{
 	font-family: $body-font-family; font-weight: normal;
@@ -59,7 +59,7 @@ $code-font-family: #{$code-font}, Monaco, courier, monospace, sans-serif; //
 //@include font-include($body-font,$body-font-name,normal,normal);
 //
 /* embed font family as list */
-@include font-list($code-font,$code-font-name,$code-font-weights,normal); //
+// @include font-list($code-font,$code-font-name,$code-font-weights,normal); //
 
 %#{$prefix}code-font-family{
 	font-family: $code-font-family; font-weight: normal;

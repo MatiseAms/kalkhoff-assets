@@ -16,3 +16,9 @@
 .button-compare{
 	@extend %#{$prefix}button--compare;
 }
+
+
+// Specific Buttons
+.button--arrow-right{
+	@extend %#{$prefix}button--arrow-right;
+}

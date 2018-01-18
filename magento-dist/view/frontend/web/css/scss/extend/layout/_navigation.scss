@@ -37,7 +37,7 @@
 				@include reset(); content: none;
 			}
 
-			&:hover{
+			&:nth-child(1), &:hover{
 				>div{
 					max-height: 1000px; z-index: 2;
 				}

@@ -22,7 +22,7 @@
   "test": [
     "clean:test",
     "shell:check_src",
-    "sass",
+    "sass:test",
     "less:test",
     "shell:compile_less"
   ],
@@ -36,5 +36,9 @@
 		"clean:test",
 		"less:test",
 		"shell:compile_less"
+	],
+	"compile": [
+		"clean:test",
+		"sass:compile"
 	]
 }

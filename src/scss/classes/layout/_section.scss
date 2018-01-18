@@ -1,3 +1,15 @@
 .basic-section{
 	@extend %#{$prefix}basic-section;
 }
+
+
+.#{$prefix}sectionSingleBike{
+	@extend	%#{$prefix}sectionSingleBike;
+	&--image{
+		@extend	%#{$prefix}sectionSingleBike--image;
+	}
+}
+
+.#{$prefix}sectionSegmentTrio{
+	@extend %#{$prefix}sectionSegmentTrio;
+}

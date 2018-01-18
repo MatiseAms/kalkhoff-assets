@@ -2,12 +2,17 @@
   "kalkhoff-UI": {
     "title": "kalkhoff-UI",
     "icons": [
-     { "name": "location", "unicode": "U+d1001" },
-     { "name": "next", "unicode": "U+d1002" },
-     { "name": "search", "unicode": "U+d1003" },
-     { "name": "shop-alt", "unicode": "U+d1004" },
-     { "name": "shop", "unicode": "U+d1005" },
-     { "name": "triangle", "unicode": "U+d1006" }
+     { "name": "compare", "unicode": "U+d1001" },
+     { "name": "location", "unicode": "U+d1002" },
+     { "name": "next", "unicode": "U+d1003" },
+     { "name": "plus", "unicode": "U+d1004" },
+     { "name": "search", "unicode": "U+d1005" },
+     { "name": "shop-alt", "unicode": "U+d1006" },
+     { "name": "shop", "unicode": "U+d1007" },
+     { "name": "triangle-down", "unicode": "U+d1008" },
+     { "name": "triangle-left", "unicode": "U+d1009" },
+     { "name": "triangle-right", "unicode": "U+d100a" },
+     { "name": "triangle-up", "unicode": "U+d100b" }
     ],
     "weights":[
     "200",

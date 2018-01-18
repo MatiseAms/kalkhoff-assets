@@ -4,5 +4,10 @@ module.exports = {
 			'<%= config.test.scss %>assets.css': '<%= config.dist.root %>assets.scss',
 			'<%= config.test.scss %>assets-classes.css': '<%= config.dist.root %>assets-classes.scss'
 		}
+	},
+	compile: {
+		files: {
+			'<%= config.test.scss %>compiled.css': '<%= config.dist.root %>compile.scss'
+		}
 	}
 };

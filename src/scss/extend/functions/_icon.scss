@@ -9,13 +9,13 @@ $icons: () !default;
 @function icon($value,$return: "value"){
 	$returnValue: "";
 	@each $iconFamily-name, $iconFamily-value in $icons{
-		@each $icon-name, $icon-value in $iconFamily-value{
+		@each $icon-name, $icon-value in map-get($iconFamily-value,"icons"){
 			@if $value == $icon-name{
 				@if $return == "name"{
 					$returnValue: $icon-name;
 				}
 				@elseif $return == "font"{
-					$returnValue: "#{$iconFamily-name}-font-family";
+					$returnValue: "#{$iconFamily-name}";
 				}
 				@else{
 					$returnValue: $icon-value;
@@ -24,7 +24,7 @@ $icons: () !default;
 		}
 	}
 	@if $returnValue == ""{
-		//	@warn "return value from icon is empty";
+		@warn "return value from icon is empty";
 	}
 	@return $returnValue;
 }

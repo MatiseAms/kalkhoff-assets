@@ -11,6 +11,10 @@
 	.st5{fill:none;stroke:#000000;stroke-width:12;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
 	.st6{fill:none;stroke:#FFFFFF;stroke-width:6;stroke-miterlimit:10;}
 	.st7{fill:none;stroke:#000000;stroke-width:10;stroke-miterlimit:10;}
+	.st8{fill:none;stroke:#000000;stroke-width:10;stroke-miterlimit:10;stroke-dasharray:9.4223,9.4223;}
+	.st9{fill:none;stroke:#000000;stroke-width:8;stroke-miterlimit:10;stroke-dasharray:9.4223,9.4223;}
+	.st10{fill:none;stroke:#000000;stroke-width:6;stroke-miterlimit:10;stroke-dasharray:9.4223,9.4223;}
+	.st11{fill:none;stroke:#000000;stroke-width:4;stroke-miterlimit:10;stroke-dasharray:9.4223,9.4223;}
 </style>
 <path d="M48.2,83.4l-1.5-0.8c-0.3-0.1-7.2-3.6-14.2-10.2C23,63.7,18.1,53.4,18.1,42.9C18.1,26.4,31.5,13,48,13
 	c16.5,0,29.9,13.4,29.9,29.9c0,21.6-27.2,38.9-28.4,39.6L48.2,83.4z M48,19c-13.2,0-23.9,10.7-23.9,23.9c0,18.4,18.4,30.4,23.8,33.5
