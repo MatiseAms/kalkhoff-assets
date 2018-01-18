@@ -103,7 +103,7 @@
 	.navMain__subList{
 		position: relative; padding: 6.25vw; padding-bottom: 12.5vw; display: flex; flex-flow: row wrap;
 		&:after{
-			content: ""; width: calc(50vw - 20px); height: calc(100% + 4.1666666667vw); background-color: @colors-primary-khwhite; display: block; position: absolute; left: 100%; top: 0; display: block; background-image: linear-gradient(#101010, #101010); background-repeat: repeat-x; background-position: left bottom; background-size: 4.1666666667vw 4.1666666667vw;
+			content: ""; width: calc(50vw - 20px); height: calc(100% + 4.1666666667vw); background-color: @colors-primary-khwhite; display: block; position: absolute; left: 100%; top: 0; display: block; background-image: linear-gradient(#101010, #101010); background-repeat: repeat-x; background-position: left bottom; background-size: 100% 4.1666666667vw;
 		}
 	}
 	.navMain__subContainer{
@@ -111,11 +111,10 @@
 		.grid(1,top); width: 100%; height: auto; transform: translateY(-200%); z-index: 1;
 	}
 	.navMain__buttongroup{
-		position: absolute; left: 0; bottom: -4.1666666667vw; width: 100%;
+		position: absolute; left: 0; .grid(-1,bottom); width: 100%;
 		.grid(1,height); transition: opacity @assets-transition, transform 0.5s @assets-transition; z-index: 1; background-color: @colors-primary-khwhite; transform: translateX(-200%); z-index: -1;
 		.button{
-			width: 50%; margin: 0 !important; border-radius: 0 !important; padding: 0;
-			.grid(1,line-height); text-align: center;
+			width: 50%; margin: 0 !important; border-radius: 0 !important; padding: 0; text-align: center;
 		}
 	}
 	.navMain__subItem{
