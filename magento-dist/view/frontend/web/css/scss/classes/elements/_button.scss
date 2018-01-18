@@ -1,18 +1,18 @@
-.button, input[type="button"], input[type="submit"]{
+.button{
 	@extend %#{$prefix}button;
-	&.naked, &-naked, &[naked]{
-		@extend %#{$prefix}button-naked;
+	&.naked, &--naked, &[naked]{
+		@extend %#{$prefix}button--naked;
 	}
-	&.small, &-small, &[small]{
-		@extend %#{$prefix}button-small;
+	&.small, &--small, &[small]{
+		@extend %#{$prefix}button--small;
 	}
 }
-.button-group, button-group{
-	@extend %#{$prefix}button-group;
+.button--group, button-group{
+	@extend %#{$prefix}button--group;
 }
 
 
 // Specific Buttons
 .button-compare{
-	@extend %#{$prefix}button-compare;
+	@extend %#{$prefix}button--compare;
 }

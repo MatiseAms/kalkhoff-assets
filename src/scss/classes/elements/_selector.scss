@@ -1,3 +1,15 @@
 .#{$prefix}selector{
 	@extend %#{$prefix}selector;
+	&__selected{
+		@extend %#{$prefix}selector__selected;
+	}
+	&__list{
+		@extend %#{$prefix}selector__list;
+	}
+	&__item{
+		@extend %#{$prefix}selector__item;
+	}
+	&__touch{
+		@extend %#{$prefix}selector__touch;
+	}
 }

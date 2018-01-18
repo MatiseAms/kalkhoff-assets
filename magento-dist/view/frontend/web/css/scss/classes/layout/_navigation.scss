@@ -1,85 +1,87 @@
 
-/* --------------------------------------- */
+/* ______________________________________- */
 /*				Main navigation
-/* ---------------------------------------- */
-.#{$prefix}nav_main{
-	@extend %#{$prefix}nav_main;
-	@extend %#{$prefix}nav_main_mobile;
-	&--container{
-		@extend %#{$prefix}nav_main--container;
-		@extend %#{$prefix}nav_main_mobile--container;
+/* ________________________________________ */
+.#{$prefix}navMain{
+	@extend %#{$prefix}navMain;
+	@extend %#{$prefix}navMain--mobile;
+	&__container{
+		@extend %#{$prefix}navMain__container;
+		@extend %#{$prefix}navMain--mobile__container;
 	}
-	&--list{
-		@extend %#{$prefix}nav_main--list;
-		@extend %#{$prefix}nav_main_mobile--list;
-		&__item{
-			@extend %#{$prefix}nav_main--list__item;
-			@extend %#{$prefix}nav_main_mobile--list__item;
-			&-text{
-				@extend %#{$prefix}nav_main--list__item-text;
-				@extend %#{$prefix}nav_main_mobile--list__item-text;
-			}
-			&-link{
-				@extend %#{$prefix}nav_main--list__item-link;
-				@extend %#{$prefix}nav_main_mobile--list__item-link;
-			}
-		}
+	&__list{
+		@extend %#{$prefix}navMain__list;
+		@extend %#{$prefix}navMain--mobile__list;
 	}
-	&--sublist{
-		@extend %#{$prefix}nav_main--sublist;
-		@extend %#{$prefix}nav_main_mobile--sublist;
-		&__container{
-			@extend %#{$prefix}nav_main--sublist__container;
-			@extend %#{$prefix}nav_main_mobile--sublist__container;
-		}
-		&__buttongroup{
-			@extend %#{$prefix}nav_main--sublist__buttongroup;
-			@extend %#{$prefix}nav_main_mobile--sublist__buttongroup;
-		}
-		&__item{
-			@extend %#{$prefix}nav_main--sublist__item;
-			@extend %#{$prefix}nav_main_mobile--sublist__item;
-			&__sub{
-				@extend %#{$prefix}nav_main--sublist__item__sub;
-				@extend %#{$prefix}nav_main_mobile--sublist__item__sub;
-			}
-			&-text{
-				@extend %#{$prefix}nav_main--sublist__item-text;
-				@extend %#{$prefix}nav_main_mobile--sublist__item-text;
-			}
-			&-link{
-				@extend %#{$prefix}nav_main--sublist__item-link;
-				@extend %#{$prefix}nav_main_mobile--sublist__item-link;
-			}
-			&-image{
-				@extend %#{$prefix}nav_main--sublist__item-image;
-				@extend %#{$prefix}nav_main_mobile--sublist__item-image;
-			}
+	&__item{
+		@extend %#{$prefix}navMain__item;
+		@extend %#{$prefix}navMain--mobile__item;
+	}
+	&__text{
+		@extend %#{$prefix}navMain__text;
+		@extend %#{$prefix}navMain--mobile__text;
+	}
+	&__link{
+		@extend %#{$prefix}navMain__link;
+		@extend %#{$prefix}navMain--mobile__link;
+	}
+
+	&__buttongroup{
+		@extend %#{$prefix}navMain__buttongroup;
+		@extend %#{$prefix}navMain--mobile__buttongroup;
+	}
+	&__subList{
+		@extend %#{$prefix}navMain__subList;
+		@extend %#{$prefix}navMain--mobile__subList;
+	}
+
+	&__subList--sub{
+		@extend %#{$prefix}navMain__subList--sub;
+		@extend %#{$prefix}navMain--mobile__subList--sub;
+	}
+	&__subContainer{
+		@extend %#{$prefix}navMain__subContainer;
+		@extend %#{$prefix}navMain--mobile__subContainer;
+	}
+	&__subItem{
+		@extend %#{$prefix}navMain__subItem;
+		@extend %#{$prefix}navMain--mobile__subItem;
+		&--segment{
+			@extend %#{$prefix}navMain__subItem--segment;
+			@extend %#{$prefix}navMain--mobile__subItem--segment;
 		}
 	}
-	&--seclist{
-		@extend %#{$prefix}nav_main--seclist;
-		@extend %#{$prefix}nav_main_mobile--seclist;
-		@extend %#{$prefix}nav_main_medium--seclist;
-		// &__container{
-		// 	@extend %#{$prefix}nav_main--seclist__container;
-		// }
-		&__item{
-			@extend %#{$prefix}nav_main--seclist__item;
-			@extend %#{$prefix}nav_main_mobile--seclist__item;
-			&-text{
-				@extend %#{$prefix}nav_main--seclist__item-text;
-				@extend %#{$prefix}nav_main_mobile--seclist__item-text;
-			}
-			&-link{
-				@extend %#{$prefix}nav_main--seclist__item-link;
-				@extend %#{$prefix}nav_main_mobile--seclist__item-link;
-				@extend %#{$prefix}nav_main_medium--seclist__item-link;
-			}
-		}
+	&__subText{
+		@extend %#{$prefix}navMain__subText;
+		@extend %#{$prefix}navMain--mobile__subText;
 	}
-	&--search{
-		@extend %#{$prefix}nav_main--search;
-		@extend %#{$prefix}nav_main_mobile--search;
+	&__subLink{
+		@extend %#{$prefix}navMain__subLink;
+		@extend %#{$prefix}navMain--mobile__subLink;
+	}
+	&__subImage{
+		@extend %#{$prefix}navMain__subImage;
+		@extend %#{$prefix}navMain--mobile__subImage;
+	}
+	&__secList{
+		@extend %#{$prefix}navMain__secList;
+		@extend %#{$prefix}navMain--mobile__secList;
+	}
+	&__secItem{
+		@extend %#{$prefix}navMain__secItem;
+		@extend %#{$prefix}navMain--mobile__secItem;
+	}
+	&__secText{
+		@extend %#{$prefix}navMain__secText;
+		@extend %#{$prefix}navMain--mobile__secText;
+	}
+	&__secLink{
+		@extend %#{$prefix}navMain__secLink;
+		@extend %#{$prefix}navMain--mobile__secLink;
+	}
+
+	&__search{
+		@extend %#{$prefix}navMain__search;
+		@extend %#{$prefix}navMain--mobile__search;
 	}
 }

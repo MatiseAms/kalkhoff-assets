@@ -1,39 +1,33 @@
 %#{$prefix}breadcrumb{
-	border: 2px solid red; all: initial;
+	all: initial;
 	*{
 		all: unset;
 	}
-	ul, li{
-		list-style-type: none;
-	}
-	ul{
-		li{
-			padding: 0; display: inline-block;
-			&:before{
-				@include reset();
-			}
-			&~li{
-				&:before{
-					left: auto; top: auto; background: none; position: relative; width: auto; height: auto; display: inline-block; content: "\00a0/\00a0"; opacity: 0.5;
-				}
-			}
+	&__list{ list-style-type: none; }
+
+	&__item{ list-style-type: none; padding: 0; display: inline-block;
+		&:before{
+			@include reset(); left: auto; top: auto; background: none; position: relative; width: auto; height: auto; display: inline-block; content: "\00a0/\00a0"; opacity: 0.5;
+		}
+		&:first-child{
+			&:before{ content: none;}
+		}
+		a{
+			@extend %#{$prefix}p; opacity: 0.5; font-weight: $assets-font-weight-medium;
+		}
+		&:last-child{
 			a{
-				@extend %#{$prefix}p; opacity: 0.5; font-weight: $assets-font-weight-medium;
-			}
-			&:last-child{
-				a{
-					opacity: 1;
-				}
+				opacity: 1;
 			}
 		}
 	}
-
-	// Dark mode
-
-	&.dark{
-		color: color(White);
+	&--dark{ color: color(khWhite);
 		ul li a{
 			font-weight: $assets-font-weight-regular;
 		}
+	}
+	// this stays here for dark magical reasons nobody can explain except for 'He-who-must-not-be-named'
+	.dark{
+		content: 'je moer';
 	}
 }

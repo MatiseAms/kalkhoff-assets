@@ -1,9 +1,9 @@
 .content{
 	@extend %#{$prefix}content !optional;
-	ul{
-		@extend %#{$prefix}content-ul !optional;
-	}
-	ol{
-		@extend %#{$prefix}content-ol !optional;
-	}
+	// ul{
+	// 	@extend %#{$prefix}content-ul !optional;
+	// }
+	// ol{
+	// 	@extend %#{$prefix}content-ol !optional;
+	// }
 }

@@ -2,7 +2,11 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" >
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
 <metadata>
+<<<<<<< HEAD
 Created by FontForge 20170718 at Mon Jan 15 12:00:44 2018
+=======
+Created by FontForge 20170718 at Wed Jan 17 16:36:50 2018
+>>>>>>> develop
  By Maurits Meester
 </metadata>
 <defs>
@@ -18,7 +22,7 @@ Created by FontForge 20170718 at Mon Jan 15 12:00:44 2018
     bbox="17 -9 448 389"
     underline-thickness="25"
     underline-position="-76"
-    unicode-range="U+D1001-D1005"
+    unicode-range="U+D1001-D1006"
   />
 <missing-glyph 
 d="M17 0v341h136v-341h-136zM34 17h102v307h-102v-307z" />
@@ -42,5 +46,7 @@ q-1 1 -2 1q-1 1 -2.5 2t-2.5 1l-2.5 2.5l-2.5 2.5q-10 8 -10 22t10 22q3 4 5 5q3 2 5
 q-1 0 -3 0.5t-3 0.5q-1 1 -2.5 2t-2.5 1l-2.5 2.5l-2.5 2.5l-4 4l-3 6q0 1 -1 6q-1 2 -1 6q0 14 10 22q3 4 5 5q3 2 5 2q2 1 6 2q6 2 12 0q2 0 4 -1l2 -1z" />
     <glyph glyph-name="shop" unicode="&#xd1005;" 
 d="M155 299h293v-82q0 -12 -5 -23t-14.5 -18.5t-21.5 -10.5l-197 -49l-21 -31h152v-42h-232l54 81q-16 11 -21 30v1l-31 144h-44l-9 42h88zM405 217v39h-241l20 -92q1 -4 5 -6q5 -2 8 -1l200 50q8 2 8 10z" />
+    <glyph glyph-name="triangle" unicode="&#xd1006;" 
+d="M288 80l17 -17l112 112l17 17l-17 17l-112 112l-17 -17l-17 -17l95 -95l-95 -95zM80 192v-24h304v24v24h-304v-24z" />
   </font>
 </defs></svg>
