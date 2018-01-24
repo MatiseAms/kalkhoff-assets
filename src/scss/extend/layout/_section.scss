@@ -79,18 +79,18 @@
                 clear: both;
             }
             @media #{$medium-only}{
-                width: 33.33%;
+                width: 50%;
                 clear: none;
                 float: left;
-                &:nth-child(3n+4) {
+                &:nth-child(2n+3) {
                     clear: both;
                 }
             }
             @media #{$large-up}{
-                width: 25%;
+                width: 33.33%;
                 clear: none;
                 float: left;
-                &:nth-child(4n+5) {
+                &:nth-child(3n+4) {
                     clear: both;
                 }
             }
