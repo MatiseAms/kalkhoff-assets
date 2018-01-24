@@ -9,9 +9,9 @@
 
 	@extend %#{$prefix}heading-font-family; transition: box-shadow 0.2s, color 0.2s 0.1s; cursor: pointer; font-size: 14px;
 
-	&:not([disabled]):hover{
-		box-shadow: 0 100px 0 0 color(Dark) inset; color: color(White);
-	}
+	// &:not([disabled]):hover{
+	// 	box-shadow: 0 100px 0 0 color(Dark) inset; color: color(White);
+	// }
 
 	&[disabled]{
 		opacity: 0.2; cursor: normal;
@@ -30,10 +30,13 @@
 		opacity: 0.5;
 	}
 	&--ghost, &--naked{
-		background: none; box-shadow: 0 0 0 1px  color(Black,1) inset; color: color(Black,1);
+		background: none; color: color(khMidgray); padding: 0; text-transform: none; @include assets-p(); height: 20px; line-height: 20px;
+		&:before{
+			font-size: 1.5rem; margin-right: 10px; font-weight: 200; position: relative; top: 3px;
+		}
 	}
 	@each $color-name,$color-value in $colors{
-		&.button-#{to-lower-case($color-name)}, &.button-#{$color-name}{
+		&.button-#{to-lower-case($color-name)}, &.button-#{$color-name}, &.button--#{$color-name}{
 			background-color: $color-value; color: contra($color-value);
 		}
 	}
@@ -61,16 +64,17 @@ $border-radius: 2px;
 
 
 %#{$prefix}button--compare{
-	border: none; padding: 2rem; background: none; position: relative; padding-left: calc(#{$grid-1} + 2rem);
-	&:after{
-		content: ""; display: block; position: absolute; left: grid(0.25); top: 50%; width: grid(0.5); height: grid(0.5); background-color: color(White); border-radius: 50%; transform: translateY(-50%); box-shadow: 0 0 1rem 0 color(Black,0.5);
-	}
-	&:before{
-		content: ""; display: block; position: absolute; left: 0; top: 50%; background-color: color(Black,0.25); width: grid(1); height: grid(1); border-radius: 50%; transform: translateY(-50%);
-	}
-	&:hover:before{
-		animation: comparePop 0.5s forwards;
-	}
+	content: "hoi";
+	// border: none; padding: 2rem; background: none; position: relative; padding-left: calc(#{$grid-1} + 2rem);
+	// &:after{
+	// 	content: ""; display: block; position: absolute; left: grid(0.25); top: 50%; width: grid(0.5); height: grid(0.5); background-color: color(White); border-radius: 50%; transform: translateY(-50%); box-shadow: 0 0 1rem 0 color(Black,0.5);
+	// }
+	// &:before{
+	// 	content: ""; display: block; position: absolute; left: 0; top: 50%; background-color: color(Black,0.25); width: grid(1); height: grid(1); border-radius: 50%; transform: translateY(-50%);
+	// }
+	// &:hover:before{
+	// 	animation: comparePop 0.5s forwards;
+	// }
 }
 
 

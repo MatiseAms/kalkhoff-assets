@@ -9,5 +9,10 @@ module.exports = {
 		files: {
 			'<%= config.test.scss %>compiled2.css': '<%= config.dist.root %>compile.scss'
 		}
+	},
+	dist: {
+		files: {
+			'<%= config.magento.component %>assets-dist.less': '<%= config.dist.root %>assets-classes.scss'
+		}
 	}
 };
