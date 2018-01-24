@@ -54,3 +54,45 @@
 		}
 	}
 }
+
+%#{$prefix}sectionSegmentFeatures{
+	background-color: color(khMarineblue);
+
+	padding: 12vw 0 10vw;
+
+	h2 {
+		padding-bottom: 6vw;
+	}
+
+	ul {
+        width: 100%;
+        li {
+            margin-bottom: 4vw;
+            padding-right: 2vw;
+
+            @media #{$small-only}{
+                width: 100%;
+                clear: both;
+            }
+            @media #{$medium-only}{
+                width: 33.33%;
+                clear: none;
+                float: left;
+                &:nth-child(3n+4) {
+                    clear: both;
+                }
+            }
+            @media #{$large-up}{
+                width: 25%;
+                clear: none;
+                float: left;
+                &:nth-child(4n+5) {
+                    clear: both;
+                }
+            }
+        }
+
+    }
+
+
+}
