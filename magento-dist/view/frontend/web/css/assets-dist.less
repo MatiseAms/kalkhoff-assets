@@ -895,6 +895,324 @@
 /* --------------------------------------- */
 /*				Classes for Typography
 /* ---------------------------------------- */
+/* -------------------------------------------------- */
+/*				@extend default typographic elements
+/* -------------------------------------------------- */
+h1 {
+  margin: 0;
+  padding: 0;
+  font-size: 5vw;
+  font-family: 'Roboto Condensed';
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+@media only screen and (max-width: 960px) {
+  h1 {
+    font-size: 48px;
+  }
+}
+@media only screen and (min-width: 2880px) {
+  h1 {
+    font-size: 144px;
+  }
+}
+h2 {
+  font-size: 3.125vw;
+  font-family: 'Roboto Condensed';
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+@media only screen and (max-width: 960px) {
+  h2 {
+    font-size: 30px;
+  }
+}
+@media only screen and (min-width: 2880px) {
+  h2 {
+    font-size: 90px;
+  }
+}
+h3 {
+  font-size: 2.08333333vw;
+  font-family: 'Roboto';
+  font-weight: normal;
+  line-height: 1.25;
+  letter-spacing: -0.3;
+  text-transform: none;
+}
+@media only screen and (max-width: 960px) {
+  h3 {
+    font-size: 20px;
+  }
+}
+@media only screen and (min-width: 2880px) {
+  h3 {
+    font-size: 60px;
+  }
+}
+h4 {
+  font-size: 1.66666667vw;
+  font-family: 'Roboto';
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: -0.25;
+  text-transform: none;
+}
+@media only screen and (max-width: 960px) {
+  h4 {
+    font-size: 16px;
+  }
+}
+@media only screen and (min-width: 2880px) {
+  h4 {
+    font-size: 48px;
+  }
+}
+h5 {
+  font-size: 1.25vw;
+  font-family: 'Roboto';
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: -0.25;
+  text-transform: none;
+}
+@media only screen and (max-width: 960px) {
+  h5 {
+    font-size: 12px;
+  }
+}
+@media only screen and (min-width: 2560px) {
+  h5 {
+    font-size: 32px;
+  }
+}
+h6 {
+  font-size: 1.25vw;
+  font-family: 'Roboto';
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: -0.25;
+  text-transform: none;
+}
+@media only screen and (max-width: 960px) {
+  h6 {
+    font-size: 12px;
+  }
+}
+@media only screen and (min-width: 2560px) {
+  h6 {
+    font-size: 32px;
+  }
+}
+.font-bold,
+strong {
+  font-weight: bold;
+}
+small {
+  font-size: smaller;
+}
+del {
+  text-decoration: line-through;
+}
+ins {
+  text-decoration: underline;
+}
+sub {
+  font-size: smaller;
+  vertical-align: sub;
+}
+sup {
+  font-size: smaller;
+  vertical-align: sub;
+}
+p {
+  font-size: 0.83333333vw;
+  font-weight: 400;
+  line-height: 1.75;
+}
+@media only screen and (max-width: 1920px) {
+  p {
+    font-size: 16px;
+  }
+}
+@media only screen and (max-width: 1920px) {
+  p {
+    font-size: 16px;
+  }
+}
+blockquote {
+  margin: 0;
+  padding: 0.5rem  1rem;
+}
+div h1 + h1,
+div h2 + h1,
+div h3 + h1,
+div h4 + h1,
+div h5 + h1,
+div pre + h1,
+div span.code p + h1 {
+  margin-top: 0.75rem;
+}
+div h1 + p,
+div h2 + p,
+div h3 + p,
+div h4 + p,
+div h5 + p,
+div pre + p,
+div span.code p + p {
+  margin-top: 2rem;
+}
+div h1 + .row,
+div h2 + .row,
+div h3 + .row,
+div h4 + .row,
+div h5 + .row,
+div pre + .row,
+div span.code p + .row {
+  margin-top: 1rem;
+}
+div h1 + h1,
+div h2 + h1,
+div h3 + h1,
+div h4 + h1,
+div h5 + h1,
+div pre + h1,
+div span.code p + h1,
+div h1 + h2,
+div h2 + h2,
+div h3 + h2,
+div h4 + h2,
+div h5 + h2,
+div pre + h2,
+div span.code p + h2,
+div h1 + h3,
+div h2 + h3,
+div h3 + h3,
+div h4 + h3,
+div h5 + h3,
+div pre + h3,
+div span.code p + h3,
+div h1 + h4,
+div h2 + h4,
+div h3 + h4,
+div h4 + h4,
+div h5 + h4,
+div pre + h4,
+div span.code p + h4,
+div h1 + h5,
+div h2 + h5,
+div h3 + h5,
+div h4 + h5,
+div h5 + h5,
+div pre + h5,
+div span.code p + h5,
+div h1 + p,
+div h2 + p,
+div h3 + p,
+div h4 + p,
+div h5 + p,
+div pre + p,
+div span.code p + p {
+  margin-top: 1rem;
+}
+div span.code + h1,
+div pre + h1,
+div span.code + h2,
+div pre + h2,
+div span.code + h3,
+div pre + h3,
+div span.code + h4,
+div pre + h4,
+div span.code + h5,
+div pre + h5 {
+  margin-top: 2rem;
+}
+div p [class^="button"],
+div p [class*="button"] {
+  margin-top: 2rem;
+}
+div p + p {
+  margin-top: 0.5rem;
+}
+div p + table {
+  margin-top: 1rem;
+}
+div h1 + p,
+div h2 + p,
+div h3 + p,
+div h4 + p,
+div h5 + p {
+  margin-top: 1.04166667vw;
+}
+div h1 + table,
+div h2 + table,
+div h3 + table,
+div h4 + table,
+div h5 + table {
+  margin-top: 1rem;
+}
+div h1 + ul,
+div h2 + ul,
+div h3 + ul,
+div h4 + ul,
+div h5 + ul {
+  margin-top: 1rem;
+}
+div h2 + h5,
+div h3 + h5,
+div h4 + h5 {
+  margin-top: 0.83333333vw;
+}
+div table + h1,
+div table + h2,
+div table + h3,
+div table + h4,
+div table + h5,
+div table + p {
+  margin-top: 2rem;
+}
+div blockquote + h1,
+div blockquote + h2,
+div blockquote + h3,
+div blockquote + h4,
+div blockquote + h5,
+div blockquote + p {
+  margin-top: 1rem;
+}
+div ul + h1,
+div blockquote + h1,
+div ul + h2,
+div blockquote + h2,
+div ul + h3,
+div blockquote + h3,
+div ul + h4,
+div blockquote + h4,
+div ul + h5,
+div blockquote + h5,
+div ul + p,
+div blockquote + p {
+  margin-top: 1rem;
+}
+div div + table,
+div p + table,
+div div + h1,
+div p + h1,
+div div + h2,
+div p + h2,
+div div + h3,
+div p + h3,
+div div + h4,
+div p + h4,
+div div + h5,
+div p + h5,
+div div + ul,
+div p + ul {
+  margin-top: 2.08333333vw;
+}
 /* --------------------------------------- */
 /*				Classes for Grid
 /* ---------------------------------------- */
