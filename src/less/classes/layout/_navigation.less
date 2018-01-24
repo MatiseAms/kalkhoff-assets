@@ -4,22 +4,21 @@
 @font_family_3: kalkhoff-UI, sans-serif;
 
 
-/*------
+/* ---------------------------------------
+				Main / The menu which is always in sight in the top.
+--------------------------------------- */
 
-		Main / The menu which is always in sight in the top.
-
-		------*/
-/* ______________________________________- */
-/*				Main navigation
-/* ________________________________________ */
+/* ---------------------------------------
+				Main navigation
+--------------------------------------- */
 @media only screen and (min-width: 750px) and (max-width: 9999px){
 	.navMain{
 		content: ""; height: calc(100vh - 12.5vw); position: relative; width: 100%; z-index: 1;
 		.sublist-container{
-			position: absolute; left: 0; .grid(top,1); width: 100%; height: auto; transform: translateY(-200%); z-index: 1;
+			position: absolute; left: 0; .grid(1,top); width: 100%; height: auto; transform: translateY(-200%); z-index: 1;
 		}
 		.button-group{
-			position: absolute; left: 0; .grid(bottom,-1); width: 100%; height: 4.1666666667vw; transition: opacity 0.3s, transform 0.5s 0.3s; z-index: 1; background-color: @colors-primary-khwhite; transform: translateX(-200%); z-index: -1;
+			position: absolute; left: 0; .grid(-1,bottom); width: 100%; height: 4.1666666667vw; transition: opacity 0.3s, transform 0.5s 0.3s; z-index: 1; background-color: @colors-primary-khwhite; transform: translateX(-200%); z-index: -1;
 			.button{
 				width: 50%; margin: 0 !important; border-radius: 0 !important; padding: 0; text-align: center;
 			}
@@ -90,10 +89,10 @@
 		}
 	}
 	.navMain__subContainer{
-		position: absolute; left: 0; .grid(top,1); width: 100%; height: auto; transform: translateY(-200%); z-index: 1;
+		position: absolute; left: 0; .grid(1,top); width: 100%; height: auto; transform: translateY(-200%); z-index: 1;
 	}
 	.navMain__buttongroup{
-		position: absolute; left: 0; .grid(bottom,-1); width: 100%; height: 4.1666666667vw; transition: opacity 0.3s, transform 0.5s 0.3s; z-index: 1; background-color: @colors-primary-khwhite; transform: translateX(-200%); z-index: -1;
+		position: absolute; left: 0; .grid(-1,bottom); width: 100%; height: 4.1666666667vw; transition: opacity 0.3s, transform 0.5s 0.3s; z-index: 1; background-color: @colors-primary-khwhite; transform: translateX(-200%); z-index: -1;
 		.button{
 			width: 50%; margin: 0 !important; border-radius: 0 !important; padding: 0; text-align: center;
 		}
@@ -121,7 +120,7 @@
 	.image-type-bike.navMain__subImage{
 		z-index: 4;
 		img{
-			position: absolute; right: 0; .grid(top,1); width: 100%; max-width: 100%; z-index: 2; transition: transform 0.3s; transform: translateX(4.1666666667vw);
+			position: absolute; right: 0; .grid(1,top); width: 100%; max-width: 100%; z-index: 2; transition: transform 0.3s; transform: translateX(4.1666666667vw);
 		}
 	}
 	.image-type-segment.navMain__subImage{
@@ -129,7 +128,7 @@
 			content: ""; width: 100%; height: 100vh; display: block; position: absolute; left: 0; top: 0; background-image: linear-gradient(to right bottom, rgba(16, 16, 16, 0.5), rgba(16, 16, 16, 0) 50%); z-index: 3;
 		}
 		h3{
-			position: absolute; top: 6.25vw; left: 4.1666666667vw; width: 16.6666666667vw; color: @colors-primary-white; z-index: 3; transform: translateX(-50%); transition: 0.3s;
+			position: absolute; top: 6.25vw; left: 4.1666666667vw; width: 16.6666666667vw; color: @colors-primary-khwhite; z-index: 3; transform: translateX(-50%); transition: 0.3s;
 		}
 		img{
 			position: absolute; top: 0; right: 0; width: 100%; max-width: 100%; z-index: 2;
@@ -183,7 +182,7 @@
 		}
 		&:hover{
 			&:before{
-				color: @colors-primary-white;
+				color: @colors-primary-khwhite;
 			}
 		}
 	}

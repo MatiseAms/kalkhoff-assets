@@ -4,5 +4,10 @@ module.exports = {
 			'<%= config.test.less %>assets.css': '<%= config.dist.root %>assets.less',
 			'<%= config.test.less %>assets-classes.css': '<%= config.dist.root %>assets-classes.less'
 		}
+	},
+	dist: {
+		files: {
+			'<%= config.magento.component %>assets-dist.css': '<%= config.dist.root %>assets-classes.less'
+		}
 	}
 }

@@ -17,7 +17,8 @@
     "webfont",
     "icon_font_loader",
     "copy:magento_component",
-    "shell:magentize"
+    "shell:magentize",
+		"less:dist"
   ],
   "test": [
     "clean:test",
