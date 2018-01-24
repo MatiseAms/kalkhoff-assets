@@ -1,0 +1,64 @@
+@mixin assets-main-keyframes(){
+	@keyframes theCurtain{
+		0%{
+			clip: rect(0px,100vw,0vh,0px);
+		}
+		70%{
+			clip: rect(0px,100vw,90vh,0px);
+		}
+		100%{
+			clip: rect(0px,100vw,100vh,0px);
+		}
+	}
+	@keyframes comeDown{
+		0%{
+			transform: translateY(-100%);
+		}
+		100%{
+			transform: translateY(0%);
+		}
+	}
+}
+@mixin assets-main-animation(){
+	&#homepage{
+		position: absolute; width: 100%; display: block; height: 100%; overflow: scroll; clip: rect(0px,100vw,0vh,0px); animation: theCurtain 2s 0.5s forwards;
+	}
+	.navMain{
+		animation: comeDown 0.5s 2s forwards; transform: translateY(-100%);
+		.kh-logo{
+			animation: comeDown 0.5s 2.5s forwards; transform: translateY(-100%);
+		}
+		.navMain__secList{
+			li{
+				&:nth-child(1){
+					transform: translateY(-100%); animation: comeDown 0.5s 2.6s forwards;
+				}
+				&:nth-child(2){
+					transform: translateY(-100%); animation: comeDown 0.5s 2.8s forwards;
+				}
+				&:nth-child(3){
+					transform: translateY(-100%); animation: comeDown 0.5s 3s forwards;
+				}
+			}
+		}
+		.navMain__list{
+			>li{
+				&:nth-child(1){
+					a{
+						position: relative; display: block; transform: translateY(-100%); animation: comeDown 0.5s 2.6s forwards;
+					}
+				}
+				&:nth-child(2){
+					a{
+						position: relative; display: block; transform: translateY(-100%); animation: comeDown 0.5s 2.8s forwards;
+					}
+				}
+				&:nth-child(3){
+					a{
+						position: relative; display: block; transform: translateY(-100%); animation: comeDown 0.5s 3s forwards;
+					}
+				}
+			}
+		}
+	}
+}

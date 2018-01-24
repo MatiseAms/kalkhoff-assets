@@ -18,7 +18,7 @@
 		------*/
 
 	%#{$prefix}navMain{
-		$c: c($c); content: ""; height: calc(100vh - #{grid(3)}); position: relative; width: 100%; z-index: 1;
+		$c: c($c); content: ""; height: calc(100vh - #{grid(3)}); position: absolute; width: 100%; z-index: 1;
 		&__container{
 			$c: c($c); position: absolute; left: 20px; top: 20px; width: calc(100vw - 40px);
 		}
