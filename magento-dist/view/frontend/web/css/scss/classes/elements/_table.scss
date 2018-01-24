@@ -6,4 +6,7 @@ table{
 	table{
 		@extend %#{$prefix}content-table;
 	}
+	dl{
+		@extend %#{$prefix}content-dl;
+	}
 }

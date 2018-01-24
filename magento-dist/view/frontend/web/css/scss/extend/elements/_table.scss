@@ -30,6 +30,9 @@
 			&:last-child{
 				padding-right: 1rem;
 			}
+			.more-info{
+				color: color(khMidgray); text-decoration: underline; white-space: nowrap;
+			}
 		}
 	}
 	thead{
@@ -41,75 +44,17 @@
 
 
 %#{$prefix}content-dl{
-	.dl-flex{
-		display: flex; flex-wrap: wrap; align-items: flex-start;
-	}
-
-	.dl-multicolumn{
-		display: flex; flex-wrap: wrap; align-items: stretch;
-	}
-
-	dt{
-		padding: 2px 0;
-	}
-
-	.dl-flex dt{
-		flex: 0 0 35%; overflow: hidden; /* Prevents long words in labels from causing layout to break */
-	}
-
-	/* Use padding rather than margin in bottom to avoid extra spacing overflowing to the top of the next column */
+	display: flex; flex-wrap: wrap;
 	dd{
-		padding: 2px 0 20px 0; margin-left: 0;
-	}
-
-	.dl-flex dd{
-		flex: 65% 0 0; padding-left: 20px; max-width: 65%; /* Fix for IE issue in which box-sizing is not taken into account when using flex */
-	}
-
-	.dl-flex dd+dd{
-		margin-left: 35%;
-	}
-
-	@media (min-width: 768px){
-		.dl-flex dt{
-			flex: 0 0 20%;
-		}
-		.dl-flex dd{
-			flex: 80% 0 0; max-width: 80%;
-		}
-		.dl-flex dd+dd{
-			margin-left: 20%;
-		}
-	}
-
-	.avoid-break{
-		flex-basis: 50%; text-align: center;
-	}
-
-
-	/* Styling for demo purposes below this line */
-	*, *:after, *:before{
-		box-sizing: border-box;
-	}
-	body{
-		font-family: arial, helvetica, sans-serif; font-size: 15px; background: #333333; color: #eeeeee; padding: 10px;
-	}
-	h2{
-		color: #f5ea53;
-	}
-	dl{
-		margin-bottom: 70px;
-	}
-	dl.dl-flex{
-		max-width: 900px;
+		width: 60%; padding: 1rem;
 	}
 	dt{
-		background: rgba(0, 0, 0, 0.5); color: #777777;
+		width: 40%; padding: 1rem;
 	}
-	dd{
-		background: rgba(0, 0, 0, 0.2); color: #ffffff;
-	}
-	dt, dd{
-		box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.1);
+	dl, dt{
+		border-bottom: 1px solid color(khBlack,0.1);
+		&:nth-last-child(2){
+			//		border: none;
+		}
 	}
 }
