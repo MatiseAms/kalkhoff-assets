@@ -1,9 +1,13 @@
 %#{$prefix}basic-section{
-	background-color: color(White); padding: grid(1);
-	@include bgBorder(color(khBlack), 0 1 1 1);
+	background-color: color(White); padding: grid(1); padding-left: calc(#{$grid-2} - 20px); padding-right: calc(#{$grid-2} - 20px); margin: 20px;
 
-	&:first-of-type{
-		@include bgBorder(color(khBlack), 1 1 1 1);
+	// @include bgBorder(color(khBlack), 0 1 1 1);
+	//
+	// &:first-of-type{
+	// 	@include bgBorder(color(khBlack), 1 1 1 1);
+	// }
+	.breadcrumb{
+		padding-top: grid(1);
 	}
 
 	&>.image.full-width{
@@ -15,7 +19,7 @@
 %#{$prefix}sectionSingleBike{
 	padding: grid(4 0); position: relative;
 	&--image{
-		width: calc(50vw - 20px); position: absolute; right: 20px; bottom: 20px; height: calc(100% - 40px); overflow: hidden; padding-top: grid(4);
+		width: calc(50vw - 20px); position: absolute; bottom: 0; right: 0; padding: 20px; height: 100%; overflow: hidden; padding-top: grid(4);
 
 		img{
 			max-width: 100%;

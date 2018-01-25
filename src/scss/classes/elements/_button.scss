@@ -18,6 +18,12 @@
 }
 
 
+// Ghost Buttons
+.button--ghost{
+	@extend %#{$prefix}button--ghost;
+}
+
+
 // Specific Buttons
 .button--arrow-right{
 	@extend %#{$prefix}button--arrow-right;
