@@ -1,6 +1,0 @@
-.color-dot{
-	@extend %#{$prefix}color-dot;
-
-	@include color-dot-colors("color-dot-",true);
-	@include color-dot-dual("color-dot-dual-",true);
-}
