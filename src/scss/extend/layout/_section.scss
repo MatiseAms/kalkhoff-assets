@@ -134,9 +134,10 @@
             padding-top: 0.5rem;
             padding-left: 70px;
             line-height: 32px;
+            font-size: 24px;
             @media #{$xlarge-up}{
-                //line-height: 39px;
-                line-height: 34px;
+                line-height: 36px;
+                font-size: 32px;
             }
 
         }
@@ -147,8 +148,8 @@
         @media #{$xlarge-up}{
             /*font-size: 20px;
             line-height: 39px;*/
-            font-size: 17x;
-            line-height: 33px;
+            font-size: 17px;
+            line-height: 36px;
         }
     }
 
