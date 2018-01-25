@@ -125,10 +125,9 @@
         align-self: flex-start;*/
         margin-bottom: 1.4rem;
         @media #{$xlarge-up}{
-            margin-bottom: 2rem;
+            margin-bottom: 1.6rem;
         }
         img {
-            //margin-right: 1rem;
             position: absolute;
         }
         h3 {
@@ -136,7 +135,8 @@
             padding-left: 70px;
             line-height: 32px;
             @media #{$xlarge-up}{
-                line-height: 39px;
+                //line-height: 39px;
+                line-height: 34px;
             }
 
         }
@@ -145,8 +145,10 @@
     p {
         line-height: 32px;
         @media #{$xlarge-up}{
-            font-size: 20px;
-            line-height: 39px;
+            /*font-size: 20px;
+            line-height: 39px;*/
+            font-size: 17x;
+            line-height: 33px;
         }
     }
 
