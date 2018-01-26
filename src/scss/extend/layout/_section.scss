@@ -17,64 +17,53 @@
 
 
 %#{$prefix}sectionSingleBike{
-	padding: grid(4 0 0);
-    position: relative;
-    @media #{$small-only}{
-        .column {
-            .content {
-                padding-bottom: 0;
-            }
-        }
-    }
-    @media #{$medium-up}{
-        padding: grid(4 0);
-    }
+	padding: grid(4 0 0); position: relative;
+	@media #{$small-only}{
+		.column{
+			.content{
+				padding-bottom: 0;
+			}
+		}
+	}
+	@media #{$medium-up}{
+		padding: grid(4 0);
+	}
 	&--image{
-        position: relative;
-        bottom: 0;
+		position: relative; bottom: 0;
 
-        @media #{$medium-up}{
-            position: absolute;
-            width: calc(50vw - 20px);
-            bottom: 0;
-        }
-        right: 0; padding: 20px; height: 100%; overflow: hidden;
+		@media #{$medium-up}{
+			position: absolute; width: calc(50vw - 20px); bottom: 0;
+		}
+		right: 0; padding: 20px; height: 100%; overflow: hidden;
 
 		img{
-			max-width: 100%;
-            position: relative;
-            @media #{$medium-up}{
-                position: absolute;
-            }
-            bottom: grid(-4);
+			max-width: 100%; position: relative;
+			@media #{$medium-up}{
+				position: absolute;
+			}
+			bottom: grid(-4);
 		}
 	}
 
-    /* SbC:: button-naked doesn't do the job */
-    .button--transparent {
-        background-color: transparent;
-        text-transform: none;
-        color: color(khBlack);
-        &.button--arrow-right {
-            padding-left: 0;
-            &:after {
-                background-image: linear-gradient(#000,#000);
-            }
-        }
-    }
+	/* SbC:: button-naked doesn't do the job */
+	.button--transparent{
+		background-color: transparent; text-transform: none; color: color(khBlack);
+		&.button--arrow-right{
+			padding-left: 0;
+			&:after{
+				background-image: linear-gradient(#000000,#000000);
+			}
+		}
+	}
 
-    .sectionSingleBike {
-        &__caption{
-            color: color(khMidgray);
-            position: absolute;
-            bottom: 5vw;
-            font-size: 14px;
-            display: none;
-            @media #{$medium-up}{
-                display: block;
-            }
-        }
-    }
+	.sectionSingleBike{
+		&__caption{
+			color: color(khMidgray); position: absolute; bottom: 5vw; font-size: 14px; display: none;
+			@media #{$medium-up}{
+				display: block;
+			}
+		}
+	}
 }
 
 %#{$prefix}sectionSegmentTrio{
@@ -110,94 +99,81 @@
 }
 
 %#{$prefix}sectionSegmentFeatures{
-	background-color: color(khMarineblue);
+	background-color: color(khMarineblue); padding: 12vw 0 10vw;
 
-	padding: 12vw 0 10vw;
-
-	h2 {
+	// Wij hanteren een paar regels om alles hetzelfde te houden en geen conflicterende margins en paddings te krijgen. We gebruiken daarom nooit een padding/margin-bottom. maar doen dit door combinatie selectors:
+	// h2 + p { margin-top: 1rem; }. Probeer ook vooral margins te gebruiken zodat de "grootte" van een element niet veranderd enkel de spacing tussen elementen.
+	h2{
 		padding-bottom: 6vw;
 	}
 
-    .flex-wrapper {
-        /*display: flex;
+	// Volgens mij kan dit simpeler met een inline background image op de h3 met een extra classje voor hergebruikt.
+	// Dan is er ook geen extra wrapper nodig.
+	.flex-wrapper{
+		/*display: flex;
         flex-flow: row;
         align-items: top;
         align-self: flex-start;*/
-        margin-bottom: 1.4rem;
-        @media #{$xlarge-up}{
-            margin-bottom: 1.6rem;
-        }
-        img {
-            position: absolute;
-        }
-        h3 {
-            padding-top: 0.5rem;
-            padding-left: 70px;
-            line-height: 32px;
-            font-size: 24px;
-            @media #{$xlarge-up}{
-                line-height: 36px;
-                font-size: 32px;
-            }
-
-        }
-    }
-
-    p {
-        line-height: 32px;
-        @media #{$xlarge-up}{
-            /*font-size: 20px;
+		margin-bottom: 1.4rem;
+		@media #{$xlarge-up}{
+			margin-bottom: 1.6rem;
+		}
+		img{
+			position: absolute;
+		}
+		h3{
+			padding-top: 0.5rem; padding-left: 70px; line-height: 32px; font-size: 24px;
+			@media #{$xlarge-up}{
+				line-height: 36px; font-size: 32px;
+			}
+		}
+	}
+	// P element is gestyled in de typography en klopt ook met het design.
+	p{
+		line-height: 32px;
+		@media #{$xlarge-up}{
+			/*font-size: 20px;
             line-height: 39px;*/
-            font-size: 17px;
-            line-height: 36px;
-        }
-    }
 
-	ul {
-        width: 100%;
-        li {
-            margin-bottom: 8vw;
 
-            @media #{$small-only}{
-                width: 100%;
-                clear: both;
-            }
-            @media #{$medium-up}{
-                margin-bottom: 6vw;
-            }
-            @media #{$medium-only}{
-                width: 50%;
-                clear: none;
-                float: left;
-                &:nth-child(2n+2) {
-                    padding-left: 2vw;
-                    padding-right: 0;
-                }
-                &:first-child,
-                &:nth-child(2n+3) {
-                    clear: both;
-                    padding-left: 0;
-                    padding-right: 2vw;
-                }
-            }
-            @media #{$large-up}{
-                width: 33.33%;
-                clear: none;
-                float: left;
-                padding: 0 1vw;
-                &:nth-child(3n+3) {
-                    padding-left: 2vw;
-                    padding-right: 0;
-                }
-                &:first-child,
-                &:nth-child(3n+4) {
-                    clear: both;
-                    padding-left: 0;
-                    padding-right: 2vw;
-                }
-            }
-        }
+			// Zie hierboven, waar haal je precies die 17 en 36px vandaan?
+			font-size: 17px; line-height: 36px;
+		}
+	}
 
-    }
+	// UL/LI structure in deze setup is overbodig. Een uitzondering voor deze specifieke section zou ook kunnen met margin-top op de columns en eventueel Niet voor de eerste 3 of 2 , 1 (media query afhankelijk).
 
+	ul{
+		width: 100%;
+		li{
+			margin-bottom: 8vw;
+
+
+			// Gebruik van floats en clears zijn overbodig bij goed gebruik van grid/column structuur.
+			@media #{$small-only}{
+				width: 100%; clear: both;
+			}
+			@media #{$medium-up}{
+				margin-bottom: 6vw;
+			}
+			@media #{$medium-only}{
+				width: 50%; clear: none; float: left;
+				&:nth-child(2n+2){
+					padding-left: 2vw; padding-right: 0;
+				}
+				&:first-child, &:nth-child(2n+3){
+					clear: both; padding-left: 0; padding-right: 2vw;
+				}
+			}
+			@media #{$large-up}{
+				width: 33.33%; clear: none; float: left; padding: 0 1vw;
+				&:nth-child(3n+3){
+					padding-left: 2vw; padding-right: 0;
+				}
+				&:first-child, &:nth-child(3n+4){
+					clear: both; padding-left: 0; padding-right: 2vw;
+				}
+			}
+		}
+	}
 }
