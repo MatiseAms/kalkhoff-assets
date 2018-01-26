@@ -1,11 +1,11 @@
-%#{$prefix}basicHeader{
-	background-color: color(White); padding: grid(1); padding-left: calc(#{$grid-2} - 20px); padding-right: calc(#{$grid-2} - 20px); background-color: color(khWhite); padding-top: grid(3); position: relative;
+%#{$prefix}s--basicHeader{
+	@include borders(0 1 0 1); background-color: color(White); padding: grid(1); padding-left: calc(#{$grid-2} - 20px); padding-right: calc(#{$grid-2} - 20px); background-color: color(khWhite); padding-top: grid(3); position: relative; background-position: center center; background-size: cover;
 	// making or hididng the black borders
-	//margin: 20px;
-	margin: 0;
-	.column .content{
-		padding: 0;
-	}
+	// margin: 20px;
+	margin: 0; min-height: calc(100vh - #{grid(3)}); margin-top: 20px;
+	// .column .content{
+	// 	padding: 0;
+	// }
 	>.breadcrumb{
 		display: block; margin-top: grid(1);
 	}
@@ -17,5 +17,8 @@
 		img{
 			max-width: 100%;
 		}
+	}
+	.content{
+		width: 50vw; position: absolute; left: 0; top: 50%; padding-left: grid(3); color: color(khWhite); transform: translateY(-50%);
 	}
 }

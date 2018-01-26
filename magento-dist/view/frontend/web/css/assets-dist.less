@@ -128,7 +128,7 @@ h4 {
   font-family: "Roboto";
   font-size: 1.6666666667vw;
   font-weight: 400;
-  line-height: 1.5;
+  line-height: 1.25;
   letter-spacing: -0.25;
   text-transform: none; }
   h4.sub {
@@ -571,7 +571,7 @@ input[type="password"] {
     font-family: "Roboto";
     font-size: 1.6666666667vw;
     font-weight: 400;
-    line-height: 1.5;
+    line-height: 1.25;
     letter-spacing: -0.25;
     text-transform: none;
     caret-color: rgba(255, 255, 255, 0.5); }
@@ -1165,6 +1165,8 @@ table {
     position: absolute;
     width: 100%;
     z-index: 1;
+    top: 20px;
+    left: 0;
     /*------
 
 		Styling for secondary menu / Black bar in top
@@ -1172,9 +1174,9 @@ table {
 		------*/ }
     .navMain__container {
       position: absolute;
-      left: 20px;
-      top: 20px;
-      width: calc(100vw - 40px); }
+      left: 0;
+      top: 0;
+      width: 100vw; }
     .navMain__list {
       position: absolute;
       width: 50%;
@@ -1256,7 +1258,7 @@ table {
       .navMain__subList:after {
         opacity: 1;
         content: "";
-        width: calc(50vw - 20px);
+        width: 50vw;
         height: calc(100% + 4.1666666667vw);
         background-color: #ffffff;
         display: block;
@@ -1351,10 +1353,9 @@ table {
       top: 0;
       left: 50vw;
       display: block;
-      width: calc(50vw - 20px);
+      width: 50vw;
       height: 100%;
       transition: max-height 0.3s, opacity 0.3s 0.3s;
-      margin-left: -20px;
       background-size: cover;
       overflow: hidden;
       height: calc(100% + 4.1666666667vw); } }
@@ -1412,7 +1413,7 @@ table {
       font-family: "Roboto";
       font-size: 1.6666666667vw;
       font-weight: 400;
-      line-height: 1.5;
+      line-height: 1.25;
       letter-spacing: -0.25;
       text-transform: none; } }
     @media only screen and (min-width: 750px) and (max-width: 9999px) and (max-width: 960px) {
@@ -1502,7 +1503,7 @@ table {
       position: absolute;
       right: 0;
       height: 4.1666666667vw;
-      width: calc(50vw - 20px);
+      width: 50vw;
       z-index: 1;
       background-image: url("../img/kalkhoff.svg");
       background-repeat: no-repeat;
@@ -1668,37 +1669,53 @@ table {
   background-repeat: repeat-x, repeat-y, repeat-x, repeat-y;
   background-position: top left, top right, bottom left, top left; }
 
-.basic-section {
+.s--basicSection {
   background-color: #ffffff;
   padding: 4.1666666667vw;
   margin: 0;
   position: relative;
-  border-top: 1px solid black; }
-  .basic-section:after, .basic-section:before {
+  border-top: 1px solid black;
+  position: relative; }
+  .s--basicSection:after, .s--basicSection:before {
     content: "";
     width: 20px;
     height: 100%;
     display: block;
     position: absolute;
     top: 0;
-    background-color: #101010; }
-  .basic-section:after {
+    background-color: #101010;
+    z-index: 3; }
+  .s--basicSection:after {
     left: 0; }
-  .basic-section:before {
+  .s--basicSection:before {
     right: 0; }
-  .basic-section .breadcrumb {
+  .s--basicSection .breadcrumb {
     padding-top: 4.1666666667vw; }
-  .basic-section > .image.full-width {
+  .s--basicSection > .image.full-width {
     margin-top: -4.1666666667vw;
     margin-left: -4.1666666667vw;
     width: -moz-calc(100% + 8.3333333333vw);
     width: -webkit-calc(100% + 8.3333333333vw);
     width: calc(100% + 8.3333333333vw); }
 
-.sectionSingleBike {
+.s--singleBike {
   padding: 16.6666666667vw 0vw;
+  position: relative;
   position: relative; }
-  .sectionSingleBike--image {
+  .s--singleBike:after, .s--singleBike:before {
+    content: "";
+    width: 20px;
+    height: 100%;
+    display: block;
+    position: absolute;
+    top: 0;
+    background-color: #101010;
+    z-index: 3; }
+  .s--singleBike:after {
+    left: 0; }
+  .s--singleBike:before {
+    right: 0; }
+  .s--singleBike__image {
     width: calc(50vw - 20px);
     position: absolute;
     bottom: 0;
@@ -1707,31 +1724,57 @@ table {
     height: 100%;
     overflow: hidden;
     padding-top: 16.6666666667vw; }
-    .sectionSingleBike--image img {
+    .s--singleBike__image img {
       max-width: 100%; }
+  .s--singleBike__caption {
+    position: absolute;
+    bottom: 4.1666666667vw;
+    left: 12.5vw;
+    opacity: 0.5; }
+    @media only screen and (min-width: 0px) and (max-width: 750px) {
+      .s--singleBike__caption {
+        left: 4.1666666667vw; } }
+  .s--singleBike--dark {
+    background-color: #1a1b1a;
+    color: #ffffff; }
 
-.sectionSegmentTrio {
-  padding: 20px;
+.s--segmentTrio {
   position: relative;
-  background-color: #101010; }
-  .sectionSegmentTrio img {
+  background-color: #101010;
+  position: relative;
+  padding: 0;
+  margin: 1px 0; }
+  .s--segmentTrio:after, .s--segmentTrio:before {
+    content: "";
+    width: 20px;
+    height: 100%;
+    display: block;
+    position: absolute;
+    top: 0;
+    background-color: #101010;
+    z-index: 3; }
+  .s--segmentTrio:after {
+    left: 0; }
+  .s--segmentTrio:before {
+    right: 0; }
+  .s--segmentTrio img {
     max-width: 100%;
     margin: 0;
     margin: 0 1px;
     transform: scale(1);
     transition: transform 0.3s cubic-bezier(0.75, 0.75, 0.25, 0.5); }
-  .sectionSegmentTrio h3 {
+  .s--segmentTrio h3 {
     position: absolute;
     bottom: calc(4.1666666667vw + 20px);
     left: calc(4.1666666667vw + 20px);
     width: 16.6666666667vw;
     color: #ffffff;
     z-index: 2; }
-  .sectionSegmentTrio .column {
+  .s--segmentTrio .column {
     position: relative;
     font-size: 0;
     overflow: hidden; }
-    .sectionSegmentTrio .column:before {
+    .s--segmentTrio .column:before {
       content: "";
       display: block;
       position: absolute;
@@ -1741,12 +1784,92 @@ table {
       height: 80%;
       background-image: linear-gradient(to top, rgba(16, 16, 16, 0.5), rgba(16, 16, 16, 0));
       z-index: 1; }
-    .sectionSegmentTrio .column:first-child img {
+    .s--segmentTrio .column:first-child img {
       margin-left: 0; }
-    .sectionSegmentTrio .column:last-child img {
+    .s--segmentTrio .column:last-child img {
       margin-right: 0; }
-    .sectionSegmentTrio .column:hover img {
+    .s--segmentTrio .column:hover img {
       transform: scale(1.1); }
+
+.s--introImage {
+  padding: 0;
+  position: relative; }
+  .s--introImage:after, .s--introImage:before {
+    content: "";
+    width: 20px;
+    height: 100%;
+    display: block;
+    position: absolute;
+    top: 0;
+    background-color: #101010;
+    z-index: 3; }
+  .s--introImage:after {
+    left: 0; }
+  .s--introImage:before {
+    right: 0; }
+  .s--introImage .column[style] {
+    background-size: cover;
+    background-position: center center; }
+  .s--introImage .content {
+    padding: 4.1666666667vw; }
+    @media only screen and (min-width: 750px) and (max-width: 9999px) {
+      .s--introImage .content {
+        padding: 12.5vw 4.1666666667vw 12.5vw 4.1666666667vw; } }
+    @media only screen and (min-width: 960px) and (max-width: 9999px) {
+      .s--introImage .content {
+        padding: 12.5vw 6.25vw 12.5vw 12.5vw; } }
+
+.s--basicHeader {
+  position: relative;
+  background-color: #ffffff;
+  padding: 4.1666666667vw;
+  padding-left: calc(8.3333333333vw - 20px);
+  padding-right: calc(8.3333333333vw - 20px);
+  background-color: #ffffff;
+  padding-top: 12.5vw;
+  position: relative;
+  background-position: center center;
+  background-size: cover;
+  margin: 0;
+  min-height: calc(100vh - 12.5vw);
+  margin-top: 20px; }
+  .s--basicHeader:after, .s--basicHeader:before {
+    content: "";
+    width: 20px;
+    height: 100%;
+    display: block;
+    position: absolute;
+    top: 0;
+    background-color: #101010;
+    z-index: 3; }
+  .s--basicHeader:after {
+    left: 0; }
+  .s--basicHeader:before {
+    right: 0; }
+  .s--basicHeader > .breadcrumb {
+    display: block;
+    margin-top: 4.1666666667vw; }
+  .s--basicHeader table + .button {
+    margin-top: 2.0833333333vw; }
+  .s--basicHeader .header--image {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: calc(50vw - 20px);
+    height: 100%;
+    padding: 20px;
+    padding-top: 12.5vw;
+    overflow: hidden; }
+    .s--basicHeader .header--image img {
+      max-width: 100%; }
+  .s--basicHeader .content {
+    width: 50vw;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    padding-left: 12.5vw;
+    color: #ffffff;
+    transform: translateY(-50%); }
 
 /* --------------------------------------- */
 /*				@extend components
@@ -8778,6 +8901,9 @@ table {
 /* --------------------------------------- */
 /*				Mobile navigation
 /* ---------------------------------------- */
+/* --------------------------------------- */
+/*				@extend layout/headers
+		/* ---------------------------------------- */
 /* --------------------------------------- */
 /*				@extend components
 /* ---------------------------------------- */
