@@ -78,7 +78,7 @@
 	}
 }
 
-*{
+@mixin assets-input-checkbox(){
 	%#{$prefix}input-checkbox{
 		@include input-checkbox(1rem,1rem,0, 0.25rem, color(White), color(Black), 50%);
 
@@ -99,7 +99,7 @@
 		}
 	}
 }
-*{
+@mixin assets-input-radio(){
 	%#{$prefix}input-radio{
 		display: block;
 		@include input-radio(1rem,1rem,0, 0.25rem, color(White), color(Black));

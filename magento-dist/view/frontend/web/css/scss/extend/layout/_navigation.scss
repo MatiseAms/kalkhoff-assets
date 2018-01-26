@@ -1,21 +1,23 @@
-@include keyframes(menuButtonGroup){
-	0%{
-		opacity: 0; display: block; transform: translateY(-#{grid(0.5)});
-	}
-	1%{
-		opacity: 0; display: block; transform: translateY(-#{grid(0.5)});
-	}
-	100%{
-		opacity: 1; display: block; transform: translateY(0);
+@mixin navMain--Animations(){
+	@keyframes menuButtonGroup{
+		0%{
+			opacity: 0; display: block; transform: translateY(-#{grid(0.5)});
+		}
+		1%{
+			opacity: 0; display: block; transform: translateY(-#{grid(0.5)});
+		}
+		100%{
+			opacity: 1; display: block; transform: translateY(0);
+		}
 	}
 }
 
 @media #{$medium-up}{
-	/*------
+	//------
+	//	Main / The menu which is always in sight in the top.
+	//------
 
-		Main / The menu which is always in sight in the top.
 
-		------*/
 
 	%#{$prefix}navMain{
 		$c: c($c); content: ""; position: absolute; width: 100%; z-index: 1;
@@ -36,7 +38,6 @@
 			&:before{
 				@include reset(); content: none;
 			}
-
 			&:hover{
 				>div{
 					max-height: 1000px; z-index: 2;
@@ -61,7 +62,7 @@
 			}
 		}
 		&__link{
-			$c: c($c); content: ""; position: relative; z-index: 100;
+			$c: c($c); content: "";// position: relative; z-index: 100;
 		}
 		&__item{
 			// second time defined for hover.
@@ -71,18 +72,23 @@
 				}
 			}
 		}
+		&__link{
+			&:hover{
+				&+.sublist-container .hover-image{
+					z-index: 10; opacity: 1;
+				}
+			}
+		}
 
 
-		/*------
-
-		Submenu / The menu which opens when hovered the main menu.
-
-		------*/
+		//------
+		// Submenu / The menu which opens when hovered the main menu.
+		//-------
 
 		&__subList{
 			$c: c($c); position: relative; padding: grid(1.5); padding-bottom: grid(3); display: flex; flex-flow: row wrap;
 			&:after{
-				content: ""; width: calc(50vw - 20px); height: calc(100% + #{grid(1)}); background-color: color(khWhite); display: block; position: absolute; left: 100%; top: 0; display: block; background-image: linear-gradient(color(khBlack), color(khBlack)); background-repeat: no-repeat; background-position: left bottom -1px; background-size: 100% #{grid(1)};
+				opacity: 1; content: ""; width: calc(50vw - 20px); height: calc(100% + #{grid(1)}); background-color: color(khWhite); display: block; position: absolute; left: 100%; top: 0; display: block; background-image: linear-gradient(color(khBlack), color(khBlack)); background-repeat: no-repeat; background-position: left bottom -1px; background-size: 100% #{grid(1)}; z-index: -1;
 				@include min-("background-size",1,60){
 					height: calc(100% + 60px); background-size: 100% 60px;
 				};
@@ -135,14 +141,25 @@
 				margin-top: 1rem;
 			}
 		}
-
+		&__image{
+			z-index: 2;
+		}
 		&__subImage{
+			z-index: 3;
+		}
+
+		&__image, &__subImage{
 			opacity: 0; $c: c($c); content: ""; position: absolute; top: 0; left: 50vw; display: block; width: calc(50vw - 20px); height: 100%; transition: max-height $assets-transition, opacity $assets-transition $assets-transition; margin-left: -20px; background-size: cover; overflow: hidden; height: calc(100% + #{grid(1)});
 			@include min-("height",1,60){
 				height: calc(100% + 60px);
 			}
 			@include max-("height",1,80){
 				height: calc(100% + 80px);
+			}
+			&.image-type-topmodel{
+				img{
+					max-width: 150%;
+				}
 			}
 			&.image-type-bike{
 				z-index: 4;
@@ -169,8 +186,9 @@
 
 		&__subLink{
 			$c: c($c); content: "";
+
 			&:hover{
-				>#{get-c("subImage",$c)}{
+				.hover-subimage{
 					opacity: 1;
 					img{
 						transform: translateX(0);
@@ -312,7 +330,7 @@
 		&__subLink{
 			padding: 0 grid(1);
 		}
-		&__subImage{
+		&__image, &__subImage{
 			display: none;
 		}
 

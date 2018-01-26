@@ -18,7 +18,7 @@
     "icon_font_loader",
     "copy:magento_component",
     "shell:magentize",
-		"less:dist"
+		"sass:dist"
   ],
   "test": [
     "clean:test",
