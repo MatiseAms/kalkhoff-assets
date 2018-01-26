@@ -127,7 +127,7 @@
 		}
 	}
 
-	.column{
+	li.column{
 		position: relative;
 		@media #{$medium-only}{
 			&:nth-child(2n+2){
