@@ -99,81 +99,53 @@
 }
 
 %#{$prefix}sectionSegmentFeatures{
-	background-color: color(khMarineblue); padding: 12vw 0 10vw;
+	background-color: color(khMarineblue);
+	padding: 12vw 0 10vw;
 
-	// Wij hanteren een paar regels om alles hetzelfde te houden en geen conflicterende margins en paddings te krijgen. We gebruiken daarom nooit een padding/margin-bottom. maar doen dit door combinatie selectors:
-	// h2 + p { margin-top: 1rem; }. Probeer ook vooral margins te gebruiken zodat de "grootte" van een element niet veranderd enkel de spacing tussen elementen.
 	h2{
-		padding-bottom: 6vw;
+		padding-bottom: 4vw;
 	}
 
-	// Volgens mij kan dit simpeler met een inline background image op de h3 met een extra classje voor hergebruikt.
-	// Dan is er ook geen extra wrapper nodig.
-	.flex-wrapper{
-		/*display: flex;
-        flex-flow: row;
-        align-items: top;
-        align-self: flex-start;*/
-		margin-bottom: 1.4rem;
+	.flex-wrapper {
+		margin-bottom: 1.25rem;
+		height: 6rem;
+		position: relative;
 		@media #{$xlarge-up}{
 			margin-bottom: 1.6rem;
 		}
-		img{
+		img {
 			position: absolute;
+			bottom: -8px;
 		}
-		h3{
-			padding-top: 0.5rem; padding-left: 70px; line-height: 32px; font-size: 24px;
-			@media #{$xlarge-up}{
-				line-height: 36px; font-size: 32px;
-			}
-		}
-	}
-	// P element is gestyled in de typography en klopt ook met het design.
-	p{
-		line-height: 32px;
-		@media #{$xlarge-up}{
-			/*font-size: 20px;
-            line-height: 39px;*/
-
-
-			// Zie hierboven, waar haal je precies die 17 en 36px vandaan?
-			font-size: 17px; line-height: 36px;
+		h3 {
+			padding-top: 0.5rem;
+			padding-left: 70px;
+			line-height: 32px;
+			font-size: 24px;
+			position: absolute;
+			bottom: 0;
 		}
 	}
 
-	// UL/LI structure in deze setup is overbodig. Een uitzondering voor deze specifieke section zou ook kunnen met margin-top op de columns en eventueel Niet voor de eerste 3 of 2 , 1 (media query afhankelijk).
-
-	ul{
-		width: 100%;
-		li{
-			margin-bottom: 8vw;
-
-
-			// Gebruik van floats en clears zijn overbodig bij goed gebruik van grid/column structuur.
-			@media #{$small-only}{
-				width: 100%; clear: both;
+	.column{
+		position: relative;
+		@media #{$medium-only}{
+			&:nth-child(2n+2){
+				padding-left: 2vw; padding-right: 0;
 			}
-			@media #{$medium-up}{
-				margin-bottom: 6vw;
+			&:first-child, &:nth-child(2n+3){
+				padding-left: 0; padding-right: 2vw;
 			}
-			@media #{$medium-only}{
-				width: 50%; clear: none; float: left;
-				&:nth-child(2n+2){
-					padding-left: 2vw; padding-right: 0;
-				}
-				&:first-child, &:nth-child(2n+3){
-					clear: both; padding-left: 0; padding-right: 2vw;
-				}
+		}
+		@media #{$large-up}{
+			padding: 0 1vw;
+			&:nth-child(3n+3){
+				padding-left: 2vw; padding-right: 0;
 			}
-			@media #{$large-up}{
-				width: 33.33%; clear: none; float: left; padding: 0 1vw;
-				&:nth-child(3n+3){
-					padding-left: 2vw; padding-right: 0;
-				}
-				&:first-child, &:nth-child(3n+4){
-					clear: both; padding-left: 0; padding-right: 2vw;
-				}
+			&:first-child, &:nth-child(3n+4){
+				padding-left: 0; padding-right: 2vw;
 			}
 		}
 	}
+
 }
