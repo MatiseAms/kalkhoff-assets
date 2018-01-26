@@ -1,11 +1,15 @@
 %#{$prefix}basic-section{
-	background-color: color(White); padding: grid(1); padding-left: calc(#{$grid-2} - 20px); padding-right: calc(#{$grid-2} - 20px); margin: 0;
-	//	 margin: 20px;
-	// @include bgBorder(color(khBlack), 0 1 1 1);
-	//
-	// &:first-of-type{
-	// 	@include bgBorder(color(khBlack), 1 1 1 1);
-	// }
+	background-color: color(White); padding: grid(1); margin: 0; position: relative; border-top: 1px solid black;
+	&:after, &:before{
+		content: ""; width: 20px; height: 100%; display: block; position: absolute; top: 0; background-color: color(khBlack);
+	}
+	&:after{
+		left: 0;
+	}
+	&:before{
+		right: 0;
+	}
+
 	.breadcrumb{
 		padding-top: grid(1);
 	}
