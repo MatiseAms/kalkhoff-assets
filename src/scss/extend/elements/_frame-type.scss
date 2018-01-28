@@ -24,15 +24,16 @@
 		content: icon(wave);
 	}
 }
-
-@keyframes framePopIn{
-	0%{
-		transform: translate(-50%,-50%) scale(0);
-	}
-	75%{
-		transform: translate(-50%,-50%) scale(1.5);
-	}
-	100%{
-		transform: translate(-50%,-50%) scale(1);
+@mixin frame-type--animations{
+	@keyframes framePopIn{
+		0%{
+			transform: translate(-50%,-50%) scale(0);
+		}
+		75%{
+			transform: translate(-50%,-50%) scale(1.5);
+		}
+		100%{
+			transform: translate(-50%,-50%) scale(1);
+		}
 	}
 }
