@@ -3,11 +3,6 @@
 }
 
 %#{$prefix}productCard{ width: grid(8); background-color: color(khWhite); padding: grid(1);
-	// content: "";
-	// &--overview{
-	// 	width: 100%; display: grid; grid-template-columns: minmax(100px, min-content) calc(100vw - 463px); grid-auto-rows: minmax(10vh, auto); grid-column-gap: 2px; grid-row-gap: 2px; background-color: color(Black);
-	// }
-	// &--block{
 		&__text{ color: color(khBlack);
 			h2{ @extend %#{$prefix}h4; font-weight: $assets-font-weight-bold; line-height: 1; }
 			h3{ @extend %#{$prefix}p; font-weight: $assets-font-weight-bold; line-height: 1.25; margin-top: rem(16px); }
@@ -23,8 +18,7 @@
 				}
 			}
 		}
-		&__settings{ margin-top: grid(52/60);
-			display: flex; padding: 1rem 0;
+		&__settings, &__footer{ margin-top: grid(52/60); display: flex;
 			div{
 				text-align: right; width: 50%;
 				&:first-child{
@@ -32,8 +26,7 @@
 				}
 			}
 		}
-		&__bottom{
-			border-top: 1px solid color(Midgray); padding: grid(0.5 0 0 0);
+		&__footer{ border-top: 1px solid color(khLightgray); margin: grid(32/60) 0 0 0; padding-top: grid(40/60);
+			label{ font-weight: $assets-font-weight-bold; color: color(khMidgray); }
 		}
-	// }
 }

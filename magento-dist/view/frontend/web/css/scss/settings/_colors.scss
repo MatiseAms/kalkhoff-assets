@@ -1,6 +1,7 @@
 $colors-primary-khblack: #101010 !default; //
 $colors-primary-khdark: #1a1b1a !default; //
 $colors-primary-khmidgray: #7f7f7f !default; //
+$colors-primary-khlightgray: #e0e0e0 !default; //
 $colors-primary-khoffwhite: #f7f7f7 !default; //
 $colors-primary-khwhite: #ffffff !default; //
 $colors-secondary-khgreen: #b4bb00 !default; //
@@ -19,6 +20,7 @@ $colors-primary: (
 	"khBlack": #101010, 
 	"khDark": #1a1b1a, 
 	"khMidgray": #7f7f7f, 
+	"khLightgray": #e0e0e0, 
 	"khOffwhite": #f7f7f7, 
 	"khWhite": #ffffff
 ) !default; //, 

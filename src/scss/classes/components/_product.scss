@@ -12,4 +12,7 @@
 	&__settings{
 		@extend %#{$prefix}productCard__settings;
 	}
+	&__footer{
+		@extend %#{$prefix}productCard__footer;
+	}
 }
