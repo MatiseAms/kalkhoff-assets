@@ -63,19 +63,6 @@ $border-radius: 2px;
 }
 
 
-%#{$prefix}button--compare{
-	content: "hoi";
-	// border: none; padding: 2rem; background: none; position: relative; padding-left: calc(#{$grid-1} + 2rem);
-	// &:after{
-	// 	content: ""; display: block; position: absolute; left: grid(0.25); top: 50%; width: grid(0.5); height: grid(0.5); background-color: color(White); border-radius: 50%; transform: translateY(-50%); box-shadow: 0 0 1rem 0 color(Black,0.5);
-	// }
-	// &:before{
-	// 	content: ""; display: block; position: absolute; left: 0; top: 50%; background-color: color(Black,0.25); width: grid(1); height: grid(1); border-radius: 50%; transform: translateY(-50%);
-	// }
-	// &:hover:before{
-	// 	animation: comparePop 0.5s forwards;
-	// }
-}
 
 
 %#{$prefix}button--arrow-right{
@@ -84,6 +71,4 @@ $border-radius: 2px;
 
 		@include icon("triangle-right");
 	}
-}
-@keyframes comparePop{
 }
