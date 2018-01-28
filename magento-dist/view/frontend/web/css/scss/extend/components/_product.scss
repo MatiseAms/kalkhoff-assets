@@ -1,43 +1,29 @@
-%#{$prefix}productCard{ width: grid(8);
+%#{$prefix}wheelShadow{
+	display: block; z-index: 1; width: 22%; height: 4.5px; filter: blur(1px); background-image: radial-gradient(circle, color(khBlack, .8), color(khWhite,0)); background-blend-mode: multiply;
+}
+
+%#{$prefix}productCard{ width: grid(8); background-color: color(khWhite); padding: grid(1);
 	// content: "";
 	// &--overview{
 	// 	width: 100%; display: grid; grid-template-columns: minmax(100px, min-content) calc(100vw - 463px); grid-auto-rows: minmax(10vh, auto); grid-column-gap: 2px; grid-row-gap: 2px; background-color: color(Black);
 	// }
 	// &--block{
-		background-color: color(White); padding: grid(1);
-		&__text{ color: color(Black);
-			h2{ font-size: grid(32/80); @include min-fontsize($assets-h4-font-size-value,$assets-h4-font-size-min); @include max-fontsize($assets-h4-font-size-value,$assets-h4-font-size-max); }
-			h3{ }
-			h4{ }
+		&__text{ color: color(khBlack);
+			h2{ @extend %#{$prefix}h4; font-weight: $assets-font-weight-bold; line-height: 1; }
+			h3{ @extend %#{$prefix}p; font-weight: $assets-font-weight-bold; line-height: 1.25; margin-top: rem(16px); }
+			h4{ @extend %#{$prefix}p; color: color(khMidgray); line-height: 1.75; margin-top: rem(4px); }
 		}
-		&__image{
-			width: 100%; position: relative;
-			@include calc("width","100% + #{grid(2)}"); margin-left: -grid(1); padding-bottom: 20px;
-			.bike-shadow{
-				height: 40px; width: 90%; overflow: hidden; filter: blur(23px) grayscale(100%); bottom: 21px; transform: scale(1,0.1); position: relative; left: 5%;
+		&__image{ position: relative; padding-top: grid(40/60);
+			img{ display: relative; z-index: 2; width: 100%; }
+			&Shadow{ @extend %#{$prefix}wheelShadow; position: absolute; bottom: 0; left: 9%;
+				&:after{ @extend %#{$prefix}wheelShadow; width: 100%; content: ''; position: absolute; bottom: 0; left: 275%; }
+				// position: absolute; height: 20px; width: 100%; overflow: hidden; filter: blur(23px) grayscale(100%); bottom: 0%; transform: scale(1,0.1); left: 0%;
 				img{
-					position: absolute; bottom: 0; height: 600%; width: 100%; max-width: 90%;
+					display:  none;
 				}
-			}
-
-			.slick-slide{
-				height: grid(6); opacity: 0;
-				&.slick-current{
-					opacity: 1;
-				}
-				img{
-					max-width: 100%;
-				}
-				>div,>div>div{
-					height: 100%; width: 100%;
-				}
-			}
-			@include calc("width","100% + #{grid(2)}"); margin-left: -grid(1); padding: 0 grid(1);
-			&__image-figure{
-				width: 100%; @include calc("width","100% - #{$grid-2}"); top: 0; position: absolute; left: grid(1); height: 100%;
 			}
 		}
-		&__settings{
+		&__settings{ margin-top: grid(52/60);
 			display: flex; padding: 1rem 0;
 			div{
 				text-align: right; width: 50%;

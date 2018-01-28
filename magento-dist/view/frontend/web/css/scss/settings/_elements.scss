@@ -1,4 +1,4 @@
-$assets-elements-color-dot-class: 'color-dot' !default; //
+$assets-elements-color-dot-class: 'colorDot' !default; //
 $assets-elements-color-dot-width: 20px !default; //
 $assets-elements-color-dot-height: 20px !default; //
 $assets-elements-color-dot-gutter: 5px !default; //
@@ -7,8 +7,11 @@ $assets-elements-color-dot-margin: 0 0 0 20px !default; //
 $assets-elements-color-dot-shadow-brightness: 80 !default; //
 $assets-elements-color-dot-shadow-size: 0 0 2px 0 !default; //
 $assets-elements-color-dot-shadow-color: rgba(16,16,16,0.25) !default; //
+$assets-elements-frame-select-class: 'frameSelect' !default; //
+$assets-elements-frame-select-width: 25px !default; //
+$assets-elements-frame-select-height: 16px !default; //
 $assets-elements-color-dot: (
-	"class": 'color-dot', 
+	"class": 'colorDot', 
 	"width": 20px, 
 	"height": 20px, 
 	"gutter": 5px, 
@@ -17,4 +20,9 @@ $assets-elements-color-dot: (
 	"shadow-brightness": 80, 
 	"shadow-size": 0 0 2px 0, 
 	"shadow-color": rgba(16,16,16,0.25)
+) !default; //, 
+$assets-elements-frame-select: (
+	"class": 'frameSelect', 
+	"width": 25px, 
+	"height": 16px
 ) !default; //

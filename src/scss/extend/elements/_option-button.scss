@@ -7,7 +7,7 @@
 	input[type="radio"]{
 		opacity: 0; width: 0; height: 0; border: none;
 		&+label{
-			display: block; border: 1px solid color(khBlack); color: color(khBlack); padding: 0 grid(0.25); line-height: grid(0.5); height: grid(0.5); font-size: 14px;
+			display: block; border: 1px solid color(khMidgray); color: color(khBlack); padding: 0 grid(0.25); line-height: grid(0.5); height: grid(0.5); font-size: 14px;
 			@include min-("height",0.5,22){
 				padding: 0 12px; line-height: 20px; height: 22px;
 			}
@@ -16,7 +16,7 @@
 			}
 		}
 		&:checked+label{
-			color: color(khWhite); background-color: color(khBlack);
+			color: color(khWhite); border-color: color(khBlack);
 		}
 	}
 }

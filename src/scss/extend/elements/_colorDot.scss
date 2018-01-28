@@ -2,7 +2,7 @@
 	position: relative; display: inline-block;
 
 	input[type="radio"]{
-		@include input-radio($assets-elements-color-dot-width,$assets-elements-color-dot-height,0, $assets-elements-color-dot-gutter, var(--this-color), color(White));
+		@include input-radio($assets-elements-color-dot-width,$assets-elements-color-dot-height,0, $assets-elements-color-dot-gutter, var(--this-color), color(khWhite));
 		@include input-radio-body{
 			box-shadow: none;
 		}

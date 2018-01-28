@@ -1,4 +1,4 @@
-@mixin input-radio($width: 1rem, $height: 1rem, $margin: 0, $spacing: 0.2rem, $bg-body: color(White), $bg-check: color(Black), $round: 100%){
+@mixin input-radio($width: 1rem, $height: 1rem, $margin: 0, $spacing: 0.2rem, $bg-body: color(khWhite), $bg-check: color(khBlack), $round: 100%){
 	&{
 		width: 0; height: 0; opacity: 0;
 	}

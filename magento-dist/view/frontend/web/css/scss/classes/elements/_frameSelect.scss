@@ -1,0 +1,15 @@
+.frameSelect{
+	@extend %#{$prefix}frameSelect;
+	&--diamond{
+		@extend %#{$prefix}frameSelect--diamond;
+	}
+	&--mixte{
+		@extend %#{$prefix}frameSelect--mixte;
+	}
+	&--trapez{
+		@extend %#{$prefix}frameSelect--trapez;
+	}
+	&--wave{
+		@extend %#{$prefix}frameSelect--wave;
+	}
+}
