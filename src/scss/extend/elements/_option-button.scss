@@ -1,4 +1,5 @@
-%#{$prefix}option-button{
+
+%#{$prefix}radio-label{
 	position: relative; display: inline-block; margin-left: 12px; cursor: pointer;
 	&:first-child{
 		margin-left: 0;
@@ -17,6 +18,16 @@
 		}
 		&:checked+label{
 			color: color(khWhite); border-color: color(khBlack);
+		}
+	}
+}
+
+%#{$prefix}option-button{
+	@extend %#{$prefix}radio-label;
+
+	input[type="radio"]{
+		&:checked+label{
+			background-color: color(khBlack);
 		}
 	}
 }
