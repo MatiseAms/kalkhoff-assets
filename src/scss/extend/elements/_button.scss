@@ -1,3 +1,25 @@
+%#{$prefix}buttonAnimations{
+	@include keyframes(buttonBikeHover){
+		0%{
+			transform: translateX(0);
+		}
+		30%{
+			transform: translateX(#{grid(3)}); opacity: 1;
+		}
+		31%{
+			opacity: 0;
+		}
+		32%{
+			transform: translateX(-500px); opacity: 0;
+		}
+		33%{
+			transform: translateX(-500px); opacity: 1;
+		}
+		100%{
+			transform: translateX(0px); opacity: 1;
+		}
+	}
+}
 %#{$prefix}button{
 	font-weight: 600; letter-spacing: 0.5px; display: inline-block; font-size: 1rem; padding: 0rem grid(0.5); border: none; box-shadow: 0 0 0 0 color(Dark) inset; border-radius: 2px; background-color: color(Black); color: color(White); text-transform: uppercase; border: none; line-height: grid(1);
 	&:hover{
@@ -30,7 +52,19 @@
 		}
 	}
 	&--light{
-		opacity: 0.5;
+		background-color: color(khWhite); color: color(khBlack);
+	}
+	&--bike{
+		padding-right: calc(#{grid(1)} + 40px); position: relative; overflow: hidden;
+		.button__image{
+			position: absolute; right: 20px; bottom: 0; width: grid(1); background-position: center center; background-repeat: no-repeat; background-size: contain; height: 100%;
+		}
+
+		&:hover{
+			.button__image{
+				animation: buttonBikeHover 0.5s forwards;
+			}
+		}
 	}
 	&--ghost, &--naked{
 		background: none; color: color(khMidgray); padding: 0; text-transform: none; @include assets-p(); height: 20px; line-height: 20px;
@@ -65,8 +99,8 @@ $border-radius: 2px;
 	}
 }
 
-%#{$prefix}button--compare{ content: 'hoi';
-
+%#{$prefix}button--compare{
+	content: "hoi";
 }
 
 %#{$prefix}button--arrow-right{

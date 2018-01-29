@@ -1,0 +1,3 @@
+.#{$prefix}bar{
+	@extend %#{$prefix}bar;
+}

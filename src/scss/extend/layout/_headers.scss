@@ -24,7 +24,10 @@
 }
 
 %#{$prefix}s--singleBikeHeader{
-	@include borders(0 1 0 1); background-color: color(khWhite); background-color: color(khWhite); padding-top: grid(1); padding-bottom: grid(2); position: relative; background-position: center center; background-size: cover; color: color(khBlack);
+	@include borders(0 1 0 1); background-color: color(khWhite); background-color: color(khWhite); padding-top: grid(1); padding-bottom: grid(2); position: relative; background-position: center center; background-size: cover; color: color(khBlack); box-shadow: 0 -#{grid(1)}  0 0 color(khBlack) inset;
+	@include min-(box-shadow,1,60){
+		box-shadow: 0 -60px 0 0 color(khBlack) inset;
+	}
 	// making or hididng the black borders
 	// margin: 20px;
 	margin: 0; min-height: calc(100vh - #{grid(3)}); margin-top: 20px;
@@ -32,13 +35,13 @@
 	// 	padding: 0;
 	// }
 	.breadcrumb{
-		position: absolute; bottom: grid(1); left: grid(2);
+		position: absolute; bottom: grid(2); left: grid(2);
 	}
 	table+.button{
 		margin-top: grid(0.5);
 	}
 	&__image{
-		position: absolute; top: 0; right: 0; width: calc(50vw - 20px); height: 100%; padding: 20px; padding-top: grid(3); overflow: hidden;
+		position: absolute; bottom: 0; right: 0; width: calc(50vw); padding: 0 20px; padding-top: grid(3); overflow: hidden; max-height: 100vh;
 		img{
 			max-width: 100%;
 		}
@@ -51,6 +54,9 @@
 		}
 	}
 	.content{
-		width: 50vw; left: 0; top: 50%; padding-left: grid(2); padding-top: grid(2);
+		padding: 0; padding-top: grid(2); padding-bottom: grid(2);
+	}
+	.bar{
+		width: 100%; position: absolute; bottom: 0;
 	}
 }

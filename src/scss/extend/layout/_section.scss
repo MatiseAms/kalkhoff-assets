@@ -37,7 +37,7 @@
 		}
 	}
 	&__caption{
-		position: absolute; bottom: grid(1); left: grid(3); opacity: 0.5;
+		position: absolute; bottom: grid(1); opacity: 0.5;
 		@media #{$small-only}{
 			left: grid(1);
 		}

@@ -1,3 +1,5 @@
+@extend %#{$prefix}buttonAnimations;
+
 .#{$prefix}button{
 	@extend %#{$prefix}button;
 	&.naked, &--naked, &[naked]{
@@ -13,13 +15,25 @@
 
 
 // Specific Buttons
+.button--ghost{
+	@extend %#{$prefix}button--ghost;
+}
+
+
+// Specific Buttons
 .button--compare{
 	@extend %#{$prefix}button--compare;
 }
 
 // Ghost Buttons
-.#{$prefix}button--ghost{
-	@extend %#{$prefix}button--ghost;
+.#{$prefix}button--light{
+	@extend %#{$prefix}button--light;
+}
+
+
+// Ghost Buttons
+.#{$prefix}button--bike{
+	@extend %#{$prefix}button--bike;
 }
 
 
