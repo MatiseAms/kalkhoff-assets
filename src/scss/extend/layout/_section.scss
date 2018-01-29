@@ -31,20 +31,66 @@
 	padding: grid(4 0); position: relative;
 	@include borders();
 	&__image{
-		width: calc(50vw - 20px); position: absolute; bottom: 0; right: 0; padding: 20px; height: 100%; overflow: hidden; padding-top: grid(4);
+		width: calc(50vw - 20px); right: 0; padding: 20px; height: 100%; overflow: hidden; padding-top: grid(4);
+        position: relative;
+        bottom: 0;
+
+        @media #{$medium-up}{
+            position: absolute;
+            width: calc(50vw - 20px);
+            bottom: 0;
+        }
+        right: 0; padding: 20px; height: 100%; overflow: hidden;
+
 		img{
 			max-width: 100%;
+            position: relative;
+            @media #{$medium-up}{
+                position: absolute;
+            }
+            bottom: grid(-4);
 		}
 	}
 	&__caption{
-		position: absolute; bottom: grid(1); left: grid(3); opacity: 0.5;
+		position: absolute; bottom: grid(1); opacity: 0.5;
+		font-size: 14px;
+        display: none;
 		@media #{$small-only}{
 			left: grid(1);
 		}
+        @media #{$medium-up}{
+            display: block;
+        }
 	}
 	&--dark{
 		background-color: color(khDark); color: color(khWhite);@extend	%#{$prefix}s--singleBike--dark;
 	}
+
+	//* SbC:: button-naked doesn't do the job */
+    .button--transparent {
+        background-color: transparent;
+        text-transform: none;
+        color: color(khBlack);
+        &.button--arrow-right {
+            padding-left: 0;
+            &:after {
+                background-image: linear-gradient(#000,#000);
+            }
+        }
+    }
+
+    padding: grid(4 0 0);
+    @media #{$small-only}{
+        .column {
+            .content {
+                padding-bottom: 0;
+            }
+        }
+    }
+    @media #{$medium-up}{
+        padding: grid(4 0);
+    }
+
 }
 
 %#{$prefix}s--segmentTrio{
@@ -98,4 +144,54 @@
 
 %#{$prefix}s--features{
 	padding: 0;
+}
+
+%#{$prefix}sectionSpecifications{
+    padding: grid(4 0);
+}
+
+.s--specifications {
+    padding: grid(4 0);
+
+    h2 + ul {
+        margin-top: grid(1.25);
+    }
+
+    .specifications__list {
+        > li {
+            border-bottom: solid 1px color(khMidgray);
+            padding: 1.35rem 0 1.5rem;
+            .dt {
+                display: block;
+                padding-bottom: 0.6rem;
+                font-weight: $assets-font-weight-bold;
+                @media #{$medium-up}{
+                    display: inline-block;
+                    width: 25%;
+                    float: left;
+                }
+                &:after {
+                    content: ":";
+                }
+            }
+            .dd {
+                display: block;
+                line-height: 1.35;
+                @media #{$medium-up}{
+                    display: inline-block;
+                    width: 75%;
+                }
+            }
+
+            li.specifications__colorlist {
+                margin-right: 2rem;
+                @media #{$large-up}{
+                    float: left;
+                }
+                span {
+                    margin-right: 0.5rem;
+                }
+            }
+        }
+    }
 }
