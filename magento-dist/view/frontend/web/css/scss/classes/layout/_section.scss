@@ -1,24 +1,37 @@
-.basic-section{
-	@extend %#{$prefix}basic-section;
+.#{$prefix}s--basicSection{
+	@extend %#{$prefix}s--basicSection;
 }
 
 
-.#{$prefix}sectionSingleBike{
-	@extend	%#{$prefix}sectionSingleBike;
-	&--image{
-		@extend	%#{$prefix}sectionSingleBike--image;
+.#{$prefix}s--singleBike{
+	@extend	%#{$prefix}s--singleBike;
+	&__image{
+		@extend	%#{$prefix}s--singleBike__image;
+	}
+	&__caption{
+		@extend	%#{$prefix}s--singleBike__caption;
+	}
+
+	&--dark{
+		@extend	%#{$prefix}s--singleBike--dark;
 	}
 }
 
-.#{$prefix}sectionSegmentTrio{
-	@extend %#{$prefix}sectionSegmentTrio;
+.#{$prefix}s--segmentTrio{
+	@extend %#{$prefix}s--segmentTrio;
 }
 
+.#{$prefix}s--introImage{
+	@extend %#{$prefix}s--introImage;
+}
 .#{$prefix}s--fullImage{
 	@extend %#{$prefix}s--fullImage;
 }
 
 
 .#{$prefix}s--singleBikeSpecs{
-	@extend %#{$prefix}s--fullImage;
+	@extend %#{$prefix}s--singleBikeSpecs;
+}
+.#{$prefix}s--features{
+	@extend %#{$prefix}s--features;
 }

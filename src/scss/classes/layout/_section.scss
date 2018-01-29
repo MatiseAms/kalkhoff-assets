@@ -30,8 +30,8 @@
 
 
 .#{$prefix}s--singleBikeSpecs{
-	@extend %#{$prefix}s--fullImage;
-
+	@extend %#{$prefix}s--singleBikeSpecs;
+}
 .#{$prefix}s--features{
-    @extend %#{$prefix}s--features;
+	@extend %#{$prefix}s--features;
 }
