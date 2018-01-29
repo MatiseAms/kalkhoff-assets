@@ -65,8 +65,9 @@ $border-radius: 2px;
 	}
 }
 
+%#{$prefix}button--compare{ content: 'hoi';
 
-
+}
 
 %#{$prefix}button--arrow-right{
 	&:after{

@@ -1,0 +1,62 @@
+%#{$prefix}frameSelect{
+	line-height: 1;
+	@extend %#{$prefix}radio-label; width: 25px; height: 16px;
+
+	input[type="radio"]{
+		&+label{
+			position: absolute; top: 0; left: 0; width: 100%; height: 100%; font-size: rem(25); line-height: 1; text-align: center; padding: 0; margin: 0; border: none; background: none; color: color(khLightgray);
+			&:before{
+				content: ""; position: relative; width: 100%; height: 100%; box-shadow: none;
+			}
+			&:after{
+				border: none;
+			}
+		}
+		&:checked{
+			&+label{
+				border: none; color: color(khDark);
+			}
+		}
+	}
+	@extend %#{$prefix}tooltip;
+
+	&--diamant{
+		input[type="radio"]{
+			&+label{
+				&:before{
+					@include icon(diamant);
+				}
+			}
+		}
+	}
+
+	&--mixte{
+		input[type="radio"]{
+			&+label{
+				&:before{
+					@include icon(mixte);
+				}
+			}
+		}
+	}
+
+	&--trapez{
+		input[type="radio"]{
+			&+label{
+				&:before{
+					@include icon(trapez);
+				}
+			}
+		}
+	}
+
+	&--wave{
+		input[type="radio"]{
+			&+label{
+				&:before{
+					@include icon(wave);
+				}
+			}
+		}
+	}
+}

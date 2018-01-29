@@ -12,6 +12,10 @@
 }
 
 
+// Specific Buttons
+.button--compare{
+	@extend %#{$prefix}button--compare;
+}
 
 // Ghost Buttons
 .#{$prefix}button--ghost{

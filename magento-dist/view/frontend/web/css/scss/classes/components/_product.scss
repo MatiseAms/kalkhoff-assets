@@ -1,18 +1,18 @@
-.product{
-	@extend %#{$prefix}product;
-	&--overview{
-		@extend %#{$prefix}product--overview;
+.productCard{
+	@extend %#{$prefix}productCard;
+	&__text{
+		@extend %#{$prefix}productCard__text;
 	}
-	&--block{
-		@extend %#{$prefix}product--block;
-		&__image{
-			@extend %#{$prefix}product--block__image;
+	&__image{
+		@extend %#{$prefix}productCard__image;
+		&Shadow{
+			@extend %#{$prefix}productCard__imageShadow;
 		}
-		&__settings{
-			@extend %#{$prefix}product--block__settings;
-		}
-		&__bottom{
-			@extend %#{$prefix}product--block__bottom;
-		}
+	}
+	&__settings{
+		@extend %#{$prefix}productCard__settings;
+	}
+	&__footer{
+		@extend %#{$prefix}productCard__footer;
 	}
 }
