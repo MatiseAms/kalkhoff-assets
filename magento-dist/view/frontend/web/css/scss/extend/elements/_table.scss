@@ -3,29 +3,33 @@
 	&.full{
 		width: 100%;
 	}
-	tr, thead{
-		td, th{
-			padding: 1rem; text-align: left; @extend %#{$prefix}p;
-			&:first-child{
-				padding-left: 0rem;
-			}
-			&:last-child{
-				padding-right: 0rem;
-			}
-			&.no-break{
-				white-space: nowrap;
+	tbody{
+		tr, thead{
+			td, th{
+				padding: 1rem; text-align: left; @extend %#{$prefix}p;
+				&:first-child{
+					padding-left: 0rem;
+				}
+				&:last-child{
+					padding-right: 0rem;
+				}
+				&.no-break{
+					white-space: nowrap;
+				}
 			}
 		}
 	}
 }
 
 %#{$prefix}content-table{
+	width: 100%;
 	tr, thead{
 		border-bottom: 1px solid color(Black,0.25);
 		td, th{
-			font-weight: $font-regular; font-size: rem(14); padding: 1rem; text-align: left;
+			font-weight: $font-regular; font-size: rem(14); padding: 1rem; text-align: left; color: color(khMidgray);
 			&:first-child{
-				padding-left: 1rem;
+				padding-left: 0rem; font-size: grid(0.225); color: color(khBlack);
+				@include min-("font-size",0.225,14);
 			}
 			&:last-child{
 				padding-right: 1rem;

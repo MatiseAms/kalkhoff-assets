@@ -43,6 +43,13 @@
 			max-width: 100%;
 		}
 	}
+	&__table{
+		tr{
+			td:last-child{
+				text-align: right !important;
+			}
+		}
+	}
 	.content{
 		width: 50vw; left: 0; top: 50%; padding-left: grid(2); padding-top: grid(2);
 	}
