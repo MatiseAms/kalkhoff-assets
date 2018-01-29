@@ -1,5 +1,0 @@
-@include frame-type--animations();
-
-.#{$prefix}frame-type{
-	@extend %#{$prefix}frame-type;
-}
