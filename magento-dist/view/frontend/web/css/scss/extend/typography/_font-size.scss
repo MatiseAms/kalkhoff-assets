@@ -125,6 +125,11 @@
 }
 
 
+@mixin assets-button-special-text{
+	font-size: $assets-button-special-font-size; font-weight: $assets-button-special-font-weight; line-height: $assets-button-special-line-height; font-family: $assets-button-special-font-family; text-transform: $assets-button-special-text-transform;
+}
+
+
 @mixin assets-menu{
 	font-size: $assets-menu-font-size; font-weight: $assets-menu-font-weight; line-height: $assets-menu-line-height; font-family: $assets-menu-font-family;
 	@include min-fontsize($assets-menu-font-size-value,$assets-menu-font-size-min);
