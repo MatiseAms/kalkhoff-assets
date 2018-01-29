@@ -312,62 +312,6 @@ div div + table, div div + h1, div div + h2, div div + h3, div div + h4, div div
 [data-tooltip].colorDot:before, [data-tooltip].frameSelect:before, [data-tooltip].tooltip:before {
   content: attr(data-tooltip); }
 
-@-webkit-keyframes buttonBikeHover {
-  0% {
-    transform: translateX(0); }
-  30% {
-    transform: translateX(12.5vw);
-    opacity: 1; }
-  31% {
-    opacity: 0; }
-  32% {
-    transform: translateX(-500px);
-    opacity: 0; }
-  33% {
-    transform: translateX(-500px);
-    opacity: 1; }
-  100% {
-    transform: translateX(0px);
-    opacity: 1; } }
-
-@-moz-keyframes buttonBikeHover {
-  0% {
-    transform: translateX(0); }
-  30% {
-    transform: translateX(12.5vw);
-    opacity: 1; }
-  31% {
-    opacity: 0; }
-  32% {
-    transform: translateX(-500px);
-    opacity: 0; }
-  33% {
-    transform: translateX(-500px);
-    opacity: 1; }
-  100% {
-    transform: translateX(0px);
-    opacity: 1; } }
-
-@-ms-keyframes buttonBikeHover { }
-
-@keyframes buttonBikeHover {
-  0% {
-    transform: translateX(0); }
-  30% {
-    transform: translateX(12.5vw);
-    opacity: 1; }
-  31% {
-    opacity: 0; }
-  32% {
-    transform: translateX(-500px);
-    opacity: 0; }
-  33% {
-    transform: translateX(-500px);
-    opacity: 1; }
-  100% {
-    transform: translateX(0px);
-    opacity: 1; } }
-
 .button {
   font-weight: 600;
   letter-spacing: 0.5px;
@@ -415,24 +359,6 @@ div div + table, div div + h1, div div + h2, div div + h3, div div + h4, div div
         line-height: 40px;
         height: 40px;
         padding: 0 40px; } }
-  .button--light {
-    background-color: #ffffff;
-    color: #101010; }
-  .button--bike {
-    padding-right: calc(4.1666666667vw + 40px);
-    position: relative;
-    overflow: hidden; }
-    .button--bike .button__image {
-      position: absolute;
-      right: 20px;
-      bottom: 0;
-      width: 4.1666666667vw;
-      background-position: center center;
-      background-repeat: no-repeat;
-      background-size: contain;
-      height: 100%; }
-    .button--bike:hover .button__image {
-      animation: buttonBikeHover 0.5s forwards; }
   .button--ghost, .button.naked, .button--naked, .button[naked] {
     background: none;
     color: #7f7f7f;
@@ -525,7 +451,7 @@ div div + table, div div + h1, div div + h2, div div + h3, div div + h4, div div
       margin: 0; }
 
 .button--compare {
-  content: "hoi"; }
+  content: 'hoi'; }
 
 .button--arrow-right:after {
   width: 4.1666666667vw;
@@ -1916,7 +1842,7 @@ table {
     background-color: #1a1b1a;
     color: #ffffff; }
 
-.s--fullImage {
+.s--fullImage, .s--singleBikeSpecs {
   position: relative;
   background-size: cover;
   background-position: center center;
@@ -1926,7 +1852,7 @@ table {
   background-image: none;
   height: auto;
   margin-bottom: 20px; }
-  .s--fullImage:after, .s--fullImage:before {
+  .s--fullImage:after, .s--singleBikeSpecs:after, .s--fullImage:before, .s--singleBikeSpecs:before {
     content: "";
     width: 20px;
     height: 100%;
@@ -1935,11 +1861,11 @@ table {
     top: 0;
     background-color: #101010;
     z-index: 3; }
-  .s--fullImage:after {
+  .s--fullImage:after, .s--singleBikeSpecs:after {
     left: 0; }
-  .s--fullImage:before {
+  .s--fullImage:before, .s--singleBikeSpecs:before {
     right: 0; }
-  .s--fullImage img {
+  .s--fullImage img, .s--singleBikeSpecs img {
     display: block;
     width: 100%;
     height: auto;
@@ -2025,12 +1951,6 @@ table {
     @media only screen and (min-width: 960px) and (max-width: 9999px) {
       .s--introImage .content {
         padding: 12.5vw 6.25vw 12.5vw 12.5vw; } }
-
-.bar .buttonGroup {
-  padding-left: 6.25vw; }
-
-.bar .button {
-  border-radius: 0; }
 
 .s--basicHeader {
   position: relative;
@@ -9136,9 +9056,6 @@ table {
 /* ---------------------------------------- */
 /* --------------------------------------- */
 /*				@extend layout/headers
-		/* ---------------------------------------- */
-/* --------------------------------------- */
-/*				@extend layout/bar
 		/* ---------------------------------------- */
 /* --------------------------------------- */
 /*				@extend components
