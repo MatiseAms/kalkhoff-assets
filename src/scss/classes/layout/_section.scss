@@ -25,6 +25,6 @@
 	@extend %#{$prefix}s--introImage;
 }
 
-.#{$prefix}sectionSegmentFeatures{
-    @extend %#{$prefix}sectionSegmentFeatures;
+.#{$prefix}s--features{
+    @extend %#{$prefix}s--features;
 }
