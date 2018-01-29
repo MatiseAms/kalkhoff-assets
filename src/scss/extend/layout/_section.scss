@@ -47,6 +47,13 @@
 	}
 }
 
+%#{$prefix}s--fullImage{
+	@include borders(); background-size: cover; background-position: center center; width: 100vw; padding: 0; background-image: none; background-image: none; height: auto; margin-bottom: 20px;
+	img{
+		display: block; width: 100%; height: auto; max-width: 100%;
+	}
+}
+
 %#{$prefix}s--segmentTrio{
 	position: relative; background-color: color(khBlack);	@include borders(); padding: 0; margin: 1px 0;
 	img{

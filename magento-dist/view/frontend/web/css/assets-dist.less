@@ -1916,6 +1916,35 @@ table {
     background-color: #1a1b1a;
     color: #ffffff; }
 
+.s--fullImage {
+  position: relative;
+  background-size: cover;
+  background-position: center center;
+  width: 100vw;
+  padding: 0;
+  background-image: none;
+  background-image: none;
+  height: auto;
+  margin-bottom: 20px; }
+  .s--fullImage:after, .s--fullImage:before {
+    content: "";
+    width: 20px;
+    height: 100%;
+    display: block;
+    position: absolute;
+    top: 0;
+    background-color: #101010;
+    z-index: 3; }
+  .s--fullImage:after {
+    left: 0; }
+  .s--fullImage:before {
+    right: 0; }
+  .s--fullImage img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-width: 100%; }
+
 .s--segmentTrio {
   position: relative;
   background-color: #101010;
