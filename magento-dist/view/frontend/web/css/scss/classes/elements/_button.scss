@@ -27,3 +27,7 @@
 .#{$prefix}button--arrow-right{
 	@extend %#{$prefix}button--arrow-right;
 }
+
+.#{$prefix}button--load-more{
+	@extend %#{$prefix}button--load-more;
+}
