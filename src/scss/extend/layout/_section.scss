@@ -37,7 +37,7 @@
 		}
 	}
 	&__caption{
-		position: absolute; bottom: grid(1); left: grid(3); opacity: 0.5;
+		position: absolute; bottom: grid(1); opacity: 0.5;
 		@media #{$small-only}{
 			left: grid(1);
 		}
@@ -45,6 +45,17 @@
 	&--dark{
 		background-color: color(khDark); color: color(khWhite);@extend	%#{$prefix}s--singleBike--dark;
 	}
+}
+
+%#{$prefix}s--fullImage{
+	@include borders(); background-size: cover; background-position: center center; width: 100vw; padding: 0; background-image: none; background-image: none; height: auto; margin-bottom: 20px;
+	img{
+		display: block; width: 100%; height: auto; max-width: 100%;
+	}
+}
+
+%#{$prefix}s--singleBikeSpecs{
+	@include borders;
 }
 
 %#{$prefix}s--segmentTrio{

@@ -24,3 +24,12 @@
 .#{$prefix}s--introImage{
 	@extend %#{$prefix}s--introImage;
 }
+
+.#{$prefix}s--fullImage{
+	@extend %#{$prefix}s--fullImage;
+}
+
+
+.#{$prefix}s--singleBikeSpecs{
+	@extend %#{$prefix}s--fullImage;
+}
