@@ -12,12 +12,10 @@ input[type="password"]{
 }
 *{
 	input[type="checkbox"]{
-		@include assets-input-checkbox();
-		//	@extend %#{$prefix}input-checkbox;
+		@extend %#{$prefix}input-checkbox;
 	}
 	input[type="radio"]{
-		@include assets-input-radio();
-		//	@extend %#{$prefix}input-radio;
+		@extend %#{$prefix}input-radio;
 	}
 }
 

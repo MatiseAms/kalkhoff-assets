@@ -2,7 +2,6 @@
 /* ______________________________________- */
 /*				Main navigation
 /* ________________________________________ */
-@include navMain--Animations();
 .#{$prefix}navMain{
 	@extend %#{$prefix}navMain;
 	@extend %#{$prefix}navMain--mobile;
@@ -21,10 +20,6 @@
 	&__text{
 		@extend %#{$prefix}navMain__text;
 		@extend %#{$prefix}navMain--mobile__text;
-	}
-	&__image{
-		@extend %#{$prefix}navMain__image;
-		@extend %#{$prefix}navMain--mobile__image;
 	}
 	&__link{
 		@extend %#{$prefix}navMain__link;

@@ -1,14 +1,8 @@
-@mixin assets-icons($this: false){
-	@each $iconFamily-name, $iconFamily-value in $icons{
-		@each $icon-name, $icon-value in map-get($iconFamily-value,"icons"){
-			@if $this{
-				&.icon-#{$icon-name}{
-					content: #{$icon-value}; font-family: #{$iconFamily-name};
-				}
-			} @else{
-				.icon-#{$icon-name}{
-					content: #{$icon-value}; font-family: #{$iconFamily-name};
-				}
+@mixin assets-icons{
+	@each $set-name, $iconset in $icons{
+		@each $icon-name,$icon-value in $iconset{
+			.icon-#{$icon-name}:before{
+				content: #{$icon-value}; font-family: #{$set-name};
 			}
 		}
 	}

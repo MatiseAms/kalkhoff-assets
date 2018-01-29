@@ -8,15 +8,6 @@
 			"font-size": "14px",
 			"line-height": "1",
 			"font-weight": "{{assets(assets.font-weight.bold)}}"
-		},
-		"button-special":{
-			"font-family": "Roboto",
-			"background-color": "transparent",
-			"padding": "{{grid(1 2 3 5)}}",
-			"text-transform": "none",
-			"font-size": "16px",
-			"line-height": "1",
-			"font-weight": "{{assets(assets.font-weight.regular)}}"
 		}
 	}
 }
