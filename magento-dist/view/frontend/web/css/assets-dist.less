@@ -1950,7 +1950,7 @@ table {
     .s--singleBike .button--transparent.button--arrow-right {
       padding-left: 0; }
       .s--singleBike .button--transparent.button--arrow-right:after {
-        background-image: linear-gradient(#000, #000); }
+        background-image: linear-gradient(#000000, #000000); }
   @media only screen and (min-width: 0px) and (max-width: 750px) {
     .s--singleBike .column .content {
       padding-bottom: 0; } }
@@ -2085,9 +2085,23 @@ table {
         padding: 12.5vw 6.25vw 12.5vw 12.5vw; } }
 
 .s--features {
-  background-color: #4c5971;
+  background-color: var(--bike-theme-color);
   color: #ffffff;
-  padding: 12vw 0 10vw; }
+  padding: 12vw 0 10vw;
+  position: relative; }
+  .s--features:after, .s--features:before {
+    content: "";
+    width: 20px;
+    height: 100%;
+    display: block;
+    position: absolute;
+    top: 0;
+    background-color: #101010;
+    z-index: 3; }
+  .s--features:after {
+    left: 0; }
+  .s--features:before {
+    right: 0; }
   .s--features h2 {
     padding-bottom: 4vw; }
   .s--features .flex-wrapper {
