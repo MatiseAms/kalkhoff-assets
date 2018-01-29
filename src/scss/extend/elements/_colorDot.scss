@@ -1,8 +1,8 @@
-%#{$prefix}color-dot{
+%#{$prefix}colorDot{
 	position: relative; display: inline-block;
 
 	input[type="radio"]{
-		@include input-radio($assets-elements-color-dot-width,$assets-elements-color-dot-height,0, $assets-elements-color-dot-gutter, var(--this-color), color(White));
+		@include input-radio($assets-elements-color-dot-width,$assets-elements-color-dot-height,0, $assets-elements-color-dot-gutter, var(--this-color), color(khWhite));
 		@include input-radio-body{
 			box-shadow: none;
 		}
@@ -19,13 +19,13 @@
 			opacity: 1; transform: scale(1); transition: transform 0.15s 0.3s;
 		}
 	}
-	&+.#{$prefix}color-dot{
+	&+.#{$prefix}colorDot{
 		margin: $assets-elements-color-dot-margin;
 	}
 	@extend %#{$prefix}tooltip;
 }
 
-@mixin color-dot-colors($prefix: "",$pre: false){
+@mixin colorDot__colors($prefix: "",$pre: false){
 	@each $color-name,$color-value in $colors{
 		@if $pre{
 			&.#{$prefix}#{$color-name}, //
@@ -61,7 +61,7 @@
 }
 
 
-@mixin color-dot-dual($prefix: "",$pre: false){
+@mixin colorDot__dual($prefix: "",$pre: false){
 	@each $color-name,$color-value in $colors{
 		@if $pre{
 			&.#{$prefix}#{$color-name}, //

@@ -2,15 +2,20 @@
   "assets": {
     "elements": {
       "color-dot": [{
-        "class": "color-dot",
-        "width": "20px",
-        "height": "20px",
-        "gutter": "5px",
-        "active-scale": "1.2",
-        "margin": "0 0 0 20px",
+        "class": "colorDot",
+        "width": "16px",
+        "height": "16px",
+        "gutter": "4px",
+        "active-scale": "1.25",
+        "margin": "0 0 0 14px",
         "shadow-brightness": "80",
         "shadow-size": "0 0 2px 0",
         "shadow-color": "{{color(khBlack,0.25)}}"
+      }],
+			"frame-select": [{
+        "class": "frameSelect",
+        "width": "25px",
+        "height": "16px"
       }]
     }
   }
