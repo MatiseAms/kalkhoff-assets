@@ -1330,7 +1330,7 @@ table {
 
 @media only screen and (min-width: 750px) and (max-width: 9999px) {
   .navMain {
-    color: #101010;
+    color: #ffffff;
     content: "";
     position: absolute;
     width: 100%;
@@ -1380,16 +1380,18 @@ table {
         margin: auto;
         padding: auto;
         content: none; }
-      .navMain__item:hover > div {
-        max-height: 1000px;
-        z-index: 2; }
-      .navMain__item:hover .sublist-item {
-        opacity: 1; }
-      .navMain__item:hover .sublist-container {
-        background-color: #ffffff;
-        transform: translateY(0%); }
-      .navMain__item:hover .button-group {
-        animation: menuButtonGroup 0.3s 0.5s forwards; }
+      .navMain__item:hover {
+        color: #101010; }
+        .navMain__item:hover > div {
+          max-height: 1000px;
+          z-index: 2; }
+        .navMain__item:hover .sublist-item {
+          opacity: 1; }
+        .navMain__item:hover .sublist-container {
+          background-color: #ffffff;
+          transform: translateY(0%); }
+        .navMain__item:hover .button-group {
+          animation: menuButtonGroup 0.3s 0.5s forwards; }
     .navMain__text {
       font-size: 0.8333333333vw;
       font-weight: 400;
@@ -1399,8 +1401,7 @@ table {
       display: block;
       padding: 0 2.0833333333vw;
       line-height: 4.1666666667vw;
-      height: 4.1666666667vw;
-      color: inherit; } }
+      height: 4.1666666667vw; } }
     @media only screen and (min-width: 750px) and (max-width: 9999px) and (max-width: 1920px) {
       .navMain__text {
         font-size: 16px; } }
@@ -2182,16 +2183,13 @@ table {
 .s--basicHeader {
   position: relative;
   background-color: #ffffff;
-  padding: 4.1666666667vw;
-  padding-left: calc(8.3333333333vw - 20px);
-  padding-right: calc(8.3333333333vw - 20px);
   background-color: #ffffff;
   padding-top: 12.5vw;
   position: relative;
-  background-position: center center;
+  background-position: top center;
   background-size: cover;
   margin: 0;
-  min-height: calc(100vh - 12.5vw);
+  min-height: calc(100vh - 6.25vw);
   margin-top: 20px; }
   .s--basicHeader:after, .s--basicHeader:before {
     content: "";
@@ -2206,9 +2204,11 @@ table {
     left: 0; }
   .s--basicHeader:before {
     right: 0; }
-  .s--basicHeader > .breadcrumb {
-    display: block;
-    margin-top: 4.1666666667vw; }
+  .s--basicHeader .breadcrumb {
+    position: absolute;
+    bottom: 8.3333333333vw;
+    left: 8.3333333333vw;
+    color: #ffffff; }
   .s--basicHeader table + .button {
     margin-top: 2.0833333333vw; }
   .s--basicHeader .header--image {

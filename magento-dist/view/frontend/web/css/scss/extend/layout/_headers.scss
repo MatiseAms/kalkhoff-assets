@@ -1,13 +1,8 @@
 %#{$prefix}s--basicHeader{
-	@include borders(0 1 0 1); background-color: color(White); padding: grid(1); padding-left: calc(#{$grid-2} - 20px); padding-right: calc(#{$grid-2} - 20px); background-color: color(khWhite); padding-top: grid(3); position: relative; background-position: center center; background-size: cover;
-	// making or hididng the black borders
-	// margin: 20px;
-	margin: 0; min-height: calc(100vh - #{grid(3)}); margin-top: 20px;
-	// .column .content{
-	// 	padding: 0;
-	// }
-	>.breadcrumb{
-		display: block; margin-top: grid(1);
+	@include borders(0 1 0 1); background-color: color(White); background-color: color(khWhite); padding-top: grid(3); position: relative; background-position: top center; background-size: cover; margin: 0; min-height: calc(100vh - #{grid(1.5)}); margin-top: 20px;
+
+	.breadcrumb{
+		position: absolute; bottom: grid(2); left: grid(2); color: color(khWhite);
 	}
 	table+.button{
 		margin-top: grid(0.5);
