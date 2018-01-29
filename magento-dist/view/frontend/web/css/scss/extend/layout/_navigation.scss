@@ -249,7 +249,7 @@
 		}
 
 		.kh-logo{
-			position: absolute; right: 0; height: grid(1); width: 50vw; z-index: 1; background-image: url("#{$assets-base-image-dir}/#{$assets-image-logo-regular}"); background-repeat: no-repeat; background-size: auto 15px; background-position: right grid(1.5) center; line-height: grid(1); height: grid(1); text-align: right; text-transform: uppercase; color: color(khWhite); padding-right: grid(1);
+			position: absolute; right: 0; height: grid(1); width: 50vw; z-index: 1; background-image: url("#{$assets-base-image-dir}/#{$assets-image-logo-regular}"); background-repeat: no-repeat; background-size: auto 15px; background-position: right grid(1.5) center; line-height: grid(1); height: grid(1); text-transform: uppercase; color: color(khWhite); padding-right: grid(1); text-indent: -999em;
 			@include min-("height",1,60){
 				line-height: 60px;
 			}

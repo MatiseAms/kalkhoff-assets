@@ -503,6 +503,8 @@ div div + table, div div + h1, div div + h2, div div + h3, div div + h4, div div
     height: 0;
     border: none; }
     .option-button input[type="radio"] + label {
+      margin-top: -20px;
+      top: 0;
       display: block;
       border: 1px solid #101010;
       color: #101010;
@@ -1581,10 +1583,10 @@ table {
       background-position: right 6.25vw center;
       line-height: 4.1666666667vw;
       height: 4.1666666667vw;
-      text-align: right;
       text-transform: uppercase;
       color: #ffffff;
-      padding-right: 4.1666666667vw; } }
+      padding-right: 4.1666666667vw;
+      text-indent: -999em; } }
     @media only screen and (min-width: 750px) and (max-width: 9999px) and (max-width: 1440px) {
       .navMain .kh-logo {
         height: 60px;
@@ -1947,6 +1949,56 @@ table {
     padding-left: 12.5vw;
     color: #ffffff;
     transform: translateY(-50%); }
+
+.s--singleBikeHeader {
+  position: relative;
+  background-color: #ffffff;
+  background-color: #ffffff;
+  padding-top: 4.1666666667vw;
+  padding-bottom: 8.3333333333vw;
+  position: relative;
+  background-position: center center;
+  background-size: cover;
+  color: #101010;
+  margin: 0;
+  min-height: calc(100vh - 12.5vw);
+  margin-top: 20px; }
+  .s--singleBikeHeader:after, .s--singleBikeHeader:before {
+    content: "";
+    width: 20px;
+    height: 100%;
+    display: block;
+    position: absolute;
+    top: 0;
+    background-color: #101010;
+    z-index: 3; }
+  .s--singleBikeHeader:after {
+    left: 0; }
+  .s--singleBikeHeader:before {
+    right: 0; }
+  .s--singleBikeHeader .breadcrumb {
+    position: absolute;
+    bottom: 4.1666666667vw;
+    left: 8.3333333333vw; }
+  .s--singleBikeHeader table + .button {
+    margin-top: 2.0833333333vw; }
+  .s--singleBikeHeader__image {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: calc(50vw - 20px);
+    height: 100%;
+    padding: 20px;
+    padding-top: 12.5vw;
+    overflow: hidden; }
+    .s--singleBikeHeader__image img {
+      max-width: 100%; }
+  .s--singleBikeHeader .content {
+    width: 50vw;
+    left: 0;
+    top: 50%;
+    padding-left: 8.3333333333vw;
+    padding-top: 8.3333333333vw; }
 
 /* --------------------------------------- */
 /*				@extend components
