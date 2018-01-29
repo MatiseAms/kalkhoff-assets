@@ -1,4 +1,4 @@
-.button{
+.#{$prefix}button{
 	@extend %#{$prefix}button;
 	&.naked, &--naked, &[naked]{
 		@extend %#{$prefix}button--naked;
@@ -7,7 +7,7 @@
 		@extend %#{$prefix}button--small;
 	}
 }
-.button--group, button-group{
+.#{$prefix}button--group, button-group{
 	@extend %#{$prefix}button--group;
 }
 
@@ -17,14 +17,13 @@
 	@extend %#{$prefix}button--compare;
 }
 
-
 // Ghost Buttons
-.button--ghost{
+.#{$prefix}button--ghost{
 	@extend %#{$prefix}button--ghost;
 }
 
 
 // Specific Buttons
-.button--arrow-right{
+.#{$prefix}button--arrow-right{
 	@extend %#{$prefix}button--arrow-right;
 }
