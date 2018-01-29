@@ -6,4 +6,7 @@
 	&__image{
 		@extend %#{$prefix}s--singleBikeHeader__image;
 	}
+	&__table{
+		@extend %#{$prefix}s--singleBikeHeader__table;
+	}
 }

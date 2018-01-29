@@ -205,16 +205,16 @@ sup {
   font-size: smaller;
   vertical-align: sup; }
 
-table tr td, table tr th, table thead td, table thead th, .breadcrumb__item a, p, .content li {
+table tbody tr td, table tbody tr th, table tbody thead td, table tbody thead th, .breadcrumb__item a, p, .content li {
   font-size: 0.8333333333vw;
   font-weight: 400;
   line-height: 1.75;
   font-family: "Roboto"; }
   @media only screen and (max-width: 1920px) {
-    table tr td, table tr th, table thead td, table thead th, .breadcrumb__item a, p, .content li {
+    table tbody tr td, table tbody tr th, table tbody thead td, table tbody thead th, .breadcrumb__item a, p, .content li {
       font-size: 16px; } }
   @media only screen and (min-width: 1920px) {
-    table tr td, table tr th, table thead td, table thead th, .breadcrumb__item a, p, .content li {
+    table tbody tr td, table tbody tr th, table tbody thead td, table tbody thead th, .breadcrumb__item a, p, .content li {
       font-size: 16px; } }
 
 blockquote {
@@ -804,34 +804,41 @@ table {
   max-width: 100%; }
   table.full {
     width: 100%; }
-  table tr td, table tr th, table thead td, table thead th {
+  table tbody tr td, table tbody tr th, table tbody thead td, table tbody thead th {
     padding: 1rem;
     text-align: left; }
-    table tr td:first-child, table tr th:first-child, table thead td:first-child, table thead th:first-child {
+    table tbody tr td:first-child, table tbody tr th:first-child, table tbody thead td:first-child, table tbody thead th:first-child {
       padding-left: 0rem; }
-    table tr td:last-child, table tr th:last-child, table thead td:last-child, table thead th:last-child {
+    table tbody tr td:last-child, table tbody tr th:last-child, table tbody thead td:last-child, table tbody thead th:last-child {
       padding-right: 0rem; }
-    table tr td.no-break, table tr th.no-break, table thead td.no-break, table thead th.no-break {
+    table tbody tr td.no-break, table tbody tr th.no-break, table tbody thead td.no-break, table tbody thead th.no-break {
       white-space: nowrap; }
 
-.content table tr, .content table thead {
-  border-bottom: 1px solid rgba(16, 16, 16, 0.25); }
-  .content table tr td, .content table tr th, .content table thead td, .content table thead th {
-    font-weight: 400;
-    font-size: 0.875rem;
-    padding: 1rem;
-    text-align: left; }
-    .content table tr td:first-child, .content table tr th:first-child, .content table thead td:first-child, .content table thead th:first-child {
-      padding-left: 1rem; }
-    .content table tr td:last-child, .content table tr th:last-child, .content table thead td:last-child, .content table thead th:last-child {
-      padding-right: 1rem; }
-    .content table tr td .more-info, .content table tr th .more-info, .content table thead td .more-info, .content table thead th .more-info {
-      color: #7f7f7f;
-      text-decoration: underline;
-      white-space: nowrap; }
-
-.content table thead th {
-  font-weight: 600; }
+.content table {
+  width: 100%; }
+  .content table tr, .content table thead {
+    border-bottom: 1px solid rgba(16, 16, 16, 0.25); }
+    .content table tr td, .content table tr th, .content table thead td, .content table thead th {
+      font-weight: 400;
+      font-size: 0.875rem;
+      padding: 1rem;
+      text-align: left;
+      color: #7f7f7f; }
+      .content table tr td:first-child, .content table tr th:first-child, .content table thead td:first-child, .content table thead th:first-child {
+        padding-left: 0rem;
+        font-size: 0.9375vw;
+        color: #101010; }
+        @media only screen and (max-width: 1493.33333333px) {
+          .content table tr td:first-child, .content table tr th:first-child, .content table thead td:first-child, .content table thead th:first-child {
+            font-size: 14px; } }
+      .content table tr td:last-child, .content table tr th:last-child, .content table thead td:last-child, .content table thead th:last-child {
+        padding-right: 1rem; }
+      .content table tr td .more-info, .content table tr th .more-info, .content table thead td .more-info, .content table thead th .more-info {
+        color: #7f7f7f;
+        text-decoration: underline;
+        white-space: nowrap; }
+  .content table thead th {
+    font-weight: 600; }
 
 .content dl {
   display: flex;
@@ -1993,6 +2000,8 @@ table {
     overflow: hidden; }
     .s--singleBikeHeader__image img {
       max-width: 100%; }
+  .s--singleBikeHeader__table tr td:last-child {
+    text-align: right !important; }
   .s--singleBikeHeader .content {
     width: 50vw;
     left: 0;
