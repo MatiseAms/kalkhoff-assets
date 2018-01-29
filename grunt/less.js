@@ -7,7 +7,7 @@ module.exports = {
 	},
 	dist: {
 		files: {
-			'<%= config.magento.component %>assets-dist.less': '<%= config.dist.root %>assets-classes.less'
+			'<%= config.magento.component %>assets-dist.less': '<%= config.dist.root %>assets-classes.less',
 		}
 	}
 }
