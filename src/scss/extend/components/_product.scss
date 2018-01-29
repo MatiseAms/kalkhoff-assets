@@ -2,7 +2,7 @@
 	display: block; z-index: 1; width: 22%; height: 4.5px; filter: blur(1px); background-image: radial-gradient(circle, color(khBlack, .8), color(khWhite,0)); background-blend-mode: multiply;
 }
 
-%#{$prefix}productCard{ width: calc(#{grid(8)} - 2px); background-color: color(khWhite); padding: grid(1); border: 1px solid color(khBlack);
+%#{$prefix}productCard{ background-color: color(khWhite); padding: grid(1); border: 1px solid color(khBlack);
 		&__text{ color: color(khBlack);
 			h2{ @extend %#{$prefix}h4; font-family: $assets-h2-font-family; font-weight: $assets-font-weight-bold; line-height: 1; }
 			h3{ @extend %#{$prefix}p; font-weight: $assets-font-weight-bold; line-height: 1.25; margin-top: rem(16px); }
