@@ -22,8 +22,7 @@
 					}
 				}
 				&.icon-item{
-					//@include assets-icons; 
-					display: inline-block; width: 20px; margin-right: 20px;
+					@include assets-icons(true); display: inline-block; width: 20px; margin-right: 20px;
 					a{
 						text-indent: -999em; display: block; width: 20px; height: 20px;
 					}
