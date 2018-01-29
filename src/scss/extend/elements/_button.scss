@@ -1,5 +1,8 @@
 %#{$prefix}button{
 	font-weight: 600; letter-spacing: 0.5px; display: inline-block; font-size: 1rem; padding: 0rem grid(0.5); border: none; box-shadow: 0 0 0 0 color(Dark) inset; border-radius: 2px; background-color: color(Black); color: color(White); text-transform: uppercase; border: none; line-height: grid(1);
+	&:hover{
+		text-decoration: none;
+	}
 	@include min-("line-height",1,60){
 		height: 60px; padding: 0 30px;
 	}

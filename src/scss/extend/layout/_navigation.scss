@@ -20,7 +20,7 @@
 
 
 	%#{$prefix}navMain{
-		$c: c($c); content: ""; position: absolute; width: 100%; z-index: 1; top: 20px; left: 0;
+		color: color(khBlack); $c: c($c); content: ""; position: absolute; width: 100%; z-index: 1; top: 20px; left: 0;
 		&__container{
 			$c: c($c); position: absolute; left: 0; top: 0; width: 100vw;
 		}
@@ -56,13 +56,13 @@
 		}
 		&__text{
 			$c: c($c);
-			@include assets-p; content: ""; display: block; padding: 0 grid(0.5); line-height: grid(1); height: grid(1);
+			@include assets-p; content: ""; display: block; padding: 0 grid(0.5); line-height: grid(1); height: grid(1); color: inherit;
 			@include min-("height",1,60){
 				line-height: 60px;
 			}
 		}
 		&__link{
-			$c: c($c); content: "";// position: relative; z-index: 100;
+			color: inherit; text-decoration: none; $c: c($c); content: "";// position: relative; z-index: 100;
 		}
 		&__item{
 			// second time defined for hover.
@@ -74,6 +74,7 @@
 		}
 		&__link{
 			&:hover{
+				text-decoration: none;
 				&+.sublist-container .hover-image{
 					z-index: 10; opacity: 1;
 				}
@@ -124,8 +125,9 @@
 			}
 
 			&:hover{
+				text-decoration: none;
 				>a{
-					color: color(khGreen);
+					text-decoration: none; color: color(khGreen);
 				}
 			}
 			&--segment{
@@ -231,10 +233,10 @@
 			}
 		}
 		&__secText{
-			$c: c($c); display: none; font-size: 0;
+			$c: c($c); display: none; font-size: 0; text-decoration: none;
 		}
 		&__secLink{
-			$c: c($c); padding: 0 grid(0.25); display: block;
+			$c: c($c); padding: 0 grid(0.25); display: block; text-decoration: none;
 			&:before{
 				display: block; color: color(khWhite,0.5); font-family: $kalkhoff-UI-font-family; font-size: 1.25rem; font-weight: 600;
 			}
@@ -247,7 +249,7 @@
 		}
 
 		.kh-logo{
-			position: absolute; right: 0; height: grid(1); width: 50vw; z-index: 1; background-image: url("#{$assets-base-image-dir}/#{$assets-image-logo-regular}"); background-repeat: no-repeat; background-size: auto 15px; background-position: right grid(1.5) center; line-height: grid(1); height: grid(1);
+			position: absolute; right: 0; height: grid(1); width: 50vw; z-index: 1; background-image: url("#{$assets-base-image-dir}/#{$assets-image-logo-regular}"); background-repeat: no-repeat; background-size: auto 15px; background-position: right grid(1.5) center; line-height: grid(1); height: grid(1); text-align: right; text-transform: uppercase; color: color(khWhite); padding-right: grid(1);
 			@include min-("height",1,60){
 				line-height: 60px;
 			}
@@ -281,10 +283,11 @@
 			}
 		}
 		&__text{
+			color: inherit;
 			@include assets-h2; content: ""; display: block; padding: grid(0.25) grid(1);
 		}
 		&__link{
-			content: "";
+			color: inherit; text-decoration: none; content: "";
 		}
 		&__subList{
 			content: ""; max-height: #{$assets-nav-mobile-show-count * $assets-nav-mobile-item-height}; overflow: scroll; padding-top: $assets-nav-mobile-item-height; padding-bottom: #{$assets-nav-mobile-item-height * 2};

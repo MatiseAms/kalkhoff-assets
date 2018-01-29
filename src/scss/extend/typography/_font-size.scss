@@ -123,10 +123,16 @@
 @mixin assets-button-text{
 	font-size: $assets-button-font-size; font-weight: $assets-button-font-weight; line-height: $assets-button-line-height; font-family: $assets-button-font-family; text-transform: $assets-button-text-transform;
 }
-
+%#{$prefix}button-text{
+	@include assets-button-text;
+}
 
 @mixin assets-button-special-text{
 	font-size: $assets-button-special-font-size; font-weight: $assets-button-special-font-weight; line-height: $assets-button-special-line-height; font-family: $assets-button-special-font-family; text-transform: $assets-button-special-text-transform;
+}
+
+%#{$prefix}button-special-text{
+	@include assets-button-special-text;
 }
 
 

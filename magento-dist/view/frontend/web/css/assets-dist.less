@@ -1,5 +1,4 @@
 @charset "UTF-8";
-/* Or this? */
 /* Combine Colors into one variable
   	*/
 /*  Grid Specific values */
@@ -330,6 +329,8 @@ div div + table, div div + h1, div div + h2, div div + h3, div div + h4, div div
   transition: box-shadow 0.2s, color 0.2s 0.1s;
   cursor: pointer;
   font-size: 14px; }
+  .button:hover {
+    text-decoration: none; }
   @media only screen and (max-width: 1440px) {
     .button {
       line-height: 60px;
@@ -1219,6 +1220,7 @@ table {
 
 @media only screen and (min-width: 750px) and (max-width: 9999px) {
   .navMain {
+    color: #101010;
     content: "";
     position: absolute;
     width: 100%;
@@ -1287,7 +1289,8 @@ table {
       display: block;
       padding: 0 2.0833333333vw;
       line-height: 4.1666666667vw;
-      height: 4.1666666667vw; } }
+      height: 4.1666666667vw;
+      color: inherit; } }
     @media only screen and (min-width: 750px) and (max-width: 9999px) and (max-width: 1920px) {
       .navMain__text {
         font-size: 16px; } }
@@ -1301,12 +1304,16 @@ table {
 
 @media only screen and (min-width: 750px) and (max-width: 9999px) {
     .navMain__link {
+      color: inherit;
+      text-decoration: none;
       content: ""; }
     .navMain__item:hover .navMain__text {
       color: #b4bb00; }
-    .navMain__link:hover + .sublist-container .hover-image {
-      z-index: 10;
-      opacity: 1; }
+    .navMain__link:hover {
+      text-decoration: none; }
+      .navMain__link:hover + .sublist-container .hover-image {
+        z-index: 10;
+        opacity: 1; }
     .navMain__subList {
       position: relative;
       padding: 6.25vw;
@@ -1388,8 +1395,11 @@ table {
         margin: auto;
         padding: auto;
         content: none; }
-      .navMain__subItem:hover > a {
-        color: #b4bb00; }
+      .navMain__subItem:hover {
+        text-decoration: none; }
+        .navMain__subItem:hover > a {
+          text-decoration: none;
+          color: #b4bb00; }
       .navMain__subItem--segment {
         color: #7f7f7f;
         margin-bottom: 0.5rem;
@@ -1543,10 +1553,12 @@ table {
         content: none; }
     .navMain__secText {
       display: none;
-      font-size: 0; }
+      font-size: 0;
+      text-decoration: none; }
     .navMain__secLink {
       padding: 0 1.0416666667vw;
-      display: block; }
+      display: block;
+      text-decoration: none; }
       .navMain__secLink:before {
         display: block;
         color: rgba(255, 255, 255, 0.5);
@@ -1568,7 +1580,11 @@ table {
       background-size: auto 15px;
       background-position: right 6.25vw center;
       line-height: 4.1666666667vw;
-      height: 4.1666666667vw; } }
+      height: 4.1666666667vw;
+      text-align: right;
+      text-transform: uppercase;
+      color: #ffffff;
+      padding-right: 4.1666666667vw; } }
     @media only screen and (min-width: 750px) and (max-width: 9999px) and (max-width: 1440px) {
       .navMain .kh-logo {
         height: 60px;
@@ -1609,6 +1625,7 @@ table {
       .navMain__item:hover > div {
         max-height: 180px; }
     .navMain__text {
+      color: inherit;
       font-family: "Roboto Condensed";
       font-size: 3.125vw;
       font-weight: 600;
@@ -1627,6 +1644,8 @@ table {
 
 @media only screen and (min-width: 0px) and (max-width: 750px) {
     .navMain__link {
+      color: inherit;
+      text-decoration: none;
       content: ""; }
     .navMain__subList {
       content: "";
@@ -8299,69 +8318,6 @@ table {
 /* --------------------------------------- */
 /*				@extend typography
 /* ---------------------------------------- */
-@font-face {
-  font-family: "Roboto Condensed";
-  src: url("/fonts/RobotoCondensed-Light.eot?#iefix") format("embedded-opentype"), url("/fonts/RobotoCondensed-Light.woff") format("woff"), url("/fonts/RobotoCondensed-Light.ttf") format("truetype"), url("/fonts/RobotoCondensed-Light.svg#Roboto Condensed") format("svg");
-  /* Legacy iOS */
-  font-weight: 300;
-  font-style: normal; }
-
-@font-face {
-  font-family: "Roboto Condensed";
-  src: url("/fonts/RobotoCondensed-Regular.eot?#iefix") format("embedded-opentype"), url("/fonts/RobotoCondensed-Regular.woff") format("woff"), url("/fonts/RobotoCondensed-Regular.ttf") format("truetype"), url("/fonts/RobotoCondensed-Regular.svg#Roboto Condensed") format("svg");
-  /* Legacy iOS */
-  font-weight: 400;
-  font-style: normal; }
-
-@font-face {
-  font-family: "Roboto Condensed";
-  src: url("/fonts/RobotoCondensed-Bold.eot?#iefix") format("embedded-opentype"), url("/fonts/RobotoCondensed-Bold.woff") format("woff"), url("/fonts/RobotoCondensed-Bold.ttf") format("truetype"), url("/fonts/RobotoCondensed-Bold.svg#Roboto Condensed") format("svg");
-  /* Legacy iOS */
-  font-weight: 600;
-  font-style: normal; }
-
-@font-face {
-  font-family: "Roboto";
-  src: url("/fonts/Roboto-Light.eot?#iefix") format("embedded-opentype"), url("/fonts/Roboto-Light.woff") format("woff"), url("/fonts/Roboto-Light.ttf") format("truetype"), url("/fonts/Roboto-Light.svg#Roboto") format("svg");
-  /* Legacy iOS */
-  font-weight: 300;
-  font-style: normal; }
-
-@font-face {
-  font-family: "Roboto";
-  src: url("/fonts/Roboto-Regular.eot?#iefix") format("embedded-opentype"), url("/fonts/Roboto-Regular.woff") format("woff"), url("/fonts/Roboto-Regular.ttf") format("truetype"), url("/fonts/Roboto-Regular.svg#Roboto") format("svg");
-  /* Legacy iOS */
-  font-weight: 400;
-  font-style: normal; }
-
-@font-face {
-  font-family: "Roboto";
-  src: url("/fonts/Roboto-Medium.eot?#iefix") format("embedded-opentype"), url("/fonts/Roboto-Medium.woff") format("woff"), url("/fonts/Roboto-Medium.ttf") format("truetype"), url("/fonts/Roboto-Medium.svg#Roboto") format("svg");
-  /* Legacy iOS */
-  font-weight: 500;
-  font-style: normal; }
-
-@font-face {
-  font-family: "Roboto";
-  src: url("/fonts/Roboto-Bold.eot?#iefix") format("embedded-opentype"), url("/fonts/Roboto-Bold.woff") format("woff"), url("/fonts/Roboto-Bold.ttf") format("truetype"), url("/fonts/Roboto-Bold.svg#Roboto") format("svg");
-  /* Legacy iOS */
-  font-weight: 600;
-  font-style: normal; }
-
-@font-face {
-  font-family: "Roboto Mono";
-  src: url("/fonts/RobotoMono-Regular.eot?#iefix") format("embedded-opentype"), url("/fonts/RobotoMono-Regular.woff") format("woff"), url("/fonts/RobotoMono-Regular.ttf") format("truetype"), url("/fonts/RobotoMono-Regular.svg#Roboto Mono") format("svg");
-  /* Legacy iOS */
-  font-weight: 400;
-  font-style: normal; }
-
-@font-face {
-  font-family: "Roboto Mono";
-  src: url("/fonts/RobotoMono-Bold.eot?#iefix") format("embedded-opentype"), url("/fonts/RobotoMono-Bold.woff") format("woff"), url("/fonts/RobotoMono-Bold.ttf") format("truetype"), url("/fonts/RobotoMono-Bold.svg#Roboto Mono") format("svg");
-  /* Legacy iOS */
-  font-weight: 600;
-  font-style: normal; }
-
 /* -------------------------------------------------- */
 /*				@extend default typographic elements
 /* -------------------------------------------------- */
