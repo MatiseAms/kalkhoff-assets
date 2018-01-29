@@ -1,5 +1,8 @@
 %#{$prefix}button{
 	font-weight: 600; letter-spacing: 0.5px; display: inline-block; font-size: 1rem; padding: 0rem grid(0.5); border: none; box-shadow: 0 0 0 0 color(Dark) inset; border-radius: 2px; background-color: color(Black); color: color(White); text-transform: uppercase; border: none; line-height: grid(1);
+	&:hover{
+		text-decoration: none;
+	}
 	@include min-("line-height",1,60){
 		height: 60px; padding: 0 30px;
 	}
@@ -70,5 +73,13 @@ $border-radius: 2px;
 		width: grid(1); height: 100%; display: inline-block; text-align: right; background-image: linear-gradient(color(khWhite), color(khWhite)); background-size: calc(100% - 5px) 2px; background-position: left center; background-repeat: no-repeat; font-size: rem(11); margin-left: 20px; font-weight: 800;
 
 		@include icon("triangle-right");
+	}
+}
+
+%#{$prefix}button--load-more{
+	background-color: transparent; color: color(khMidgray); position: relative; padding-left: 80px; text-transform: none; @include assets-button-special-text(); letter-spacing: 0; font-size: rem(14);
+	&:before{
+		display: block; width: 40px; height: 40px; border-radius: 50%; background-color: color(khWhite); box-shadow: 0 0 0 10px color(khBlack,0.05), 0 0 5px 0 color(khBlack,0.05);
+		@include icon("next"); line-height: 40px; position: absolute; left: 10px; top: 50%; font-weight: 800; transform: translateY(-50%) rotate(90deg);
 	}
 }

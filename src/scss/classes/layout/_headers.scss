@@ -1,3 +1,9 @@
 .#{$prefix}s--basicHeader{
 	@extend %#{$prefix}s--basicHeader;
 }
+.#{$prefix}s--singleBikeHeader{
+	@extend %#{$prefix}s--singleBikeHeader;
+	&__image{
+		@extend %#{$prefix}s--singleBikeHeader__image;
+	}
+}
