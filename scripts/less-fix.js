@@ -4,7 +4,6 @@ let path = require('path');
 let sourceFile = 'magento-dist/view/frontend/web/css/assets-dist.less';
 
 const processFile = function(file, callback) {
-
 	fs.readFile(file, 'utf-8', function read(err, fileData) {
 		if (err) {
 			throw err;
@@ -20,18 +19,16 @@ String.prototype.replaceAll = function(str1, str2, ignore) {
 
 //const replaceCalc = function(fileData, callback) {
 const replaceCalc = function(fileData) {
-	//	let fileDataProcessed = fileData.replace(new RegExp('/(?:calc\((?:.*)\)/', 'gi'), "~\"calc($1)\"");
-	// let fileDataProcessed = fileData.replace(/(?:calc\()(?:.*)(?:\))/gi, "~\"calc($1)\"");
-	let fileDataProcessed = fileData.replace(/(?:calc\((?:.*)\/)/g, '$1, hoi');
-
+	let fileDataProcessed = fileData.replace(/calc\((.*?)\)/gi, "~\"calc($1)\"");
 
 	console.log(fileDataProcessed);
+
 	return fileDataProcessed;
 }
 
 const writeFile = function(file, fileData) {
-	let processedFileData = replaceCalc(fileData);
-	fs.writeFileSync(file, processedFileData, function(err) {
+	// let processedFileData = replaceCalc(fileData);
+	fs.writeFileSync(file, fileData, function(err) {
 		console.log('woops, something went wrong!' + err);
 	});
 }
