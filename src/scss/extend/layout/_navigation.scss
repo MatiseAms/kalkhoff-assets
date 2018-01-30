@@ -274,7 +274,8 @@
 
 @media #{$small-only}{
 	%#{$prefix}navMain--mobile{
-		position: fixed; top: 0; left: 0; z-index: 10; content: ""; width: 100%; background-color: color(khDark); min-height: 100vh; overflow: scroll; height: 100vh;
+		//position: fixed;
+		top: 0; left: 0; z-index: 10; content: ""; width: 100%; background-color: color(khDark); min-height: 100vh; overflow: scroll; height: 100vh;
 
 		&__container{
 			background-color: color(White); padding-top: grid(2);

@@ -1,17 +1,15 @@
 
 %#{$prefix}radio-label{
-	position: relative; display: inline-block; margin-left: 12px; cursor: pointer;
-	&:first-child{
-		margin-left: 0;
-	}
+	position: relative; display: inline-block; margin-right: 12px; cursor: pointer;
 
 	input[type="radio"]{
 		opacity: 0; width: 0; height: 0; border: none;
 		&+label{
-			margin-top: -20px; top: 0; display: block; border: 1px solid color(khBlack); color: color(khBlack); padding: 0 grid(0.25); line-height: grid(0.5); height: grid(0.5); font-size: 14px;
-			@include min-("height",0.5,22){
-				padding: 0 12px; line-height: 20px; height: 22px;
-			}
+			margin-top: -20px; top: 0; display: block; border: 1px solid color(khBlack); color: color(khBlack); padding: 0.3rem grid(0.25); line-height: grid(0.5);
+			font-size: 14px;
+
+			line-height: 20px;
+
 			&:before, &:after{
 				content: none;
 			}
