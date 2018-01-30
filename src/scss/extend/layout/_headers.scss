@@ -81,11 +81,14 @@
 
 		font-size: rem(14);
 		li {
-			padding: 0;
+			padding: 0.5rem 0;
 			margin: 0;
+			border-bottom: solid 1px color(khLightgray);
 			dt {
-				padding: 0;
+				padding: 0.25rem;
 				width: 30%;
+				border-bottom: none;
+				line-height: 0.8;
 			}
 			dd {
 				padding: 0;
