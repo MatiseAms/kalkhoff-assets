@@ -35,3 +35,7 @@
 .#{$prefix}s--features{
 	@extend %#{$prefix}s--features;
 }
+
+.#{$prefix}s--whereToBuy{
+	@extend %#{$prefix}s--whereToBuy;
+}

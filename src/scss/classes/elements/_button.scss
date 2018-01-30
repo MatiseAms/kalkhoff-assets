@@ -1,47 +1,57 @@
 @extend %#{$prefix}buttonAnimations;
 
-.#{$prefix}button{
-	@extend %#{$prefix}button;
-	&.naked, &--naked, &[naked]{
-		@extend %#{$prefix}button--naked;
-	}
-	&.small, &--small, &[small]{
-		@extend %#{$prefix}button--small;
-	}
-}
-.#{$prefix}button--group, button-group{
+.#{$prefix}button--group{
 	@extend %#{$prefix}button--group;
 }
 
-
-// Specific Buttons
-.button--ghost{
-	@extend %#{$prefix}button--ghost;
-}
-
-
-// Specific Buttons
-.button--compare{
-	@extend %#{$prefix}button--compare;
-}
-
-// Ghost Buttons
-.#{$prefix}button--light{
-	@extend %#{$prefix}button--light;
-}
+a, button{
+	&.#{$prefix}button{
+		@extend %#{$prefix}button;
+		&.naked, &--naked, &[naked]{
+			@extend %#{$prefix}button--naked;
+		}
+		&.small, &--small, &[small]{
+			@extend %#{$prefix}button--small;
+		}
+	}
 
 
-// Ghost Buttons
-.#{$prefix}button--bike{
-	@extend %#{$prefix}button--bike;
-}
+
+	// Specific Buttons
+	&.button--ghost{
+		@extend %#{$prefix}button--ghost;
+	}
 
 
-// Specific Buttons
-.#{$prefix}button--arrow-right{
-	@extend %#{$prefix}button--arrow-right;
-}
 
-.#{$prefix}button--load-more{
-	@extend %#{$prefix}button--load-more;
+	// Specific Buttons
+	&.button--compare{
+		@extend %#{$prefix}button--compare;
+	}
+
+	// Light Buttons
+	&.#{$prefix}button--white, &.#{$prefix}button--light{
+		@extend %#{$prefix}button--light;
+	}
+
+	// Dark Buttons
+	&.#{$prefix}button--dark{
+		@extend %#{$prefix}button--dark;
+	}
+
+
+	// Ghost Buttons
+	&.#{$prefix}button--bike{
+		@extend %#{$prefix}button--bike;
+	}
+
+
+	// Specific Buttons
+	&.#{$prefix}button--arrow-right{
+		@extend %#{$prefix}button--arrow-right;
+	}
+
+	&.#{$prefix}button--load-more{
+		@extend %#{$prefix}button--load-more;
+	}
 }

@@ -20,7 +20,15 @@
 
 
 	%#{$prefix}navMain{
-		color: color(khWhite); $c: c($c); content: ""; position: absolute; width: 100%; z-index: 1; top: 20px; left: 0; &__container{
+		$c: c($c); content: ""; position: absolute; width: 100%; z-index: 1; top: 20px; left: 0;
+		&--light{
+			color: color(khWhite);
+		}
+		&--dark{
+			color: color(khBlack);
+		}
+
+		&__container{
 			$c: c($c); position: absolute; left: 0; top: 0; width: 100vw;
 		}
 		&__list{
@@ -103,10 +111,13 @@
 			$c: c($c); position: absolute; left: 0; top: grid(1); width: 100%; height: auto; transform: translateY(-200%); z-index: 1;
 		}
 		&__buttongroup, .button-group{
-			$c: c($c); position: absolute; left: 0; bottom: -grid(1); width: 100%; height: grid(1); transition: opacity $assets-transition, transform 0.5s $assets-transition; z-index: 1; background-color: color(khWhite); transform: translateX(-200%); z-index: -1;
+			$c: c($c); position: absolute; left: 0; bottom: -grid(1); width: 100vw; height: grid(1); transition: opacity $assets-transition, transform 0.5s $assets-transition; z-index: 1; background-color: color(khBlack); transform: translateX(-200%); z-index: -1; overflow: hidden;
 			//				transform-origin: 50% 0; transform: translateY(#{grid(2)}); opacity: 0; display: none;
 			.button{
-				width: 50%; margin: 0 !important; border-radius: 0 !important; padding: 0; text-align: center;
+				margin: 0 !important; border-radius: 0 !important; text-align: center;
+				&:first-child{
+					padding-left: grid(1.5);
+				}
 			}
 		}
 		.sublist-item{

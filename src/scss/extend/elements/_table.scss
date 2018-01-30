@@ -32,7 +32,7 @@
 				@include min-("font-size",0.225,14);
 			}
 			&:last-child{
-				padding-right: 1rem;
+				padding-right: 0rem;
 			}
 			.more-info{
 				color: color(khMidgray); text-decoration: underline; white-space: nowrap;

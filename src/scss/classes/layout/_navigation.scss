@@ -6,6 +6,12 @@
 .#{$prefix}navMain{
 	@extend %#{$prefix}navMain;
 	@extend %#{$prefix}navMain--mobile;
+	&--dark{
+		@extend %#{$prefix}navMain--dark;
+	}
+	&--light{
+		@extend %#{$prefix}navMain--light;
+	}
 	&__container{
 		@extend %#{$prefix}navMain__container;
 		@extend %#{$prefix}navMain--mobile__container;

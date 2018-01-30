@@ -143,6 +143,15 @@
 	}
 }
 
+%#{$prefix}s--whereToBuy{
+	background-color: color(khBlack); color: color(khWhite); padding: grid(3) 0;
+	.column{
+		position: relative;
+	}
+	.button{
+		position: absolute; top: 50%; transform: translateY(-50%); right: 0;
+	}
+}
 %#{$prefix}s--features{
 	background-color: var(--bike-theme-color); color: color(khWhite); padding: 12vw 0 10vw;
 	@include borders();
@@ -180,49 +189,6 @@
 			}
 			&:first-child, &:nth-child(3n+4){
 				padding-left: 0; padding-right: 2vw;
-			}
-		}
-	}
-}
-
-%#{$prefix}sectionSpecifications{
-	padding: grid(4 0);
-}
-
-.s--specifications{
-	padding: grid(4 0);
-
-	h2+ul{
-		margin-top: grid(1.25);
-	}
-
-	.specifications__list{
-		>li{
-			border-bottom: solid 1px color(khMidgray); padding: 1.35rem 0 1.5rem;
-			.dt{
-				display: block; padding-bottom: 0.6rem; font-weight: $assets-font-weight-bold;
-				@media #{$medium-up}{
-					display: inline-block; width: 25%; float: left;
-				}
-				&:after{
-					content: ":";
-				}
-			}
-			.dd{
-				display: block; line-height: 1.35;
-				@media #{$medium-up}{
-					display: inline-block; width: 75%;
-				}
-			}
-
-			li.specifications__colorlist{
-				margin-right: 2rem;
-				@media #{$large-up}{
-					float: left;
-				}
-				span{
-					margin-right: 0.5rem;
-				}
 			}
 		}
 	}
