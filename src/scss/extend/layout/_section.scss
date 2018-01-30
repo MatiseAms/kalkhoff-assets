@@ -28,7 +28,7 @@
 
 
 %#{$prefix}s--singleBike{
-	padding: grid(4 0); position: relative;
+	background-color: color(White); padding: grid(4 0); position: relative;
 	@include borders();
 	&__image{
 		width: calc(50vw - 20px); right: 0; padding: 20px; height: 100%; overflow: hidden; padding-top: grid(4); position: relative; bottom: 0;
@@ -91,11 +91,12 @@
 }
 
 %#{$prefix}s--singleBikeSpecs{
+	background-color: color(White);
 	@include borders;
 }
 
 %#{$prefix}s--segmentTrio{
-	position: relative; background-color: color(khBlack);	@include borders(); padding: 0; margin: 1px 0;
+	background-color: color(khBlack); position: relative; background-color: color(khBlack);	@include borders(); padding: 0; margin: 1px 0;
 	img{
 		max-width: 100%; margin: 0; margin: 0 1px; transform: scale(1); transition: transform $assets-transition $assets-bezier;
 	}
@@ -126,7 +127,7 @@
 }
 
 %#{$prefix}s--introImage{
-	padding: 0;
+	background-color: color(White); padding: 0;
 	@include borders();
 
 	.column[style]{
@@ -153,7 +154,7 @@
 	}
 }
 %#{$prefix}s--features{
-	background-color: var(--bike-theme-color); color: color(khWhite); padding: 12vw 0 10vw;
+	background-color: color(khDark); background-color: var(--bike-theme-color); color: color(khWhite); padding: 12vw 0 10vw;
 	@include borders();
 	h2{
 		padding-bottom: 4vw;
