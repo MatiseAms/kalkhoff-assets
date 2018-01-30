@@ -53,7 +53,6 @@ const writeFile = function(file, fileData) {
 	});
 }
 
-
 walk(sourceFolder, function(err, results) {
 	// throw error if something is wrong
 	if (err) throw err;

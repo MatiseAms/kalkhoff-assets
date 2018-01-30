@@ -11,6 +11,9 @@
 		}
 	}
 	@keyframes comeDown{
+		1%{
+			transform: calc("100vw + 1vh");
+		}
 		0%{
 			transform: translateY(-100%);
 		}

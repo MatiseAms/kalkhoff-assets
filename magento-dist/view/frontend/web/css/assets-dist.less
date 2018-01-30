@@ -6,7 +6,7 @@
   @include min-(width,4,240);
 
   use width calculation
-  @include min-(width,4,240,'calc(100% - 240px)');
+  @include min-(width,4,240,'$1, hoi100% - 240px)');
 */
 /* Generate the classes */
 /* @function c($map){
@@ -273,7 +273,7 @@ div div + table, div div + h1, div div + h2, div div + h3, div div + h4, div div
   white-space: nowrap;
   position: absolute;
   left: -10px;
-  bottom: calc(100% + 10px);
+  bottom: $1, hoi100% + 10px);
   display: block;
   padding: 0 0.5rem;
   background-color: #101010;
@@ -289,7 +289,7 @@ div div + table, div div + h1, div div + h2, div div + h3, div div + h4, div div
   display: block;
   position: absolute;
   left: 0;
-  bottom: calc(100% + 10px);
+  bottom: $1, hoi100% + 10px);
   background-color: #101010;
   width: 0.625rem;
   height: 0.625rem;
@@ -384,7 +384,7 @@ a.button, button.button {
     background-color: #1a1b1a;
     color: #7f7f7f; }
   a.button--bike, button.button--bike {
-    padding-right: calc(4.1666666667vw + 40px);
+    padding-right: $1, hoi4.1666666667vw + 40px);
     position: relative;
     overflow: hidden; }
     a.button--bike .button__image, button.button--bike .button__image {
@@ -503,7 +503,7 @@ a.button--arrow-right, button.button--arrow-right {
     display: inline-block;
     text-align: right;
     background-image: linear-gradient(#ffffff, #ffffff);
-    background-size: calc(100% - 5px) 2px;
+    background-size: $1, hoi100% - 5px) 2px;
     background-position: left center;
     background-repeat: no-repeat;
     font-size: 0.6875rem;
@@ -847,7 +847,7 @@ input[type="password"] {
     padding: 0.5rem;
     position: relative; }
   [class^="flag-"].selector__selected a, [class*=" flag-"].selector__selected a {
-    padding-left: calc(1rem + 18px); }
+    padding-left: $1, hoi1rem + 18px); }
     [class^="flag-"].selector__selected a:before, [class*=" flag-"].selector__selected a:before {
       content: "";
       width: 18px;
@@ -1439,7 +1439,7 @@ table {
         opacity: 1;
         content: "";
         width: 50vw;
-        height: calc(100% + 4.1666666667vw);
+        height: $1, hoi100% + 4.1666666667vw);
         background-color: #ffffff;
         display: block;
         position: absolute;
@@ -1454,12 +1454,12 @@ table {
       @media only screen and (min-width: 750px) and (max-width: 9999px) and (max-width: 1440px) {
         .navMain__subList:after {
           background-size: 60px;
-          height: calc(100% + 60px);
+          height: $1, hoi100% + 60px);
           background-size: 100% 60px; } }
       @media only screen and (min-width: 750px) and (max-width: 9999px) and (min-width: 1920px) {
         .navMain__subList:after {
           background-size: 80px;
-          height: calc(100% + 80px);
+          height: $1, hoi100% + 80px);
           background-size: 100% 80px; } }
 
 @media only screen and (min-width: 750px) and (max-width: 9999px) {
@@ -1501,7 +1501,7 @@ table {
       display: block;
       background-image: none;
       background-size: 0 0;
-      width: calc(100% / 3); }
+      width: $1, hoi100% / 3); }
       .navMain__subItem:before {
         width: auto;
         height: auto;
@@ -1542,15 +1542,15 @@ table {
       transition: max-height 0.3s, opacity 0.3s 0.3s;
       background-size: cover;
       overflow: hidden;
-      height: calc(100% + 4.1666666667vw); } }
+      height: $1, hoi100% + 4.1666666667vw); } }
     @media only screen and (min-width: 750px) and (max-width: 9999px) and (max-width: 1440px) {
       .navMain__image, .navMain__subImage {
         height: 60px;
-        height: calc(100% + 60px); } }
+        height: $1, hoi100% + 60px); } }
     @media only screen and (min-width: 750px) and (max-width: 9999px) and (min-width: 1920px) {
       .navMain__image, .navMain__subImage {
         height: 80px;
-        height: calc(100% + 80px); } }
+        height: $1, hoi100% + 80px); } }
 
 @media only screen and (min-width: 750px) and (max-width: 9999px) {
       .image-type-topmodel.navMain__image img, .image-type-topmodel.navMain__subImage img {
@@ -1880,9 +1880,9 @@ table {
   .s--basicSection > .image.full-width {
     margin-top: -4.1666666667vw;
     margin-left: -4.1666666667vw;
-    width: -moz-calc(100% + 8.3333333333vw);
-    width: -webkit-calc(100% + 8.3333333333vw);
-    width: calc(100% + 8.3333333333vw); }
+    width: -moz-$1, hoi100% + 8.3333333333vw);
+    width: -webkit-$1, hoi100% + 8.3333333333vw);
+    width: $1, hoi100% + 8.3333333333vw); }
 
 .s--singleBike {
   background-color: #ffffff;
@@ -1904,7 +1904,7 @@ table {
   .s--singleBike:before {
     right: 0; }
   .s--singleBike__image {
-    width: calc(50vw - 20px);
+    width: $1, hoi50vw - 20px);
     right: 0;
     padding: 20px;
     height: 100%;
@@ -1919,7 +1919,7 @@ table {
     @media only screen and (min-width: 750px) and (max-width: 9999px) {
       .s--singleBike__image {
         position: absolute;
-        width: calc(50vw - 20px);
+        width: $1, hoi50vw - 20px);
         bottom: 0; } }
     .s--singleBike__image img {
       max-width: 100%;
@@ -2032,8 +2032,8 @@ table {
     transition: transform 0.3s cubic-bezier(0.75, 0.75, 0.25, 0.5); }
   .s--segmentTrio h3 {
     position: absolute;
-    bottom: calc(4.1666666667vw + 20px);
-    left: calc(4.1666666667vw + 20px);
+    bottom: $1, hoi4.1666666667vw + 20px);
+    left: $1, hoi4.1666666667vw + 20px);
     width: 16.6666666667vw;
     color: #ffffff;
     z-index: 2; }
@@ -2165,7 +2165,7 @@ table {
   background-position: top center;
   background-size: cover;
   margin: 0;
-  min-height: calc(100vh - 6.25vw);
+  min-height: $1, hoi100vh - 6.25vw);
   margin-top: 20px; }
   .s--basicHeader:after, .s--basicHeader:before {
     content: "";
@@ -2191,7 +2191,7 @@ table {
     position: absolute;
     top: 0;
     right: 0;
-    width: calc(50vw - 20px);
+    width: $1, hoi50vw - 20px);
     height: 100%;
     padding: 20px;
     padding-top: 12.5vw;
@@ -2219,7 +2219,7 @@ table {
   color: #101010;
   box-shadow: 0 -4.1666666667vw 0 0 #101010 inset;
   margin: 0;
-  min-height: calc(100vh - 12.5vw);
+  min-height: $1, hoi100vh - 12.5vw);
   margin-top: 20px; }
   .s--singleBikeHeader:after, .s--singleBikeHeader:before {
     content: "";
@@ -2248,7 +2248,7 @@ table {
     position: absolute;
     bottom: 0;
     right: 0;
-    width: calc(50vw);
+    width: $1, hoi50vw);
     padding: 0 20px;
     padding-top: 12.5vw;
     overflow: hidden;
@@ -9416,6 +9416,8 @@ a, a:visited, a:link, a.link:visited, .alink:visited {
     clip: rect(0px, 100vw, 100vh, 0px); } }
 
 @keyframes comeDown {
+  1% {
+    transform: $1, hoi"100vw + 1vh"); }
   0% {
     transform: translateY(-100%); }
   100% {

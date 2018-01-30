@@ -10,5 +10,8 @@ module.exports = {
 	},
 	magentize: {
 		command: 'node scripts/magentize-less.js'
+	},
+	less_fix: {
+		command: 'node scripts/less-fix.js'
 	}
 };
