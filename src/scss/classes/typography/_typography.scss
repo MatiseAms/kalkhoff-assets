@@ -2,6 +2,16 @@
 /* -------------------------------------------------- */
 /*				@extend default typographic elements
 /* -------------------------------------------------- */
+body, html{
+	font-size: 16px;
+}
+
+a, a:visited, a:link, a.link:visited, .alink:visited{
+	color: inherit;
+}
+/* -------------------------------------------------- */
+/*				@extend default typographic elements
+/* -------------------------------------------------- */
 
 h1{
 	@extend %#{$prefix}h1 !optional;

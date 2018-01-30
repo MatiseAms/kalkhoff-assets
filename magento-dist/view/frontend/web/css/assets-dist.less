@@ -269,11 +269,6 @@ div ul + h1, div ul + h2, div ul + h3, div ul + h4, div ul + h5, div ul + p, div
 div div + table, div div + h1, div div + h2, div div + h3, div div + h4, div div + h5, div div + ul, div p + table, div p + h1, div p + h2, div p + h3, div p + h4, div p + h5, div p + ul {
   margin-top: 2.0833333333vw; }
 
-.h2--inverted,
-.h3--inverted,
-.p--inverted {
-  color: #ffffff; }
-
 [title].colorDot:before, [title].frameSelect:before, [title].tooltip:before, [data-title].colorDot:before, [data-title].frameSelect:before, [data-title].tooltip:before, [data-tooltip].colorDot:before, [data-tooltip].frameSelect:before, [data-tooltip].tooltip:before {
   white-space: nowrap;
   position: absolute;
@@ -8660,6 +8655,15 @@ table {
 /* --------------------------------------- */
 /*				@extend typography
 /* ---------------------------------------- */
+/* -------------------------------------------------- */
+/*				@extend default typographic elements
+/* -------------------------------------------------- */
+body, html {
+  font-size: 16px; }
+
+a, a:visited, a:link, a.link:visited, .alink:visited {
+  color: inherit; }
+
 /* -------------------------------------------------- */
 /*				@extend default typographic elements
 /* -------------------------------------------------- */
