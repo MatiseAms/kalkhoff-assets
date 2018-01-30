@@ -1,5 +1,5 @@
 %#{$prefix}buttonAnimations{
-	@include keyframes(buttonBikeHover){
+	@keyframes buttonBikeHover{
 		0%{
 			transform: translateX(0);
 		}
